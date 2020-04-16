@@ -34,6 +34,8 @@
 <script src="../../content/mo/js/ui_plugins.js"></script>
 <script src="../../content/mo/js/ui_common.js"></script>
 <script>
+	common.title('팝업 가이드');
+
 	$(function(){
 		$('#btnAlert').click(function(){
 			Layer.alert('얼럿창입니다.',function(){
@@ -92,6 +94,9 @@
 				<ul class="grid col2 mt20">
 					<li><a href="#" class="button h44" onclick="Layer.open('#bottomDialog1')">하단팝업(짧음)</a></li>
 					<li><a href="#" class="button h44 gray" onclick="Layer.open('#bottomDialog2')">하단팝업(길때)</a></li>
+				</ul>
+				<ul class="grid col1 mt20">
+					<li><a href="win_pop.html" class="button h44" target="_blank">팝업페이지</a></li>
 				</ul>
 				<ul class="grid col2 mt20">
 					<li><a href="#" class="button h44" onclick="Loading.open();$(this).parent().next().find('a').css('z-index',10000)">Loading.open();</a></li>
