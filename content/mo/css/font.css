@@ -89,6 +89,7 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 100;
+	font-display: fallback;
 	src: local('Roboto Thin'), local('Roboto-Thin'),
 		 url('../fonts/roboto-v20-latin-100.woff2') format('woff2'), /* Super Modern Browsers */
 		 url('../fonts/roboto-v20-latin-100.woff') format('woff'), /* Modern Browsers */
@@ -101,6 +102,7 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 300;
+	font-display: fallback;
 	src: local('Roboto Light'), local('Roboto-Light'),
 		 url('../fonts/roboto-v20-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
 		 url('../fonts/roboto-v20-latin-300.woff') format('woff'), /* Modern Browsers */
@@ -113,6 +115,7 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 400;
+	font-display: fallback;
 	src: local('Roboto'), local('Roboto-Regular'),
 		 url('../fonts/roboto-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
 		 url('../fonts/roboto-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
@@ -125,6 +128,7 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 500;
+	font-display: fallback;
 	src: local('Roboto Medium'), local('Roboto-Medium'),
 		 url('../fonts/roboto-v20-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
 		 url('../fonts/roboto-v20-latin-500.woff') format('woff'), /* Modern Browsers */
@@ -137,6 +141,7 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 700;
+	font-display: fallback;
 	src: local('Roboto Bold'), local('Roboto-Bold'),
 		 url('../fonts/roboto-v20-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
 		 url('../fonts/roboto-v20-latin-700.woff') format('woff'), /* Modern Browsers */
@@ -149,6 +154,7 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 900;
+	font-display: fallback;
 	src: local('Roboto Black'), local('Roboto-Black'),
 		 url('../fonts/roboto-v20-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
 		 url('../fonts/roboto-v20-latin-900.woff') format('woff'), /* Modern Browsers */
@@ -161,6 +167,7 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 100;
+	font-display: fallback;
 	src: local('Roboto Thin'), local('Roboto-Thin'),
 		 url('../fonts/roboto-v20-latin-ext-100.woff2') format('woff2'), /* Super Modern Browsers */
 		 url('../fonts/roboto-v20-latin-ext-100.woff') format('woff'), /* Modern Browsers */
@@ -173,6 +180,7 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 300;
+	font-display: fallback;
 	src: local('Roboto Light'), local('Roboto-Light'),
 		 url('../fonts/roboto-v20-latin-ext-300.woff2') format('woff2'), /* Super Modern Browsers */
 		 url('../fonts/roboto-v20-latin-ext-300.woff') format('woff'), /* Modern Browsers */
@@ -185,6 +193,7 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 400;
+	font-display: fallback;
 	src: local('Roboto'), local('Roboto-Regular'),
 		 url('../fonts/roboto-v20-latin-ext-regular.woff2') format('woff2'), /* Super Modern Browsers */
 		 url('../fonts/roboto-v20-latin-ext-regular.woff') format('woff'), /* Modern Browsers */
@@ -197,6 +206,7 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 500;
+	font-display: fallback;
 	src: local('Roboto Medium'), local('Roboto-Medium'),
 		 url('../fonts/roboto-v20-latin-ext-500.woff2') format('woff2'), /* Super Modern Browsers */
 		 url('../fonts/roboto-v20-latin-ext-500.woff') format('woff'), /* Modern Browsers */
@@ -209,6 +219,7 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 700;
+	font-display: fallback;
 	src: local('Roboto Bold'), local('Roboto-Bold'),
 		 url('../fonts/roboto-v20-latin-ext-700.woff2') format('woff2'), /* Super Modern Browsers */
 		 url('../fonts/roboto-v20-latin-ext-700.woff') format('woff'), /* Modern Browsers */
@@ -221,6 +232,7 @@ unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: 900;
+	font-display: fallback;
 	src: local('Roboto Black'), local('Roboto-Black'),
 		 url('../fonts/roboto-v20-latin-ext-900.woff2') format('woff2'), /* Super Modern Browsers */
 		 url('../fonts/roboto-v20-latin-ext-900.woff') format('woff'), /* Modern Browsers */
