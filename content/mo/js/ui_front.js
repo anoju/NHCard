@@ -6,8 +6,8 @@
 var _isDevice = "W"; /** 개발에서 받아와야하는 값: A-모바일앱, W-웹 **/
 
 $(function(){
-	htmlnclude();
 	common.isApp();
+	htmlnclude();
 	deviceCheck();
 	common.init();
 	Layer.init();
