@@ -67,8 +67,12 @@ var htmlnclude = function(){
 					if($htmlFile == 'top.html'){
 						common.fixed('#header');
 						common.header();
-						var $docTit = document.title.split(' | ').shift();
-						common.title($docTit);
+						if(document.title.indexOf(' | ')>0){
+							var $docTit = document.title.split(' | ').shift();
+							common.title($docTit);
+						}else{
+							common.title();
+						}
 					}
 
 					if($htmlFile == 'footer.html'){
@@ -589,6 +593,13 @@ var common = {
 				$('#header h1').html(str);
 			}
 		}
+		/*else{
+			str = '<a href="#">농협카드</a>';
+			if($('#header').length){
+				$('#header .btn_back').remove();
+				$('#header h1').addClass('logo').html(str);
+			}
+		}*/
 	},
 	fixed:function(target){
 		//고정(fixed)
