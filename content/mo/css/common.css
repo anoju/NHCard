@@ -14,7 +14,8 @@ import
 reset
 ========================================================================== */
 html{height:100%;font-size:62.5%;/*-webkit-touch-callout:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;*/}
-body{font:normal 1.5rem/1.5 'Noto Sans',Sans-serif;font-weight:400;color:#333;word-break:keep-all;/*letter-spacing:-0.05em;*/text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;}
+body{font:normal 1.5rem/1.5 'Roboto', 'Noto Sans KR', 'Apple SD Gothic Neo', 'AppleSDGothicNeo', sans-serif;font-weight:400;color:#333;word-break:keep-all;/*letter-spacing:-0.05em;*/text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;}
+html.ie9 body, html.ie10 body{font-family:'Noto Sans KR', 'Apple SD Gothic Neo', 'AppleSDGothicNeo', sans-serif;font-size:15px;}
 h1,h2,h3,h4,h5,h6,html,body,div,span,applet,object,iframe,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,sub,sup,tt,var,b,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,audio,canvas,details,figcaption,figure,footer,header,mark,menu,meter,nav,output,progress,section,summary,time,video{margin:0;padding:0;border:0;box-sizing:border-box;}
 h1,h2,h3,h4,h5,h6,th,strong,b{font-weight:500;}
 input,select,textarea{box-sizing:border-box;}
@@ -61,7 +62,6 @@ common
 .fw_bold{font-weight:bold;}
 .fw_100{font-weight:100;}
 .fw_300{font-weight:300;}
-.fw_350{font-weight:350;}
 .fw_400{font-weight:400;}
 .fw_500{font-weight:500;}
 .fw_700{font-weight:700;}
@@ -280,7 +280,9 @@ html.eng #header h1.logo:before{width:190px;background-image:url(../images/eng/h
 .gnb_bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:109;opacity:0;background:rgba(0,0,0,.7);-webkit-transition:0.45s cubic-bezier(0.22,0.61,0.2,1) 0.15s;transition:0.45s cubic-bezier(0.22,0.61,0.2,1) 0.15s;}
 .gnb_bg.show{opacity:1;-webkit-transition-delay:0s;transition-delay:0s;}
 #gnb{position:fixed;top:0;right:0;bottom:0;width:100%;background-color:#fff;z-index:120;-webkit-transform:translate3d(120%,0,0);transform:translate3d(120%,0,0);-webkit-transition:0.45s cubic-bezier(0.22,0.61,0.2,1);transition:0.45s cubic-bezier(0.22,0.61,0.2,1);}
+html.ie9 #gnb{right:-120%;}
 #gnb.show{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-transition-delay:0.15s;transition-delay:0.15s;}
+html.ie9 #gnb.show{right:0;}
 .gnb_header{position:absolute;left:0;top:0;width:100%;height:168px;padding:10px 25px;background-color:#fff;border-bottom:1px solid #f1f1f1;z-index:2;}
 .gnb_header.ty2{height:94px;}
 .gnb_header .gnb_info{height:70px;}
@@ -439,8 +441,9 @@ html.iPhoneX .add_fixed_btn .floating_btn{bottom:calc(constant(safe-area-inset-b
 #btnTop:after{top:17px;left:15px;width:16px;height:19px;background:url(../images/common/btnTop.png) no-repeat center top;background-size:contain;}
 
 #floatingMenu{z-index:110;}
-/* #floatingMenu .bg{position:fixed;left:500%;top:0;width:100%;height:100%;opacity:0;background:rgba(0,0,0,.7);-webkit-transition:left 0s 0.3s, opacity 0.3s;transition:left 0s 0.3s, opacity 0.3s;} */
 #floatingMenu .bg{position:fixed;left:0;top:0;width:100%;height:100%;opacity:1;background:rgba(0,0,0,.7);-webkit-transition:0.45s;transition:0.45s;-webkit-clip-path:circle(0 at calc(100% - 44px) calc(100% - 44px));clip-path:circle(0 at calc(100% - 44px) calc(100% - 44px));}
+html.msie #floatingMenu .bg,
+html.edge #floatingMenu .bg{position:fixed;left:500%;top:0;width:100%;height:100%;opacity:0;background:rgba(0,0,0,.7);-webkit-transition:left 0s 0.3s, opacity 0.3s;transition:left 0s 0.3s, opacity 0.3s;}
 #floatingMenu.is_fixed_btn .bg,
 #floatingMenu.top_on .bg{-webkit-clip-path:circle(0 at calc(100% - 44px) calc(100% - 104px));clip-path:circle(0 at calc(100% - 44px) calc(100% - 104px));}
 #floatingMenu.is_fixed_btn.top_on .bg{-webkit-clip-path:circle(0 at calc(100% - 44px) calc(100% - 104px));clip-path:circle(0 at calc(100% - 44px) calc(100% - 164px));}
@@ -450,8 +453,9 @@ html.iPhoneX .add_fixed_btn .floating_btn{bottom:calc(constant(safe-area-inset-b
 #floatingMenu ul li+li{margin-top:-48px;}
 #floatingMenu .btn .txt{color:#fff;right:0;opacity:0;transition:0.3s 0.3s;}
 #floatingMenu.show{margin-bottom:0;}
-/* #floatingMenu.show .bg{left:0;opacity:1;-webkit-transition-delay:0s;transition-delay:0s;} */
 #floatingMenu.show .bg{-webkit-transition-delay:0s;transition-delay:0s;z-index:0;-webkit-clip-path:circle(100% at 50% 50%) !important;clip-path:circle(100% at 50% 50%) !important;}
+html.msie #floatingMenu.show .bg,
+html.edge #floatingMenu.show .bg{left:0;opacity:1;-webkit-transition-delay:0s;transition-delay:0s;}
 #floatingMenu.show ul{bottom:60px;width:auto;height:auto;border-radius:0;overflow:visible;-webkit-transform:scale(1);transform:scale(1);}
 #floatingMenu.show ul li{opacity:1;}
 #floatingMenu.show ul li+li{margin-top:12px;}
