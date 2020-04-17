@@ -3,19 +3,25 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<jsp:include page="./include/meta.jsp" flush="false" />
-<title>농협카드 모바일</title>
-<jsp:include page="./include/head.jsp" flush="false" />
+<%@ include file="./include/meta.jsp" %>
+<!-- 공통이 아닌 추가meta태그(기타 meta태그는 여기에~) -->
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="-1">
+<!-- //공통이 아닌 추가meta태그 -->
+
+<%@ include file="./include/head.jsp" %>
+<!-- 공통이 아닌 추가css,스크립트: -->
 <script>
 	$(function(){
 		common.title('페이지 제목입니다.');
 	});
 </script>
+<!-- //공통이 아닌 추가css,스크립트 -->
 </head>
 <body>
 <article id="wrap">
-	<jsp:include page="./include/top.jsp" flush="false" /><!-- 헤더 -->
-	<jsp:include page="./include/gnb.jsp" flush="false" /><!-- 전체메뉴 -->
+	<%@ include file="./include/top.jsp" %><!-- 헤더 -->
+	<%@ include file="./include/gnb.jsp" %><!-- 전체메뉴 -->
 
 	<!-- 컨텐츠 시작 -->
 	<div id="container">
@@ -41,7 +47,7 @@
 	<!-- 다른곳 말고 여기에 팝업들 넣어주세요~~ -->
 	<!-- //팝업 넣는 영역  -->
 
-	<jsp:include page="./include/footer.jsp" flush="false" /><!-- 푸터 -->
+	<%@ include file="./include/footer.jsp" %><!-- 푸터 -->
 </article>
 </body>
 </html>
