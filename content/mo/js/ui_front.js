@@ -1949,11 +1949,7 @@ var share = {
 				$href = '//story.kakao.com/share?url=' + $url;
 				break;
 			case 'kakao_talk':
-				if(share.kakaoKey != ''){
-					if(share.kakaoInit == false){
-						share.kakaoInit = true;
-						Kakao.init(share.kakaoKey);
-					}
+				var kakaoSend = function(){
 					Kakao.Link.sendDefault({
 						objectType: 'feed',
 						content: {
@@ -1973,6 +1969,18 @@ var share = {
 							}
 						}]
 					});
+				};
+
+				if(share.kakaoKey != ''){
+					if(share.kakaoInit == false){
+						share.kakaoInit = true;
+						loadScript('//developers.kakao.com/sdk/js/kakao.min.js',function(){
+							Kakao.init(share.kakaoKey);
+							kakaoSend();
+						});
+					}else{
+						kakaoSend();
+					}
 				}else{
 					Layer.alert('카카오톡 공유하기 API의 key값를 등록해주세요.');
 				}
@@ -1982,6 +1990,25 @@ var share = {
 		if($snsType !== 'kakao_talk')window.open($protocol + $href, $snsType + 'sns_share', 'scrollbars=1,width=' + $width + ',height=500,menubar=0,resizable=0');
 	}
 };
+var loadScript = function(url, callback){
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+	if(script.readyState){  //IE
+		script.onreadystatechange = function(){
+			if (script.readyState == "loaded" ||
+					script.readyState == "complete"){
+				script.onreadystatechange = null;
+				callback();
+			}
+		};
+	} else {  //Others
+		script.onload = function(){
+			callback();
+		};
+	}
+	script.src = url;
+	document.getElementsByTagName("head")[0].appendChild(script);
+}
 
 //스크롤 관련
 var scrollUI = {
