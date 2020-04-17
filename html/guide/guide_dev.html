@@ -395,14 +395,14 @@ body{background:#f1f1f1;}
 							<li class="dot">.form_item에 error 클래스를 추가하면 그안에 속한 모든 폼요소가 레드라인으로 나옵니다.</li>
 						</ul>
 					</div>
-					<h4 class="gd__h3">error 표시를 긍정표현으로 쓸때</h4>
+					<h4 class="gd__h3">error 표시를 긍정표현으로 쓸때(checked 클래스 활용)</h4>
 					<div class="form_item">
 						<label for="inputText5" class="fm_lb">이름</label>
 						<div class="fm_cont">
-							<div class="input">
+							<div class="input checked"><!-- 여기에 checked 클래스 추가 -->
 								<input type="text" id="inputText5" placeholder="" value="홍길동">
 							</div>
-							<div class="error_txt on" style="display:block;">이름을 맞습니다.</div><!-- display:block; --><!-- 여기에 on 클래스 추가 -->
+							<div class="error_txt checked" style="display:block;">이름이 확인되었습니다.</div><!-- display:block; --><!-- 여기에 checked 클래스 추가 -->
 						</div>
 					</div>
 				</div>
