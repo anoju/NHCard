@@ -73,6 +73,8 @@ $(function () {
 				$(this).find('.no').text($noIdx);
 				$noIdx++;
 			}
+			var deps2Txt = $(this).children().eq(3).text();
+			if(deps2Txt != '')$(this).addClass('line');
 		});
 		var completeNum = $this.find('.complete').length,
 			per = Math.round((100/pageNum)*completeNum);
