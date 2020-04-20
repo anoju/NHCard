@@ -16,7 +16,7 @@ body{font-size:14px;}
 .g_project{position:absolute;top:12px;right:20px;}
 .g_project .current{position:relative;width:200px;height:35px;line-height:35px;padding:0 40px 0 15px;border:1px solid #fff;background:none;color:#fff;text-align:left;overflow:hidden;}
 .g_project .current:after{content:'';position:absolute;top:0;right:0;width:40px;height:30px;background:url(../images/guide/ico_select_arrow.png) 50% 50% no-repeat;opacity:1;transform:rotate(0deg);transition:all 0.3s ease-in-out;}
-.g_project .current.active{background:#fff;color:#111;}
+/*.g_project .current.active{background:#fff;color:#111;}*/
 .g_project .current.active:after{transform:rotate(180deg);}
 .g_project .g_list{display:none;position:absolute;top:36px;left:0;right:0;border:1px solid #e6e6e6;border-width:0 1px;z-index:100;background:#fff;}
 .g_project .g_list li{border-bottom:1px solid #e6e6e6;}
@@ -47,7 +47,7 @@ body{font-size:14px;}
 	.g_util h1 a{display:inline-block;vertical-align:top;}
 	.g_util h1 img{height:22px;}
 	.g_util .btn_nav{display:block;}
-	.g_project{top:8px;right:10px;width:100px;transition:all 0.3s ease-in-out;}
+	.g_project{top:8px;right:10px;width:90px;transition:all 0.3s ease-in-out;}
 	.g_project .current{width:100%;transition:all 0.3s ease-in-out;border:none;text-align:right;}
 	.g_nav{top:50px;width:100%;overflow:auto;background-color:rgba(0,0,0,1);-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0);transition:all 0.3s ease-in-out;}
 	.no_scroll .g_nav{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);}
