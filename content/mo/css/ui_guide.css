@@ -159,6 +159,8 @@ body{font-size:14px;}
 .g_board table{white-space:nowrap;table-layout:auto;font-size:11px;}
 .g_board table th,
 .g_board table td{border:1px solid #ddd;border-width:1px 1px 0;}
+.g_board table tr.hr th,
+.g_board table tr.hr th,
 .g_board table tr.line th,
 .g_board table tr.line td{border-top-color:#999;}
 .g_board table th.no{width:50px;}
@@ -171,7 +173,7 @@ body{font-size:14px;}
 .g_board table th.m_date{width:100px;}
 .g_board table thead th{padding:8px 10px;color:#111;background:#fff;}
 .g_board table thead tr:first-child th{border-top-width:0;}
-.g_board table thead th button{width:20px;height:20px;margin-left:5px;background:#ccc url(../images/guide/ico_delete.png) 50% 50% no-repeat;border-radius:100%;text-indent:-9999px;}
+.g_board table thead th button{width:18px;height:18px;margin-left:5px;background:#ccc url(../images/guide/ico_delete.png) 50% 50% no-repeat;border-radius:100%;text-indent:-9999px;background-size:7px auto;}
 .g_board table thead th select{min-width:55px;height:25px;line-height:23px;width:100%;}
 .g_board table tbody td{padding:8px 10px;word-break:break-all;background:#f1f1f1;text-align:center;}
 .g_board table tbody td.deps, 
