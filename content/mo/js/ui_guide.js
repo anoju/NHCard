@@ -1,13 +1,13 @@
 $(function () {
 	if($('.g_content>h2').length && $('.g_content>h2').text() != ''){
-		var $title = document.title
+		var $title = document.title;
 		document.title = $('.g_content>h2').text()+' | '+$title;
 	}
 	
 	var $thBtn = $('th button'), 
 		$projectSelect = $('.g_project .current'), 
 		$document = $(document),
-		$currentName = $('nav a[href^="' + location.pathname.split("/")[5] + '"]');
+		$currentName = $('nav a[href^="' + location.pathname.split("/")[5] + '"]'),
 		$currentTile = $currentName.text(),
 		$codeView = $('.g_guide_info .code_view'),
 		$codeViewTarget = $('.g_guide_info .code_view h4 a');
@@ -53,14 +53,12 @@ $(function () {
 
 	// Status Count	
 	$('.g_content tbody .c_date').each(function(){
-		if(!$.trim($(this).html())==''){
-			$(this).parent('tr').addClass('complete');
-		}
-	})
+		var $thisHtml = $.trim($(this).html());
+		if($thisHtml != '')$(this).parent('tr').addClass('complete');
+	});
 	$('.g_content tbody .m_date').each(function(){
-		if(!$.trim($(this).html())==''){
-			$(this).parent('tr').addClass('modify');
-		}
+		var $thisHtml = $.trim($(this).html());
+		if($thisHtml != '')$(this).parent('tr').addClass('modify');
 	});
 	$('.g_board_panel').each(function(){
 		var $this = $(this),
@@ -97,7 +95,7 @@ $(function () {
 	// Tab
 	var g_board_tab = function(){
 		var $tab = $('.g_board_tab ul li'), $tabCurrent = $('.g_board_tab ul li.active'), $panel = $('.g_board_panel');
-		$('#'+$tabCurrent.attr('rel')).addClass('active')
+		$('#'+$tabCurrent.attr('rel')).addClass('active');
 		$tab.on('click', function(e){
 			e.preventDefault();
 			var $this = $(this), panelID = $this.attr('rel'), $scrollTop = $(window).scrollTop();
@@ -122,7 +120,7 @@ $(function () {
 				$panel.eq(0).addClass('active');
 			}
 		//});
-	}
+	};
 	g_board_tab();
 	
 	// swiper Tab
@@ -151,20 +149,16 @@ $(function () {
 				tabSwiper.update();
 			});
 		}
-	}
+	};
 	tabSlide();
 	$(window).on('resize', function () {
 		var $hr = $('tr.hr th'), 
 			windowWidth = $(window).width();		
-		if(windowWidth < 1024){
+		if(windowWidth < 760){
 			$hr.attr('colspan','2');
 		}else{
-			var $colspan = $hr.parent().data('colspan')
-			if($colspan == undefined){
-				$hr.attr('colspan','10');
-			}else{
-				$hr.attr('colspan',$colspan);
-			}
+			var $colspan = $hr.closest('table').find('thead').first().children().children().length;
+			$hr.attr('colspan',$colspan);
 		}
 	});
 	
@@ -193,7 +187,7 @@ $(function () {
 			for(var i = 0;i < dayArry.length;i++){
 				var opt = dayArry[i].toString();
 				var optTxt = opt.substr(0, 4) + '-' + opt.substr(4, 2) + '-' + opt.substr(6, 2);
-				$select.append('<option value="'+opt+'">'+optTxt+'</option>')
+				$select.append('<option value="'+opt+'">'+optTxt+'</option>');
 			}
 		}
 
@@ -216,7 +210,7 @@ $(function () {
 			for(var j = 0;j < dayArry2.length;j++){
 				var opt2 = dayArry2[j].toString();
 				var optTxt2 = opt2.substr(0, 4) + '-' + opt2.substr(4, 2) + '-' + opt2.substr(6, 2);
-				$select2.append('<option value="'+opt2+'">'+optTxt2+'</option>')
+				$select2.append('<option value="'+opt2+'">'+optTxt2+'</option>');
 			}
 		}
 
@@ -236,7 +230,7 @@ $(function () {
 		if($select3.length){
 			for(var k = 0;k < wkArry.length;k++){
 				var opt3 = wkArry[k];
-				$select3.append('<option value="'+k+'">'+opt3+'</option>')
+				$select3.append('<option value="'+k+'">'+opt3+'</option>');
 			}
 		}
 		
@@ -282,7 +276,7 @@ $(function () {
 			}
 			
 			return (_thisLeft/_sclWid)*100;
-		}
+		};
 		catchChk();
 		_this.on('scroll resize',function(e){
 			var _tar = _this.next('.g_board_scroll').find('>div');
