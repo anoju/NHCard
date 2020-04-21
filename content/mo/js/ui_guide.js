@@ -60,35 +60,34 @@ var _gdCommon ={
 // swiper Tab
 var _gdTabSwiper = '';
 var _gdBoardUI ={
-	slide:function(){
-		var $tab = $('.g_board_tab');
-		if($tab.length > 0){
-			_gdTabSwiper = new Swiper('.g_board_tab',{
-				slidesPerView: 'auto',
-				freeMode: true
-			});
-			$('.g_board_tab .swiper-slide').on('click', function(e){
-				var $this = $(this),
-					gnbWidth = $tab.width(),
-					offset = $this.width()+$this.offset().left,
-					$slideItems = $this,
-					myIndex = $this.index();
-				if(gnbWidth < offset){
-					_gdTabSwiper.slideNext();
-				}else{
-					_gdTabSwiper.slideTo(myIndex-1);
-				}
-			});
-			
-			$(window).on('load',function(){
-				_gdTabSwiper.update();
-			});
-		}
-	},
 	tab :function(){
-		var $tab = $('.g_board_tab ul li'), $tabCurrent = $('.g_board_tab ul li.active'), $panel = $('.g_board_panel');
-		$('#'+$tabCurrent.attr('rel')).addClass('active');
-		$tab.on('click', function(e){
+		var $tab = $('.g_board_tab'),
+			$tabLi = $('.g_board_tab ul li'), 
+			$tabCurrent = $('.g_board_tab ul li.active'), 
+			$panel = $('.g_board_panel'),
+			$hash = location.hash;
+
+		_gdTabSwiper = new Swiper('.g_board_tab',{
+			slidesPerView: 'auto',
+			freeMode: true
+		});
+		$(window).on('load',function(){
+			_gdTabSwiper.update();
+		});
+		$('.g_board_tab .swiper-slide').on('click', function(e){
+			var $this = $(this),
+				gnbWidth = $tab.width(),
+				offset = $this.width()+$this.offset().left,
+				myIndex = $this.index();
+			if(gnbWidth < offset){
+				_gdTabSwiper.slideNext();
+			}else{
+				_gdTabSwiper.slideTo(myIndex-1);
+			}
+		});
+		
+		if($('#'+$tabCurrent.attr('rel')).length)$('#'+$tabCurrent.attr('rel')).addClass('active');
+		$tabLi.on('click', function(e){
 			e.preventDefault();
 			var $this = $(this), panelID = $this.attr('rel'), $scrollTop = $(window).scrollTop();
 			$this.addClass('active').siblings('li').removeClass('active');
@@ -97,34 +96,32 @@ var _gdBoardUI ={
 			location.hash = panelID;
 			$(window).scrollTop($scrollTop);
 		});
-		//$(window).on('load',function(){
-			var $hash = location.hash;
-			if(!!$hash){
-				$tab.each(function(){
-					var $rel = $(this).attr('rel');
-					if($rel == $hash.substring(1)){
-						$(this).addClass('active').siblings().removeClass('active');
-						$('#'+$rel).addClass('active').siblings('.g_board_panel').removeClass('active');
-					}
-				});
-			}else{
-				$tab.eq(0).addClass('active');
-				$panel.eq(0).addClass('active');
-			}
-		//});
+		if(!!$hash){
+			$tabLi.each(function(){
+				var $rel = $(this).attr('rel');
+				if($rel == $hash.substring(1)){
+					$(this).addClass('active').siblings().removeClass('active');
+					$('#'+$rel).addClass('active').siblings('.g_board_panel').removeClass('active');
+				}
+			});
+		}else{
+			$tabLi.eq(0).addClass('active');
+			$panel.eq(0).addClass('active');
+		}
 	},
 	board :function(){
+		var $board = $('.g_board');
 		//완료일 체크
-		$('.g_board tbody .c_date').each(function(){
+		$board.find('tbody .c_date').each(function(){
 			var $thisHtml = $.trim($(this).html());
 			if($thisHtml != '')$(this).parent('tr').addClass('complete');
 		});
 		//수정일 체크
-		$('.g_board tbody .m_date').each(function(){
+		$board.find('tbody .m_date').each(function(){
 			var $thisHtml = $.trim($(this).html());
 			if($thisHtml != '')$(this).parent('tr').addClass('modify');
 		});
-		$('.g_board').each(function(){
+		$board.each(function(){
 			var _this = $(this);
 			var dayArry = [];
 			var dayArry2 = [];
@@ -247,7 +244,7 @@ var _gdBoardUI ={
 		});
 
 		//th select 기능
-		$('.g_board thead th select').change(function(){
+		$board.find('thead th select').change(function(){
 			var $tbody = $(this).closest('.g_board').find('tbody'),
 				$class = '';
 			if($(this).val()== ''){
@@ -264,75 +261,74 @@ var _gdBoardUI ={
 		
 		//tr colspan
 		$(window).on('resize', function(){
-			var $hr = $('tr.hr th'), 
-				windowWidth = $(window).width();		
-			if(windowWidth < 760){
-				$hr.attr('colspan','2');
-			}else{
-				var $colspan = $hr.closest('table').find('thead').first().children().children().length;
-				$hr.attr('colspan',$colspan);
-			}
+			var windowWidth = $(window).width();
+			$board.each(function(){
+				var $hr = $(this).find('tr.hr th');
+				var $colspan = $(this).data('colspan');
+				if($colspan == undefined)$colspan = $(this).find('thead').first().children().children().length;
+				if(windowWidth < 760){
+					$hr.attr('colspan','2');
+				}else{
+					$hr.attr('colspan',$colspan);
+				}
+			});
+			
 		});
 	},
 	state :function(){
-		var totalPageNum = $('.g_board tbody .no').length,
-			completeTotalNum = $('.g_board .complete').length,
-			perTotal = Math.round((100/totalPageNum)*completeTotalNum);
+		var stateTxt = function(el,wrap){
+			var max = $(wrap).find('tbody .no').length,
+				c = $(wrap).find('.complete').length,
+				p = Math.round((100/max)*c);
+			
+			$(el).find('.total .num').text(max);
+			$(el).find('.cp_num .num').text(c);
+			$(el).find('.ing .num').text(p);
+			$(el).find('.bar').css('width', p+'%');
+		};
 
-		$('.g_project_status .total .num').text(totalPageNum);
-		$('.g_project_status .cp_num .num').text(completeTotalNum);
-		$('.g_project_status .ing .num').text(perTotal);
-		$('.g_project_status .bar').css('width', perTotal+'%');
+		//전체 진행률
+		stateTxt('.g_project_status','.g_board');
 
 		$('.g_board_panel').each(function(){
 			var $this = $(this),
-				$no = $this.find('.g_board tbody .no'),
-				pageNum = $no.length;
-			
-			var $noIdx = 1;
+				$noIdx = 1;
 			$this.find('tbody tr').each(function(){
-				if($(this).hasClass('cms')){
-					$(this).find('.no').text('CMS');
-				}else if($(this).find('.no').length){
+				//No 자동입력
+				if($(this).find('.no').length){
 					$(this).find('.no').text($noIdx);
 					$noIdx++;
 				}
+
+				//2뎁스 라인
 				var deps2Txt = $(this).children().eq(3).text();
 				if(deps2Txt != '')$(this).addClass('line');
 			});
-			var completeNum = $this.find('.complete').length,
-				per = Math.round((100/pageNum)*completeNum);
-				
-			$this.find('.total .num').text(pageNum);
-			$this.find('.cp_num .num').text(completeNum);
-			$this.find('.ing .num').text(per);
-			$this.find('.bar').css('width', per+'%');
+
+			//1뎁스별 진행률
+			stateTxt(this,this);
 		});
 	},
 	del:function(){
 		var $thBtn = $('.g_board th button');
 		$thBtn.on('click', function(){
 			var $this = $(this), 
-				//$target = $this.attr('rel'),
 				$idx = $this.closest('th').index(),
 				$grid = $this.closest('.g_board');
 			$this.closest('th').hide();
-			//$grid.find('.'+$target).hide();
 			$grid.find('tr').not('.hr').each(function(){
 				$(this).find('td').eq($idx).hide();
 			});
 			$grid.resize();
 			var thNum = $grid.find('thead th:visible').length;
-			$grid.find('.hr').data('colspan',thNum);
+			$grid.data('colspan',thNum);
 			$grid.find('.hr th').attr('colspan', thNum);
 		});
 	},
 	init :function(){
-		if($('.g_board_tab').length){
-			_gdBoardUI.slide();
-			_gdBoardUI.tab();
-		}
+		if($('.g_board_tab').length)_gdBoardUI.tab();
 		if($('.g_board').length)_gdBoardUI.board();
 		if($('.g_project_status').length)_gdBoardUI.state();
+		_gdBoardUI.del();
 	}
 };
