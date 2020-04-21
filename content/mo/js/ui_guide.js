@@ -114,12 +114,12 @@ var _gdBoardUI ={
 		//완료일 체크
 		$board.find('tbody .c_date').each(function(){
 			var $thisHtml = $.trim($(this).html());
-			if($thisHtml != '')$(this).parent('tr').addClass('complete');
+			if($thisHtml != '' && !$(this).parent('tr').hasClass('del'))$(this).parent('tr').addClass('complete');
 		});
 		//수정일 체크
 		$board.find('tbody .m_date').each(function(){
 			var $thisHtml = $.trim($(this).html());
-			if($thisHtml != '')$(this).parent('tr').addClass('modify');
+			if($thisHtml != '' && !$(this).parent('tr').hasClass('del'))$(this).parent('tr').addClass('modify');
 		});
 		$board.each(function(){
 			var _this = $(this);
@@ -277,7 +277,7 @@ var _gdBoardUI ={
 	},
 	state :function(){
 		var stateTxt = function(el,wrap){
-			var max = $(wrap).find('tbody .no').length,
+			var max = $(wrap).find('tbody tr').not('.hr, .del').length,
 				c = $(wrap).find('.complete').length,
 				p = Math.round((100/max)*c);
 			
@@ -296,8 +296,12 @@ var _gdBoardUI ={
 			$this.find('tbody tr').each(function(){
 				//No 자동입력
 				if($(this).find('.no').length){
-					$(this).find('.no').text($noIdx);
-					$noIdx++;
+					if($(this).hasClass('del')){
+						$(this).find('.no').text('삭제');
+					}else{
+						$(this).find('.no').text($noIdx);
+						$noIdx++;
+					}
 				}
 
 				//2뎁스 라인
@@ -309,7 +313,7 @@ var _gdBoardUI ={
 			stateTxt(this,this);
 		});
 	},
-	del:function(){
+	click:function(){
 		var $thBtn = $('.g_board th button');
 		$thBtn.on('click', function(){
 			var $this = $(this), 
@@ -324,11 +328,19 @@ var _gdBoardUI ={
 			$grid.data('colspan',thNum);
 			$grid.find('.hr th').attr('colspan', thNum);
 		});
+		$(document).on('click','tr.complete',function(e){
+			if($(this).find('a').length){
+				if(!$(e.target).is('a')){
+					var $href = $(this).find('a').attr('href');
+					if($href != '' && $href != '#')window.open($href);
+				}
+			}
+		});
 	},
 	init :function(){
 		if($('.g_board_tab').length)_gdBoardUI.tab();
 		if($('.g_board').length)_gdBoardUI.board();
 		if($('.g_project_status').length)_gdBoardUI.state();
-		_gdBoardUI.del();
+		_gdBoardUI.click();
 	}
 };
