@@ -14,10 +14,10 @@ body{font-size:14px;}
 .no_scroll .g_util .btn_nav span:before{transform:rotate(-45deg) translate(-6px, 6px);}
 .no_scroll .g_util .btn_nav span:after{transform:rotate(45deg) translate(-5px, -6px);}
 .g_project{position:absolute;top:12px;right:20px;}
-.g_project .current{position:relative;width:200px;height:35px;line-height:35px;padding:0 40px 0 15px;border:1px solid #fff;background:none;color:#fff;text-align:left;overflow:hidden;}
-.g_project .current:after{content:'';position:absolute;top:0;right:0;width:40px;height:30px;background:url(../images/guide/ico_select_arrow.png) 50% 50% no-repeat;opacity:1;transform:rotate(0deg);transition:all 0.3s ease-in-out;}
-/*.g_project .current.active{background:#fff;color:#111;}*/
-.g_project .current.active:after{transform:rotate(180deg);}
+.g_project .current{position:relative;width:200px;height:35px;line-height:35px;padding:0 25px 0 15px;border:1px solid #fff;background:none;color:#fff;text-align:left;overflow:hidden;}
+.g_project .current:after{content:'';display:block;position:absolute;right:7px;top:50%;border:1px solid transparent;border-width:4px 5px 0 5px;border-top-color:#fff;margin-top:-2px;-webkit-transform:rotate3d(1,0,0,0deg);transform:rotate3d(1,0,0,0deg);-webkit-transition:0.3s;transition:0.3s;}
+.g_project .current.active{background:#fff;color:#111;}
+.g_project .current.active:after{border-top-color:#111;-webkit-transform:rotate3d(1,0,0,180deg);transform:rotate3d(1,0,0,180deg);}
 .g_project .g_list{display:none;position:absolute;top:36px;left:0;right:0;border:1px solid #e6e6e6;border-width:0 1px;z-index:100;background:#fff;}
 .g_project .g_list li{border-bottom:1px solid #e6e6e6;}
 .g_project .g_list li a{display:block;position:relative;height:30px;line-height:30px;padding:0 15px;}
@@ -118,8 +118,8 @@ body{font-size:14px;}
 .g_guide_info .viewer{position:relative;margin-bottom:10px;padding:20px;border:1px solid #e6e6e6;}
 .g_guide_info .code_view{position:relative;border-bottom:1px solid #e6e6e6;}
 .g_guide_info .code_view h4 a{display:block;position:relative;padding:20px 0;color:#111;}
-.g_guide_info .code_view h4 a:after{content:''; position:absolute;top:12px;right:0;width:30px;height:30px;background:rgba(0,0,0,0.5) url(../images/guide/ico_select_arrow.png) 50% 50% no-repeat;border-radius:100%;transform:rotate(0deg);transition:all 0.3s ease-in-out;}
-.g_guide_info .code_view.active h4 a:after{transform:rotate(180deg);}
+.g_guide_info .code_view h4 a:after{content:'';display:block;position:absolute;right:0;top:50%;border:1px solid transparent;border-width:4px 5px 0 5px;border-top-color:#111;margin-top:-2px;-webkit-transform:rotate3d(1,0,0,0deg);transform:rotate3d(1,0,0,0deg);-webkit-transition:0.3s;transition:0.3s;}
+.g_guide_info .code_view.active h4 a:after{-webkit-transform:rotate3d(1,0,0,180deg);transform:rotate3d(1,0,0,180deg);}
 .g_guide_info .code_view .code{display:none;background-color:#1b2426;}
 .g_guide_info .code_view.active .code{display:block;}
 .g_board_tab{position:relative;margin-top:25px;border:1px solid #e6e6e6;border-width:1px 0;overflow:hidden;}
@@ -186,12 +186,13 @@ body{font-size:14px;}
 .g_grid table thead th{line-height:18px;padding:10px;background-color:#f5f5f5;}
 .g_grid table tbody th, 
 .g_grid table tbody td{line-height:18px;margin-top:1px;padding:10px;vertical-align:middle;word-break:break-all;}
-.g_board table tbody .complete td{background-color:#fff;color:#666;}
-.g_board table tbody .modify td{background-color:#fcf7f6;color:#ca4c07;}
+.g_board table tbody .complete td{background-color:#fff;color:#666;cursor:pointer;}
+.g_board table tbody .modify td{background-color:#fcf7f6;color:#ca4c07;cursor:pointer;}
 .g_board table tbody .modify td a{color:#ca4c07;}
 .g_board table tbody .red td{
 	color:#ff0000;}
 .g_board table tbody .red td a{color:#ff0000;}
+.g_board table tbody tr.del td{background:#eee !important;}
 .g_board table tbody tr.del td,
 .g_board table tbody tr.del td a{text-decoration:line-through;color:#bbb !important;}
 .g_board_scroll{display:none;position:fixed;left:30px;right:30px;bottom:0;background:#fff;z-index:1;opacity:0.6;}
