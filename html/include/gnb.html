@@ -1,42 +1,62 @@
 
 <nav id="gnb" aria-hidden="true">
 	<div class="gnb_header">
-		<div class="gnb_info">
-			<!-- <h2 class="tit">고객님 환영합니다.</h2> -->
-			<h2 class="tit"><strong>홍길동</strong>님 반갑습니다.</h2>
-			<div class="gnb_util">
-				<div class="gnb_btn">
-					<!-- <a href="#" class="button h32 line">로그인</a> -->
-					<a href="#" class="button h32 line">로그아웃</a>
-				</div>
-				<div class="date">최근 접속 <span class="roboto3">2019.10.24 17:34</span></div>
-			</div>
-		</div>
+		<a href="#btnGnb" class="btn_gnb_close"><span class="blind">전체메뉴 닫기</span></a>
 		<div class="gnb_btn_grp">
 			<a href="#" class="btn_gnb_search"><span class="blind">통합검색 열기</span></a>
+			<a href="#" class="btn_gnb_logout"><span class="blind">로그아웃</span></a>
 		</div>
-		<a href="#btnGnb" class="btn_gnb_close"><i></i><span class="blind">전체메뉴 닫기</span></a>
+		<div class="gnb_info">
+			<div class="avata">
+				<img src="../../content/mo/images/temp/avata.png" alt="">
+			</div>
+			<div>
+				<!-- <h2 class="tit">고객님 환영합니다.</h2> -->
+				<h2 class="tit"><strong>홍길동</strong>님, 반가워요.</h2>
+				<div class="cont">
+					<span class="my_level lv_0"><strong>VIP</strong><span class="blind">등급</span></span><!-- lv_0:VIP, lv_1:Prime, lv_2:Royal, lv_3:Super Royal, lv_4:Noblesse -->
+					<span class="last_date">최근접속 <span class="roboto3">2019.10.24 17:34</span></span>
+				</div>
+			</div>
+		</div>
 		<div class="gnb_link">
-			<ul class="grid col4">
+			<ul class="grid col3">
 				<li><a href="#"><i class="ic_1" aria-hidden="true"></i><span>홈으로</span></a></li>
-				<li><a href="#"><i class="ic_2" aria-hidden="true"></i><span>알림</span></a></li>
-				<li><a href="#"><i class="ic_4" aria-hidden="true"></i><span>마이페이지</span></a></li>
-				<li><a href="#"><i class="ic_3" aria-hidden="true"></i><span>설정</span></a></li>
+				<li><a href="#"><i class="ic_2" aria-hidden="true"></i><span>인증센터</span></a></li>
+				<li><a href="#"><i class="ic_3" aria-hidden="true"></i><span>로그인 설정</span></a></li>
 			</ul>
 		</div>
 	</div>
 	<div class="gnb_content">
+		<div class="gnb_quick">
+			<a href="#" class="button h24 round white">선결제</a>
+			<a href="#" class="button h24 round white">카드이용내역</a>
+			<a href="#" class="button h24 round white">도시가스요금</a>
+			<a href="#" class="button h24 round white">NH포인트</a>
+			<a href="#" class="button h24 round white">리볼빙</a>
+			<a href="#" class="button h24 round green2">내게맞는 카드찾기</a>
+		</div>
 		<div class="gnb_dep1">
 			<ul>
-				<li><a href="#" class="gnb_t1_1"><span>MY NH</span></a>
-					<div class="gnb_dep2">
+				<li class="active"><a href="#"><span>MY NH</span></a></li>
+				<li><a href="#"><span>혜택</span></a></li>
+				<li><a href="#"><span>카드</span></a></li>
+				<li><a href="#"><span>금융</span></a></li>
+				<li><a href="#"><span>생활&middot;편의</span></a></li>
+				<li><a href="#"><span>고객센터</span></a></li>
+			</ul>
+		</div>
+		<div class="gnb_sub">
+			<div class="swipe-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide gnb_dep2">
 						<ul>
 							<li><a href="#">결제 예정금액 조회</a></li>
 							<li><a href="#">이용대금 명세서 조회</a></li>
-							<li><a href="#" class="in_sub">이용내역 조회</a>
+							<li class="active"><a href="#" class="in_sub">이용내역 조회</a>
 								<div class="gnb_dep3">
 									<ul>
-										<li><a href="#">카드 이용내역</a></li>
+										<li class="active"><a href="#">카드 이용내역</a></li>
 										<li><a href="#">교통카드 이용내역</a></li>
 										<li><a href="#">후불하이패스 이용내역</a></li>
 										<li><a href="#">매출 취소내역</a></li>
@@ -101,9 +121,7 @@
 							</li>
 						</ul>
 					</div>
-				</li>
-				<li><a href="#" class="gnb_t1_2"><span>혜택</span></a>
-					<div class="gnb_dep2">
+					<div class="swiper-slide gnb_dep2">
 						<ul>
 							<li><a href="#" class="in_sub">내가받은혜택</a>
 								<div class="gnb_dep3">
@@ -155,9 +173,7 @@
 							</li>
 						</ul>
 					</div>
-				</li>
-				<li><a href="#" class="gnb_t1_3"><span>카드</span></a>
-					<div class="gnb_dep2">
+					<div class="swiper-slide gnb_dep2">
 						<ul>
 							<li><a href="#" class="in_sub">카드검색</a>
 								<div class="gnb_dep3">
@@ -196,9 +212,7 @@
 							<li><a href="#">카드신청 현황/취소</a></li>
 						</ul>
 					</div>
-				</li>
-				<li><a href="#" class="gnb_t1_4"><span>금융</span></a>
-					<div class="gnb_dep2">
+					<div class="swiper-slide gnb_dep2">
 						<ul>
 							<li><a href="#" class="in_sub">단기카드대출<br>(현금서비스)</a>
 								<div class="gnb_dep3">
@@ -233,9 +247,7 @@
 							</li>
 						</ul>
 					</div>
-				</li>
-				<li><a href="#" class="gnb_t1_5"><span>생활&middot;편의</span></a>
-					<div class="gnb_dep2">
+					<div class="swiper-slide gnb_dep2">
 						<ul>
 							<li><a href="#" class="in_sub">자동납부 신청/조회</a>
 								<div class="gnb_dep3">
@@ -259,9 +271,7 @@
 							</li>
 						</ul>
 					</div>
-				</li>
-				<li><a href="#" class="gnb_t1_6"><span>고객센터</span></a>
-					<div class="gnb_dep2">
+					<div class="swiper-slide gnb_dep2">
 						<ul>
 							<li><a href="#" class="in_sub">고객상담</a>
 								<div class="gnb_dep3">
@@ -318,12 +328,9 @@
 							</li>
 						</ul>
 					</div>
-				</li>
-			</ul>
-		</div>
-		<div class="gnb_etc">
-			<a href="#" class="button h32 line">채움레터</a>
-			<a href="#" class="button h32 line">패밀리앱</a>
+				</div>
+			</div>
+			<div class="gnb-pagination" aria-hidden="true"></div>
 		</div>
 	</div>
 </nav>
