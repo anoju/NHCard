@@ -401,7 +401,7 @@ html.iPhoneX #footer.add_floating_navi:after{height:calc(constant(safe-area-inse
 .foot_info .info_top .tit>a{position:relative;display:block;padding:12px 22px;text-align:left;}
 .foot_info .info_top .tit>a:after{content:'';display:block;position:absolute;top:18px;right:22px;width:10px;height:10px;border:1px solid #3a3b3c;border-top:none;border-right:none;transform: rotate(-45deg);transition: transform 0.4s;}
 .foot_info .info_top .tit>a.open:after{transform: rotate(135deg);}
-.foot_info .info_bottom{padding:13px;}
+.foot_info .info_bottom{padding:13px 20px;}
 .foot_info .info_bottom:after{content:'';display:block;clear:both;}
 .foot_info .copy{float:left;line-height:24px;color:#939393;}
 .foot_info .bestsite{float:right;}
