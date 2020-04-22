@@ -40,6 +40,7 @@
 .chk_item>.radio>.lbl{padding:20px 20px 20px 50px;margin-left:0;}
 
 .form_item{position:relative;margin-top:35px;}
+.section>.form_item:first-child{margin-top:0;}
 .form_item .fm_lb{display:block;font-weight:500;font-size:1.4rem;cursor:default;}
 .form_item .fm_lb .tooltip_wrap{vertical-align:1px;}
 .form_item .fm_lb + .fm_val,
