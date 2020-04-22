@@ -516,11 +516,14 @@ var common = {
 		$('.btn_gnb').addClass('on');
 		$('.btn_gnb span').changeTxt('열기','닫기');
 
-		if($('#gnb').find('.active').length){
-			$('#gnb').find('.active').addClass('open').children('div').show().siblings('.in_sub').attr('title',common.gnbSubCloseTxt);
+		if($('.gnb_dep1').find('.active').length){
 			$('#gnb').find('.gnb_dep1>ul>li.active>a').attr('title','현재선택');
 		}else{
-			$('#gnb').find('.gnb_dep1>ul>li').first().addClass('open').children('a').attr('title','현재선택').siblings('.gnb_dep2').find('>ul>li').first().addClass('open').children('div').show();
+			$('.gnb_dep1>ul>li').first().addClass('active open').children('a').attr('title','현재선택');
+		}
+
+		if($('.gnb_dep2').find('.active').length){
+			$('.gnb_dep2').find('.active').addClass('open').children('div').show().siblings('.in_sub').attr('title',common.gnbSubCloseTxt);
 		}
 
 		if($('.gnb_sub .swipe-container.swiper-container-initialized').length){
@@ -556,37 +559,36 @@ var common = {
 	},
 	gnbDepthReset:function(){
 		$('#gnb').find('.open').removeClass('open');
-		$('#gnb').find('.gnb_dep2').removeAttr('style');
+		$('#gnb').find('.gnb_dep2,.gnb_dep3').removeAttr('style');
 		$('#gnb .in_sub').each(function(){
 			$(this).attr('title',common.gnbSubCloseTxt);
 		});
 	},
 	gnbSubOpenIng:false,
 	gnbSubOpen:function(target,isToggle){
-		var $parent = $(target).parent(),
-			$slideSpeed = 300;
+		var $slideSpeed = 300;
 		//클릭시 메뉴 활성화
 		if(isToggle){
+			var $closest = $(target).closest('li');
 			//뎁스2
 			if(common.gnbSubOpenIng == false){
 				common.gnbSubOpenIng = true;
-				if($parent.hasClass('open')){
-					$parent.removeClass('open').find('.in_sub').attr('title',common.gnbSubOpenTxt);
+				if($closest.hasClass('open')){
+					$closest.removeClass('open').find('.in_sub').attr('title',common.gnbSubOpenTxt);
 					$(target).next().stop(true,false).slideUp($slideSpeed,function(){
 						common.gnbSubOpenIng = false;
+						common.gnbSwipe.update();
 					});
 				}else{
-					if($parent.find('.active').length){
-						$parent.find('.active').addClass('open').children('div').show().siblings('.in_sub').attr('title',common.gnbSubCloseTxt);
-					}
-					$parent.addClass('open').find('.in_sub').attr('title',common.gnbSubCloseTxt);
-					$parent.siblings().removeClass('open').find('.open').removeClass('open');
-					$isScroll = true;
-					$parent.siblings().children('div').stop(true,false).slideUp($slideSpeed,function(){
-						$(this).removeAttr('style').find('.gnb_dep4').removeAttr('style');
+					$(target).closest('.gnb_dep2').siblings().find('.open').removeClass('open').find('a').removeAttr('title').next().removeAttr('style');
+					$closest.siblings().removeClass('open').find('.open').removeClass('open').find('a').removeAttr('title').next().removeAttr('style');
+					$closest.siblings().children('div').stop(true,false).slideUp($slideSpeed,function(){
+						$(this).removeAttr('style');
 					}).siblings('.in_sub').attr('title',common.gnbSubOpenTxt);
+					$closest.addClass('open').find('.in_sub').attr('title',common.gnbSubCloseTxt);
 					$(target).next().stop(true,false).slideDown($slideSpeed,function(){
 						common.gnbSubOpenIng = false;
+						common.gnbSwipe.update();
 					});
 				}
 			}
