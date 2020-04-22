@@ -353,37 +353,60 @@ html.mobile .gnb_content .gnb_dep1::-webkit-scrollbar{display:none;}
 .section{padding:0 20px;}
 .section .outer{margin-left:-20px;margin-right:-20px;}
 
-#footer{position:relative;border-top:1px solid #f1f1f1;text-align:center;background:#fff;}
+#footer{position:relative;text-align:center;background:#e6eaeb;}
 #footer.add_fixed_btn:after,
 #footer.add_floating_navi:after{content:'';display:block;height:70px;}
 html.iPhoneX #footer.add_fixed_btn:after,
 html.iPhoneX #footer.add_floating_navi:after{height:calc(constant(safe-area-inset-bottom) + 70px);height:calc(env(safe-area-inset-bottom) + 70px);}
-#footer>.section{padding-top:25px;padding-bottom:40px;}
-.foot_contact{margin:5px 0 20px;height:25px;font-weight:500;line-height:25px;font-size:1.3rem;color:#111;}
+#footer>.section{padding:0;}
+.foot_contact{margin:15px 0 20px;line-height:25px;font-size:1.3rem;color:#111;}
 .foot_contact .tel,
 .foot_contact span,
 .foot_contact strong{display:inline-block;line-height:25px;vertical-align:top;}
-.foot_contact strong{font-size:2rem;margin-left:10px;}
-.foot_contact .i_icon{vertical-align:top;margin-right:7px;width:25px;height:25px;box-shadow:none;background:#191919 url(../images/common/spr_foot_sns.png) no-repeat center top;background-size:30px auto;}
-.foot_link{font-size:0;margin-bottom:7px;}
-.foot_link>li{position:relative;display:inline-block;padding:0 12px;font-size:1.3rem;color:#535353;}
+.foot_contact strong{margin-left:5px;}
+.foot_contact .i_icon{vertical-align:top;margin-right:7px;width:24px;height:25px;box-shadow:none;background: url(../images/common/ico_tel.png) no-repeat 0 center;background-size:24px auto;}
+.foot_contact .info{font-size:1.2rem;color:#737475;}
+.foot_contact .main_num{font-weight:500;}
+.foot_contact .sub_num{margin-top:16px;font-size:1.2rem;color:#737475;}
+.foot_contact .sub_num:after{content:'';display:block;clear:both;}
+.foot_contact .sub_num>li{float:left;width:50%;padding:0 13px;}
+.foot_contact .sub_num>li:nth-child(odd){text-align:right;}
+.foot_contact .sub_num>li:nth-child(even){position:relative;text-align:left;}
+.foot_contact .sub_num>li:nth-child(even):before{content:'';display:block;position:absolute;top:50%;margin-top:-5px;left:0;width:1px;height:10px;background:#d0d4d5;}
+.foot_link{font-size:0;color:#4d4e4f;border-bottom:1px solid #d5d9da;}
+.foot_link>li{position:relative;display:inline-block;padding:12px;font-size:1.3rem;color:#535353;}
 .foot_link>li:first-child{padding-left:0;}
 .foot_link>li:last-child{padding-right:0;}
-.foot_link>li+li:before{content:'';display:block;position:absolute;left:0;top:25%;width:1px;height:50%;background:#f1f1f1;}
+.foot_link>li+li:before{content:'';display:block;position:absolute;left:0;top:50%;margin-top:-5px;width:1px;height:10px;background:#d0d4d5;}
+.foot_btn{padding-bottom:33px;border-bottom:1px solid #d5d9da;}
+.foot_btn>li{display:inline-block;vertical-align:top;margin:0 1px;}
+.foot_btn>li+li{position:relative;padding-left:38px;}
+.foot_btn>li+li:before{content:'';display:block;position:absolute;left:15px;top:50%;margin-top:-10px;width:1px;height:20px;background:#d0d4d5;}
+.foot_btn>li>ul:after{content:'';display:block;clear:both;}
+.foot_btn>li>ul>li{float:left;}
+.foot_btn>li>ul>li+li{margin-left:8px;}
+.foot_btn .foot_sns{position:relative;display:block;width:42px;height:42px;padding:0;overflow:hidden;}
+.foot_btn .foot_sns .offscreen{top:0;left:0;}
+.foot_btn .foot_sns:before{content:'';display:inline-block;width:42px;height:42px;background:url(../images/common/spr_foot_sns.png) no-repeat;background-size:42px auto;vertical-align:middle;}
+.foot_btn .foot_sns.nhcard:before{background-position:0 -140px;}
+.foot_btn .foot_sns.allone:before{background-position:0 -186px;}
+.foot_btn .foot_sns.facebook:before{background-position:0 -233px;}
+.foot_btn .foot_sns.insta:before{background-position:0 0;}
+.foot_btn .foot_sns.blog:before{background-position:0 -47px;}
+.foot_btn .foot_sns.post:before{background-position:0 -94px;}
 .foot_info{font-size:1.1rem;line-height:1.9;color:#767676;}
 .foot_info div span+span{margin-left:10px;}
-.foot_info .copy{color:#939393;}
-.foot_btn{margin-top:16px;}
-.foot_btn>li{display:inline-block;vertical-align:top;margin:0 1px;}
-.foot_btn>li:last-child{margin-left:13px;}
-.foot_btn .button.foot_sns{position:relative;display:block;width:30px;padding:0;overflow:hidden;}
-.foot_btn .button.foot_sns .offscreen{top:0;left:0;}
-.foot_btn .button.foot_sns:before{content:'';display:inline-block;width:20px;height:18px;background:url(../images/common/spr_foot_sns.png) no-repeat;background-size:20px auto;vertical-align:middle;}
-.foot_btn .button.foot_sns.facebook:before{background-position:center -20px;}
-.foot_btn .button.foot_sns.youtube:before{background-position:center -38px;}
-.foot_btn .button.foot_sns.insta:before{background-position:center -56px;}
-.foot_btn .button.foot_sns.blog:before{background-position:center -74px;}
-.foot_btn .button.foot_sns.kakao:before{background-position:center -92px;}
+.foot_info .info_top{border-bottom:1px solid #d5d9da;}
+.foot_info .info_top .tit{font-size:1.4rem;font-weight:500;color:#3a3b3c;}
+.foot_info .info_top .tit>a{position:relative;display:block;padding:12px 22px;text-align:left;}
+.foot_info .info_top .tit>a:after{content:'';display:block;position:absolute;top:18px;right:22px;width:10px;height:10px;border:1px solid #3a3b3c;border-top:none;border-right:none;transform: rotate(-45deg);transition: transform 0.4s;}
+.foot_info .info_top .tit>a.open:after{transform: rotate(135deg);}
+.foot_info .info_bottom{padding:13px;}
+.foot_info .info_bottom:after{content:'';display:block;clear:both;}
+.foot_info .copy{float:left;line-height:24px;color:#939393;}
+.foot_info .bestsite{float:right;}
+.foot_info .link_bestsite{display:inline-block;vertical-align: middle;width:34px;height:20px;background:url(../images/common/foot_best_site.png);background-size:34px 20px;}
+.foot_info .link_bestsite+span{padding-left:8px;font-size:1.3rem;}
 
 /*floatingBar*/
 #floatingBar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:95;-webkit-transform:translateY(0px);transform:translateY(0px);-webkit-transition:all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);transition:all 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);}
