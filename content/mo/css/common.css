@@ -282,8 +282,8 @@ html.ie9 #gnb.show{right:0;}
 .gnb_header .gnb_link .ic_2{background-position:center -36px;}
 .gnb_header .gnb_link .ic_3{background-position:center -72px;}
 .gnb_header .gnb_link span{display:block;color:#252525;font-size:1.2rem;line-height:1;}
-.gnb_content{position:relative;padding:215px 0 30px;height:100%;overflow:auto;background:#f1f5f7;}
-.gnb_quick{padding:22.5px 15px 0;font-size:0;}
+.gnb_content{position:relative;padding:235px 0 20px;height:100%;overflow:auto;background:#f1f5f7;}
+.gnb_quick{padding:2.5px 15px 0;font-size:0;}
 .gnb_quick .button{margin:7.5px 5px;vertical-align:top;padding-left:17px;padding-right:17px;}
 .gnb_dep1{height:53px;overflow:hidden;}
 .gnb_dep1>ul{white-space:nowrap;overflow-y:hidden;overflow-x:auto;font-size:0;}
@@ -308,8 +308,8 @@ html.ie9 #gnb.show{right:0;}
 .gnb_dep3{display:none;padding:8px 0;border-top:1px solid #efefef;}
 .gnb_dep3>ul>li>a{padding:8px 16px;font-size:1.5rem;}
 .gnb_dep3>ul>li.active>a{color:#5da4dc;font-weight:500;}
-.gnb-pagination{position:fixed;height:0;top:0;overflow:hidden;font-size:0;}
-.gnb-pagination .swiper-pagination-bullet{width:0;height:0;background:none !important;}
+.gnb_pagination{position:fixed;height:0;top:0;overflow:hidden;font-size:0;}
+.gnb_pagination .swiper-pagination-bullet{width:0;height:0;background:none !important;}
 
 #container{position:relative;min-height:calc(100vh - 50px);}
 .isApp #container{min-height:calc(100vh - 120px);}

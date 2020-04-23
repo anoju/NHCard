@@ -447,7 +447,7 @@ var common = {
 					resizeReInit:true,
 					autoHeight:true,
 					pagination:{
-						el: '.gnb-pagination',
+						el: '.gnb_pagination',
 						renderBullet:function(index, className) {
 							return '<button type="button" class="'+className+'">'+(index+1)+'번째 t서브메뉴 슬라이드</button>';
 						}
