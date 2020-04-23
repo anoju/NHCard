@@ -464,13 +464,15 @@ var common = {
 							swiperUI.focusAria($gnbSubContainer,common.gnbSwipe.snapIndex,$itemLength-$length);
 						},
 						transitionEnd:function(e){
-							var $length = common.gnbSwipe.pagination.bullets.length;
-							swiperUI.focusAria($gnbSubContainer,common.gnbSwipe.snapIndex,$itemLength-$length);
+							if($('#gnb').hasClass('show')){
+								var $length = common.gnbSwipe.pagination.bullets.length;
+								swiperUI.focusAria($gnbSubContainer,common.gnbSwipe.snapIndex,$itemLength-$length);
 
-							var $activeLi = $('.gnb_dep1').find('li').eq(common.gnbSwipe.snapIndex);
-							$activeLi.addClass('open').find('a').attr('title',common.gnbSubOpenTxt);
-							$activeLi.siblings().removeClass('open').find('a').removeAttr('title');
-							scrollUI.center($activeLi);
+								var $activeLi = $('.gnb_dep1').find('li').eq(common.gnbSwipe.snapIndex);
+								$activeLi.addClass('open').find('a').attr('title',common.gnbSubOpenTxt);
+								$activeLi.siblings().removeClass('open').find('a').removeAttr('title');
+								scrollUI.center($activeLi);
+							}
 						}
 					}
 				});
@@ -506,7 +508,7 @@ var common = {
 	},
 	gnbOpen:function(){
 		Body.lock();
-		$('#gnb').attr('tabindex',0).focus();
+		$('#gnb').show().attr('tabindex',0).focus();
 		$('#gnb').attr('aria-hidden',false);
 		$(common.gnbOutCont).attr('aria-hidden',true);
 		$('#gnb').addClass('show');
@@ -517,16 +519,17 @@ var common = {
 		$('.btn_gnb span').changeTxt('열기','닫기');
 
 		if($('.gnb_dep1').find('.active').length){
-			$('#gnb').find('.gnb_dep1>ul>li.active>a').attr('title','현재선택');
+			scrollUI.center($('.gnb_dep1').find('.active'));
+			$('.gnb_dep1').find('.active').addClass('open').find('a').attr('title','현재선택');
 		}else{
-			$('.gnb_dep1>ul>li').first().addClass('active open').children('a').attr('title','현재선택');
+			$('.gnb_dep1>ul>li').first().addClass('active open').find('a').attr('title','현재선택');
 		}
 
 		if($('.gnb_dep2').find('.active').length){
 			$('.gnb_dep2').find('.active').addClass('open').children('div').show().siblings('.in_sub').attr('title',common.gnbSubCloseTxt);
 		}
 
-		if($('.gnb_sub .swipe-container.swiper-container-initialized').length){
+		if(common.gnbSwipe != ''){
 			var $idx = $('.gnb_dep1>ul>li.active').index();
 			common.gnbSwipe.update();
 			$('.gnb_dep1>ul>li.active>a').click();
@@ -543,16 +546,17 @@ var common = {
 		$(common.gnbOutCont).removeAttr('aria-hidden');
 		$('#gnb').removeClass('show');
 		$(common.gnbBgClass).removeClass('show');
-		$('#gnb').removeAttr('tabindex style');
+		$('#gnb').removeAttr('tabindex');
 		$('.btn_gnb').removeClass('on');
 		$('.btn_gnb span').changeTxt('닫기','열기');
 
-		if($('.gnb_sub .swipe-container.swiper-container-initialized').length){
+		if(common.gnbSwipe != ''){
 			common.gnbSwipe.slideTo(0);
 		}
-
+		
 		setTimeout(function(){
 			$(common.gnbBgClass).remove();
+			$('#gnb').removeAttr('style');
 			common.gnbDepthReset();
 			if($('#gnb').find('.btn_gnb_close.last_focus').length)$('#gnb').find('.btn_gnb_close.last_focus').remove();
 		},610);
@@ -897,7 +901,7 @@ var Layer = {
 		}else if($title.indexOf('카드선택') >= 0 || $title.indexOf('카드 선택') >= 0){
 			$isCard = true;
 		}
-		//if($isBank)$isFullPop = true;
+		if($isBank)$isFullPop = true;
 		$popHtml += '<div id="'+$popId+'" class="popup '+($isFullPop?'full':'bottom')+' '+Layer.selectClass+'" role="dialog" aria-hidden="true">';
 			$popHtml += '<div class="'+Layer.wrapClass+'">';
 				$popHtml += '<div class="'+Layer.headClass+'">';
@@ -1092,7 +1096,7 @@ var Layer = {
 		}
 
 		//열릴때 플루팅 버튼
-		if($('.floating_btn').is(':visible') && $(tar).hasClass('t3')){
+		if($('.floating_btn').is(':visible')){
 			$('.floating_btn').hide();
 			if($('.floating_btn').hasClass('is_fixed_btn'))$(tar).addClass('is_fixed_btn');
 		}
@@ -1191,7 +1195,7 @@ var Layer = {
 
 		//포커스
 		var $returnFocus = $(tar).data('returnFocus');
-		$returnFocus.removeClass(Layer.focusClass);
+		$returnFocus.removeClass(Layer.focusClass).focus();
 
 		//닫기
 		$(tar).removeClass('show');
@@ -1226,7 +1230,7 @@ var Layer = {
 		}
 
 		//닫힐때 플루팅 버튼
-		if(!$('.floating_btn').is(':visible') && $(tar).hasClass('t3')){
+		if(!$('.floating_btn').is(':visible')){
 			$('.floating_btn').removeAttr('style');
 		}
 	},
