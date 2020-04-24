@@ -653,6 +653,13 @@ div.tit_h4 .tit{font-size:1.4rem;color:#111}
 .form_item.error .textarea,
 .textarea.error{border-color:#fd775c !important;}
 
+.password{position:relative;padding:30px 0;}
+.password .dot{text-align:center;}
+.password .dot span{position:relative;display:inline-block;width:18px;height:18px;margin:0 5px;border-radius:50%;background:#858585;vertical-align:top;overflow:hidden;}
+.password .dot span:before{content:'';display:block;position:absolute;left:-150%;top:0;width:100%;height:100%;border-radius:50%;background:#111;-webkit-transition:0.3s;transition:0.3s;}
+.password .dot span.on:before{left:0;}
+.password input{position:absolute;top:0;left:0;width:100%;height:100%;background:none;border:0 none;color:transparent;opacity:0;}
+
 /*radio, checkbox*/
 input[type="radio"], input[type="checkbox"]{margin:0;}
 .radio, .checkbox{position:relative;display:inline-block;min-width:24px;min-height:24px;vertical-align:middle;}

@@ -2313,6 +2313,16 @@ var formUI = {
 			$val = $val.split('-').join('.');
 			$(this).prev('input.date').val($val).change().focus();
 		});
+
+		//password
+		$(document).on('keyup','.password input',function(){
+			var $val = $(this).val(),
+				$closest = $(this).closest('.password'),
+				$dot = $closest.find('.dot span');
+			$dot.slice(0,$val.length).addClass('on');
+			$dot.slice($val.length).removeClass('on');
+		});
+		
 	},
 	delBtn:function(){
 		//input 삭제버튼
