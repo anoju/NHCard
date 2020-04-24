@@ -664,9 +664,35 @@
 					</div>
 				</div>
 				<div class="form_item">
-					<label for="phoneNum2_1" class="fm_lb">휴대폰번호</label>
-					<div class="fm_cont phone inp_btn">
-						<div class="tbl">
+					<div class="fm_lb">휴대폰인증</div>
+					<div class="fm_cont phone">
+						<ul class="btn_toggle grid col2 row2">
+							<li>
+								<input type="radio" id="phoneSKT" name="phoneRdo">
+								<label for="phoneSKT">SKT</label>
+							</li>
+							<li>
+								<input type="radio" id="phoneKT" name="phoneRdo">
+								<label for="phoneKT">KT</label>
+							</li>
+							<li>
+								<input type="radio" id="phoneLG" name="phoneRdo">
+								<label for="phoneLG">LGU+</label>
+							</li>
+							<li class="in_sel">
+								<input type="radio" id="phoneETC" name="phoneRdo">
+								<label for="phoneETC">알뜰폰</label>
+								<div class="select">
+									<select name="" id="" title="알뜰폰 선택">
+										<option value="">알뜰폰</option>
+										<option value="1">SKT 알뜰폰</option>
+										<option value="2">KT 알뜰폰</option>
+										<option value="3">LGU+ 알뜰폰</option>
+									</select>
+								</div>
+							</li>
+						</ul>
+						<div class="tbl mt10">
 							<div class="td w20">
 								<div class="select">
 									<select id="phoneNum2_1" title="연락처 식별번호 선택">
@@ -686,15 +712,10 @@
 							</div>
 						</div>
 						<div class="error_txt">연락처를 입력해주세요.</div><!-- 에러메세지 입력영역 -->
-					</div>
-				</div>
-				<div class="form_item">
-					<label for="phoneNum2_3" class="fm_lb">인증번호 입력</label>
-					<div class="fm_cont phone inp_btn">
-						<div class="tbl">
+						<div class="tbl mt10">
 							<div class="td">
 								<div class="input add_time">
-									<input type="tel" id="phoneNum2_3" title="인증번호 숫자만 입력" placeholder="숫자만 입력">
+									<input type="tel" id="phoneNum2_3" title="인증번호 숫자만 입력" placeholder="숫자만 입력" maxlength="6">
 									<span class="time">01:45</span>
 								</div>
 							</div>
