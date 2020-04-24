@@ -591,7 +591,7 @@
 					<div class="fm_cont">
 						<div class="tbl">
 							<div class="td">
-								<div class="input"><input type="tel" id="jumin1" maxlength="6" title="주민등록번호 앞6자리 입력" placeholder="주민번호(앞6자리)"></div>
+								<div class="input"><input type="tel" id="jumin1" maxlength="6" title="주민등록번호 앞6자리 입력" placeholder="(앞6자리)"></div>
 							</div>
 							<div class="td dash">-</div>
 							<div class="td">
@@ -606,11 +606,11 @@
 					<div class="fm_cont">
 						<div class="tbl">
 							<div class="td">
-								<div class="input"><input type="tel" id="jumin3" maxlength="6" title="주민등록번호 앞6자리 입력" placeholder="주민번호(앞6자리)"></div>
+								<div class="input"><input type="tel" id="jumin3" maxlength="6" title="주민등록번호 앞6자리 입력" placeholder="앞 6자리"></div>
 							</div>
 							<div class="td dash">-</div>
 							<div class="td w_60">
-								<div class="input"><input type="tel" id="jumin4" class="t_center no_del" maxlength="7" title="주민등록번호 뒤7자리 중 첫번째자리 입력" placeholder="1자리"></div>
+								<div class="input"><input type="tel" id="jumin4" class="t_center no_del" maxlength="7" title="주민등록번호 뒤7자리 중 첫번째자리 입력" placeholder="뒤 1자리"></div>
 							</div>
 							<div class="td w_100 pl0">●●●●●●</div>
 						</div>
@@ -704,18 +704,18 @@
 							</div>
 							<div class="td dash">-</div>
 							<div class="td">
-								<div class="input"><input type="tel" id="phoneNum2_2" title="연락처 나머지 7~8자리 숫자만 입력" placeholder="숫자만 입력"></div>
+								<div class="input"><input type="tel" id="phoneNum2_2" title="연락처 나머지 7~8자리 숫자만 입력" placeholder="'-' 없이 입력"></div>
 							</div>
 							<div class="td va_mid w_110">
-								<a href="#" class="button h32 line round block ">인증번호 발송</a>
-								<!-- <a href="#" class="button line block h32">인증번호 재발송</a> -->
+								<a href="#" class="button h32 line round block ">인증번호 전송</a>
+								<!-- <a href="#" class="button line block h32">인증번호 재전송</a> -->
 							</div>
 						</div>
 						<div class="error_txt">연락처를 입력해주세요.</div><!-- 에러메세지 입력영역 -->
 						<div class="tbl mt10">
 							<div class="td">
 								<div class="input add_time">
-									<input type="tel" id="phoneNum2_3" title="인증번호 숫자만 입력" placeholder="숫자만 입력" maxlength="6">
+									<input type="tel" id="phoneNum2_3" title="인증번호 숫자만 입력" placeholder="인증번호 6자리 입력" maxlength="6">
 									<span class="time">01:45</span>
 								</div>
 							</div>
@@ -811,15 +811,26 @@
 					</div>
 				</div>
 				<div class="form_item">
+					<label for="cardNum5" class="fm_lb">카드번호 (FULL)</label>
+					<div class="fm_cont">
+						<div class="tbl">
+							<div class="td">
+								<div class="input"><input type="tel" id="cardNum5" class="no_del" maxlength="16" title="카드번호 첫번째 4자리 입력" placeholder="'-' 없이 16자리 입력"></div>
+							</div>
+						</div>
+						<div class="error_txt">카드번호를 정확하게 입력해주세요.</div><!-- 에러메세지 입력영역 -->
+					</div>
+				</div>
+				<div class="form_item">
 					<label for="validity1" class="fm_lb">유효기간</label>
 					<div class="fm_cont">
 						<div class="tbl">
 							<div class="td">
-								<div class="input"><input type="tel" id="validity1" maxlength="2" placeholder="월2자리" title="유효기간 월2자리 입력"></div>
+								<div class="input"><input type="tel" id="validity1" maxlength="2" placeholder="월(MM)" title="유효기간 월2자리 입력"></div>
 							</div>
 							<div class="td dash">/</div>
 							<div class="td">
-								<div class="input"><input type="tel" id="validity2" maxlength="4" placeholder="년4자리" title="유효기간 년4자리 입력"></div>
+								<div class="input"><input type="tel" id="validity2" maxlength="4" placeholder="년도(YY)" title="유효기간 년4자리 입력"></div>
 							</div>
 						</div>
 						<div class="error_txt">유효기간을 입력해주세요.</div><!-- 에러메세지 입력영역 -->
@@ -831,8 +842,8 @@
 						<div class="tbl">
 							<div class="td">
 								<div class="select">
-									<select id="validity3" title="월2자리 선택">
-										<option value="">월 2자리</option>
+									<select id="validity3" title="월(MM) 선택">
+										<option value="">월(MM)</option>
 										<option value="01">01</option>
 										<option value="02">02</option>
 										<option value="03">03</option>
@@ -843,8 +854,8 @@
 							<div class="td dash">/</div>
 							<div class="td">
 								<div class="select">
-									<select id="validity4" title="년4자리 선택">
-										<option value="">년 4자리</option>
+									<select id="validity4" title="년도(YY) 선택">
+										<option value="">년도(YY)</option>
 										<option value="2020">2020</option>
 										<option value="2019">2019</option>
 										<option value="2018">2018</option>
@@ -857,19 +868,19 @@
 					</div>
 				</div>
 				<div class="form_item">
-					<label for="cvcNumber" class="fm_lb">CVC번호</label>
+					<label for="cvcNumber" class="fm_lb">카드고유확인번호</label>
 					<div class="fm_cont">
-						<div class="input"><input type="tel" id="cvcNumber" maxlength="2" placeholder="CVC번호(카드 뒷면 2자리)" title="CVC번호 3자리 입력">
+						<div class="input"><input type="tel" id="cvcNumber" maxlength="3" placeholder="숫자 3자리 입력" title="카드고유확인번호 3자리 입력">
 							<div class="tooltip_wrap">
 								<a href="#" class="tooltip_btn">자세한 내용 확인</a>
 								<div class="tooltip_cont">툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 </div>
 							</div>
 						</div>
-						<div class="error_txt">유효기간을 선택해주세요.</div><!-- 에러메세지 입력영역 -->
+						<div class="error_txt">카드고유확인번호를 입력해주세요.</div><!-- 에러메세지 입력영역 -->
 					</div>
 				</div>
 				<div class="form_item">
-					<label for="cardPW" class="fm_lb">카드 비밀번호</label>
+					<label for="cardPW" class="fm_lb">카드비밀번호</label>
 					<div class="fm_cont">
 						<div class="tbl">
 							<div class="td">
