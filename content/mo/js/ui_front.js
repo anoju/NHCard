@@ -894,9 +894,8 @@ var Layer = {
 			$isCard = false,
 			$isFullPop = false;
 
-		if(!$title){
-			$title = '선택';
-		}else if($title.indexOf('은행선택') >= 0 || $title.indexOf('은행 선택') >= 0){
+		if($title == undefined)$title = '선택';
+		if($title.indexOf('은행선택') >= 0 || $title.indexOf('은행 선택') >= 0){
 			$isBank = true;
 		}else if($title.indexOf('카드선택') >= 0 || $title.indexOf('카드 선택') >= 0){
 			$isCard = true;
@@ -2568,6 +2567,21 @@ var formUI = {
 				$lblTxt = $lblTxt.replace('등록','해제');
 				$lbl.find('.blind').text($lblTxt);
 			}
+		});
+
+		//알뜰폰
+		$(document).on('change','.btn_toggle .in_sel .select select',function(){
+			var $val = $(this).val(),
+				$li = $(this).closest('li'),
+				$input = $li.find('>input');
+			if($val != ''){
+				//$li.siblings().find('>input').prop('checked',false);
+				$input.prop('checked',true);
+			}
+		});
+		$(document).on('click','.btn_toggle .in_sel>input,.btn_toggle .in_sel>label',function(){
+			var $li = $(this).closest('li');
+			$li.find('.ui-select-open').click();
 		});
 	},
 	jqRange:function(){
