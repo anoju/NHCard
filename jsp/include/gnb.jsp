@@ -9,7 +9,7 @@
 			</div>
 			<div class="gnb_info">
 				<div class="avata">
-					<img src="../../content/mo/images/temp/avata.png" alt="">
+					<img src="../../content/nhcd_mo/images/temp/avata.png" alt="">
 				</div>
 				<div>
 					<!-- <h2 class="tit">고객님 환영합니다.</h2> -->
