@@ -338,7 +338,7 @@ html.iPhoneX #footer.add_floating_navi:after{height:calc(constant(safe-area-inse
 .foot_contact span,
 .foot_contact strong{display:inline-block;line-height:25px;vertical-align:top;}
 .foot_contact strong{margin-left:5px;}
-.foot_contact .i_icon{vertical-align:top;margin-right:7px;width:24px;height:25px;box-shadow:none;background: url(../images/common/ico_tel.png) no-repeat 0 center;background-size:24px auto;}
+.foot_contact .i_icon{vertical-align:middle;margin-right:7px;width:24px;height:19px;box-shadow:none;border-radius:0;background: url(../images/common/ico_tel.png) no-repeat 0 center;background-size:24px auto;}
 .foot_contact .info{font-size:1.2rem;color:#737475;}
 .foot_contact .main_num{font-weight:500;}
 .foot_contact .sub_num{margin-top:16px;font-size:1.2rem;color:#737475;}
