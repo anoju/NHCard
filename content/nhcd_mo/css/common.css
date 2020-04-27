@@ -526,7 +526,7 @@ div.tit_h4 .tit{font-size:1.4rem;color:#111}
 .button.line.blue{border-color:#3182f7;color:#3182f7;}
 .button.line.white{border-color:#fff;color:#fff;background:none;}
 .button.line.disabled,
-.button.line:disabled{border-color:#f0f0f0 !important;color:#858585 !important;}
+.button.line:disabled{border-color:#f0f0f0 !important;color:#858585 !important;cursor:default !important;}
 
 .button.h54{height:54px;line-height:52px;font-size:1.8rem;}
 .button.h48{height:48px;line-height:46px;font-size:1.8rem;}
@@ -613,17 +613,17 @@ div.tit_h4 .tit{font-size:1.4rem;color:#111}
 .input.checked:after{background:#3182f7 !important;}
 .form_item.checked .input input,
 .input.checked input{border-color:#3182f7 !important;}
-.input.add_time input{padding-right:40px;}
-.input.add_time .inp_del{right:35px;}
-.input.add_time .time{position:absolute;right:0;top:50%;font-size:1.1rem;color:#3182f7;-webkit-transform:translateY(-50%);transform:translateY(-50%);}
+.input.add_time input{padding-right:50px;}
+.input.add_time .inp_del{right:45px;}
+.input.add_time .time{position:absolute;right:10px;top:50%;font-size:1.1rem;color:#3182f7;-webkit-transform:translateY(-50%);transform:translateY(-50%);}
 .input[class*=add_unit_] input{text-align:right;}
-.input[class*=add_unit_] .unit+input{padding-left:15px;}
-.input.add_unit_1 input{padding-right:45px;}
-.input.add_unit_1 .inp_del{right:15px;}
-.input.add_unit_2 input{padding-right:60px;}
-.input.add_unit_2 .inp_del{right:30px;}
-.input.add_unit_3 input{padding-right:75px;}
-.input.add_unit_3 .inp_del{right:45px;}
+.input[class*=add_unit_] .unit+input{padding-left:20px;}
+.input.add_unit_1 input{padding-right:55px;}
+.input.add_unit_1 .inp_del{right:25px;}
+.input.add_unit_2 input{padding-right:70px;}
+.input.add_unit_2 .inp_del{right:40px;}
+.input.add_unit_3 input{padding-right:85px;}
+.input.add_unit_3 .inp_del{right:55px;}
 
 .select{display:inline-block;position:relative;width:100%;}
 .select select,
@@ -743,7 +743,7 @@ html:not(.isApp) .checkbox input:focus+i{box-shadow:0px 0px 1px 1px rgba(0,97,25
 .btn_toggle li{position:relative;}
 .btn_toggle li input{position:absolute;width:100%;height:100%;left:0;top:0;clip:auto;opacity:0;}
 .btn_toggle li input+label,
-.btn_toggle li a{display:block;margin:0;height:44px;line-height:42px;font-size:1.4rem;font-weight:400;color:#666;border:1px solid #bbb;word-break:break-all;background:#fff;text-align:center;}
+.btn_toggle li a{display:block;margin:0;height:44px;line-height:42px;font-size:1.4rem;font-weight:400;color:#bbb;border:1px solid #ddd;word-break:break-all;background:#fff;text-align:center;}
 /*.btn_toggle li input+label:before,
 .btn_toggle li a:before{content:'';display:inline-block;position:relative;top:-2px;width:12px;height:6px;margin-right:-16px;opacity:0;border:2px solid #3182f7;border-top-width:0;border-right-width:0;-webkit-transform:rotate(-47deg) scale(0.7);transform:rotate(-47deg) scale(0.7);-webkit-transition:0.3s;transition:0.3s;}*/
 .btn_toggle li input+label span,
@@ -758,7 +758,7 @@ html:not(.isApp) .btn_toggle li input:focus+label{box-shadow:0px 0px 1px 1px rgb
 .btn_toggle li input:disabled+label,
 .btn_toggle li a.disabled{opacity:0.6;}
 .btn_toggle li input:checked+label,
-.btn_toggle li.active a{position:relative;color:#3182f7;border-color:#3182f7 !important;background:#fff;z-index:1;}
+.btn_toggle li.active a{position:relative;color:#111;border-color:#3182f7 !important;background:#fff;z-index:1;}
 /*.btn_toggle li input:checked+label:before,
 .btn_toggle li.active a:before{margin-left:-8px;margin-right:4px;opacity:1;}*/
 .btn_toggle li+li input:checked+label:after,
@@ -788,7 +788,7 @@ html:not(.isApp) .btn_toggle li input:focus+label{box-shadow:0px 0px 1px 1px rgb
 .btn_toggle.ty2{margin:-3px;background:none;}
 .btn_toggle.ty2 li{padding:3px;}
 .btn_toggle.ty2 li input+label,
-.btn_toggle.ty2 li a{border-color:#bbb;border-width:1px;border-radius:0;}
+.btn_toggle.ty2 li a{border-color:#ddd;border-width:1px;border-radius:0;}
 .btn_toggle.ty2 li+li input:checked+label:after, 
 .btn_toggle.ty2 li+li.active a:after{display:none;}
 

@@ -64,8 +64,8 @@
 .form_item .td.email_inp .input input{padding-right:60px;}
 .form_item .td.email_inp .inp_del{right:20px;}
 .form_item .td.email_inp .btn_sel{display:block;position:absolute;right:0;top:0;width:23px;height:100%;font-size:3px;color:transparent;background:url(../images/common/select_arrow.png) 100% 50% no-repeat;background-size:12px auto;overflow:hidden;}
-.form_item .unit{display:block;position:absolute;right:0;top:0;color:#111;line-height:44px;}
-.form_item .unit:first-child{left:0;right:auto;}
+.form_item .unit{display:block;position:absolute;right:10px;top:0;color:#111;line-height:44px;font-size:1.4rem;}
+.form_item .unit:first-child{left:10px;right:auto;}
 
 /*약관*/
 .chk_list .chk_item+.chk_item{margin-top:0;border-top:0 none;}
