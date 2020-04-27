@@ -877,14 +877,14 @@ html.isApp.ios.inpFocus .tab_nav_wrap.fixed .tab_track{position:absolute;top:0;}
 .tooltip_wrap{position:relative;display:inline-block;vertical-align:middle;margin-left:3px;line-height:1;}
 .tooltip_btn{display:inline-block;width:17px;height:17px;vertical-align:top;font-size:3px;color:transparent;background:url(../images/common/ico_tooltip.png) no-repeat center center;background-size:contain;overflow:hidden;}
 .tooltip_btn.bg_gray{width:24px;height:24px;border:none;background:url(../images/common/ico_tooltip2.png) no-repeat center center;background-size:contain;}
-.tooltip_cont{display:none;position:absolute;margin-top:10px;left:0px;top:100%;width:100px;min-width:300px;min-height:22px;padding:12.5px 14px 16px;background:#f1f1f1;box-shadow:0 3px 5px 0 rgba(0,0,0,0.1);color:#666;box-sizing:border-box;z-index:10;font-size:1.3rem;font-weight:400;line-height:1.4;text-align:left;white-space:normal;}
+.tooltip_cont{display:none;position:absolute;margin-top:10px;left:0px;top:100%;width:100px;min-width:300px;min-height:22px;padding:13px 25px 15px 14px;background:#f1f1f1;box-shadow:0 3px 5px 0 rgba(0,0,0,0.1);color:#666;box-sizing:border-box;z-index:10;font-size:1.3rem;font-weight:400;line-height:1.4;text-align:left;white-space:normal;}
 .tooltip_cont .guide_txt dl dt,
 .tooltip_cont .guide_txt dl dd{color:#666;}
 .tooltip_cont .guide_txt dl dd+dd{margin-top:6px;}
 .tooltip_cont .guide_txt dl dt.tit{margin-bottom:10px;font-size:1.5rem;font-weight:500;}
 .tooltip_cont .arr{position:absolute;top:-6px;margin-left:-5px;border:1px solid transparent;border-width:0 5px 6px;border-bottom-color:#f1f1f1;}
 .tooltip_cont .sub{display:block;padding-left:1rem;font-size:1.2rem;}
-.tooltip_cont .tooltip_close{display:block;position:absolute;right:14px;top:12.5px;width:10px;height:10px;background:url(../images/common/ico_tooltip_close.png) no-repeat center center;background-size:14px auto;}
+.tooltip_cont .tooltip_close{display:block;position:absolute;right:14px;top:10px;width:20px;height:20px;background:url(../images/common/ico_tooltip_close.png) no-repeat center center;background-size:10px;}
 .tooltip_cont.bottom{top:auto;bottom:100%;margin-top:0;margin-bottom:10px;}
 .tooltip_cont.bottom .arr{top:auto;bottom:-6px;border-width:6px 5px 0;border-top-color:#57585e;}
 
