@@ -933,9 +933,9 @@
 				<div class="form_item">
 					<label for="cvcNumber" class="fm_lb">카드고유확인번호</label>
 					<div class="fm_cont">
-						<div class="input"><input type="tel" id="cvcNumber" maxlength="3" placeholder="숫자 3자리 입력" title="카드고유확인번호 3자리 입력">
+						<div class="input add_tooltip"><input type="tel" id="cvcNumber" maxlength="3" placeholder="숫자 3자리 입력" title="카드고유확인번호 3자리 입력">
 							<div class="tooltip_wrap">
-								<a href="#" class="tooltip_btn">자세한 내용 확인</a>
+								<a href="#" class="tooltip_btn bg_gray">자세한 내용 확인</a>
 								<div class="tooltip_cont">툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 </div>
 							</div>
 						</div>
@@ -1136,7 +1136,7 @@
 							<div class="td w_120">
 								<div class="select">
 									<select id="CrdNbr" name="CrdNbr" title="카드 선택">
-										<option value="">선택해주세요.</option>
+										<option value="">카드 선택</option>
 										<option value="allCard">전체카드</option>
 										<option value="nhcard">전체NH채움카드</option>
 										<option value="bccard">전체NHBC카드</option>
@@ -1161,7 +1161,7 @@
 								<div class="td">
 									<div class="select">
 										<select id="CrdNbr2" name="CrdNbr" title="카드 선택">
-											<option value="">선택해주세요.</option>
+											<option value="">카드 선택</option>
 											<option value="allCard">전체카드</option>
 											<option value="nhcard">전체NH채움카드</option>
 											<option value="bccard">전체NHBC카드</option>
@@ -1474,7 +1474,7 @@
 								</div>
 							</div>
 							<div class="td w_70">
-								<a href="#" class="button line h32 block layer_select_open">선택</a>
+								<a href="#" class="button line w100 layer_select_open">선택</a>
 							</div>
 						</div>
 						<div class="layer_select_wrap" aria-hidden="true">
@@ -1496,64 +1496,9 @@
 
 				<h2 class="gd__h1">검색</h2>
 				<h3 class="gd__h2">단일 검색</h3>
-				<div class="form_item search_box full">
+				<div class="form_item search_box">
 					<div>
-						<div class="input"><input type="search" placeholder="검색어를 입력해주세요." title="검색어 입력"></div>
-						<button type="button" class="btn_search"><span class="blind">검색하기</span></button>
-					</div>
-				</div>
-				<div class="form_item search_box full">
-					<div>
-						<div class="select">
-							<select title="선택">
-								<option value="">선택</option>
-								<option value="1">가나다라마가</option>
-								<option value="2">가나다라마 가나다 라마</option>
-								<option value="3">가나다</option>
-								<option value="4">가나다라</option>
-							</select>
-						</div>
-						<button type="button" class="btn_search"><span class="blind">검색하기</span></button>
-					</div>
-				</div>
-				<div class="form_item search_box full">
-					<div>
-						<div class="tbl">
-							<div class="td">
-								<div class="select">
-									<select title="년도 선택">
-										<option value="2018">2018</option>
-										<option value="2017">2017</option>
-										<option value="2016">2016</option>
-										<option value="2015">2015</option>
-										<option value="2014">2014</option>
-										<option value="2013">2013</option>
-										<option value="2012">2012</option>
-										<option value="2011">2011</option>
-										<option value="2010">2010</option>
-										<option value="2009">2009</option>
-										<option value="2008">2008</option>
-										<option value="2007">2007</option>
-										<option value="2006">2006</option>
-										<option value="2005">2005</option>
-										<option value="2004">2004</option>
-										<option value="2003">2003</option>
-										<option value="2002">2002</option>
-										<option value="2001">2001</option>
-									</select>
-								</div>
-							</div>
-							<div class="td">
-								<div class="select">
-									<select title="분기 선택">
-										<option value="4">4분기</option>
-										<option value="3">3분기</option>
-										<option value="2">2분기</option>
-										<option value="1">1분기</option>
-									</select>
-								</div>
-							</div>
-						</div>
+						<div class="input add_btn"><input type="search" placeholder="검색어를 입력해주세요." title="검색어 입력"></div>
 						<button type="button" class="btn_search"><span class="blind">검색하기</span></button>
 					</div>
 				</div>
