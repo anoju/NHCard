@@ -1095,10 +1095,10 @@ var Layer = {
 		}
 
 		//열릴때 플루팅 버튼
-		if($('.floating_btn').is(':visible')){
-			$('.floating_btn').hide();
-			if($('.floating_btn').hasClass('is_fixed_btn'))$(tar).addClass('is_fixed_btn');
-		}
+		// if($('.floating_btn').is(':visible')){
+		// 	$('.floating_btn').hide();
+		// 	if($('.floating_btn').hasClass('is_fixed_btn'))$(tar).addClass('is_fixed_btn');
+		// }
 		if(isAppChk() && !$('#floatingBar').hasClass('off')){
 			$(tar).addClass('is_floating');
 		}else{
