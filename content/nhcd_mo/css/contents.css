@@ -53,8 +53,9 @@
 .form_item .td{position:relative;}
 .form_item .td+.td{padding-left:10px;}
 .form_item .td.time{width:50px;font-size:1.5rem;font-weight:500;color:#111;text-align:right}
-.form_item .td.dash{width:20px;text-align:center;color:#111;white-space:nowrap;}
-.form_item .td.dash.ty2{width:30px;}
+.form_item .td.dash{width:30px;padding-right:10px;text-align:center;color:#858585;white-space:nowrap;}
+.form_item .td.dash.ty2{width:40px;}
+.form_item .td.dash+.td{padding-left:0;}
 .form_item .td.sp{width:10px;}
 .form_item .td.sp+.td{padding-left:0;}
 .form_item .td.ut{padding-left:5px;text-align:right;white-space:nowrap;width:20px;color:#111;}
@@ -62,7 +63,7 @@
 .form_item .td.swt{text-align:right;width:70px;vertical-align:middle;}
 .form_item .td.email_inp .input input{padding-right:60px;}
 .form_item .td.email_inp .inp_del{right:20px;}
-.form_item .td.email_inp .btn_sel{display:block;position:absolute;right:0;top:0;width:20px;height:100%;font-size:3px;color:transparent;background:url(../images/common/ico_sel_arrow.png) 100% 50% no-repeat;background-size:12px auto;overflow:hidden;}
+.form_item .td.email_inp .btn_sel{display:block;position:absolute;right:0;top:0;width:23px;height:100%;font-size:3px;color:transparent;background:url(../images/common/select_arrow.png) 100% 50% no-repeat;background-size:12px auto;overflow:hidden;}
 .form_item .unit{display:block;position:absolute;right:0;top:0;color:#111;line-height:44px;}
 .form_item .unit:first-child{left:0;right:auto;}
 
