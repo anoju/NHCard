@@ -3,7 +3,7 @@
 /*****************************************************************
 jq-Datepicker
 *****************************************************************/
-.ui-datepicker-trigger{position:absolute;top:0;right:0;width:25px;height:40px;background:url(../images/calendar/ico_date.png) 50% 50% no-repeat;background-size:15px 15px;font-size:3px;color:transparent;overflow:hidden;}
+.ui-datepicker-trigger{position:absolute;top:0;right:11px;width:22px;height:44px;background:url(../images/calendar/ico_date.png) 50% 50% no-repeat;background-size:contain;font-size:3px;color:transparent;overflow:hidden;}
 .ui-widget{font-size:1.1em;}
 .ui-widget .ui-widget{font-size:1em;}
 .ui-widget input,
@@ -16,7 +16,7 @@ jq-Datepicker
 .ui-icon{display:block;text-indent:-99999px;overflow:hidden;background-repeat:no-repeat;}
 .datepicker-dimmed{position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.7);z-index:299}
 .ui-datepicker{width:300px;display:none;padding:0 15px 25px;position:fixed !important;top:50% !important;left:50% !important;transform:translateY(-50%) !important;margin-left:-150px;z-index:300 !important;border-radius:0;border:0 none;overflow:hidden;}
-.ui-datepicker:before{content:'날짜선택';display:block;line-height:1.4;padding:14px 40px 14px 5px;font-size:1.6rem;color:#111;}
+.ui-datepicker:before{content:'날짜선택';display:block;line-height:1.4;padding:14px 40px 14px 6px;font-size:1.6rem;color:#111;}
 .ui-datepicker .ui-datepicker-header{position:relative;background:#f8f8f8;margin:0 -15px 25px;}
 .ui-datepicker .ui-datepicker-prev-y,
 .ui-datepicker .ui-datepicker-next-y,
