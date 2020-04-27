@@ -206,12 +206,14 @@ var Body = {
 		}
 	},
 	unlock: function(){
-		$('html').removeClass('lock');
-		$('#wrap').removeAttr('style');
-		window.scrollTo(0, Body.scrollTop);
-		window.setTimeout(function (){
-			Body.scrollTop = '';
-		}, 0);
+		if($('html').hasClass('lock')){
+			$('html').removeClass('lock');
+			$('#wrap').removeAttr('style');
+			window.scrollTo(0, Body.scrollTop);
+			window.setTimeout(function (){
+				Body.scrollTop = '';
+			}, 0);
+		}
 	}
 };
 
@@ -2881,7 +2883,7 @@ var sclCalendar = {
 				if($type == undefined)$type = 'date';
 				if($type == 'full')$btnTxt = '날짜 및 시간 선택';
 				if($type == 'time')$btnTxt = '시간 선택';
-				if(!$this.closest('.scl_calrender').length)$this.wrap('<div class="scl_calrender"><div class="scl_cal_btn"></div></div>');
+				if(!$this.closest('.scl_calrender').length)$this.parent().wrap('<div class="scl_calrender"><div class="scl_cal_btn"></div></div>');
 				if(!$this.siblings('.btn_select').length)$this.after('<a href="#'+$thisId+'" class="btn_select ui-date-open" role="button"><span class="blind">'+$btnTxt+'</span></a>');
 				var $wrap = $this.closest('.scl_calrender'),
 					$calendar = $wrap.find('.scl_cal_wrap');
@@ -3194,7 +3196,7 @@ var sclCalendar = {
 			var $wrap = $(this).closest('.scl_calrender'),
 				$btn = $wrap.find('.ui-date-open');
 			$wrap.removeClass('expend');
-			Body.unlock();
+			//Body.unlock();
 			$wrap.find('.scl_cal_wrap').stop(true,false).slideUp(200);
 			$btn.removeClass('on');
 			if($(this).closest('.scl_cal_close').length)$btn.focus();

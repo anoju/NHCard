@@ -763,7 +763,7 @@ html:not(.isApp) .btn_toggle li input:focus+label{box-shadow:0px 0px 1px 1px rgb
 .btn_toggle li input:disabled+label,
 .btn_toggle li a.disabled{opacity:0.6;}
 .btn_toggle li input:checked+label,
-.btn_toggle li.active a{position:relative;font-weight:500;color:#111;border-color:#3182f7 !important;background:#fff;z-index:1;}
+.btn_toggle li.active a{position:relative;font-weight:500;color:#3182f7;border-color:#3182f7 !important;background:#fff;z-index:1;}
 /*.btn_toggle li input:checked+label:before,
 .btn_toggle li.active a:before{margin-left:-8px;margin-right:4px;opacity:1;}*/
 .btn_toggle li+li input:checked+label:after,
@@ -1003,11 +1003,11 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .i_icon{display:inline-block;width:36px;height:36px;line-height:36px;font-size:3px;color:transparent;overflow:hidden;background-color:#fff;background-image:url(../images/common/spr_service_icon.png);background-position:70px 0;background-repeat:no-repeat;background-size:180px auto;text-align:center;border-radius:100%;box-shadow:5px 5px 10px 1px rgba(161,161,161,0.15);}
 
 /* scl_datepicker */
-.scl_cal_wrap{display:none;position:relative;border:1px solid #ddd;border-top-width:0;overflow:hidden;}
-.scl_cal_btn{position:relative;}
+.scl_cal_wrap{display:none;position:relative;margin-top:-4px;padding-top:4px;border:1px solid #ddd;border-top-width:0;overflow:hidden;}
+.scl_cal_btn{position:relative;z-index:1;}
 .scl_cal_btn .input input{padding-right:60px;}
 .scl_cal_btn .inp_del{right:35px;}
-.scl_cal_btn .btn_select{position:absolute;right:0;top:0;width:30px;}
+.scl_cal_btn .btn_select{position:absolute;right:0;top:0;width:30px;height:100%;border:0 none;padding:0;}
 .scl_cal_group{text-align:center;padding-left:0 !important;}
 .scl_cal_group.scl_month,
 .scl_cal_group.scl_day{width:25%;}
