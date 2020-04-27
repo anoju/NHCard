@@ -322,7 +322,7 @@ html.ie9 #gnb.show{right:0;}
 #container{position:relative;min-height:calc(100vh - 50px);}
 .isApp #container{min-height:calc(100vh - 120px);}
 .chatbot #container{padding-bottom:60px;}
-#contents{padding:20px 0 40px;width:100%;}
+#contents{padding:30px 0;width:100%;}
 #contents.h_full{padding:0;height:100vh;min-height:350px}
 .section{padding:0 20px;}
 .section .outer{margin-left:-20px;margin-right:-20px;}
@@ -819,13 +819,13 @@ html:not(.isApp) .btn_toggle li input:focus+label{box-shadow:0px 0px 1px 1px rgb
 .btn_toggle.grid.col3.row2 li:nth-last-child(1) input+label{border-bottom-right-radius:4px;}
 
 /*tab*/
-.tab_nav_wrap{position:relative;margin-bottom:25px;}
-.tab_nav_wrap.fixed{height:58px;}
+.tab_nav_wrap{position:relative;margin-bottom:30px;}
+.tab_nav_wrap.fixed{height:52px;}
 .tab_nav_wrap.fixed .tab_track{position:fixed;left:0;width:100%;top:50px;z-index:10;}
 html.isApp.ios.inpFocus .tab_nav_wrap.fixed .tab_track{position:absolute;top:0;}
 #contents>.tab_nav_wrap:first-child,
 #contents>.section>.tab_nav_wrap:first-child,
-.dialog_content>.section>.tab_nav_wrap:first-child{margin-top:-20px;}
+.dialog_content>.section>.tab_nav_wrap:first-child{margin-top:-30px;}
 .section .tab_nav_wrap{margin-left:-20px;margin-right:-20px;}
 .tab_track{position:relative;height:52px;overflow:hidden;border-width:1px 0;border-style:solid;border-color:#ddd;background-color:#fff;}
 .tab_nav li{position:relative;float:left;width:auto;padding:0 7.5px;}
@@ -940,8 +940,10 @@ html.isApp.ios.inpFocus .tab_nav_wrap.fixed .tab_track{position:absolute;top:0;}
 .fc_block.dash:before{background:#111;}
 
 /*step_state*/
-.step_wrap{display:table;width:100%;padding:13px 20px;background:#306edf;}
-.step_wrap h3{display:table-cell;width:70%;color:#fff;font-size:1.6rem;}
+.step_wrap{display:table;width:100%;padding:13px 20px;margin-bottom:30px;background:#306edf;}
+.step_wrap:first-child,
+.tab_nav_wrap+.step_wrap{margin-top:-30px;}
+.step_wrap .step_tit{display:table-cell;width:70%;color:#fff;font-size:1.6rem;}
 .step_wrap .step_state{display:table-cell;width:30%;font-size:0;text-align:right;}
 .step_wrap .step_state>li{display:inline-block;width:21px;height:21px;border:1px solid #83a8ec;border-radius:50%;font-size:1.3rem;color:#83a8ec;text-align:center;}
 .step_wrap .step_state>li+li{margin-left:9px;}
