@@ -921,6 +921,13 @@ html.isApp.ios.inpFocus .tab_nav_wrap.fixed .tab_track{position:absolute;top:0;}
 .fc_block.dot:before,
 .fc_block.dash:before{background:#111;}
 
+/*step_state*/
+.step_wrap{display:table;width:100%;padding:13px 20px;background:#306edf;}
+.step_wrap h3{display:table-cell;width:70%;color:#fff;font-size:1.6rem;}
+.step_wrap .step_state{display:table-cell;width:30%;font-size:0;text-align: right;}
+.step_wrap .step_state>li{display:inline-block;width:21px;height:21px;border:1px solid #83a8ec;border-radius:50%;font-size:1.3rem;color:#83a8ec;text-align:center;}
+.step_wrap .step_state>li+li{margin-left:9px;}
+.step_wrap .step_state>li.on{background-color:#fff;border-color:#fff;color:#2f6edf;font-weight:500;}
 
 /*table*/
 .table{position:relative;border-top:1px solid #bbb;background-color:#fff;}
