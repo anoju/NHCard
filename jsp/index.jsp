@@ -20,8 +20,8 @@
 </head>
 <body>
 <article id="wrap">
-	<%@ include file="./include/top.jsp" %><!-- 헤더 -->
-	<%@ include file="./include/gnb.jsp" %><!-- 전체메뉴 -->
+	<%@ include file="./include/top.jsp" %><!-- 헤더: 화면마다 헤더가 달라질수 있습니다. -->
+	<%@ include file="./include/gnb.jsp" %><!-- 전체메뉴: 구조 미확정 -->
 
 	<!-- 컨텐츠 시작 -->
 	<div id="container">
