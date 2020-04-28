@@ -740,7 +740,7 @@ var common = {
 		common.skipNavi();
 
 		common.fixed('#header');
-		if($('.tab_nav_wrap.add_fixed').length)common.fixed('.tab_nav_wrap.add_fixed');
+		if($('.tab_wrap.add_fixed').length)common.fixed('.tab_wrap.add_fixed');
 	}
 };
 
@@ -1707,9 +1707,11 @@ var buttonUI ={
 				});
 			}
 		});
-		if($('.tab_nav').not('.ui-tab').length){
-			$('.tab_nav').not('.ui-tab').each(function(){
-				$(this).find('.tab.active > a').attr('title',$onText);
+		if($('.tabmenu').length){
+			$('.tabmenu').each(function(){
+				if($(this).not('.ui-tab').length && $(this).closest('.tab_wrap').length){
+					$(this).find('.active > a').attr('title',$onText);
+				}
 			});
 		}
 
@@ -1801,6 +1803,8 @@ var buttonUI ={
 				}else{
 					$tabNavis[i].slideTo(0,speed);
 				}
+				$activeTab.find('a').attr('title','현재선택');
+				$activeTab.siblings().find('a').removeAttr('title');
 			};
 
 			var $activeCheckNum = 0;
@@ -1814,8 +1818,6 @@ var buttonUI ={
 				}
 				if($activeCheckNum >= 20)clearInterval($activeCheck);
 			},100);
-
-
 
 			$(window).resize(function(){
 				var $parenW = $navi.parent().width();
