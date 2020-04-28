@@ -9,31 +9,31 @@
 <meta name="description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
 <meta property="og:title" content="농협카드 모바일">
 <meta property="og:url" content="https://card.nonghyup.com">
-<!-- <meta property="og:image" content="https://card.nonghyup.com/content/nhcd_mo/images/logo_1200x1200.png"> -->
-<meta property="og:image" content="http://http://127.0.0.1:5500/content/nhcd_mo/images/logo_1200x1200.png">
+<!-- <meta property="og:image" content="https://card.nonghyup.com/content/images/logo_1200x1200.png"> -->
+<meta property="og:image" content="http://http://127.0.0.1:5500/content/images/logo_1200x1200.png">
 <meta property="og:description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
 <meta name="format-detection" content="telephone=no">
 
 <title>농협카드 모바일</title>
 
 <meta name="apple-mobile-web-app-title" content="농협카드 모바일">
-<link rel="apple-touch-startup-image" href="../../content/nhcd_mo/images/icons/touch-icon-iphone-retina.png">
+<link rel="apple-touch-startup-image"href="../../images/icons/touch-icon-iphone-retina.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<link rel="shortcut icon" type="image/x-icon" href="../../content/nhcd_mo/images/favicon.png"><!-- 196x196-->
-<link rel="apple-touch-icon" href="../../content/nhcd_mo/images/icons/touch-icon-iphone.png"><!-- 120x120-->
-<link rel="apple-touch-icon" sizes="152x152" href="../../content/nhcd_mo/images/icons/touch-icon-ipad.png">
-<link rel="apple-touch-icon" sizes="180x180" href="../../content/nhcd_mo/images/icons/touch-icon-iphone-retina.png">
-<link rel="apple-touch-icon" sizes="167x167" href="../../content/nhcd_mo/images/icons/touch-icon-ipad-retina.png">
-<link rel="manifest" href="../../content/nhcd_mo/manifest.json">
+<link rel="shortcut icon" type="image/x-icon"href="../../images/favicon.png"><!-- 196x196-->
+<link rel="apple-touch-icon"href="../../images/icons/touch-icon-iphone.png"><!-- 120x120-->
+<link rel="apple-touch-icon" sizes="152x152"href="../../images/icons/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="180x180"href="../../images/icons/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="167x167"href="../../images/icons/touch-icon-ipad-retina.png">
+<link rel="manifest"href="../../manifest.json">
 
-<link rel="stylesheet" href="../../content/nhcd_mo/css/common.css">
-<link rel="stylesheet" href="../../content/nhcd_mo/css/contents.css">
+<link rel="stylesheet"href="../../css/common.css">
+<link rel="stylesheet"href="../../css/contents.css">
 
-<script src="../../content/nhcd_mo/js/jquery-3.3.1.min.js"></script>
-<script src="../../content/nhcd_mo/js/jquery-ui-1.12.1.min.js"></script>
-<script src="../../content/nhcd_mo/js/ui_plugins.js"></script>
-<script src="../../content/nhcd_mo/js/ui_front.js"></script>
+<script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/jquery-ui-1.12.1.min.js"></script>
+<script src="../../js/ui_plugins.js"></script>
+<script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
 		common.title('버튼 가이드');
@@ -50,16 +50,20 @@
 			<div class="section">
 				<h2 class="gd__h1">버튼</h2>
 				<h3 class="gd__h2">크기(세로)</h3>
-				<a href="#" class="button h54">button h54(페이지 fixed 버튼)</a>
-				<a href="#" class="button h48">button h48(팝업 fixed 버튼)</a>
-				<a href="#" class="button">button 기본(h44)</a>
-				<a href="#" class="button h32">button h32</a>
-				<a href="#" class="button h25">button h25</a>
+				<div>
+					button h54: 페이지 fixed 버튼 <br>
+					button h48: 팝업 fixed 버튼
+				</div>
+				<a href="#" class="button h54 blue">button h54</a>
+				<a href="#" class="button h48 gray">button h48</a>
+				<a href="#" class="button blue">button</a>
+				<a href="#" class="button h32 gray">button h32</a>
+				<a href="#" class="button h25 blue">button h25</a>
 
 				<h3 class="gd__h2">컬러</h3>
-				<a href="#" class="button">button 기본</a>
+				<a href="#" class="button blue">button 기본</a>
 				<a href="#" class="button gray">button bc2</a>
-				<div style="padding:10px;background:#aaa;">
+				<div class="p10 mt10" style="background:#bbb;">
 					<a href="#" class="button white">button bc3</a>
 				</div>
 				<h4 class="gd__h3">컬러 비활성화</h4>
@@ -68,7 +72,7 @@
 				<h3 class="gd__h2">라인</h3>
 				<a href="#" class="button line">button line</a>
 				<a href="#" class="button line blue">button line blue</a>
-				<div style="padding:10px;background:#aaa;">
+				<div class="p10 mt10" style="background:#bbb;">
 					<a href="#" class="button line white">button line white</a>
 				</div>
 				<h4 class="gd__h3">라인 비활성화</h4>
@@ -160,29 +164,29 @@
 				<!-- 하단 고정 -->
 				<div class="btn_wrap bottom_fixed">
 					<div class="flex">
-						<a href="#" class="button h54">목록</a>
+						<a href="#" class="button h54 blue">목록</a>
 					</div>
 				</div>
 				<br>
 				<div class="btn_wrap bottom_fixed">
 					<div class="flex" style="position:static;">
 						<a href="#" class="button h54 gray">버튼1</a>
-						<a href="#" class="button h54">버튼2</a>
+						<a href="#" class="button h54 blue">버튼2</a>
 					</div>
 				</div>
 				<br>
 				<div class="btn_wrap bottom_fixed">
 					<div class="flex ty2" style="position:static;">
 						<a href="#" class="button h54 gray">취소</a>
-						<a href="#" class="button h54">확인</a>
+						<a href="#" class="button h54 blue">확인</a>
 					</div>
 				</div>
 				<br>
 				<div class="btn_wrap bottom_fixed">
 					<div class="flex ty3" style="position:static;">
-						<a href="#" class="button h54 line">전화</a>
+						<a href="#" class="button h54 green">전화</a>
 						<a href="#" class="button h54 gray">취소</a>
-						<a href="#" class="button h54">확인</a>
+						<a href="#" class="button h54 blue">확인</a>
 					</div>
 				</div>
 				
@@ -192,10 +196,17 @@
 					<a href="#" class="button line">더보기 (<strong>20</strong>/25)</a>
 				</div>
 
+				<h3 class="gd__h2">아이콘+버튼</h3>
+				<div class="btn_wrap">
+					<div class="flex">
+						<a href="#" class="button line icon"><i class="bt_ic_faceId" aria-hidden="true"></i>Face ID로 로그인하기<i class="bt_ic_arr" aria-hidden="true"></i></a>
+					</div>
+				</div>
+
 				<h3 class="gd__h2">툴팁</h3>
 				<div class="tooltip_wrap">
 					<a href="#" class="tooltip_btn">자세한 내용 확인</a>
-					<div class="tooltip_cont">툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 </div>
+					<div class="tooltip_cont">툴팁내용내용내용내용내용내용내용내용내용내용내용내용내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 툴팁내용 </div>
 				</div>
 				<div class="tooltip_wrap">
 					<a href="#" class="tooltip_btn">자세한 내용 확인</a>
@@ -206,13 +217,11 @@
 				<div class="tooltip_wrap">
 					<a href="#" class="tooltip_btn">자세한 내용 확인</a>
 					<div class="tooltip_cont">
-						<div class="guide_txt">
-							<dl>
-								<dt class="tit">툴팁이란?</dt>
-								<dd>툴팁의 내용이 들어갑니다.</dd>
-								<dd>툴팁의 내용이 들어갑니다.툴팁의 내용이 들어갑니다.툴팁의 내용이 들어갑니다.툴팁의 내용이 들어갑니다.</dd>
-							</dl>
-						</div>
+						<dl class="dl">
+							<dt class="tit">툴팁이란?</dt>
+							<dd>툴팁의 내용이 들어갑니다.</dd>
+							<dd>툴팁의 내용이 들어갑니다.툴팁의 내용이 들어갑니다.툴팁의 내용이 들어갑니다.툴팁의 내용이 들어갑니다.</dd>
+						</dl>
 					</div>
 				</div>
 				
@@ -223,19 +232,19 @@
 
 				<h2 class="gd__h1">탭메뉴</h2>
 				<h3 class="gd__h2">네비</h3>
-				<div class="tab_nav_wrap ui-tab">
-					<div class="tab_track">
-						<ul class="tab_nav">
-							<li class="tab"><a href="#tabCont1"><span>탭메뉴1</span></a></li>
-							<li class="tab"><a href="#tabCont2"><span>탭메뉴2</span></a></li>
-							<li class="tab"><a href="#tabCont3"><span>탭메뉴3</span></a></li>
-							<li class="tab"><a href="#tabCont4"><span>탭메뉴4</span></a></li>
-							<li class="tab"><a href="#tabCont5"><span>탭메뉴5</span></a></li>
-							<li class="tab"><a href="#tabCont6"><span>탭메뉴6</span></a></li>
-							<li class="tab"><a href="#tabCont7"><span>탭메뉴7</span></a></li>
-							<li class="tab"><a href="#tabCont8"><span>탭메뉴8</span></a></li>
-							<li class="tab"><a href="#tabCont9"><span>탭메뉴9</span></a></li>
-							<li class="tab"><a href="#tabCont10"><span>탭메뉴10</span></a></li>
+				<div class="tab_wrap">
+					<div class="tabmenu ui-tab">
+						<ul>
+							<li><a href="#tabCont1"><span>탭메뉴1</span></a></li>
+							<li><a href="#tabCont2"><span>탭메뉴2</span></a></li>
+							<li><a href="#tabCont3"><span>탭메뉴3</span></a></li>
+							<li><a href="#tabCont4"><span>탭메뉴4</span></a></li>
+							<li><a href="#tabCont5"><span>탭메뉴5</span></a></li>
+							<li><a href="#tabCont6"><span>탭메뉴6</span></a></li>
+							<li><a href="#tabCont7"><span>탭메뉴7</span></a></li>
+							<li><a href="#tabCont8"><span>탭메뉴8</span></a></li>
+							<li><a href="#tabCont9"><span>탭메뉴9</span></a></li>
+							<li><a href="#tabCont10"><span>탭메뉴10</span></a></li>
 						</ul>
 					</div>
 				</div>

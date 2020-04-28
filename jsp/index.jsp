@@ -20,8 +20,8 @@
 </head>
 <body>
 <article id="wrap">
-	<%@ include file="./include/top.jsp" %><!-- 헤더 -->
-	<%@ include file="./include/gnb.jsp" %><!-- 전체메뉴 -->
+	<%@ include file="./include/top.jsp" %><!-- 헤더: 화면마다 헤더가 달라집니다. -->
+	<%@ include file="./include/gnb.jsp" %><!-- 전체메뉴: 구조 미확정 -->
 
 	<!-- 컨텐츠 시작 -->
 	<div id="container">
@@ -47,7 +47,7 @@
 	<!-- 다른곳 말고 여기에 팝업들 넣어주세요~~ -->
 	<!-- //팝업 넣는 영역  -->
 
-	<%@ include file="./include/footer.jsp" %><!-- 푸터 -->
+	<%@ include file="./include/footer.jsp" %><!-- 푸터: 구조 미확정 -->
 </article>
 </body>
 </html>

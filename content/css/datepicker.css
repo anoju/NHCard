@@ -16,27 +16,29 @@ jq-Datepicker
 .ui-icon{display:block;text-indent:-99999px;overflow:hidden;background-repeat:no-repeat;}
 .datepicker-dimmed{position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.7);z-index:299}
 .ui-datepicker{width:300px;display:none;padding:0 15px 25px;position:fixed !important;top:50% !important;left:50% !important;transform:translateY(-50%) !important;margin-left:-150px;z-index:300 !important;border-radius:0;border:0 none;overflow:hidden;}
-.ui-datepicker:before{content:'날짜선택';display:block;line-height:1.4;padding:14px 40px 14px 6px;font-size:1.7rem;color:#111;}
-.ui-datepicker .ui-datepicker-header{position:relative;background:#f4f6fa;margin:0 -15px 25px;}
+.ui-datepicker:before{content:'날짜선택';display:block;line-height:1.4;padding:14px 40px 14px 6px;font-size:1.6rem;color:#111;}
+.ui-datepicker .ui-datepicker-header{position:relative;background:#f8f8f8;margin:0 -15px 25px;}
+.ui-datepicker .ui-datepicker-header .ui-state-disabled{cursor:default;;}
+/* .ui-datepicker .ui-datepicker-header .ui-state-disabled span{opacity:0.7;} */
 .ui-datepicker .ui-datepicker-prev-y,
 .ui-datepicker .ui-datepicker-next-y,
 .ui-datepicker .ui-datepicker-prev,
-.ui-datepicker .ui-datepicker-next{display:block;position:absolute;top:50%;width:25px;height:25px;margin-top:-12.5px;padding:0;background:none !important;border-radius:0;overflow:hidden;}
-.ui-datepicker .ui-datepicker-prev-y.ui-state-disabled,
-.ui-datepicker .ui-datepicker-next-y.ui-state-disabled,
-.ui-datepicker .ui-datepicker-prev.ui-state-disabled,
-.ui-datepicker .ui-datepicker-next.ui-state-disabled{opacity:0.5;} 
-.ui-datepicker .ui-datepicker-prev{left:61px;}
-.ui-datepicker .ui-datepicker-next{right:61px;}
-.ui-datepicker .ui-datepicker-prev-y{left:32px;}
-.ui-datepicker .ui-datepicker-next-y{right:32px;}
+.ui-datepicker .ui-datepicker-next{display:block;padding:0;position:absolute;top:50%;width:25px;height:25px;line-height:25px;margin-top:-12.5px;background:none !important;border-radius:0;overflow:hidden;text-align:center;}
+.ui-datepicker .ui-datepicker-prev{left:57px;}
+.ui-datepicker .ui-datepicker-next{right:57px;}
+.ui-datepicker .ui-datepicker-prev-y{left:28px;}
+.ui-datepicker .ui-datepicker-next-y{right:28px;}
 .ui-datepicker .ui-datepicker-prev-y span,
 .ui-datepicker .ui-datepicker-next-y span,
 .ui-datepicker .ui-datepicker-prev span,
-.ui-datepicker .ui-datepicker-next span{display:block;height:25px;background:url(../images/calendar/spr_calendar.png) center 0 no-repeat;background-size:25px auto;font-size:3px;color:transparent;}
-.ui-datepicker .ui-datepicker-prev span{background-position:center -23px}
-.ui-datepicker .ui-datepicker-next span{background-position:center -46px}
-.ui-datepicker .ui-datepicker-next-y span{background-position:center -69px}
+.ui-datepicker .ui-datepicker-next span{display:inline-block;width:18px;height:18px;background:url(../images/calendar/spr_calendar.png) 0 0 no-repeat;background-size:40px auto;font-size:3px;color:transparent;vertical-align:middle;}
+.ui-datepicker .ui-datepicker-prev-y.ui-state-disabled span{background-position:-20px 0}
+.ui-datepicker .ui-datepicker-prev span{background-position:0 -20px}
+.ui-datepicker .ui-datepicker-prev.ui-state-disabled span{background-position:-20px -20px}
+.ui-datepicker .ui-datepicker-next span{background-position:0 -40px}
+.ui-datepicker .ui-datepicker-next.ui-state-disabled span{background-position:-20px -40px}
+.ui-datepicker .ui-datepicker-next-y span{background-position:0 -60px}
+.ui-datepicker .ui-datepicker-next-y.ui-state-disabled span{background-position:-20px -60px}
 .ui-datepicker .ui-datepicker-title{margin:0 4em;line-height:48px;text-align:center;font-size:1.8rem;}
 .ui-datepicker .ui-datepicker-title select{background:transparent;font-size:1.8rem;font-weight:bold;margin:0;width:auto;height:auto;padding:0;border:0 none;-webkit-appearance:none;appearance:none;color:#111;}
 .ui-datepicker .ui-datepicker-title select option{color:#111;}

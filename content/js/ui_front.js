@@ -85,7 +85,7 @@ var htmlnclude = function(){
 
 					if($htmlFile == 'inc_guide_navi.html'){
 						//$('.gd__navi').find('.tab').eq($atvIdx-1).addClass('active');
-						$('.gd__navi').find('.tab').each(function(){
+						$('.gd__navi').find('li').each(function(){
 							var $href = $(this).find('a').attr('href');
 							if($href == $fileName)$(this).addClass('active');
 						});
@@ -206,12 +206,14 @@ var Body = {
 		}
 	},
 	unlock: function(){
-		$('html').removeClass('lock');
-		$('#wrap').removeAttr('style');
-		window.scrollTo(0, Body.scrollTop);
-		window.setTimeout(function (){
-			Body.scrollTop = '';
-		}, 0);
+		if($('html').hasClass('lock')){
+			$('html').removeClass('lock');
+			$('#wrap').removeAttr('style');
+			window.scrollTo(0, Body.scrollTop);
+			window.setTimeout(function (){
+				Body.scrollTop = '';
+			}, 0);
+		}
 	}
 };
 
@@ -738,7 +740,7 @@ var common = {
 		common.skipNavi();
 
 		common.fixed('#header');
-		if($('.tab_nav_wrap.add_fixed').length)common.fixed('.tab_nav_wrap.add_fixed');
+		if($('.tab_wrap.add_fixed').length)common.fixed('.tab_wrap.add_fixed');
 	}
 };
 
@@ -1705,9 +1707,11 @@ var buttonUI ={
 				});
 			}
 		});
-		if($('.tab_nav').not('.ui-tab').length){
-			$('.tab_nav').not('.ui-tab').each(function(){
-				$(this).find('.tab.active > a').attr('title',$onText);
+		if($('.tabmenu').length){
+			$('.tabmenu').each(function(){
+				if($(this).not('.ui-tab').length && $(this).closest('.tab_wrap').length){
+					$(this).find('.active > a').attr('title',$onText);
+				}
 			});
 		}
 
@@ -1746,21 +1750,23 @@ var buttonUI ={
 		}
 	},
 	tabNavi:function(){
-		$('.tab_track').each(function(i){
-			if($(this).hasClass('swiper-container-initialized')) return false;
+		$('.tab_wrap .tabmenu').each(function(i){
+			if($(this).hasClass('swiper-container-initialized')){
+				return false;
+			}else{
+				$(this).find('ul').addClass('swiper-wrapper');
+				$(this).find('li').addClass('swiper-slide');
+			}
 			var $navi = $(this),
 				$widthSum = 0,
 				$class = 'ui-tabnavi-'+i;
 
-			$navi.find('.tab').each(function(){
+			$navi.find('.swiper-slide').each(function(){
 				$widthSum = $widthSum + $(this).outerWidth();
 			});
-
 			$navi.addClass($class);
 			var $tabNavi = new Swiper('.'+$class,{
 				slidesPerView: 'auto',
-				wrapperClass:'tab_nav',
-				slideClass:'tab',
 				resizeReInit:true,
 				on: {
 					touchMove:function(){
@@ -1778,7 +1784,7 @@ var buttonUI ={
 			var $isCenter = false;
 			var activeMove = function(idx,speed){
 				var $windowCenter = $(window).width()/2,
-					$activeTab = $navi.find('.tab').eq(idx),
+					$activeTab = $navi.find('.swiper-slide').eq(idx),
 					$tabLeft = $activeTab.position().left,
 					$tabWidth = $activeTab.outerWidth(),
 					$tabCenter = $tabLeft + ($tabWidth/2);
@@ -1797,12 +1803,14 @@ var buttonUI ={
 				}else{
 					$tabNavis[i].slideTo(0,speed);
 				}
+				$activeTab.find('a').attr('title','현재선택');
+				$activeTab.siblings().find('a').removeAttr('title');
 			};
 
 			var $activeCheckNum = 0;
 			var $activeCheck = setInterval(function(e){
 				$activeCheckNum++;
-				var $active = $navi.find('.tab.active'),
+				var $active = $navi.find('.swiper-slide.active'),
 					$activeIdx = $active.index();
 				if($activeIdx >= 0){
 					activeMove($activeIdx,0);
@@ -1811,16 +1819,14 @@ var buttonUI ={
 				if($activeCheckNum >= 20)clearInterval($activeCheck);
 			},100);
 
-
-
 			$(window).resize(function(){
 				var $parenW = $navi.parent().width();
 				if($parenW > $widthSum){
-					$navi.find('.tab_nav').addClass('center');
+					$navi.find('.swiper-wrapper').addClass('center');
 					$tabNavis[i].params.followFinger = false;
 					$tabNavis[i].update();
 				}else{
-					$navi.find('.tab_nav').removeClass('center');
+					$navi.find('.swiper-wrapper').removeClass('center');
 					$tabNavis[i].params.followFinger = true;
 					$tabNavis[i].update();
 				}
@@ -2881,7 +2887,7 @@ var sclCalendar = {
 				if($type == undefined)$type = 'date';
 				if($type == 'full')$btnTxt = '날짜 및 시간 선택';
 				if($type == 'time')$btnTxt = '시간 선택';
-				if(!$this.closest('.scl_calrender').length)$this.wrap('<div class="scl_calrender"><div class="scl_cal_btn"></div></div>');
+				if(!$this.closest('.scl_calrender').length)$this.parent().wrap('<div class="scl_calrender"><div class="scl_cal_btn"></div></div>');
 				if(!$this.siblings('.btn_select').length)$this.after('<a href="#'+$thisId+'" class="btn_select ui-date-open" role="button"><span class="blind">'+$btnTxt+'</span></a>');
 				var $wrap = $this.closest('.scl_calrender'),
 					$calendar = $wrap.find('.scl_cal_wrap');
@@ -3194,7 +3200,7 @@ var sclCalendar = {
 			var $wrap = $(this).closest('.scl_calrender'),
 				$btn = $wrap.find('.ui-date-open');
 			$wrap.removeClass('expend');
-			Body.unlock();
+			//Body.unlock();
 			$wrap.find('.scl_cal_wrap').stop(true,false).slideUp(200);
 			$btn.removeClass('on');
 			if($(this).closest('.scl_cal_close').length)$btn.focus();

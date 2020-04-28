@@ -2,14 +2,16 @@
     pageEncoding="UTF-8"%>
 	<nav id="gnb" aria-hidden="true">
 		<div class="gnb_header">
-			<a href="#btnGnb" class="btn_gnb_close"><span class="blind">전체메뉴 닫기</span></a>
-			<div class="gnb_btn_grp">
-				<a href="#" class="btn_gnb_search"><span class="blind">통합검색 열기</span></a>
-				<a href="#" class="btn_gnb_logout"><span class="blind">로그아웃</span></a>
+			<div class="gnb_head_top">
+				<a href="#btnGnb" class="btn_gnb_close"><span class="blind">전체메뉴 닫기</span></a>
+				<div>
+					<a href="#" class="btn_gnb_search"><span class="blind">통합검색 열기</span></a>
+					<a href="#" class="btn_gnb_logout"><span class="blind">로그아웃</span></a>
+				</div>
 			</div>
 			<div class="gnb_info">
 				<div class="avata">
-					<img src="../../content/nhcd_mo/images/temp/avata.png" alt="">
+					<img src="/content/images/temp/avata.png" alt="">
 				</div>
 				<div>
 					<!-- <h2 class="tit">고객님 환영합니다.</h2> -->
@@ -30,12 +32,12 @@
 		</div>
 		<div class="gnb_content">
 			<div class="gnb_quick">
-				<a href="#" class="button h24 round white">선결제</a>
-				<a href="#" class="button h24 round white">카드이용내역</a>
-				<a href="#" class="button h24 round white">도시가스요금</a>
-				<a href="#" class="button h24 round white">NH포인트</a>
-				<a href="#" class="button h24 round white">리볼빙</a>
-				<a href="#" class="button h24 round green2">내게맞는 카드찾기</a>
+				<a href="#" class="button h25 round white">선결제</a>
+				<a href="#" class="button h25 round white">카드이용내역</a>
+				<a href="#" class="button h25 round white">도시가스요금</a>
+				<a href="#" class="button h25 round white">NH포인트</a>
+				<a href="#" class="button h25 round white">리볼빙</a>
+				<a href="#" class="button h25 round green2">내게맞는 카드찾기</a>
 			</div>
 			<div class="gnb_dep1">
 				<ul>
@@ -215,7 +217,7 @@
 						</div>
 						<div class="swiper-slide gnb_dep2">
 							<ul>
-								<li><a href="#" class="in_sub">단기카드대출<br>(현금서비스)</a>
+								<li><a href="#" class="in_sub">단기카드대출(현금서비스)</a>
 									<div class="gnb_dep3">
 										<ul>
 											<li><a href="#">안내</a></li>
@@ -223,7 +225,7 @@
 										</ul>
 									</div>
 								</li>
-								<li><a href="#" class="in_sub">장기카드대출<br>(카드론)</a>
+								<li><a href="#" class="in_sub">장기카드대출(카드론)</a>
 									<div class="gnb_dep3">
 										<ul>
 											<li><a href="#">장기카드대출 안내</a></li>

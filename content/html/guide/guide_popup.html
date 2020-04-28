@@ -9,30 +9,30 @@
 <meta name="description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
 <meta property="og:title" content="농협카드 모바일">
 <meta property="og:url" content="https://card.nonghyup.com">
-<!-- <meta property="og:image" content="https://card.nonghyup.com/content/nhcd_mo/images/logo_1200x1200.png"> -->
-<meta property="og:image" content="http://localhost:8080/content/nhcd_mo/images/logo_1200x1200.png">
+<!-- <meta property="og:image" content="https://card.nonghyup.com/content/images/logo_1200x1200.png"> -->
+<meta property="og:image" content="http://localhost:8080/content/images/logo_1200x1200.png">
 <meta property="og:description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
 <meta name="format-detection" content="telephone=no">
 
 <title>농협카드 모바일</title>
 <meta name="apple-mobile-web-app-title" content="농협카드 모바일">
-<link rel="apple-touch-startup-image" href="../../content/nhcd_mo/images/icons/touch-icon-iphone-retina.png">
+<link rel="apple-touch-startup-image"href="../../images/icons/touch-icon-iphone-retina.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<link rel="shortcut icon" type="image/x-icon" href="../../content/nhcd_mo/images/favicon.png"><!-- 196x196-->
-<link rel="apple-touch-icon" href="../../content/nhcd_mo/images/icons/touch-icon-iphone.png"><!-- 120x120-->
-<link rel="apple-touch-icon" sizes="152x152" href="../../content/nhcd_mo/images/icons/touch-icon-ipad.png">
-<link rel="apple-touch-icon" sizes="180x180" href="../../content/nhcd_mo/images/icons/touch-icon-iphone-retina.png">
-<link rel="apple-touch-icon" sizes="167x167" href="../../content/nhcd_mo/images/icons/touch-icon-ipad-retina.png">
-<link rel="manifest" href="../../content/nhcd_mo/manifest.json">
+<link rel="shortcut icon" type="image/x-icon"href="../../images/favicon.png"><!-- 196x196-->
+<link rel="apple-touch-icon"href="../../images/icons/touch-icon-iphone.png"><!-- 120x120-->
+<link rel="apple-touch-icon" sizes="152x152"href="../../images/icons/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="180x180"href="../../images/icons/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="167x167"href="../../images/icons/touch-icon-ipad-retina.png">
+<link rel="manifest"href="../../manifest.json">
 
-<link rel="stylesheet" href="../../content/nhcd_mo/css/common.css">
-<link rel="stylesheet" href="../../content/nhcd_mo/css/contents.css">
+<link rel="stylesheet"href="../../css/common.css">
+<link rel="stylesheet"href="../../css/contents.css">
 
-<script src="../../content/nhcd_mo/js/jquery-3.3.1.min.js"></script>
-<script src="../../content/nhcd_mo/js/jquery-ui-1.12.1.min.js"></script>
-<script src="../../content/nhcd_mo/js/ui_plugins.js"></script>
-<script src="../../content/nhcd_mo/js/ui_front.js"></script>
+<script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/jquery-ui-1.12.1.min.js"></script>
+<script src="../../js/ui_plugins.js"></script>
+<script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
 		common.title('팝업 가이드');
@@ -91,19 +91,19 @@
 				<h3 class="gd__h2">레이어</h3>
 				<div class="btn_wrap mt20">
 					<div class="flex">
-						<a href="#" class="button h48" onclick="Layer.open('#fullDialog')">풀팝업</a>
+						<a href="#" class="button h48 blue" onclick="Layer.open('#fullDialog')">풀팝업</a>
 						<a href="#" class="button h48 gray" onclick="Layer.open('#modalDialog')">모달팝업</a>
 					</div>
 				</div>
 				<div class="btn_wrap mt20">
 					<div class="flex">
-						<a href="#" class="button h48" onclick="Layer.open('#bottomDialog1')">하단팝업(짧음)</a>
+						<a href="#" class="button h48 blue" onclick="Layer.open('#bottomDialog1')">하단팝업(짧음)</a>
 						<a href="#" class="button h48 gray" onclick="Layer.open('#bottomDialog2')">하단팝업(길때)</a>
 					</div>
 				</div>
 				<div class="btn_wrap mt20">
 					<div class="flex">
-						<a href="win_pop.html" class="button h48" target="_blank">팝업페이지</a>
+						<a href="win_pop.html" class="button h48 blue" target="_blank">팝업페이지</a>
 					</div>
 				</div>
 				<h3 class="gd__h2">select</h3>
@@ -113,7 +113,7 @@
 						<div class="tbl">
 							<div class="td w_120">
 								<div class="select">
-									<select id="bank_nm" name="bank_nm" title="은행 선택"><option value="">은행 선택</option><option value="002">산업은행</option><option value="003">기업은행</option><option value="004">국민은행</option><option value="081">KEB하나은행(구외환)</option><option value="007">수협중앙회</option><option value="011">농협</option><option value="020">우리은행</option><option value="023">SC제일은행</option><option value="027">씨티은행</option><option value="031">대구은행</option><option value="032">부산은행</option><option value="034">광주은행</option><option value="035">제주은행</option><option value="037">전북은행</option><option value="039">경남은행</option><option value="045">새마을금고</option><option value="048">신협</option><option value="050">상호저축은행</option><option value="071">우체국</option><option value="089">케이뱅크</option><option value="054">HSBC은행</option><option value="055">도이치은행</option><option value="057">JP모건체이스은행</option><option value="064">산림조합중앙회</option><option value="088">신한은행</option><option value="026">신한은행(구신한)</option><option value="209">유안타증권</option><option value="218">KB증권(구현대)</option><option value="230">미래에셋증권</option><option value="238">대우증권</option><option value="240">삼성증권</option><option value="243">한국투자증권</option><option value="247">NH투자증권(구우리투자)</option><option value="261">교보증권</option><option value="262">하이투자</option><option value="263">HMC증권</option><option value="265">이베스트투자증권(구이트레이드)</option><option value="266">SK증권</option><option value="267">대신증권</option><option value="268">메리츠종금증권(구아이엠투자)</option><option value="269">한화투자증권</option><option value="270">하나금융투자</option><option value="278">신한금융투자</option><option value="279">DB금융투자(구동부)</option><option value="280">유진투자증권</option><option value="287">메리츠종금증권</option><option value="289">NH농협증권</option><option value="290">부국증권</option><option value="291">신영증권</option><option value="292">케이프투자증권(구엘아이지)</option><option value="090">카카오뱅크</option></select>
+									<select id="bank_nm" name="bank_nm" title="은행 선택"><option value="">은행선택</option><option value="002">산업은행</option><option value="003">기업은행</option><option value="004">국민은행</option><option value="081">KEB하나은행(구외환)</option><option value="007">수협중앙회</option><option value="011">농협</option><option value="020">우리은행</option><option value="023">SC제일은행</option><option value="027">씨티은행</option><option value="031">대구은행</option><option value="032">부산은행</option><option value="034">광주은행</option><option value="035">제주은행</option><option value="037">전북은행</option><option value="039">경남은행</option><option value="045">새마을금고</option><option value="048">신협</option><option value="050">상호저축은행</option><option value="071">우체국</option><option value="089">케이뱅크</option><option value="054">HSBC은행</option><option value="055">도이치은행</option><option value="057">JP모건체이스은행</option><option value="064">산림조합중앙회</option><option value="088">신한은행</option><option value="026">신한은행(구신한)</option><option value="209">유안타증권</option><option value="218">KB증권(구현대)</option><option value="230">미래에셋증권</option><option value="238">대우증권</option><option value="240">삼성증권</option><option value="243">한국투자증권</option><option value="247">NH투자증권(구우리투자)</option><option value="261">교보증권</option><option value="262">하이투자</option><option value="263">HMC증권</option><option value="265">이베스트투자증권(구이트레이드)</option><option value="266">SK증권</option><option value="267">대신증권</option><option value="268">메리츠종금증권(구아이엠투자)</option><option value="269">한화투자증권</option><option value="270">하나금융투자</option><option value="278">신한금융투자</option><option value="279">DB금융투자(구동부)</option><option value="280">유진투자증권</option><option value="287">메리츠종금증권</option><option value="289">NH농협증권</option><option value="290">부국증권</option><option value="291">신영증권</option><option value="292">케이프투자증권(구엘아이지)</option><option value="090">카카오뱅크</option></select>
 								</div>
 							</div>
 							<div class="td">
@@ -131,7 +131,7 @@
 							<div class="td w_120">
 								<div class="select">
 									<select id="CrdNbr2" name="CrdNbr" title="카드 선택">
-										<option value="">카드 선택</option>
+										<option value="">카드선택</option>
 										<option value="allCard">전체카드</option>
 										<option value="nhcard">전체NH채움카드</option>
 										<option value="bccard">전체NHBC카드</option>
@@ -151,7 +151,7 @@
 				<h2 class="gd__h1">로딩</h2>
 				<div class="btn_wrap mt20">
 					<div class="flex">
-						<a href="#" class="button h48" onclick="Loading.open();$(this).next().css('z-index',10000)">Loading.open();</a>
+						<a href="#" class="button h48 blue" onclick="Loading.open();$(this).next().css('z-index',10000)">Loading.open();</a>
 						<a href="#" class="button h48 gray" onclick="Loading.close();$(this).removeAttr('style');">Loading.close();</a>
 					</div>
 				</div>
