@@ -172,6 +172,7 @@ common
 .ml30{margin-left:30px !important;}
 
 /* padding */
+.p10{padding:10px !important;}
 .pt0{padding-top:0px !important;}
 .pt5{padding-top:5px !important;}
 .pt10{padding-top:10px !important;}
@@ -510,11 +511,12 @@ div.tit_h3 .tit{font-size:1.5rem;color:#111}
 div.tit_h4 .tit{font-size:1.4rem;color:#111}
 
 /*button*/
-.button{position:relative;display:inline-block;width:auto;height:44px;line-height:42px;padding:0 11px;color:#fff;background:#3182f7;border:1px solid #3182f7;text-align:center;vertical-align:middle;font-size:1.5rem;font-weight:500;white-space:nowrap;text-decoration:none;overflow:hidden;box-sizing:border-box;border-radius:4px;-webkit-appearance:none;}
-.button.green{background:#07a814;border-color:#07a814;}
-.button.green2{background:#82c150;border-color:#82c150;}
+.button{position:relative;display:inline-block;width:auto;height:44px;line-height:42px;padding:0 11px;border:1px solid transparent;text-align:center;vertical-align:middle;font-size:1.5rem;font-weight:500;white-space:nowrap;text-decoration:none;overflow:hidden;box-sizing:border-box;border-radius:4px;-webkit-appearance:none;}
+.button.blue{background:#3182f7;border-color:#3182f7;color:#fff;}
+.button.green{background:#07a814;border-color:#07a814;color:#fff;}
+.button.green2{background:#82c150;border-color:#82c150;color:#fff;}
 .button.gray{background:#f0f0f0;border-color:#f0f0f0;color:#858585;}
-.button.black{background:#111;border-color:#333;}
+.button.black{background:#111;border-color:#333;color:#fff;}
 .button.white{background:#fff;border-color:#fff;color:#333;}
 .button:not(.line).disabled,
 .button:not(.line):disabled{border-color:#999999 !important;background-color:#999999 !important;color:#fff !important;cursor:default !important;}
@@ -827,7 +829,7 @@ html:not(.isApp) .btn_toggle li input:focus+label{box-shadow:0px 0px 1px 1px rgb
 .tabmenu{position:relative;margin-bottom:30px;}
 .ui-pop-select .tabmenu{margin-bottom:0;}
 .tabmenu:before{content:'';display:block;position:absolute;left:0;bottom:0;width:100%;height:1px;background:#ddd;}
-.section>.tabmenu{margin-left:-20px;margin-right:-20px;padding:0 20px;}
+.section>.tabmenu{margin-left:-20px;margin-right:-20px;}
 .pop_cont>.tabmenu:first-child{margin-top:-30px;}
 .popup.bottom .pop_cont>.tabmenu:first-child{margin-top:0px;}
 .tabmenu>ul{display:flex;}
