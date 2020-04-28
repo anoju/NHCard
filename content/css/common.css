@@ -556,10 +556,15 @@ div.tit_h4 .tit{font-size:1.4rem;color:#111}
 .pop_btn .button{border-radius:0;margin:0;width:auto;}
 
 /* icon in button */
-[class*=bt_ic_]{display:inline-block;vertical-align:0;background-repeat:no-repeat;background-position:center center;background-size:contain;}
+[class*=bt_ic_]{position:relative;display:inline-block;vertical-align:0;background-repeat:no-repeat;background-position:center center;background-size:contain;}
 .bt_ic_arr{width:7px;height:12px;margin-left:8px;background-image:url(../images/btn/bt_ic_arr_333.png);}
 .bt_ic_arr_down{width:10px;height:6px;margin-left:5px;background-image:url(../images/btn/bt_ic_arr_down.png);}
-.bt_ic_faceId{width:31px;height:31px;background-image:url(../images/btn/bt_ic_faceId.png);}
+.bt_ic_faceId{width:31px;height:31px;background-image:url(../images/btn/bt_ic_faceId.png);vertical-align:middle;}
+	
+.button.icon{text-align:left;height:56px;line-height:54px;padding-left:11px;padding-right:27px;}
+.button.icon [class*=bt_ic_]:first-child{margin-right:15px;}
+.button.icon .bt_ic_faceId{top:-1.5px;}
+.button.icon .bt_ic_arr{position:absolute;right:11px;top:50%;margin-top:-6px;}
 
 /* etc button */
 .btn_click_in{display:block;position:absolute;background:rgba(0,0,0,0.2);border-radius:100%;-webkit-transform:scale(0);transform:scale(0);}
@@ -858,7 +863,7 @@ html.isApp.ios.inpFocus .tab_wrap.fixed .tab_track{position:absolute;top:0;}
 .tabmenu2 ul li{display:inline-block;vertical-align:top;padding:0 4px;}
 .tabmenu2 ul li a{display:block;line-height:28px;padding:0 14px;border:1px solid #e2e2e2;color:#767676;font-size:1.4rem;border-radius:15px;}
 .tabmenu2 ul li.active a,
-.tabmenu2 ul li a.on{background-color:#e3f4e9;border-color:#b9d4c4;color:#3182f7;}
+.tabmenu2 ul li a.on{background-color:#3182f7;border-color:#3182f7;color:#fff;}
 
 /* tab-panel */
 .tab_panel,
@@ -891,7 +896,7 @@ html.isApp.ios.inpFocus .tab_wrap.fixed .tab_track{position:absolute;top:0;}
 .tooltip_cont .sub{display:block;padding-left:1rem;font-size:1.2rem;}
 .tooltip_cont .tooltip_close{display:block;position:absolute;right:10px;top:10px;width:20px;height:20px;background:url(../images/common/ico_tooltip_close.png) no-repeat center center;background-size:10px;}
 .tooltip_cont.bottom{top:auto;bottom:100%;margin-top:0;margin-bottom:10px;}
-.tooltip_cont.bottom .arr{top:auto;bottom:-6px;border-width:6px 5px 0;border-top-color:#f1f1f1;}
+.tooltip_cont.bottom .arr{top:auto;bottom:-6px;border-width:6px 5px 0;border-top-color:#f1f1f1;filter:drop-shadow(0 1px 3px rgba(0,0,0,0.05));}
 
 /*range*/
 .ui-slider{position:relative;padding:13px 0;background:none;}
