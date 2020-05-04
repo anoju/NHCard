@@ -241,7 +241,8 @@ html.isApp.ios.inpFocus #header>div{position:absolute;}
 #header h1.logo.center span{margin:0 auto;}
 html.eng #header h1.logo:before{width:190px;background-image:url(../images/eng/header_logo_eng.png);}
 #header [class*=btn_]{display:block;position:absolute;top:0;width:40px;height:50px;overflow:hidden;}
-#header .btn_back{left:5px;background:url(../images/common/head_back.png) 50% 50% no-repeat;background-size:9px auto}
+#header .btn_back{left:5px;background:url(../images/common/head_back.png) 50% 50% no-repeat;background-size:9px auto;}
+#header .btn_close{right:10px;background:url(../images/common/head_close.png) 50% 50% no-repeat;background-size:20px auto;}
 #header .btn_home{right:10px;background:url(../images/common/btn_ico_home.png) 50% 50% no-repeat;background-size:19px auto}
 #header .btn_member{right:50px;background:url(../images/common/header_btn_member.png) 50% 50% no-repeat;background-size:16px auto}
 #header .btn_member.on:after{content:'';display:block;width:5px;height:5px;position:absolute;top:12px;right:9px;border-radius:50%;background:#fc6f2a;}
