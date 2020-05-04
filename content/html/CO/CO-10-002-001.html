@@ -36,6 +36,8 @@
 <script>
 	$(function(){
 		common.title('회원가입');
+
+		//Layer.alert('연속된 문자 또는 동일한 문자는 사용할 수 없습니다.'); //비밀번호 사용불가 알럿
 	});
 </script>
 </head>
@@ -97,6 +99,19 @@
 						</div>
 					</div>
 				</div>
+				<!-- 기존ID로 회원가입 할 경우-->
+				<!-- <div class="form_item">
+					<label for="join_id2" class="fm_lb">기존 아이디</label>
+					<div class="fm_cont">
+					<div class="fm_cont">
+						<div class="tbl">
+							<div class="td">
+								<div class="input"><input type="text" id="join_id2" title="기존 아이디" value="abcde" readonly></div>
+							</div>
+						</div>
+					</div>
+				</div> -->
+				<!-- //기존ID로 회원가입 할 경우-->
 				<div class="form_item">
 					<label for="pwd" class="fm_lb">비밀번호</label>
 					<div class="fm_cont">

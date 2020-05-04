@@ -35,6 +35,8 @@ $(window).on('load',function(){
 	swiperUI.init();
 	Loading.aria();
 
+	if($('.finish_effect').length > 0) finishEffect('.finish_effect');
+
 	//이미지 미리로딩
 	var preLoadingImgArry = [
 		'/moweb/images/common/spr_ico_bank_logo.jpg',
@@ -4056,6 +4058,47 @@ var chartUI = function(target,speed){
 };
 
 /*** 애니메이션 ***/
+//완료 효과
+var finishEffect = function(wrap){
+	var $wrap = $(wrap),
+		$itemLength = 10,			//20 넘지 않게
+		rdClass, rdLeft, rdTop, rdDelay,rdDirection, rdSpeed, 
+		$html = '',
+		rdLeftAry = [];
+
+	if($wrap.hasClass('type1') || $wrap.hasClass('type3'))$itemLength = 20;
+
+	for(var i = 0; i < $itemLength;i++){
+		rdClass = randomNumber(1,3,0);
+		rdSize = randomNumber(1,3,0);
+		rdColor = (i%6) + 1;
+		rdLeft = randomNumber(0,20,0) * 5;
+		rdTop = randomNumber(2,14,0) * 5;
+		rdDelay = randomNumber(0,10,0) * 200;
+		//rdDelay = (i%10) * 200;
+		rdDirection = randomNumber(1,2,0);
+		rdSpeed = randomNumber(25,50,0) * 100;
+		
+		if(rdLeftAry.indexOf(rdLeft) >= 0){		//left 랜덤값 겹치지않게
+			i--;
+		}else{
+			rdLeftAry.push(rdLeft);
+			if($wrap.hasClass('type1')){
+				//꽃가루(2가지 모션, 3가지 컬러, 3가지 사이즈, 6가지 모양)
+				rdClass = randomNumber(1,6,0);
+				$html = '<span class="item item'+rdClass+' color'+rdColor+' size'+rdSize+'" style="left:'+rdLeft+'%;';
+					$html += '-webkit-animation:finishSwing'+rdDirection+' '+(rdSpeed/2)+'ms infinite '+rdDelay+'ms, finishDrop '+rdSpeed+'ms infinite ease-out '+rdDelay+'ms;';
+					$html += 'animation:finishSwing'+rdDirection+' '+(rdSpeed/2)+'ms infinite '+rdDelay+'ms, finishDrop '+rdSpeed+'ms infinite ease-out '+rdDelay+'ms;';
+				$html += '"><span></span></span>';
+			}else{
+				console.log('인터렉션 타입 클래스를 적용해주세요');
+				break;
+			}
+			$wrap.prepend($html);
+		}
+	}
+};
+
 //data-animation
 var scrollItem ={
 	checkInView: function(target){

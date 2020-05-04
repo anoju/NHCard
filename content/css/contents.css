@@ -192,6 +192,65 @@
 .fm_cont .fm_btn{width:96px;}
 .fm_cont .fm_btn .button{width:87px;font-size:1.4rem;font-weight:400;}
 
+/*가입완료*/
+.finish_wrap{text-align:center;}
+.finish_wrap .inner{padding:0 20px;}
+.finish_wrap .tit{font-size:2.2rem;margin-top:10px;}
+.finish_wrap .txt{margin:1.5rem 0 2.3rem;min-height:6em;}
+.finish_wrap .box{padding:12px;background:#fff;border-radius:4px;color:#8997af;text-align:left;}
+.finish_effect{position:relative;max-width:640px;margin:0 auto;overflow:hidden;text-align:center;}
+.finish_effect img{position:relative;max-width:100%;z-index:1;}
+.finish_effect .item{display:block;width:8px;height:8px;position:absolute;top:-20%;left:50%;margin-left:-4px;opacity:0;box-sizing:border-box;}
+.finish_effect.type1 .item span,
+.finish_effect.type1 .item span:before{content:'';display:block;position:absolute;left:0;top:0;width:100%;height:100%;}
+.finish_effect.type1 .color1 span:before{background:#b82525;}
+.finish_effect.type1 .color2 span:before{background:#a12460;}
+.finish_effect.type1 .color3 span:before{background:#f399c5;}
+.finish_effect.type1 .color4 span:before{background:#3081c2;}
+.finish_effect.type1 .color5 span:before{background:#d2f583;}
+.finish_effect.type1 .color6 span:before{background:#e2c220;}
+.finish_effect.type1 .size1,
+.finish_effect.type1 .size2{z-index:2;}
+.finish_effect.type1 .size3{filter:blur(1px);}
+.finish_effect.type1 .size2 span{-webkit-transform:scale(0.7);transform:scale(0.7);}
+.finish_effect.type1 .size3 span{-webkit-transform:scale(0.4);transform:scale(0.4);}
+.finish_effect.type1 .item1 span:before{-webkit-transform:skewX(-15deg);transform:skewX(-15deg);}
+.finish_effect.type1 .item2 span:before{-webkit-transform:skewX(25deg);transform:skewX(25deg);}
+.finish_effect.type1 .item3 span:before{-webkit-transform:skewX(-35deg);transform:skewX(-35deg);}
+.finish_effect.type1 .item4 span:before{-webkit-transform:skewX(45deg);transform:skewX(45deg);}
+.finish_effect.type1 .item5 span:before{-webkit-transform:skewX(-55deg);transform:skewX(-55deg);}
+.finish_effect.type1 .item6 span:before{-webkit-transform:skewX(65deg);transform:skewX(65deg);}
+@-webkit-keyframes finishSwing1{
+	0%{-webkit-transform:rotate(30deg) rotateX(0) translateX(-100%);transform:rotate(30deg) rotateX(0) translateX(-100%);}
+	50%{-webkit-transform:rotate(-30deg) rotateX(0) translateX(100%);transform:rotate(-30deg) rotateX(0) translateX(100%);}
+	100%{-webkit-transform:rotate(30deg) rotateX(0) translateX(-100%);transform:rotate(30deg) rotateX(0) translateX(-100%);}
+}
+@keyframes finishSwing1{
+	0%{-webkit-transform:rotate(30deg) rotateX(0) translateX(-100%);transform:rotate(30deg) rotateX(0) translateX(-100%);}
+	50%{-webkit-transform:rotate(-30deg) rotateX(0) translateX(100%);transform:rotate(-30deg) rotateX(0) translateX(100%);}
+	100%{-webkit-transform:rotate(30deg) rotateX(0) translateX(-100%);transform:rotate(30deg) rotateX(0) translateX(-100%);}
+}
+@-webkit-keyframes finishSwing2{
+	0%{-webkit-transform:rotate(-30deg) rotateX(0) translateX(100%);transform:rotate(-30deg) rotateX(0) translateX(100%);}
+	50%{-webkit-transform:rotate(30deg) rotateX(0) translateX(-100%);transform:rotate(30deg) rotateX(0) translateX(-100%);}
+	100%{-webkit-transform:rotate(-30deg) rotateX(0) translateX(100%);transform:rotate(-30deg) rotateX(0) translateX(100%);}
+}
+@keyframes finishSwing2{
+	0%{-webkit-transform:rotate(-30deg) rotateX(0) translateX(100%);transform:rotate(-30deg) rotateX(0) translateX(100%);}
+	50%{-webkit-transform:rotate(30deg) rotateX(0) translateX(-100%);transform:rotate(30deg) rotateX(0) translateX(-100%);}
+	100%{-webkit-transform:rotate(-30deg) rotateX(0) translateX(100%);transform:rotate(-30deg) rotateX(0) translateX(100%);}
+}
+@-webkit-keyframes finishDrop{
+	0%{top:0%;opacity:0;}
+	20%,80%{opacity:1;}
+	100%{top:100%;opacity:0;}
+}
+@keyframes finishDrop{
+	0%{top:0%;opacity:0;}
+	20%,80%{opacity:1;}
+	100%{top:100%;opacity:0;}
+}
+
 /*공지사항*/
 .txt_box_head{padding-bottom:30px;border-bottom:1px solid #ddd;}
 .txt_box_head h2{padding-bottom:15px;font-size:1.5rem;color:#111;}
@@ -212,3 +271,4 @@
 .txt_box_content img{margin-top:20px;width:100%;}
 .txt_box_content .table{margin-top:24px;}
 .txt_box_content .table table th,.txt_box_content .table table td{padding:11px;text-align:center;border-width:0 0 1px 0;}
+

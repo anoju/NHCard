@@ -332,6 +332,8 @@ html.ie9 #gnb.show{right:0;}
 #contents{padding:30px 0;}
 #container.ty2{background:#f8f8f8;min-height:calc(100vh - 120px);}
 #container.ty2 #contents{padding:0;min-height:calc(100vh - 120px);}
+#container.ty3{background:#eefcff;min-height:calc(100vh - 104px);}
+#container.ty3 #contents{padding:0;min-height:calc(100vh - 104px);}
 .section{padding:0 20px;}
 .section .outer{margin-left:-20px;margin-right:-20px;}
 
@@ -583,6 +585,7 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 .input input[type="date"]{position:absolute;right:0;top:0;width:55px;height:100%;opacity:0;padding-right:0;}
 .input input[type="password"],
 .input input.no_del{padding-right:11px;}
+.input input[readonly],
 .input input:disabled{background:#f0f0f0;color:#858585;}
 .input input:disabled+.ui-datepicker-trigger{opacity:0.3;z-index:-1;}
 .input+.input{margin-top:6px;}
