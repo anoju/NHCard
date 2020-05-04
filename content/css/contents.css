@@ -187,6 +187,10 @@
 .line_list_2 .txt_noti{color:#3182f7;font-weight:400;margin-right:0.3em;}
 .line_list_2 .ico_new{vertical-align:-3px;margin-left:0.3em;}
 
+/*로그인*/
+.login_box .button{margin-top:10px;width:100%;}
+.cont_box.lock_num .cont_txt{font-size:1.7rem;color:#111;font-weight:500;}
+
 /*회원가입*/
 .form_item+.accordion_list{margin-top:35px;}
 .fm_cont .fm_btn{width:96px;}

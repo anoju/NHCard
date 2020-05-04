@@ -63,7 +63,9 @@
 				<div class="cont">
 					<div class="swipe-container">
 						<div class="swiper-wrapper">
+							<!--잠금번호-->
 							<div class="swiper-slide">
+								<!--잠금번호가 없을 때-->
 								<div class="cont_box">
 									<div class="cont_txt">설정된 잠금번호가 없어요<br>잠금번호 설정 후 이용해 주세요</div>
 									<div class="btn_wrap">
@@ -72,12 +74,14 @@
 										</div>
 									</div>
 								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="cont_box">
-									<div class="btn_wrap">
-										<div class="flex">
-											<a href="#" class="button line icon"><i class="bt_ic_finger" aria-hidden="true"></i>지문인증으로 로그인하기<i class="bt_ic_arr" aria-hidden="true"></i></a>
+								<!--잠금번호가 있을 때-->
+								<div class="cont_box lock_num">
+									<div class="cont_txt">잠금번호 6자리를 입력해 주세요</div>
+
+									<div class="fm_cont phone">
+										<div class="password">
+											<div class="dot" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+											<input type="password" maxlength="6" title="비밀번호 입력">
 										</div>
 									</div>
 									<div class="tbl">
@@ -93,14 +97,87 @@
 									</div>
 								</div>
 							</div>
+							<!--지문-->
 							<div class="swiper-slide">
-								<div class="cont_box">33</div>
+								<!--설정된 지문이 없을 때-->
+								<div class="cont_box">
+									<div class="cont_txt">설정된 지문이 없어요<br>지문 설정 후 이용해 주세요</div>
+									<div class="btn_wrap">
+										<div class="flex">
+											<a href="#" class="button line icon"><i class="bt_ic_finger" aria-hidden="true"></i>지문 설정<i class="bt_ic_arr" aria-hidden="true"></i></a>
+										</div>
+									</div>
+								</div>
+								<!--설정된 지문이 있을 때-->
+								<div class="cont_box">
+									<div class="btn_wrap">
+										<div class="flex">
+											<a href="#" class="button line icon"><i class="bt_ic_finger" aria-hidden="true"></i>지문인증으로 로그인하기<i class="bt_ic_arr" aria-hidden="true"></i></a>
+										</div>
+									</div>
+									<div class="tbl mt40">
+										<div class="td t_left va_mid">
+											<a href="#" class="btn_link gray">결제비밀번호 로그인<i class="bt_ic_arr" aria-hidden="true"></i></a>
+										</div>
+										<div class="td t_right va_mid">
+											<span class="checkbox switch">
+												<input type="checkbox" id="switchChk2"><i aria-hidden="true"></i>
+												<label for="switchChk2" class="lbl">자동로그인</label>
+											</span>
+										</div>
+									</div>
+								</div>
 							</div>
+							<!--아이디-->
 							<div class="swiper-slide">
-								<div class="cont_box">44</div>
+								<div class="cont_box">
+									<div class="login_box">
+										<div class="input">
+											<input type="text" title="아이디 입력" placeholder="아이디 입력">
+										</div>
+										<div class="input">
+											<input type="password" title="비밀번호 입력" placeholder="비밀번호 입력">
+										</div>
+										<a href="#" class="button blue">로그인</a>
+									</div>
+									<div class="tbl mt10">
+										<div class="td t_left va_mid">
+											<a href="#" class="btn_link gray">아이디/비밀번호 찾기<i class="bt_ic_arr" aria-hidden="true"></i></a>
+										</div>
+										<div class="td t_right va_mid">
+											<span class="checkbox">
+												<input type="checkbox" id="chk2" checked=""><i aria-hidden="true"></i>
+												<label for="chk2" class="lbl">아이디저장</label>
+											</span>
+										</div>
+									</div>
+								</div>
 							</div>
+							<!--공인인증서-->
 							<div class="swiper-slide">
-								<div class="cont_box">55</div>
+								<div class="cont_box">
+									<div class="btn_wrap">
+										<div class="flex">
+											<a href="#" class="button line icon"><i class="bt_ic_certify" aria-hidden="true"></i>공인인증서로 로그인하기<i class="bt_ic_arr" aria-hidden="true"></i></a>
+										</div>
+									</div>
+									<div class="tbl mt40">
+										<div class="td va_mid t_center">
+											<a href="#" class="btn_link gray">공인인증서 등록<i class="bt_ic_arr" aria-hidden="true"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--올원페이-->
+							<div class="swiper-slide">
+								<div class="cont_box">
+									<div class="cont_txt">올원페이 앱카드로<br>로그인 할 수 있어요</div>
+									<div class="btn_wrap">
+										<div class="flex">
+											<a href="#" class="button line icon"><i class="bt_ic_allone" aria-hidden="true"></i>올원페이로 로그인하기<i class="bt_ic_arr" aria-hidden="true"></i></a>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
