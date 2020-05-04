@@ -55,7 +55,8 @@
 .pop_head .pop_close,
 .pop_close.last_focus{display:block;position:absolute;top:9px;right:15px;width:30px;height:30px;background:url(../images/common/pop_close.png) 50% 50% no-repeat;background-size:20px auto;border-radius:100%}
 .pop_close.last_focus{background:none !important;opacity:0;}
-.pop_cont{padding:80px 0 30px;overflow:auto;box-sizing:border-box;-webkit-overflow-scrolling:touch;}
+.pop_cont{padding:30px 0;overflow:auto;box-sizing:border-box;-webkit-overflow-scrolling:touch;}
+.pop_head+.pop_cont{padding-top:80px;}
 .pop_head.no_head+.pop_cont{padding-top:30px;}
 .pop_cont:after{content:'';display:block;clear:both;}
 .pop_cont.after_btn:after{height:48px;}
@@ -66,7 +67,7 @@ html.iPhoneX.isApp .popup:not(.modal) .pop_cont .in_touch_scl{height:calc(100vh 
 .popup.full .pop_wrap{height:100%;-webkit-transition-timing-function:cubic-bezier(0.2,0.6,0,1);transition-timing-function:cubic-bezier(0.2,0.6,0,1);}
 .popup.full .pop_wrap .pop_cont{height:100%;}
 .popup.full .pop_head h1,
-.pop_wrap.win .pop_head h1{border-bottom:1px solid #dadada;}
+.pop_wrap.win .pop_head h1{border-bottom:1px solid #ddd;}
 .popup.full.ui-pop-select .pop_cont{padding-bottom:0;}
 .popup.bottom{/*padding-top:50vh;*/padding-top:100px;}
 .popup.bottom .pop_wrap{position:fixed;left:0;bottom:0;border-radius:10px 10px 0 0;/*max-height:calc(50vh);*/}
