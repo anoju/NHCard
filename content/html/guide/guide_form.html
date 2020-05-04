@@ -464,7 +464,7 @@
 					<label for="inputText4" class="fm_lb">여러개 error 표시 할때</label>
 					<div class="fm_cont">
 						<div class="input"><input type="text" id="inputText4" placeholder="내용을 입력하세요" value="입력된 내용입니다."></div>
-						<div class="input"><input type="text"placeholder="내용을 입력하세요" value="입력된 내용입니다."></div>
+						<div class="input"><input type="text" placeholder="내용을 입력하세요" value="입력된 내용입니다."></div>
 						<div class="error_txt" style="display:block;">이름을 입력해주세요.</div><!-- 에러메세지 입력영역 -->
 					</div>
 				</div>
@@ -480,6 +480,18 @@
 					<div class="fm_cont">
 						<div class="input checked"><input type="text" id="inputText6" placeholder="내용을 입력하세요" value="입력된 내용입니다."></div><!-- checked 클래스 -->
 						<div class="error_txt checked" style="display:block;">확인되었습니다.</div><!-- display:block;, checked 클래스 -->
+					</div>
+				</div>
+
+				<div class="form_item">
+					<label for="pwd" class="fm_lb">유효성 체크</label>
+					<div class="fm_cont">
+						<div class="input"><input type="password" id="pwd" placeholder="새 비밀번호 입력"></div>
+						<div class="help_txt">영문+숫자+특수문자10~15자리, 사용가능 특수문자 ! ,@,#, $,%,^,&,*,(,)</div>
+						<ul class="validation_check">
+							<li class="com">영문+숫자+특수문자</li><!--조건 완료시 com 클래스 추가-->
+							<li class="err">10~15자리</li><!--조건 오류시 err 클래스 추가-->
+						</ul>
 					</div>
 				</div>
 
@@ -695,23 +707,23 @@
 					<div class="fm_cont">
 						<ul class="btn_toggle grid col5 ui-tab-rdo" data-hide="#datepickerTxt">
 							<li>
-								<input type="radio" id="date1M"" name="togDate" value="1" checked>
+								<input type="radio" id="date1M" name="togDate" value="1" checked>
 								<label for="date1M"><span>1개월</span></label>
 							</li>
 							<li>
-								<input type="radio" id="date3M"" name="togDate" value="3">
+								<input type="radio" id="date3M" name="togDate" value="3">
 								<label for="date3M"><span>3개월</span></label>
 							</li>
 							<li>
-								<input type="radio" id="date6M"" name="togDate" value="6">
+								<input type="radio" id="date6M" name="togDate" value="6">
 								<label for="date6M"><span>6개월</span></label>
 							</li>
 							<li>
-								<input type="radio" id="date12M"" name="togDate" value="12">
+								<input type="radio" id="date12M" name="togDate" value="12">
 								<label for="date12M"><span>1년</span></label>
 							</li>
 							<li>
-								<input type="radio" id="dateEtc"" name="togDate" value="etc" data-show="#datepickerTxt">
+								<input type="radio" id="dateEtc" name="togDate" value="etc" data-show="#datepickerTxt">
 								<label for="dateEtc"><span>직접입력</span></label>
 							</li>
 						</ul>
@@ -967,7 +979,7 @@
 					<div class="fm_cont">
 						<div class="tbl">
 							<div class="td">
-								<div class="input"><input type="tel" id="cardNum5" class="no_del" maxlength="16" title="카드번호 첫번째 4자리 입력" placeholder="&prime;-&prime; 없이 16자리 입력"></div>
+								<div class="input"><input type="tel" id="cardNum5" class="no_del" maxlength="16" title="카드번호" placeholder="&prime;-&prime; 없이 16자리 입력"></div>
 							</div>
 						</div>
 						<div class="error_txt">카드번호를 정확하게 입력해주세요.</div><!-- 에러메세지 입력영역 -->
