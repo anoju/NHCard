@@ -4074,10 +4074,10 @@ var finishEffect = function(wrap){
 		rdColor = (i%6) + 1;
 		rdLeft = randomNumber(0,20,0) * 5;
 		rdTop = randomNumber(2,14,0) * 5;
-		rdDelay = randomNumber(0,10,0) * 200;
+		rdDelay = randomNumber(0,10,0) * 400;
 		//rdDelay = (i%10) * 200;
 		rdDirection = randomNumber(1,2,0);
-		rdSpeed = randomNumber(25,50,0) * 100;
+		rdSpeed = randomNumber(35,50,0) * 150;
 		
 		if(rdLeftAry.indexOf(rdLeft) >= 0){		//left 랜덤값 겹치지않게
 			i--;
