@@ -66,7 +66,7 @@ html.iPhoneX.isApp .popup:not(.modal) .pop_cont .in_touch_scl{height:calc(100vh 
 .popup.full .pop_wrap{height:100%;-webkit-transition-timing-function:cubic-bezier(0.2,0.6,0,1);transition-timing-function:cubic-bezier(0.2,0.6,0,1);}
 .popup.full .pop_wrap .pop_cont{height:100%;}
 .popup.full .pop_head h1,
-.pop_wrap.win .pop_head h1{border-bottom:1px solid #dadada;}
+.pop_wrap.win .pop_head h1{border-bottom:1px solid #ddd;}
 .popup.full.ui-pop-select .pop_cont{padding-bottom:0;}
 .popup.bottom{/*padding-top:50vh;*/padding-top:100px;}
 .popup.bottom .pop_wrap{position:fixed;left:0;bottom:0;border-radius:10px 10px 0 0;/*max-height:calc(50vh);*/}

@@ -35,18 +35,87 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('기타');
+		common.title('로그인');
+		buttonUI.swipeTab();	//잠금번호
+		//buttonUI.swipeTab(1);	//지문 바로 활성화시킬때
+		//buttonUI.swipeTab(2);	//아이디 바로 활성화시킬때
+		//buttonUI.swipeTab(3);	//공인인증서 바로 활성화시킬때
+		//buttonUI.swipeTab(4);	//올원페이 바로 활성화시킬때
 	});
 </script>
 </head>
 <body>
 <article id="wrap">
-	<div data-include-html="../include/top.html"></div>
+	<div data-include-html="../include/top_logo.html"></div>
 	<div data-include-html="../include/gnb.html"></div>
-	<div id="container">
+	<div id="container" class="ty2">
 		<section id="contents">
+			<div class="swipe_tab">
+				<div class="navi">
+					<ul>
+						<li><a href="#"><span>잠금번호</span></a></li>
+						<li><a href="#"><span>지문</span></a></li>
+						<li><a href="#"><span>아이디</span></a></li>
+						<li><a href="#"><span>공인인증서</span></a></li>
+						<li><a href="#"><span>올원페이</span></a></li>
+					</ul>
+				</div>
+				<div class="cont">
+					<div class="swipe-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="cont_box">
+									<div class="cont_txt">설정된 잠금번호가 없어요<br>잠금번호 설정 후 이용해 주세요</div>
+									<div class="btn_wrap">
+										<div class="flex">
+											<a href="#" class="button line icon"><i class="bt_ic_setting" aria-hidden="true"></i>잠금번호 설정<i class="bt_ic_arr" aria-hidden="true"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="cont_box">
+									<div class="btn_wrap">
+										<div class="flex">
+											<a href="#" class="button line icon"><i class="bt_ic_finger" aria-hidden="true"></i>지문인증으로 로그인하기<i class="bt_ic_arr" aria-hidden="true"></i></a>
+										</div>
+									</div>
+									<div class="tbl">
+										<div class="td t_left va_mid">
+											<a href="#" class="btn_link gray">결제비밀번호 로그인<i class="bt_ic_arr" aria-hidden="true"></i></a>
+										</div>
+										<div class="td t_right va_mid">
+											<span class="checkbox switch">
+												<input type="checkbox" id="switchChk"><i aria-hidden="true"></i>
+												<label for="switchChk" class="lbl">자동로그인</label>
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="cont_box">33</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="cont_box">44</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="cont_box">55</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab_pagination" aria-hidden="true"></div>
+				</div>
+				<div class="btn_wrap">
+					<div class="flex">
+						<a href="#" class="button white">카드신청</a>
+						<a href="#" class="button white">회원가입</a>
+					</div>
+				</div>
+			</div>
 		</section>
 	</div>
+	<div data-include-html="../include/floatingBar.html"></div>
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>
