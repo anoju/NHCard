@@ -548,7 +548,9 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 .bt_ic_faceId{width:31px;height:31px;background-image:url(../images/btn/bt_ic_faceId.png);vertical-align:middle;}
 .bt_ic_setting{width:31px;height:31px;background-image:url(../images/btn/bt_ic_setting.png);vertical-align:middle;}
 .bt_ic_finger{width:26px;height:31px;background-image:url(../images/btn/bt_ic_finger.png);vertical-align:middle;}
-	
+.bt_ic_allone{width:34px;height:14px;background-image:url(../images/btn/bt_ic_allone.png);vertical-align:middle;}
+.bt_ic_certify{width:23px;height:28px;background-image:url(../images/btn/bt_ic_certify.png);vertical-align:middle;}
+
 .button.icon{text-align:left;height:56px;line-height:54px;padding-left:11px;padding-right:27px;}
 .button.icon [class*=bt_ic_]:first-child{margin-right:15px;top:-1.5px;}
 .button.icon .bt_ic_arr{position:absolute;right:11px;top:50%;margin-top:-6px;}
@@ -653,8 +655,9 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 
 .password{position:relative;padding:30px 0;}
 .password .dot{text-align:center;}
-.password .dot span{position:relative;display:inline-block;width:18px;height:18px;margin:0 5px;border-radius:50%;background:#858585;vertical-align:top;overflow:hidden;}
-.password .dot span:before{content:'';display:block;position:absolute;left:-150%;top:0;width:100%;height:100%;border-radius:50%;background:#111;-webkit-transition:0.3s;transition:0.3s;}
+.password .dot span{position:relative;display:inline-block;width:11px;height:11px;margin:0 5px;border-radius:50%;background:#ddd;vertical-align:middle;overflow:hidden;}
+.password .dot span:before{content:'';display:block;position:absolute;left:-150%;top:0;width:100%;height:100%;border-radius:50%;background:#333;-webkit-transition:0.3s;transition:0.3s;}
+.password .dot span.on{width:14px;height:14px;}
 .password .dot span.on:before{left:0;}
 .password input{position:absolute;top:0;left:0;width:100%;height:100%;background:none;border:0 none;color:transparent;opacity:0;}
 
