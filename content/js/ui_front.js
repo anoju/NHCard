@@ -3643,6 +3643,11 @@ var swiperUI = {
 									if($swiper != undefined){
 										var $length = $swiper.pagination.bullets.length;
 										swiperUI.focusAria($this,$swiper.snapIndex,$itemLength-$length);
+
+										var $autoCtl = $this.closest('.ui-swiper-wrap').find('.swiper-auto-ctl');
+										if($autoCtl.length){
+											$autoCtl.addClass('play').find('.blind').changeTxt('중지','시작');
+										}
 									}
 								}
 							}

@@ -58,6 +58,9 @@
 .pop_cont{padding:30px 0;overflow:auto;box-sizing:border-box;-webkit-overflow-scrolling:touch;}
 .pop_head+.pop_cont{padding-top:80px;}
 .pop_head.no_head+.pop_cont{padding-top:30px;}
+.pop_tit{font-size:1.8rem;color:#111;font-weight:500;margin:10px 0;}
+.pop_tit_wrap{text-align:center;padding-top:15px;margin-bottom:20px;}
+.pop_tit_wrap [class*=i_ico_]+.pop_tit{margin-top:20px;}
 .pop_cont:after{content:'';display:block;clear:both;}
 .pop_cont.after_btn:after{height:48px;}
 html.iPhoneX.isApp .popup:not(.modal) .pop_cont.after_btn:after{height:65px;}
