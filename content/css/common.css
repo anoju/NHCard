@@ -1034,6 +1034,7 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .i_ico_88.ico_3{background-image:url(../images/common/ico_88_03.png);}
 .i_ico_88.ico_4{background-image:url(../images/common/ico_88_04.png);}
 .i_ico_88.ico_5{background-image:url(../images/common/ico_88_05.png);}
+.i_ico_88.ico_6{background-image:url(../images/common/ico_88_06.png);}
 
 /* scl_datepicker */
 .scl_cal_wrap{display:none;position:relative;margin-top:-4px;padding-top:4px;border:1px solid #ddd;border-top-width:0;overflow:hidden;}
