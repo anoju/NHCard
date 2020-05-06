@@ -42,12 +42,44 @@
 		//buttonUI.swipeTab(3);	//공인인증서 바로 활성화시킬때
 		//buttonUI.swipeTab(4);	//올원페이 바로 활성화시킬때
 
+		//다른기기 사용안내 팝업
+		//Layer.open('#otherDeviceChkPop');
+
+		//잠금번호 불일치 팝업
+		//Layer.open('#lockPwdChkPop');
+
+		//잠금번호 5회오류 팝업
+		//Layer.open('#lockPwdFailPop');
+
+		//자동로그인
 		$('#autoLogin1,#autoLogin2').click(function(e){
 			e.preventDefault();
-			console.log('aaa')
+			var $target = e.target,
+				$this = $(this),
+				$checked = $this.prop('checked');
+			if($checked == true){
+				Layer.open('#autoLoginSettingPop');
+				$('#autoLoginSettingPop').data('id',$($target).attr('id'));
+			}else{
+				Layer.confirm('자동로그인을 해제 하시겠습니까?',function(e){
+					if(e){
+						$this.prop('checked',false);
+					}
+				});
+			}
+		});
+		$('#autoLoginSettingPop #autoLoginOK').click(function(e){
+			e.preventDefault()
+			var $id = $('#autoLoginSettingPop').data('id');
+			Layer.close('#autoLoginSettingPop');
+			if($id != undefined){
+				$('#'+$id).prop('checked',true);
+			}
 		});
 
-		Layer.open('#autoLoginSettingPop');
+		//지문팝업
+		Layer.open('#fingerGuidePop');
+
 	});
 </script>
 </head>
@@ -94,7 +126,7 @@
 										</div>
 										<div class="tbl">
 											<div class="td t_left va_mid">
-												<a href="#" class="btn_link gray">결제비밀번호 로그인<i class="bt_ic_arr" aria-hidden="true"></i></a>
+												<button type="button" class="btn_link gray">결제비밀번호 로그인<i class="bt_ic_arr" aria-hidden="true"></i></button>
 											</div>
 											<div class="td t_right va_mid">
 												<span class="checkbox switch">
@@ -120,7 +152,7 @@
 									<div class="cont_box">
 										<div class="btn_wrap">
 											<div class="flex">
-												<a href="#" class="button line icon"><i class="bt_ic_finger" aria-hidden="true"></i>지문인증으로 로그인하기<i class="bt_ic_arr" aria-hidden="true"></i></a>
+												<button type="button" class="button line icon" disabled><i class="bt_ic_finger" aria-hidden="true"></i>지문인증으로 로그인하기<i class="bt_ic_arr" aria-hidden="true"></i></button>
 											</div>
 										</div>
 										<div class="tbl mt40">
@@ -221,7 +253,72 @@
 		</section>
 	</div>
 
-	<!-- 자동로그인 설정 -->
+	<!-- 다른기기 사용안내 팝업 -->
+	<div id="otherDeviceChkPop" class="popup modal" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_cont">
+				<div class="section t_center">
+					<i class="i_ico_50 ico_2" aria-hidden="true"></i>
+					<h2 class="pop_tit fz_14">다른기기에서 잠금번호 또는 <br>지문을 사용 중입니다.</h2>
+					<div>사용설정을 진행 할 경우 이전기기에 등록 된 잠금번호 및 지문이 초기화 됩니다.</div>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h48 blue ui-pop-close">확인</a><!-- ui-pop-close클래스로 팝업 닫기 가능 -->
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- //다른기기 사용안내 팝업 -->
+
+	<!-- 잠금번호 불일치 팝업 -->
+	<div id="lockPwdChkPop" class="popup modal" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_cont">
+				<div class="section t_center">
+					<i class="i_ico_50 ico_2" aria-hidden="true"></i>
+					<h2 class="pop_tit fz_14">잠금번호가 일치하지 않습니다.<br>
+					확인 후 다시 입력해 주세요. <strong class="fc_red">(1/5)</strong></h2>
+					<div class="fz_13 fc_bluegray"><span aria-hidden="true">※</span>5회 연속 실패 시 로그인 제한</div>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h48 blue ui-pop-close">확인</a><!-- ui-pop-close클래스로 팝업 닫기 가능 -->
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- //잠금번호 불일치 팝업 -->
+
+	<!-- 잠금번호 5회오류 팝업 -->
+	<div id="lockPwdFailPop" class="popup modal" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_cont">
+				<div class="section t_center">
+					<i class="i_ico_50 ico_2" aria-hidden="true"></i>
+					<h2 class="pop_tit fz_14">잠금번호 5회 오류로<br>
+					로그인이 제한되었습니다.</h2>
+					<div>잠금번호 설정 후 다시 시도해 주세요.</div>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h48 blue ui-pop-close">확인</a><!-- ui-pop-close클래스로 팝업 닫기 가능 -->
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- //잠금번호 5회오류 팝업 -->
+
+	<!-- 자동로그인 설정 팝업 -->
 	<div id="autoLoginSettingPop" class="popup modal" role="dialog" aria-hidden="true">
 		<article class="pop_wrap">
 			<div class="pop_cont">
@@ -242,14 +339,34 @@
 			<div class="pop_btn btn_wrap bottom_fixed">
 				<div>
 					<div class="flex">
-						<a href="#" class="button h48 gray ui-pop-close">취소</a>
-						<a href="#" class="button h48 blue">자동로그인 설정</a>
+						<a href="#" class="button h48 gray ui-pop-close">취소</a><!-- ui-pop-close클래스로 팝업 닫기 가능 -->
+						<a href="#" class="button h48 blue" id="autoLoginOK">자동로그인 설정</a>
 					</div>
 				</div>
 			</div>
 		</article>
 	</div>
-	<!-- //자동로그인 설정 -->
+	<!-- //자동로그인 설정 팝업 -->
+
+	<!-- 잠금번호 5회오류 팝업 -->
+	<div id="fingerGuidePop" class="popup modal" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_cont">
+				<div class="section t_center">
+					<i class="i_ico_88 ico_5" aria-hidden="true"></i>
+					<div>지문을 센서에 터치하여<br>인증해 주세요.</div>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h48 gray ui-pop-close">취소</a><!-- ui-pop-close클래스로 팝업 닫기 가능 -->
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- //잠금번호 5회오류 팝업 -->
 
 	<div data-include-html="../include/floatingBar.html"></div>
 	<div data-include-html="../include/footer.html"></div>

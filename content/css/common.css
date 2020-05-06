@@ -95,6 +95,7 @@ common
 .fc_gray{color:#666;}
 .fc_gray2{color:#858585;}
 .fc_gray3{color:#ddd;}
+.fc_bluegray{color:#8997af;}
 
 /* align */
 .t_center{text-align:center !important;}
@@ -463,6 +464,8 @@ component
 .flex{display:-webkit-flex;display:flex;}
 .flex>*{display:block;flex-grow:1;}
 /*.flex:not([class^=ty])>*{-webkit-box-flex:1;-webkit-flex:1 100%;flex:1 100%;}*/
+.flex.ty2>*,
+.flex.ty3>*{width:auto !important;}
 .flex.ty2>*:first-child{width:100px !important;flex-grow:0;}
 .flex.ty3>*:first-child{width:60px !important;flex-grow:0;}
 .tbl{display:table;width:100%;}
@@ -542,8 +545,8 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 
 .btn_wrap.bottom_fixed{margin-top:0;}
 .btn_wrap.bottom_fixed>div{position:fixed;left:0;bottom:0;width:100%;margin-top:0;z-index:100;}
-.btn_wrap.bottom_fixed .button{border-radius:0;margin:0;width:auto;}
-.pop_btn .button{border-radius:0;margin:0;width:auto;}
+.btn_wrap.bottom_fixed .button{border-radius:0;margin:0;/*width:auto;*/}
+.pop_btn .button{border-radius:0;margin:0;/* width:auto;*/}
 
 /* icon in button */
 [class*=bt_ic_]{position:relative;display:inline-block;vertical-align:0;background-repeat:no-repeat;background-position:center center;background-size:contain;}
