@@ -551,12 +551,19 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 /* icon in button */
 [class*=bt_ic_]{position:relative;display:inline-block;vertical-align:0;background-repeat:no-repeat;background-position:center center;background-size:contain;}
 .bt_ic_arr{width:7px;height:12px;margin-left:8px;background-image:url(../images/btn/bt_ic_arr_333.png);}
+:disabled>.bt_ic_arr{background-image:url(../images/btn/bt_ic_arr_333_off.png);}
 .bt_ic_arr_down{width:10px;height:6px;margin-left:5px;background-image:url(../images/btn/bt_ic_arr_down.png);}
+:disabled>.bt_ic_arr_down{background-image:url(../images/btn/bt_ic_arr_down_off.png);}
 .bt_ic_faceId{width:31px;height:31px;background-image:url(../images/btn/bt_ic_faceId.png);vertical-align:middle;}
+:disabled>.bt_ic_faceId{background-image:url(../images/btn/bt_ic_faceId_off.png);}
 .bt_ic_setting{width:31px;height:31px;background-image:url(../images/btn/bt_ic_setting.png);vertical-align:middle;}
+:disabled>.bt_ic_setting{background-image:url(../images/btn/bt_ic_setting_off.png);}
 .bt_ic_finger{width:26px;height:31px;background-image:url(../images/btn/bt_ic_finger.png);vertical-align:middle;}
+:disabled>.bt_ic_finger{background-image:url(../images/btn/bt_ic_finger_off.png);}
 .bt_ic_allone{width:34px;height:14px;background-image:url(../images/btn/bt_ic_allone.png);vertical-align:middle;}
+:disabled>.bt_ic_allone{background-image:url(../images/btn/bt_ic_allone_off.png);}
 .bt_ic_certify{width:23px;height:28px;background-image:url(../images/btn/bt_ic_certify.png);vertical-align:middle;}
+:disabled>.bt_ic_certify{background-image:url(../images/btn/bt_ic_certify_off.png);}
 
 .button.icon{text-align:left;height:56px;line-height:54px;padding-left:11px;padding-right:27px;}
 .button.icon [class*=bt_ic_]:first-child{margin-right:15px;top:-1.5px;}
@@ -1030,7 +1037,10 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .i_ico_20.ico_2{background-position:0 -20px;}
 .i_ico_50{position:relative;width:50px;height:50px;background-color:#3182f7;border-radius:100%;background-size:50px auto;}
 .i_ico_50.ico_1:before{content:'';position:absolute;top:18px;left:50%;margin-left:-10px;display:block;box-sizing:border-box;width:20px;height:10px;border:3px solid #fff;border-top:none;border-right:none;-webkit-transform:rotate(-43deg);transform:rotate(-43deg);}
-.i_ico_50.ico_2{background-color:#f8f8f8;background-image:url(../images/common/ico_50_2.png);}
+.i_ico_50.ico_2{background-color:#f8f8f8;background-image:url(../images/common/ico_50_02.png);}
+.i_ico_80{width:80px;height:80px;background-color:#f8f8f8;border-radius:100%;background-size:80px auto;}
+.i_ico_80.ico_1{background-image:url(../images/common/ico_80_01.png);}
+.i_ico_80.ico_2{background-image:url(../images/common/ico_80_02.png);}
 .i_ico_88{width:88px;height:88px;background-color:#f8f8f8;border-radius:100%;background-size:88px auto;}
 .i_ico_88.ico_1{background-image:url(../images/common/ico_88_01.png);}
 .i_ico_88.ico_2{background-image:url(../images/common/ico_88_02.png);}
