@@ -330,6 +330,7 @@ html.ie9 #gnb.show{right:0;}
 .isApp #container{min-height:calc(100vh - 120px);}
 .chatbot #container{padding-bottom:60px;}
 #contents{padding:30px 0;}
+#container.bg_gray{background-color:#f8f8f8;}
 #container.ty2{background:#f8f8f8;min-height:calc(100vh - 120px);}
 #container.ty2 #contents{padding:0;min-height:calc(100vh - 120px);}
 #container.ty3{background:#eefcff;min-height:calc(100vh - 104px);}
@@ -338,7 +339,7 @@ html.ie9 #gnb.show{right:0;}
 .section .outer{margin-left:-20px;margin-right:-20px;}
 
 [class*=min_height_btn-]{padding-bottom:30px;}
-.min_height_btn-104{min-height:calc(100vh - 104px)}
+.min_height_btn-104{min-height:calc(100vh - 153px)}
 
 #footer{position:relative;text-align:center;background:#e6eaeb;}
 #footer.add_fixed_btn:after,
@@ -1029,6 +1030,7 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .i_ico_88{width:88px;height:88px;background-color:#f8f8f8;border-radius:100%;background-size:88px auto;}
 .i_ico_88.ico_1{background-image:url(../images/common/ico_svc1.png);}
 .i_ico_88.ico_2{background-image:url(../images/common/ico_svc2.png);}
+.i_ico_88.ico_3{background-image:url(../images/common/ico_svc3.png);}
 
 /* scl_datepicker */
 .scl_cal_wrap{display:none;position:relative;margin-top:-4px;padding-top:4px;border:1px solid #ddd;border-top-width:0;overflow:hidden;}
