@@ -203,7 +203,7 @@ common
 [class*=ico_] .empty_place{background:none;}
 .t_keyword{color:#ffb81c;}
 
-.hr_line{display:block;border:0 none;height:10px;margin:35px 0;background:#f8f8f8;}
+.hr_line{display:block;border:0 none;height:10px;margin:33px 0;background:#f8f8f8;}
 .hr_line.ty2{height:1px;background:#ddd;margin:30px 0;}
 .section .hr_line{margin-left:-20px;margin-right:-20px;}
 
@@ -1027,12 +1027,13 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .i_ico_20.ico_2{background-position:0 -20px;}
 .i_ico_50{position:relative;width:50px;height:50px;background-color:#3182f7;border-radius:100%;background-size:50px auto;}
 .i_ico_50.ico_1:before{content:'';position:absolute;top:18px;left:50%;margin-left:-10px;display:block;box-sizing:border-box;width:20px;height:10px;border:3px solid #fff;border-top:none;border-right:none;-webkit-transform:rotate(-43deg);transform:rotate(-43deg);}
-.i_ico_50.ico_2{background-color:#f8f8f8;background-image:url(../images/common/i_ico_50_2.png);}
+.i_ico_50.ico_2{background-color:#f8f8f8;background-image:url(../images/common/ico_50_2.png);}
 .i_ico_88{width:88px;height:88px;background-color:#f8f8f8;border-radius:100%;background-size:88px auto;}
 .i_ico_88.ico_1{background-image:url(../images/common/ico_88_01.png);}
 .i_ico_88.ico_2{background-image:url(../images/common/ico_88_02.png);}
 .i_ico_88.ico_3{background-image:url(../images/common/ico_88_03.png);}
 .i_ico_88.ico_4{background-image:url(../images/common/ico_88_04.png);}
+.i_ico_88.ico_5{background-image:url(../images/common/ico_88_05.png);}
 
 /* scl_datepicker */
 .scl_cal_wrap{display:none;position:relative;margin-top:-4px;padding-top:4px;border:1px solid #ddd;border-top-width:0;overflow:hidden;}
