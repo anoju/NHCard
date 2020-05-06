@@ -18,3 +18,9 @@
 .form_item+.accordion_list{margin-top:35px;}
 .fm_cont .fm_btn{width:96px;}
 .fm_cont .fm_btn .button{width:87px;font-size:1.4rem;font-weight:400;}
+
+
+.login_wrap{position:relative;min-height:calc(100vh - 120px);padding-bottom:27.81vh;}
+.login_wrap .swipe_tab{position:relative;z-index:2;}
+.login_wrap .login_banner{position:absolute;left:0;bottom:0;width:100%;}
+.login_banner .swiper-navi{margin-top:0;position:absolute;z-index:2;left:20px;bottom:13px;}

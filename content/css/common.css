@@ -659,10 +659,10 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 
 .password{position:relative;padding:30px 0;}
 .password .dot{text-align:center;}
-.password .dot span{position:relative;display:inline-block;width:11px;height:11px;margin:0 5px;border-radius:50%;background:#ddd;vertical-align:middle;overflow:hidden;}
-.password .dot span:before{content:'';display:block;position:absolute;left:-150%;top:0;width:100%;height:100%;border-radius:50%;background:#333;-webkit-transition:0.3s;transition:0.3s;}
-.password .dot span.on{width:14px;height:14px;}
-.password .dot span.on:before{left:0;}
+.password .dot span{position:relative;display:inline-block;width:14px;height:14px;margin:0 5px;border-radius:50%;vertical-align:middle;overflow:hidden;}
+.password .dot span:before{content:'';display:block;width:11px;height:11px;margin:1.5px auto;border-radius:50%;background:#ddd;}
+.password .dot span:after{content:'';display:block;position:absolute;left:-150%;top:0;width:100%;height:100%;border-radius:50%;background:#333;-webkit-transition:0.3s;transition:0.3s;}
+.password .dot span.on:after{left:0;}
 .password input{position:absolute;top:0;left:0;width:100%;height:100%;background:none;border:0 none;color:transparent;opacity:0;}
 
 /*radio, checkbox*/
@@ -1072,8 +1072,10 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .accordion_dl .tit .i_ico_20{position:absolute;left:14px;top:50%;margin-top:-10px;}
 
 /*swipe*/
-.ui-swiper-wrap{margin:40px -20px 0;}
+.ui-swiper-wrap{margin:40px 0 0;}
+.section .ui-swiper-wrap{margin-left:-20px;margin-right:-20px;}
 .ui-swiper .item{padding:0 20px;}
+.ui-swiper .item img{max-width:100%;}
 .ui-swiper.swiper-container-initialized{padding:0 12.5px;overflow:hidden;}
 .ui-swiper.swiper-container-initialized .item{padding:0 7.5px;}
 .ui-swiper .swiper-wrapper{height:auto !important;}

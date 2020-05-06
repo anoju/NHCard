@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+
+<meta name="title" content="농협카드 모바일">
+<meta name="description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
+<meta property="og:title" content="농협카드 모바일">
+<meta property="og:url" content="https://card.nonghyup.com">
+<!-- <meta property="og:image" content="https://card.nonghyup.com/content/images/logo_1200x1200.png"> -->
+<meta property="og:image" content="http://localhost:8080/content/images/logo_1200x1200.png">
+<meta property="og:description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
+<meta name="format-detection" content="telephone=no">
+
+<title>농협카드 모바일</title>
+<meta name="apple-mobile-web-app-title" content="농협카드 모바일">
+<link rel="apple-touch-startup-image" href="../../images/icons/touch-icon-iphone-retina.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png"><!-- 196x196-->
+<link rel="apple-touch-icon" href="../../images/icons/touch-icon-iphone.png"><!-- 120x120-->
+<link rel="apple-touch-icon" sizes="152x152" href="../../images/icons/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../images/icons/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="167x167" href="../../images/icons/touch-icon-ipad-retina.png">
+<link rel="manifest" href="../../manifest.json">
+
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/contents.css">
+
+<script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/jquery-ui-1.12.1.min.js"></script>
+<script src="../../js/ui_plugins.js"></script>
+<script src="../../js/ui_front.js"></script>
+<script>
+	$(function(){
+		common.title('로그인');
+		buttonUI.swipeTab();	//잠금번호
+		//buttonUI.swipeTab(1);	//지문 바로 활성화시킬때
+		//buttonUI.swipeTab(2);	//아이디 바로 활성화시킬때
+		//buttonUI.swipeTab(3);	//공인인증서 바로 활성화시킬때
+		//buttonUI.swipeTab(4);	//올원페이 바로 활성화시킬때
+
+		$('#autoLogin1,#autoLogin2').click(function(e){
+			e.preventDefault();
+			console.log('aaa')
+		});
+	});
+</script>
+</head>
+<body>
+<article id="wrap">
+	<div data-include-html="../include/top_logo.html"></div>
+	<div data-include-html="../include/gnb.html"></div>
+	<div id="container" class="ty2">
+		<section id="contents">
+			<div class="login_wrap">
+				<div class="swipe_tab">
+					<div class="navi">
+						<ul>
+							<li><a href="#"><span>잠금번호</span></a></li>
+							<li><a href="#"><span>지문</span></a></li>
+							<li><a href="#"><span>아이디</span></a></li>
+							<li><a href="#"><span>공인인증서</span></a></li>
+							<li><a href="#"><span>올원페이</span></a></li>
+						</ul>
+					</div>
+					<div class="cont">
+						<div class="swipe-container">
+							<div class="swiper-wrapper">
+								<!--잠금번호-->
+								<div class="swiper-slide">
+									<!--잠금번호가 없을 때-->
+									<div class="cont_box">
+										<div class="cont_txt">설정된 잠금번호가 없어요<br>잠금번호 설정 후 이용해 주세요</div>
+										<div class="btn_wrap">
+											<div class="flex">
+												<a href="#" class="button line icon"><i class="bt_ic_setting" aria-hidden="true"></i>잠금번호 설정<i class="bt_ic_arr" aria-hidden="true"></i></a>
+											</div>
+										</div>
+									</div>
+									<!--잠금번호가 있을 때-->
+									<div class="cont_box lock_num">
+										<div class="cont_txt">잠금번호 6자리를 입력해 주세요</div>
+
+										<div class="fm_cont phone">
+											<div class="password">
+												<div class="dot" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+												<input type="password" maxlength="6" title="비밀번호 입력">
+											</div>
+										</div>
+										<div class="tbl">
+											<div class="td t_left va_mid">
+												<a href="#" class="btn_link gray">결제비밀번호 로그인<i class="bt_ic_arr" aria-hidden="true"></i></a>
+											</div>
+											<div class="td t_right va_mid">
+												<span class="checkbox switch">
+													<input type="checkbox" id="autoLogin1"><i aria-hidden="true"></i>
+													<label for="autoLogin1" class="lbl">자동로그인</label>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--지문-->
+								<div class="swiper-slide">
+									<!--설정된 지문이 없을 때-->
+									<div class="cont_box">
+										<div class="cont_txt">설정된 지문이 없어요<br>지문 설정 후 이용해 주세요</div>
+										<div class="btn_wrap">
+											<div class="flex">
+												<a href="#" class="button line icon"><i class="bt_ic_finger" aria-hidden="true"></i>지문 설정<i class="bt_ic_arr" aria-hidden="true"></i></a>
+											</div>
+										</div>
+									</div>
+									<!--설정된 지문이 있을 때-->
+									<div class="cont_box">
+										<div class="btn_wrap">
+											<div class="flex">
+												<a href="#" class="button line icon"><i class="bt_ic_finger" aria-hidden="true"></i>지문인증으로 로그인하기<i class="bt_ic_arr" aria-hidden="true"></i></a>
+											</div>
+										</div>
+										<div class="tbl mt40">
+											<div class="td t_left va_mid">
+												<a href="#" class="btn_link gray">결제비밀번호 로그인<i class="bt_ic_arr" aria-hidden="true"></i></a>
+											</div>
+											<div class="td t_right va_mid">
+												<span class="checkbox switch">
+													<input type="checkbox" id="autoLogin2"><i aria-hidden="true"></i>
+													<label for="autoLogin2" class="lbl">자동로그인</label>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--아이디-->
+								<div class="swiper-slide">
+									<div class="cont_box">
+										<div class="login_box">
+											<div class="input">
+												<input type="text" title="아이디 입력" placeholder="아이디 입력">
+											</div>
+											<div class="input">
+												<input type="password" title="비밀번호 입력" placeholder="비밀번호 입력">
+											</div>
+											<a href="#" class="button blue">로그인</a>
+										</div>
+										<div class="tbl mt10">
+											<div class="td t_left va_mid">
+												<a href="#" class="btn_link gray">아이디/비밀번호 찾기<i class="bt_ic_arr" aria-hidden="true"></i></a>
+											</div>
+											<div class="td t_right va_mid">
+												<span class="checkbox">
+													<input type="checkbox" id="chk2" checked=""><i aria-hidden="true"></i>
+													<label for="chk2" class="lbl">아이디저장</label>
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--공인인증서-->
+								<div class="swiper-slide">
+									<div class="cont_box">
+										<div class="btn_wrap">
+											<div class="flex">
+												<a href="#" class="button line icon"><i class="bt_ic_certify" aria-hidden="true"></i>공인인증서로 로그인하기<i class="bt_ic_arr" aria-hidden="true"></i></a>
+											</div>
+										</div>
+										<div class="tbl mt40">
+											<div class="td va_mid t_center">
+												<a href="#" class="btn_link gray">공인인증서 등록<i class="bt_ic_arr" aria-hidden="true"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--올원페이-->
+								<div class="swiper-slide">
+									<div class="cont_box">
+										<div class="cont_txt">올원페이 앱카드로<br>로그인 할 수 있어요</div>
+										<div class="btn_wrap">
+											<div class="flex">
+												<a href="#" class="button line icon"><i class="bt_ic_allone" aria-hidden="true"></i>올원페이로 로그인하기<i class="bt_ic_arr" aria-hidden="true"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab_pagination" aria-hidden="true"></div>
+					</div>
+					<div class="btn_wrap">
+						<div class="flex">
+							<a href="#" class="button white">카드신청</a>
+							<a href="#" class="button white">회원가입</a>
+						</div>
+					</div>
+				</div>
+			
+				<!-- 배너 -->
+				<div class="ui-swiper-wrap full login_banner">
+					<div class="ui-swiper autoplay">
+						<div class="item">
+							<a href="#"><img src="../../images/temp/login_banner_1.png" alt="올원페이로 10만원 결제 시 스타벅스 증정. 2020년 4월1부터 4월 30일까지"></a>
+						</div>
+						<div class="item">
+							<a href="#"><img src="../../images/temp/login_banner_2.png" alt="올원페이로 10만원 결제 시 스타벅스 증정. 2020년 4월1부터 4월 30일까지"></a>
+						</div>
+						<div class="item">
+							<a href="#"><img src="../../images/temp/login_banner_1.png" alt="올원페이로 10만원 결제 시 스타벅스 증정. 2020년 4월1부터 4월 30일까지"></a>
+						</div>
+						<div class="item">
+							<a href="#"><img src="../../images/temp/login_banner_2.png" alt="올원페이로 10만원 결제 시 스타벅스 증정. 2020년 4월1부터 4월 30일까지"></a>
+						</div>
+					</div>
+				</div>
+				<!-- //배너 -->
+			</div>
+		</section>
+	</div>
+	<div data-include-html="../include/floatingBar.html"></div>
+	<div data-include-html="../include/footer.html"></div>
+</article>
+</body>
+</html>
