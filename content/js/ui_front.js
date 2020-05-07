@@ -1868,10 +1868,22 @@ var buttonUI ={
 			});
 		}
 	},
+	etc:function(){
+		/*$(document).on('click','.expend_btn a',function(e){
+			e.preventDefault();
+			var $wrap = $(this).closest('.expend_wrap');
+			if($wrap.hasClass('on')){
+				$wrap.removeClass('on');
+			}else{
+				$wrap.addClass('on');
+			}
+		});*/
+	},
 	init: function(){
 		buttonUI.default();
 		buttonUI.effect();
 		buttonUI.tab();
+		buttonUI.etc();
 		if(!$('.main_content').length)buttonUI.top(); //메인에는 탑버튼 미사용
 	}
 };
@@ -2347,14 +2359,32 @@ var formUI = {
 		});
 
 		//password
-		$(document).on('keyup','.password input',function(){
+		$(document).on('keyup,change','.password input',function(){
 			var $val = $(this).val(),
 				$closest = $(this).closest('.password'),
 				$dot = $closest.find('.dot span');
 			$dot.slice(0,$val.length).addClass('on');
 			$dot.slice($val.length).removeClass('on');
 		});
-		
+
+		//list input[type=checkbox]
+		$(document).on('change','[class*=box_list_] .checkbox input',function(){
+			var $this = $(this);
+			if($this.prop('checked') == true){
+				$this.closest('li').addClass('checked');
+				if($this.attr('type') == 'radio')$this.closest('li').siblings().removeClass('checked');
+			}else{
+				$this.closest('li').removeClass('checked');
+			}
+		});
+		$(document).on('change','.chk_item.ty2 input',function(){
+			var $this = $(this);
+			if($this.prop('checked') == true){
+				$this.closest('.chk_item').addClass('checked');
+			}else{
+				$this.closest('.chk_item').removeClass('checked');
+			}
+		});
 	},
 	delBtn:function(){
 		//input 삭제버튼
@@ -3301,6 +3331,7 @@ var listUI = {
 	winLoad:function(){
 		//토글실행
 		accordion.list('.ui-accordion','.tit a','.panel');
+		accordion.list('.box_list_1','.expend_btn .button','.expend_cont');
 		accordion.btn('.ui-toggle-btn');
 
 		//테이블 스크롤 가이드 실행
@@ -3325,9 +3356,9 @@ var listUI = {
 	},
 	allChk:function(){
 		//전체선택
-		$('.all_chk').change(function(){
-			var $closest = $(this).closest('[class*=tit_h]').next(),
-				$chk = $closest.find('.item_chk');
+		$('.ui-all-chk .list_util .checkbox input').change(function(){
+			var $list = $(this).closest('.list_util').next(),
+				$chk = $list.find('.checkbox input');
 			if($(this).is(':checked') == true){
 				$(this).siblings('label').changeTxt('선택','해제');
 				$chk.prop('checked',true).change();
@@ -3336,12 +3367,11 @@ var listUI = {
 				$chk.prop('checked',false).change();
 			}
 		});
-		$('.item_chk').change(function(){
-			var $closest = $(this).closest('.product_list');
-			if($(this).closest('.chk_wrap').length)$closest = $(this).closest('.chk_wrap');
-			var $allchk = $closest.prev().find('.all_chk');
-				checkBoxLength = $closest.find('.item_chk').length;
-				checkedLength = $closest.find('.item_chk:checked').length;
+		$('.ui-all-chk>ul .checkbox input').change(function(){
+			var $closest = $(this).closest('ul'),
+				$allchk = $closest.prev().find('.checkbox input');
+				checkBoxLength = $closest.find('.checkbox input').length;
+				checkedLength = $closest.find('.checkbox input:checked').length;
 			if(checkBoxLength == checkedLength){
 				$allchk.prop('checked',true).siblings('label').changeTxt('선택','해제');
 			}else{
@@ -3361,11 +3391,14 @@ var accordion = {
 		$(document).on('click',list+' '+btn,function(e){
 			e.preventDefault();
 			var $this = $(this),
-				$li = $(this).closest('li');
+				$li = $this.closest('li');
 			if($li.hasClass(addClass)){
 				$li.find(btn).attr('aria-expanded',false).removeAttr('title');
 				$li.removeClass(addClass);
 				$li.find(panel).attr('aria-hidden',true).stop(true,false).slideUp(speed);
+				if($this.children('span').length && $this.children('span').text() == '닫기'){
+					$this.children('span').text('더보기');
+				}
 			}else{
 				$li.find(btn).attr('aria-expanded',true).attr('title','현재열림');
 				$li.addClass(addClass).siblings().removeClass(addClass).find(btn).attr('aria-expanded',false).removeAttr('title');
@@ -3373,6 +3406,9 @@ var accordion = {
 				$li.find(panel).attr('aria-hidden',false).stop(true,false).slideDown(speed,function(){
 					accordion.scroll($this,this);
 				});
+				if($this.children('span').length && $this.children('span').text() == '더보기'){
+					$this.children('span').text('닫기');
+				}
 			}
 		});
 
@@ -3403,6 +3439,9 @@ var accordion = {
 				$(list).find('.'+addClass).each(function(){
 					$(this).find(btn).attr('aria-expanded',true).attr('title','현재열림');
 					$(this).find(panel).attr('aria-hidden',false).show();
+					if($(this).find(btn).children('span').length && $(this).find(btn).children('span').text() == '더보기'){
+						$(this).find(btn).children('span').text('닫기');
+					}
 				});
 			}
 		}
