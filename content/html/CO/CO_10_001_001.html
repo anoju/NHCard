@@ -87,7 +87,7 @@
 		//Layer.open('#certificatePwdChkPop');
 
 		//자동로그인 설정
-		$('#autoLogin1,#autoLogin2,#autoLogin3').click(function(e){
+		$('#autoLogin1,#autoLogin2,#autoLogin3,#autoLogin4').click(function(e){
 			e.preventDefault();
 			var $target = e.target,
 				$this = $(this),
@@ -361,6 +361,28 @@
 						</div>
 					</div>
 				</div>
+				
+				<!--바로 시작하기 화면-->
+				<div class="login_strat_box">
+					<div class="login_strat">
+						<h3><span>김농협</span>님 안녕하세요 :)</h3>
+						<div class="start_txt">농협카드 앱을 바로 시작할까요?</div>
+						<div class="btn_wrap">
+							<div class="flex">
+								<a href="#" class="button line blue">바로 시작하기</a>
+							</div>
+						</div>
+						<div class="tbl">
+							<div class="td t_right va_mid">
+								<span class="checkbox switch">
+									<input type="checkbox" id="autoLogin4"><i aria-hidden="true"></i>
+									<label for="autoLogin4" class="lbl">자동로그인</label>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
 			
 				<!-- 배너 -->
 				<div class="ui-swiper-wrap full login_banner">

@@ -30,4 +30,10 @@
 .login_wrap{position:relative;min-height:calc(100vh - 120px);padding-bottom:27.81vh;}
 .login_wrap .swipe_tab{position:relative;z-index:2;}
 .login_wrap .login_banner{position:absolute;left:0;bottom:0;width:100%;}
+.login_strat_box{padding:18px 20px 11px;}
+.login_strat{padding:28px 24px;min-height:230px;border-radius:4px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.05);text-align:center;}
+.login_strat h3{font-size:1.7rem;color:#3182f7;}
+.login_strat .start_txt{margin-top:4px;font-size:1.7rem;font-weight:500;}
+.login_strat .btn_wrap{margin-top:27px;}
+.login_strat .tbl{margin-top:28px;}
 .login_banner .swiper-navi{margin-top:0;position:absolute;z-index:2;left:20px;bottom:13px;}
