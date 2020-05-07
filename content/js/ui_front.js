@@ -95,7 +95,9 @@ var htmlnclude = function(){
 					}
 
 					if($htmlFile == 'user.html'){
+						htmlnclude();
 						buttonUI.tabNavi();
+						formUI.select();
 						$('#userCertifyPop .tabmenu li').first().find('a').click();
 					}
 				}
