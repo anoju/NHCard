@@ -196,7 +196,10 @@ common
 .console{position:fixed;font-size:1.5rem;top:0;left:0;width:100%;color:#fff;text-align:center;box-sizing:border-box;background:rgba(255,0,0,0.7);z-index:100;}
 .pre_loading{position:fixed;left:-9999px;top:-9999px;width:0;height:0;z-index:-1;opacity:0;overflow:hidden;}
 .pre_loading div{background-repeat:no-repeat;width:0;height:0;overflow:hidden;}
+
+.img_box{text-align:center;}
 .img_box img{max-width:100%;}
+.img_box.gray{background:#f6f6f6;border-radius:5px;}
 
 .empty_place{color:transparent !important;background:linear-gradient(to bottom, transparent 0% 25%, #eee 25% 75%, transparent 75% 100%);}
 .empty_place *{color:transparent !important;}
