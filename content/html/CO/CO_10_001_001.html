@@ -71,6 +71,9 @@
 			}
 		});*/
 
+		//PIN번호 안내 팝업
+		//Layer.open('#pinNumInfoPop');
+
 		//회원 ID가 없을 경우 팝업
 		//Layer.open('#idNotFindPop');
 
@@ -84,7 +87,7 @@
 		//Layer.open('#certificatePwdChkPop');
 
 		//자동로그인 설정
-		$('#autoLogin1,#autoLogin2,#autoLogin3').click(function(e){
+		$('#autoLogin1,#autoLogin2,#autoLogin3,#autoLogin4').click(function(e){
 			e.preventDefault();
 			var $target = e.target,
 				$this = $(this),
@@ -130,6 +133,7 @@
 							<li><a href="#"><span>잠금번호</span></a></li>
 							<li><a href="#"><span>지문</span></a></li>
 							<li><a href="#"><span>Face ID</span></a></li>
+							<li><a href="#"><span>PIN번호</span></a></li>
 							<li><a href="#"><span>아이디</span></a></li>
 							<li><a href="#"><span>공인인증서</span></a></li>
 							<li><a href="#"><span>올원페이</span></a></li>
@@ -165,7 +169,7 @@
 											</div>
 											<div class="td t_right va_mid">
 												<span class="checkbox switch">
-													<input type="checkbox" id="autoLogin1" disabled><i aria-hidden="true"></i>
+													<input type="checkbox" id="autoLogin1"><i aria-hidden="true"></i>
 													<label for="autoLogin1" class="lbl">자동로그인</label>
 												</span>
 											</div>
@@ -249,6 +253,36 @@
 									</div>
 								</div>
 
+								<!--PIN번호-->
+								<div class="swiper-slide">
+									<!--PIN번호가 없을 때-->
+									<div class="cont_box">
+										<div class="cont_txt">설정된 PIN번호가 없어요<br>PIN번호 설정 후 이용해 주세요.</div>
+										<div class="flex mt20">
+											<a href="#" class="button line">PIN번호 설정</a>
+										</div>
+									</div>
+									<!--PIN번호가 있을 때-->
+									<div class="cont_box lock_num">
+										<div class="cont_txt">PIN번호 6자리를 입력해 주세요.</div>
+										<div class="fm_cont pin">
+											<div class="password">
+												<div class="dot" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+												<input type="password" maxlength="6" title="비밀번호 입력">
+											</div>
+											<div class="caution_txt2">PIN번호는 앱의 잠금번호와 다른 로그인 수단으로 새로 등록이 필요합니다.</div>
+										</div>
+										<div class="tbl">
+											<div class="td t_left va_mid">
+												<a href="#" class="btn_link gray">PIN번호란?<i class="bt_ic_arr" aria-hidden="true"></i></a>
+											</div>
+											<div class="td t_right va_mid">
+												<a href="#" class="btn_link gray">PIN번호 설정<i class="bt_ic_arr" aria-hidden="true"></i></a>
+											</div>
+										</div>
+									</div>
+								</div>
+
 								<!--아이디-->
 								<div class="swiper-slide">
 									<div class="cont_box">
@@ -277,6 +311,7 @@
 
 								<!--공인인증서-->
 								<div class="swiper-slide">
+									<!--공인인증서: 스마트앱일 때-->
 									<div class="cont_box">
 										<div class="btn_wrap">
 											<div class="flex">
@@ -286,6 +321,19 @@
 										<div class="tbl mt40">
 											<div class="td va_mid t_center">
 												<a href="#" class="btn_link gray">공인인증서 등록<i class="bt_ic_arr" aria-hidden="true"></i></a>
+											</div>
+										</div>
+									</div>
+
+									<!--공인인증서: 모바일웹일 때-->
+									<div class="cont_box">
+										<div class="cont_txt">브라우저 인증서로<br>로그인 할 수 있어요!</div>
+										<div class="btn_wrap">
+											<div class="flex">
+												<a href="#" class="button line icon"><i class="bt_ic_certify2" aria-hidden="true"></i>공인인증서 로그인<i class="bt_ic_arr" aria-hidden="true"></i></a>
+											</div>
+											<div class="flex">
+												<a href="#" class="button line icon"><i class="bt_ic_browser" aria-hidden="true"></i>브라우저인증서 로그인<i class="bt_ic_arr" aria-hidden="true"></i></a>
 											</div>
 										</div>
 									</div>
@@ -313,6 +361,28 @@
 						</div>
 					</div>
 				</div>
+
+				<!--자동로그인 시작하기 화면-->
+				<div class="login_strat_box">
+					<div class="login_strat">
+						<h3><span>김농협</span>님 안녕하세요 :)</h3>
+						<div class="start_txt">농협카드 앱을 바로 시작할까요?</div>
+						<div class="btn_wrap">
+							<div class="flex">
+								<a href="#" class="button line blue">바로 시작하기</a>
+							</div>
+						</div>
+						<div class="tbl">
+							<div class="td t_right va_mid">
+								<span class="checkbox switch">
+									<input type="checkbox" id="autoLogin4"><i aria-hidden="true"></i>
+									<label for="autoLogin4" class="lbl">자동로그인</label>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
 			
 				<!-- 배너 -->
 				<div class="ui-swiper-wrap full login_banner">
@@ -440,6 +510,36 @@
 		</article>
 	</div>
 	<!-- //페이스ID 안내 팝업 -->
+
+	<!-- PIN번호 안내 팝업 -->
+	<div id="pinNumInfoPop" class="popup modal" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_cont">
+				<div class="section">
+					<div class="pop_tit_wrap">
+						<i class="i_ico_88 ico_6" aria-hidden="true"></i>
+						<h2 class="pop_tit">PIN번호 안내</h2>
+					</div>
+					<div class="txt_list">
+						<ul>
+							<li class="dot">PIN번호는 6자리 숫자만으로 로그인 할 수 있는 로그인 인증 수단입니다.</li>
+							<li class="dot">브라우저당 1명만 이용할 수 있습니다.</li>
+							<li class="dot">NH농협카드 앱의 잠금번호가 등록 되어 있어도, Moblie NH농협카드에서 새로 등록이 필요합니다.</li>
+							<li class="dot">생년월일, 휴대폰번호, 3자리 이상 연속되거나 동일한 숫자는 설정할 수 없습니다.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button blue h48 ui-pop-close">확인</a><!-- ui-pop-close클래스로 팝업 닫기 가능 -->
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- //PIN번호 안내 팝업 -->
 
 	<!-- 회원 ID가 없을 경우 팝업 -->
 	<div id="idNotFindPop" class="popup modal" role="dialog" aria-hidden="true">

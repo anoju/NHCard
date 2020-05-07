@@ -93,6 +93,11 @@ var htmlnclude = function(){
 						common.fixed('.gd__navi');
 						buttonUI.tabNavi();
 					}
+
+					if($htmlFile == 'user.html'){
+						buttonUI.tabNavi();
+						$('#userCertifyPop .tabmenu li').first().find('a').click();
+					}
 				}
 			});
 		});
@@ -1075,17 +1080,6 @@ var Layer = {
 			$(tar).attr('id',$id);
 		}
 
-		//열릴때 플루팅 버튼
-		// if($('.floating_btn').is(':visible')){
-		// 	$('.floating_btn').hide();
-		// 	if($('.floating_btn').hasClass('is_fixed_btn'))$(tar).addClass('is_fixed_btn');
-		// }
-		if(isAppChk() && !$('#floatingBar').hasClass('off')){
-			$(tar).addClass('is_floating');
-		}else{
-			$(tar).removeClass('is_floating');
-		}
-
 		//fixed버튼 있을때 빈공간삽입
 		if($(tar).find('.pop_cont').next('.btn_wrap.bottom_fixed').length){
 			$(tar).find('.pop_cont').addClass('after_btn');
@@ -1148,6 +1142,9 @@ var Layer = {
 			$(tar).addClass('show');
 			$(tar).find('.'+Layer.contClass).scrollTop(0);
 
+			if($(tar).find('.tab_wrap').length){
+				
+			}
 
 			Layer.focusMove(tar);
 			Layer.position(tar);
@@ -1522,7 +1519,6 @@ var buttonUI ={
 		};
 		var btnHtml = '<div class="floating_btn btn_top"><a href="#" id="'+settings.button.substring(1)+'" class="btn" title="'+settings.text+'" role="button"><span class="blind">'+settings.text+'</span></a></div>';
 		if(!$(settings.button).length && $('#footer').length){
-			console.log('aa');
 			if($('#floatingBar').length){
 				if($('#floatingBar').hasClass('hide')){
 					$('#footer').append(btnHtml);
@@ -1598,6 +1594,7 @@ var buttonUI ={
 
 				if($target == undefined){
 					$($href).addClass('active').attr('aria-expanded',true).siblings('.tab_panel').attr('aria-expanded',false).removeClass('active');
+					if($($href).find('.btn_wrap.bottom_fixed').length)$($href).addClass('add_fixed_btn');
 				}else{
 					$($target).attr('aria-expanded',false).removeClass('active');
 					$($href).addClass('active').attr('aria-expanded',true);

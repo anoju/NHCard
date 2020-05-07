@@ -38,6 +38,10 @@
 		common.title('회원가입');
 
 		//Layer.alert('연속된 문자 또는 동일한 문자는 사용할 수 없습니다.'); //비밀번호 사용불가 알럿
+
+		setTimeout(function(){
+			Layer.open('#userCertifyPop');
+		},100)
 	});
 </script>
 </head>
@@ -51,7 +55,6 @@
 				<ol class="step_state">
 					<li>1<span class="blind">단계</span></li>
 					<li class="on">2<span class="blind">단계(현재단계)</span></li>
-					<li>3<span class="blind">단계</span></li>
 				</ol>
 			</div>
 			<div class="section">
@@ -160,6 +163,11 @@
 			</div>
 		</section>
 	</div>
+
+	<!-- 본인인증팝업 -->
+	<div data-include-html="../include/certify/user.html"></div>
+	<!-- //본인인증팝업 -->
+
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>
