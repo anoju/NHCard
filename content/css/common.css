@@ -562,8 +562,12 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 :disabled>.bt_ic_finger{background-image:url(../images/btn/bt_ic_finger_off.png);}
 .bt_ic_allone{width:34px;height:14px;background-image:url(../images/btn/bt_ic_allone.png);vertical-align:middle;}
 :disabled>.bt_ic_allone{background-image:url(../images/btn/bt_ic_allone_off.png);}
-.bt_ic_certify{width:23px;height:28px;background-image:url(../images/btn/bt_ic_certify.png);vertical-align:middle;}
+.bt_ic_certify{width:28px;height:33px;background-image:url(../images/btn/bt_ic_certify.png);vertical-align:middle;}
 :disabled>.bt_ic_certify{background-image:url(../images/btn/bt_ic_certify_off.png);}
+.bt_ic_certify2{width:28px;height:33px;background-image:url(../images/btn/bt_ic_certify2.png);vertical-align:middle;}
+:disabled>.bt_ic_certify2{background-image:url(../images/btn/bt_ic_certify2_off.png);}
+.bt_ic_browser{width:34px;height:27px;background-image:url(../images/btn/bt_ic_browser.png);vertical-align:middle;}
+:disabled>.bt_ic_browser{background-image:url(../images/btn/bt_ic_browser_off.png);}
 
 .button.icon{text-align:left;height:56px;line-height:54px;padding-left:11px;padding-right:27px;}
 .button.icon [class*=bt_ic_]:first-child{margin-right:15px;top:-1.5px;}
