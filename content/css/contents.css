@@ -5,6 +5,9 @@
 .ico_box_wrap{padding-top:18px;color:#111;text-align:center;font-size:0px;}
 .ico_box_wrap h2{margin-top:33px;font-size:1.7rem;}
 .ico_box_wrap .txt{font-size:1.5rem;color:#666;}
+.ico_box_wrap .txt.only{margin-top:30px;color:#111;}
+.flex.btm_ico{margin-top:30px;}
+.td.btm_ico{margin-top:17px;}
 .complete_wrap{padding:18px 0 26px;text-align:center;font-size:0;}
 .complete_wrap .tit_h2{margin-top:17px;font-size:2.2rem;}
 .complete_wrap .txt{margin-bottom:12px;font-size:1.5rem;}
@@ -20,6 +23,16 @@
 .com_result.small_ico .txt{margin-top:25px;}
 .fm_cont.pin .caution_txt2{margin:4px 0 13px;}
 .cont_box .btn_wrap .flex+.flex{margin-top:10px;}
+
+/*본인인증*/
+.tbl.card_num .td{width:25%;padding-left:4px;}
+.tbl.card_num .td:nth-child(-n+3){width:21.875%;}
+.tbl.card_num .td:nth-child(n+3){width:26.25%;}
+.tbl.card_num .td:nth-child(1){padding:0 2px 0 0;}
+.tbl.card_num .td:nth-child(2){padding-left:2px;}
+.tbl.card_num .input input.no_del{padding:0 5px;}
+.tbl.card_num .td.gray_box{vertical-align: top;text-align:center;}
+.tbl.card_num .td.gray_box div{height:44px;line-height:44px;background:#f0f0f0;border:1px solid #ddd;border-radius:4px;color:#858585;font-size:1.2rem;}
 
 /*회원가입*/
 .form_item+.accordion_list{margin-top:35px;}
