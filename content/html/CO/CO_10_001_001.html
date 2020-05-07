@@ -36,11 +36,21 @@
 <script>
 	$(function(){
 		common.title('로그인');
-		buttonUI.swipeTab();	//잠금번호
-		//buttonUI.swipeTab(1);	//지문 바로 활성화시킬때
-		//buttonUI.swipeTab(2);	//아이디 바로 활성화시킬때
-		//buttonUI.swipeTab(3);	//공인인증서 바로 활성화시킬때
-		//buttonUI.swipeTab(4);	//올원페이 바로 활성화시킬때
+
+		//임시로 파라미터값으로 구분 처리
+		if(getUnlParams().type == 'auto'){ 					//자동로그인일때
+			$('.swipe_tab').hide();
+			$('.login_strat_box').show();
+		}else if(getUnlParams().type == 'web'){ 			//모바일 웹일때
+			$('.swipe_tab .navi>ul>li').slice(0,3).remove();
+			$('.swipe_tab .swiper-slide').slice(0,3).remove();
+			$('.swipe_tab .swiper-slide').eq(2).find('.cont_box').first().hide().next().show();
+			buttonUI.swipeTab(); //로그인 영역 swipe 실행
+		}else{ 												//모바일 앱일때
+			$('.swipe_tab .navi>ul>li').eq(3).remove();
+			$('.swipe_tab .swiper-slide').eq(3).remove();
+			buttonUI.swipeTab(); //로그인 영역 swipe 실행
+		}
 
 		//다른기기 사용안내 팝업
 		//Layer.open('#otherDeviceChkPop');
@@ -87,7 +97,7 @@
 		//Layer.open('#certificatePwdChkPop');
 
 		//자동로그인 설정
-		$('#autoLogin1,#autoLogin2,#autoLogin3,#autoLogin4').click(function(e){
+		$('#autoLogin1,#autoLogin2,#autoLogin3').click(function(e){
 			e.preventDefault();
 			var $target = e.target,
 				$this = $(this),
@@ -109,6 +119,19 @@
 			Layer.close('#autoLoginSettingPop');
 			if($id != undefined){
 				$('#'+$id).prop('checked',true);
+			}
+		});
+		$('#autoLogin4').click(function(e){
+			e.preventDefault();
+			var $this = $(this),
+				$checked = $this.prop('checked');
+			if($checked == false){
+				Layer.confirm('자동로그인을 해제 하시겠습니까?',function(e){
+					if(e){
+						//$this.prop('checked',false);
+						location.href = 'CO_10_001_030.html'
+					}
+				});
 			}
 		});
 
@@ -326,7 +349,7 @@
 									</div>
 
 									<!--공인인증서: 모바일웹일 때-->
-									<div class="cont_box">
+									<div class="cont_box" style="display:none;">
 										<div class="cont_txt">브라우저 인증서로<br>로그인 할 수 있어요!</div>
 										<div class="btn_wrap">
 											<div class="flex">
@@ -363,7 +386,7 @@
 				</div>
 
 				<!--자동로그인 시작하기 화면-->
-				<div class="login_strat_box">
+				<div class="login_strat_box" style="display:none;">
 					<div class="login_strat">
 						<h3><span>김농협</span>님 안녕하세요 :)</h3>
 						<div class="start_txt">농협카드 앱을 바로 시작할까요?</div>
@@ -375,7 +398,7 @@
 						<div class="tbl">
 							<div class="td t_right va_mid">
 								<span class="checkbox switch">
-									<input type="checkbox" id="autoLogin4"><i aria-hidden="true"></i>
+									<input type="checkbox" id="autoLogin4" checked><i aria-hidden="true"></i>
 									<label for="autoLogin4" class="lbl">자동로그인</label>
 								</span>
 							</div>
