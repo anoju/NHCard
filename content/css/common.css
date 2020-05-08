@@ -746,6 +746,7 @@ html:not(.isApp) .checkbox input:focus+i{box-shadow:0px 0px 1px 1px rgba(0,97,25
 .checkbox.large>i+.lbl{margin-left:22px;padding-left:11px;}
 .radio.large>i+.lbl.fz_14,
 .checkbox.large>i+.lbl.fz_14{padding-left:9px;}
+.chk_item>.checkbox.large .lbl_child{font-size:1.4rem;}
 .checkbox.ty2>i{border-color:transparent;background:none;}
 .checkbox.ty2 input:checked+i{background:none;border-color:transparent;}
 .checkbox.ty2 input:checked+i:after{border-color:#3182f7;}
