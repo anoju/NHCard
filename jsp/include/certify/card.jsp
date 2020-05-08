@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <div class="form_item">
 	<label for="cardName" class="fm_lb">성명</label>
 	<div class="fm_cont">

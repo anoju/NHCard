@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <script>
 	/* 일부 탭을 안쓸경우(예시로 NH농협카드 안쓴다면)
 	$('[href=#tabCertify2]').closest('li').remove();	//탭버튼을 갖고 있는 li까지 없애고
@@ -582,7 +584,7 @@
 					<hr class="hr_line" aria-hidden="true">
 					<div class="ico_box_wrap">
 						<i class="i_ico_88 ico_9" aria-hidden="true"></i>
-						<p class="txt only">올원페이(앱카드) 결제인증방법을 통하여<br>인증 할 수 있습니다.</p>
+						<p class="txt only">올원페이(앱카드) 결제인증방법을 통하여<br>인증 할 수 있어요.</p>
 					</div>
 					<div class="btn_wrap">
 						<div class="flex">

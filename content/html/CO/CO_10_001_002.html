@@ -46,7 +46,7 @@
 	<div id="container">
 		<section id="contents">
             <div class="section">
-                <div class="min_height_btn-153">
+                <div class="area_next_bottom">
                     <div class="com_result">
                         <h2 class="tit_h2">아이디 조회결과</h2>
                         <i class="i_ico_88 ico_3" aria-hidden="true"></i>
@@ -55,13 +55,18 @@
                 </div>
                 <div class="btn_wrap">
                     <div class="flex">
-                        <a href="#" class="button line blue">비밀번호 변경</a>
+                        <a href="#" class="button line blue" onclick="Layer.open('#userCertifyPop');">비밀번호 변경</a>
                         <a href="#" class="button blue">로그인</a>
                     </div>
                 </div>
             </div>
         </section>
-	</div>
+    </div>
+    
+    <!-- 본인인증팝업 -->
+	<div data-include-html="../include/certify/user.html"></div>
+    <!-- //본인인증팝업 -->
+    
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>

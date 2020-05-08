@@ -151,6 +151,7 @@ common
 .mt8{margin-top:8px !important;}
 .mt10{margin-top:10px !important;}
 .mt15{margin-top:15px !important;}
+.mt17{margin-top:17px !important;}
 .mt20{margin-top:20px !important;}
 .mt25{margin-top:25px !important;}
 .mt30{margin-top:30px !important;}
@@ -345,10 +346,9 @@ html.ie9 #gnb.show{right:0;}
 .section{padding:0 20px;}
 .section .outer{margin-left:-20px;margin-right:-20px;}
 
-[class*=min_height_btn-]{padding-bottom:30px;}
-.min_height_btn-153{min-height:calc(100vh - 153px)}
+.area_next_bottom{padding-bottom:30px;min-height:calc(100vh - 153px)}
 
-#footer{position:relative;text-align:center;border-top:1px solid #d5d9da;}
+#footer{position:relative;text-align:center;border-top:1px solid #d5d9da;background:#fff;}
 #footer.add_fixed_btn:after,
 #footer.add_floatingBar:after{content:'';display:block;height:70px;}
 html.iPhoneX #footer.add_fixed_btn:after,
@@ -602,10 +602,12 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 .btn_more .button:after{content:'';display:inline-block;width:10px;height:6px;margin-left:10px;vertical-align:1px;background:url(../images/btn/bt_ic_arr_down.png) no-repeat center center;background-size:contain;}
 .btn_filter{position:relative;display:inline-block;font-size:1.5rem;font-weight:500;color:#333;}
 .btn_link{position:relative;display:inline-block;font-size:1.4rem;color:#333;}
-.btn_link2{position:relative;color:#666;}
-.btn_link2:after{content:'';position:absolute;bottom:-1px;left:0;right:0;display:block;height:1px;background:#666;}
+.btn_link .tooltip_btn{vertical-align:-3px;}
 .btn_link.gray{color:#666;}
 .btn_link.gray .bt_ic_arr{background-image:url(../images/btn/bt_ic_arr_666.png);}
+.btn_link2{position:relative;color:#666;}
+.btn_link2:after{content:'';position:absolute;bottom:-1px;left:0;right:0;display:block;height:1px;background:#666;}
+
 
 /*input,select,textaera*/
 .input{position:relative;display:inline-block;width:100%;}
@@ -615,8 +617,9 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 .input input[type="date"]{position:absolute;right:0;top:0;width:55px;height:100%;opacity:0;padding-right:0;}
 .input input[type="password"],
 .input input.no_del{padding-right:11px;}
-.input input[readonly],
-.input input:disabled{background:#f0f0f0;color:#858585;}
+.input input[readonly]{color:#858585;}
+.input input[readonly]+.unit{color:#858585;}
+.input input:disabled{background:#f0f0f0;}
 .input input:disabled+.ui-datepicker-trigger{opacity:0.3;z-index:-1;}
 .input+.input{margin-top:6px;}
 .inp_del{position:absolute;top:50%;right:11px;display:block;width:24px;height:24px;margin-top:-12px;font-size:3px;color:transparent;overflow:hidden;background:url(../images/common/inp_del.png) no-repeat center center;background-size:contain;}
@@ -753,6 +756,12 @@ html:not(.isApp) .checkbox input:focus+i{box-shadow:0px 0px 1px 1px rgba(0,97,25
 .checkbox.ty2 input:disabled+i{border-color:#f0f0f0;background-color:#f0f0f0;}
 .checkbox.ty2 input:checked:disabled+i:after{border-color:#666;}
 
+.checkbox_btn_wrap{padding:15px 8px;text-align:center;background:#f8f8f8;font-size:0;}
+.checkbox_btn_wrap .checkbox.btn{margin:5px 4px;}
+.checkbox.btn>input{width:100%;height:100%;}
+.checkbox.btn>.lbl{margin-left:0;padding:0 18px;line-height:30px;font-size:1.2rem;background:#fff;color:#111;border-radius:15px;}
+.checkbox.btn input:checked+.lbl{background:#3182f7;color:#fff;}
+
 /*switch*/
 .checkbox.switch{min-width:29px;min-height:14px;}
 .checkbox.switch input{width:29px;height:14px;}
@@ -816,12 +825,16 @@ html:not(.isApp) .btn_toggle li input:focus+label{box-shadow:0px 0px 1px 1px rgb
 .btn_toggle.ty2{margin:-3px;background:none;}
 .btn_toggle.ty2 li{padding:3px;}
 .btn_toggle.ty2 li input+label,
-.btn_toggle.ty2 li a{border-color:#ddd;border-width:1px;border-radius:0;}
+.btn_toggle.ty2 li a{border-color:#ddd;border-width:1px;border-radius:35px;color:#111;}
+.btn_toggle.ty2 li input:checked+label, 
+.btn_toggle.ty2 li.active a{color:#3182f7;}
 .btn_toggle.ty2 li+li input:checked+label:after, 
 .btn_toggle.ty2 li+li.active a:after{display:none;}
 
 .btn_toggle.h70 li input+label,
 .btn_toggle.h70 li a{height:70px;line-height:68px;}
+.btn_toggle.h30 li input+label,
+.btn_toggle.h30 li a{height:30px;line-height:28px;font-size:12px;}
 
 .btn_toggle.grid.row2{padding-top:1px;}
 .btn_toggle.grid.row2 li{margin-top:-1px;}
@@ -860,7 +873,7 @@ html:not(.isApp) .btn_toggle li input:focus+label{box-shadow:0px 0px 1px 1px rgb
 .tabmenu .tab_line{position:absolute;left:0;bottom:0;width:0;height:2px;background:#3182f7;border-radius:2px;-webkit-transition:left 0.3s,width 0.3s;transition:left 0.3s,width 0.3s;}
 
 /* fixed tab */
-.tab_wrap{position:relative;margin-bottom:30px;}
+.tab_wrap{position:relative;margin-bottom:30px;background:#fff;}
 .tab_wrap.fixed{height:51px;}
 html.isApp.ios.inpFocus .tab_wrap.fixed .tab_track{position:absolute;top:0;}
 #contents>.tab_wrap:first-child,

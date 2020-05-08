@@ -95,7 +95,9 @@ var htmlnclude = function(){
 					}
 
 					if($htmlFile == 'user.html'){
+						htmlnclude();
 						buttonUI.tabNavi();
+						formUI.select();
 						$('#userCertifyPop .tabmenu li').first().find('a').click();
 					}
 				}
@@ -1727,97 +1729,101 @@ var buttonUI ={
 			});
 		}
 	},
-	tabNavi:function(){
+	tabNavi:function(el){
 		$('.tab_wrap .tabmenu').each(function(i){
+			var $this = $(this);
 			if($(this).hasClass('swiper-container-initialized')){
+				var $idx = $this.data('idx');
+				$tabNavis[$idx].update();
 				return false;
 			}else{
 				$(this).find('ul').addClass('swiper-wrapper');
 				$(this).find('li').addClass('swiper-slide');
-			}
-			var $navi = $(this),
-				$widthSum = 0,
-				$class = 'ui-tabnavi-'+i;
+			
+				var $navi = $this,
+					$widthSum = 0,
+					$class = 'ui-tabnavi-'+i;
 
-			$navi.find('.swiper-slide').each(function(){
-				$widthSum = $widthSum + $(this).outerWidth();
-			});
-			$navi.addClass($class);
-			var $tabNavi = new Swiper('.'+$class,{
-				slidesPerView: 'auto',
-				resizeReInit:true,
-				on: {
-					touchMove:function(){
-						if($isCenter == true){
-							$tabNavi.params.centeredSlides = false;
-							$tabNavi.update();
+				$navi.find('.swiper-slide').each(function(){
+					$widthSum = $widthSum + $(this).outerWidth();
+				});
+				$navi.addClass($class);
+				var $tabNavi = new Swiper('.'+$class,{
+					slidesPerView: 'auto',
+					resizeReInit:true,
+					on: {
+						touchMove:function(){
+							if($isCenter == true){
+								$tabNavi.params.centeredSlides = false;
+								$tabNavi.update();
+							}
 						}
 					}
-				}
-			});
+				});
 
-			//$navi.data('navis','$tabNavis['+i+']');
-			$tabNavis.push($tabNavi);
+				$navi.data('idx',$tabNavis.length);
+				$tabNavis.push($tabNavi);
 
-			var $isCenter = false;
-			var activeMove = function(idx,speed){
-				var $windowCenter = $(window).width()/2,
-					$activeTab = $navi.find('.swiper-slide').eq(idx),
-					$tabLeft = $activeTab.position().left,
-					$tabWidth = $activeTab.outerWidth(),
-					$tabCenter = $tabLeft + ($tabWidth/2);
-				if(speed == undefined)speed=300;
-				if($windowCenter < $tabCenter && $tabCenter < ($widthSum-$windowCenter)){
-					$isCenter = true;
-					$tabNavis[i].params.centeredSlides = true;
-					$tabNavis[i].update();
-				}else{
-					$isCenter = false;
-					$tabNavis[i].params.centeredSlides = false;
-					$tabNavis[i].update();
-				}
-				if($windowCenter < $tabCenter){
-					$tabNavis[i].slideTo(idx,speed);
-				}else{
-					$tabNavis[i].slideTo(0,speed);
-				}
-				$activeTab.find('a').attr('title','현재선택');
-				$activeTab.siblings().find('a').removeAttr('title');
-			};
+				var $isCenter = false;
+				var activeMove = function(idx,speed){
+					var $windowCenter = $(window).width()/2,
+						$activeTab = $navi.find('.swiper-slide').eq(idx),
+						$tabLeft = $activeTab.position().left,
+						$tabWidth = $activeTab.outerWidth(),
+						$tabCenter = $tabLeft + ($tabWidth/2);
+					if(speed == undefined)speed=300;
+					if($windowCenter < $tabCenter && $tabCenter < ($widthSum-$windowCenter)){
+						$isCenter = true;
+						$tabNavis[i].params.centeredSlides = true;
+						$tabNavis[i].update();
+					}else{
+						$isCenter = false;
+						$tabNavis[i].params.centeredSlides = false;
+						$tabNavis[i].update();
+					}
+					if($windowCenter < $tabCenter){
+						$tabNavis[i].slideTo(idx,speed);
+					}else{
+						$tabNavis[i].slideTo(0,speed);
+					}
+					$activeTab.find('a').attr('title','현재선택');
+					$activeTab.siblings().find('a').removeAttr('title');
+				};
 
-			var $activeCheckNum = 0;
-			var $activeCheck = setInterval(function(e){
-				$activeCheckNum++;
-				var $active = $navi.find('.swiper-slide.active'),
-					$activeIdx = $active.index();
-				if($activeIdx >= 0){
-					activeMove($activeIdx,0);
-					clearInterval($activeCheck);
-				}
-				if($activeCheckNum >= 20)clearInterval($activeCheck);
-			},100);
+				var $activeCheckNum = 0;
+				var $activeCheck = setInterval(function(e){
+					$activeCheckNum++;
+					var $active = $navi.find('.swiper-slide.active'),
+						$activeIdx = $active.index();
+					if($activeIdx >= 0){
+						activeMove($activeIdx,0);
+						clearInterval($activeCheck);
+					}
+					if($activeCheckNum >= 20)clearInterval($activeCheck);
+				},100);
 
-			$(window).resize(function(){
-				var $parenW = $navi.parent().width();
-				if($parenW > $widthSum){
-					$navi.find('.swiper-wrapper').addClass('center');
-					$tabNavis[i].params.followFinger = false;
-					$tabNavis[i].update();
-				}else{
-					$navi.find('.swiper-wrapper').removeClass('center');
-					$tabNavis[i].params.followFinger = true;
-					$tabNavis[i].update();
-				}
-			});
+				$(window).resize(function(){
+					var $parenW = $navi.parent().width();
+					if($parenW > $widthSum){
+						$navi.find('.swiper-wrapper').addClass('center');
+						$tabNavis[i].params.followFinger = false;
+						$tabNavis[i].update();
+					}else{
+						$navi.find('.swiper-wrapper').removeClass('center');
+						$tabNavis[i].params.followFinger = true;
+						$tabNavis[i].update();
+					}
+				});
 
-			$navi.on('click','a',function(e){
-				var $jstab = $(this).closest('.ui-tab');
-				if($jstab.length){
-					e.preventDefault();
-					var $liIdx = Math.max($(this).closest('li').index());
-					activeMove($liIdx);
-				}
-			});
+				$navi.on('click','a',function(e){
+					var $jstab = $(this).closest('.ui-tab');
+					if($jstab.length){
+						e.preventDefault();
+						var $liIdx = Math.max($(this).closest('li').index());
+						activeMove($liIdx);
+					}
+				});
+			}
 		});
 	},
 	swipeTab:function(idx){
@@ -2359,7 +2365,7 @@ var formUI = {
 		});
 
 		//password
-		$(document).on('keyup,change','.password input',function(){
+		$(document).on('keyup change','.password input',function(){
 			var $val = $(this).val(),
 				$closest = $(this).closest('.password'),
 				$dot = $closest.find('.dot span');
