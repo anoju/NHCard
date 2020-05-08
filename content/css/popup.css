@@ -63,6 +63,7 @@
 .pop_tit_wrap [class*=i_ico_]+.pop_tit{margin-top:20px;}
 .pop_cont:after{content:'';display:block;clear:both;}
 .pop_cont.after_btn:after{height:48px;}
+.pop_cont .btn_wrap.bottom_fixed{height:48px;}
 html.iPhoneX.isApp .popup:not(.modal) .pop_cont.after_btn:after{height:65px;}
 .pop_cont.no_touch_scl{-webkit-overflow-scrolling:none;overflow:hidden;padding-bottom:0;}
 .pop_cont .in_touch_scl{height:calc(100vh - 180px);-webkit-overflow-scrolling:touch;overflow:auto;padding-bottom:100px;}
