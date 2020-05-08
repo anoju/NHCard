@@ -61,6 +61,12 @@
 		//잠금번호 5회오류 팝업
 		//Layer.open('#lockPwdFailPop');
 
+		//PIN번호 불일치 팝업
+		//Layer.open('#pinNumberChkPop');
+
+		//PIN번호 5회오류 팝업
+		//Layer.open('#pinNumberFailPop');
+
 		//지문인식 안내팝업
 		//Layer.open('#fingerGuidePop');
 
@@ -80,9 +86,6 @@
 				console.log('지문 재설정!!')
 			}
 		});*/
-
-		//PIN번호 안내 팝업
-		//Layer.open('#pinNumInfoPop');
 
 		//회원 ID가 없을 경우 팝업
 		//Layer.open('#idNotFindPop');
@@ -172,7 +175,7 @@
 										<div class="cont_txt">설정된 잠금번호가 없어요<br>잠금번호 설정 후 이용해 주세요.</div>
 										<div class="btn_wrap">
 											<div class="flex">
-												<a href="#" class="button line icon"><i class="bt_ic_setting" aria-hidden="true"></i>잠금번호 설정<i class="bt_ic_arr" aria-hidden="true"></i></a>
+												<a href="#" class="button line icon" onclick="Layer.open('#userCertifyPop');"><i class="bt_ic_setting" aria-hidden="true"></i>잠금번호 설정<i class="bt_ic_arr" aria-hidden="true"></i></a>
 											</div>
 										</div>
 									</div>
@@ -180,15 +183,13 @@
 									<div class="cont_box lock_num">
 										<div class="cont_txt">잠금번호 6자리를 입력해 주세요.</div>
 
-										<div class="fm_cont phone">
-											<div class="password">
-												<div class="dot" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-												<input type="password" maxlength="6" title="비밀번호 입력">
-											</div>
+										<div class="password">
+											<div class="dot" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+											<input type="password" maxlength="6" title="잠금번호 입력">
 										</div>
 										<div class="tbl">
 											<div class="td t_left va_mid">
-												<a href="#" class="btn_link gray">잠금번호 설정<i class="bt_ic_arr" aria-hidden="true"></i></a>
+												<a href="#" class="btn_link gray" onclick="Layer.open('#userCertifyPop');">잠금번호 설정<i class="bt_ic_arr" aria-hidden="true"></i></a>
 											</div>
 											<div class="td t_right va_mid">
 												<span class="checkbox switch">
@@ -207,7 +208,7 @@
 										<div class="cont_txt">설정된 지문이 없어요<br>지문 설정 후 이용해 주세요.</div>
 										<div class="btn_wrap">
 											<div class="flex">
-												<a href="#" class="button line icon"><i class="bt_ic_finger" aria-hidden="true"></i>지문 설정<i class="bt_ic_arr" aria-hidden="true"></i></a>
+												<a href="#" class="button line icon" onclick="Layer.open('#userCertifyPop');"><i class="bt_ic_finger" aria-hidden="true"></i>지문 설정<i class="bt_ic_arr" aria-hidden="true"></i></a>
 											</div>
 										</div>
 									</div>
@@ -245,7 +246,7 @@
 										<div class="cont_txt">설정된 Face ID가 없어요.<br>Face ID 설정 후 이용해 주세요.</div>
 										<div class="btn_wrap">
 											<div class="flex">
-												<a href="#" class="button line icon"><i class="bt_ic_faceId" aria-hidden="true"></i>Face ID 설정<i class="bt_ic_arr" aria-hidden="true"></i></a>
+												<a href="#" class="button line icon" onclick="Layer.open('#userCertifyPop');"><i class="bt_ic_faceId" aria-hidden="true"></i>Face ID 설정<i class="bt_ic_arr" aria-hidden="true"></i></a>
 											</div>
 										</div>
 									</div>
@@ -288,16 +289,14 @@
 									<!--PIN번호가 있을 때-->
 									<div class="cont_box lock_num">
 										<div class="cont_txt">PIN번호 6자리를 입력해 주세요.</div>
-										<div class="fm_cont pin">
-											<div class="password">
-												<div class="dot" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
-												<input type="password" maxlength="6" title="비밀번호 입력">
-											</div>
-											<div class="caution_txt2">PIN번호는 앱의 잠금번호와 다른 로그인 수단으로 새로 등록이 필요합니다.</div>
+										<div class="password">
+											<div class="dot" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+											<input type="password" maxlength="6" title="PIN번호 입력">
 										</div>
+										<div class="caution_txt2">PIN번호는 앱의 잠금번호와 다른 로그인 수단으로 새로 등록이 필요합니다.</div>
 										<div class="tbl">
 											<div class="td t_left va_mid">
-												<a href="#" class="btn_link gray">PIN번호란?<i class="bt_ic_arr" aria-hidden="true"></i></a>
+												<a href="#pinNumInfoPop" class="btn_link gray ui-pop-open">PIN번호란?<i class="bt_ic_arr" aria-hidden="true"></i></a>
 											</div>
 											<div class="td t_right va_mid">
 												<a href="#" class="btn_link gray">PIN번호 설정<i class="bt_ic_arr" aria-hidden="true"></i></a>
@@ -320,7 +319,7 @@
 										</div>
 										<div class="tbl mt10">
 											<div class="td t_left va_mid">
-												<a href="#" class="btn_link gray">아이디/비밀번호 찾기<i class="bt_ic_arr" aria-hidden="true"></i></a>
+												<a href="#" class="btn_link gray" onclick="Layer.open('#userCertifyPop');">아이디/비밀번호 찾기<i class="bt_ic_arr" aria-hidden="true"></i></a>
 											</div>
 											<div class="td t_right va_mid">
 												<span class="checkbox">
@@ -493,6 +492,50 @@
 		</article>
 	</div>
 	<!-- //잠금번호 5회오류 팝업 -->
+
+	<!-- PIN번호 불일치 팝업 -->
+	<div id="pinNumberChkPop" class="popup modal" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_cont">
+				<div class="section t_center">
+					<i class="i_ico_50 ico_2" aria-hidden="true"></i>
+					<h2 class="pop_tit fz_14">PIN번호가 일치하지 않습니다.<br>
+					확인 후 다시 입력해 주세요. <strong class="fc_red">(1/5)</strong></h2>
+					<div class="fz_13 fc_bluegray"><span aria-hidden="true">※</span> 5회 연속 실패 시 로그인 제한</div>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h48 blue ui-pop-close">확인</a><!-- ui-pop-close클래스로 팝업 닫기 가능 -->
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- //PIN번호 불일치 팝업 -->
+
+	<!-- PIN번호 5회오류 팝업 -->
+	<div id="pinNumberFailPop" class="popup modal" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_cont">
+				<div class="section t_center">
+					<i class="i_ico_50 ico_2" aria-hidden="true"></i>
+					<h2 class="pop_tit fz_14">PIN번호 5회 오류로<br>
+					로그인이 제한되었습니다.</h2>
+					<div>PIN번호 설정 후 다시 시도해 주세요.</div>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h48 blue ui-pop-close">확인</a><!-- ui-pop-close클래스로 팝업 닫기 가능 -->
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- //PIN번호 5회오류 팝업 -->
 
 	<!-- 지문인식 안내 팝업 -->
 	<div id="fingerGuidePop" class="popup modal" role="dialog" aria-hidden="true">
@@ -722,6 +765,10 @@
 		</article>
 	</div>
 	<!-- //2개월간 미사용 할 경우 자동로그인 해제 안내 팝업 -->
+
+	<!-- 본인인증팝업 -->
+	<div data-include-html="../include/certify/user.html"></div>
+	<!-- //본인인증팝업 -->
 
 	<div data-include-html="../include/floatingBar.html"></div>
 	<div data-include-html="../include/footer.html"></div>
