@@ -63,5 +63,7 @@
 .form_item.pay_op{margin-top:30px;}
 .form_item.pay_op .fm_lb{font-size:1.8rem;font-weight:500;}
 .form_item.pay_op .fm_cont{margin-top:17px;}
-.form_item.pay_op .select+.input{margin-top:12px;}
+.form_item.pay_op .select+.input,
+.form_item.pay_op .select+.input+.input{margin-top:12px;}
 .form_item.pay_op .caution_info{margin:19px 0 5px;}
+.tit_h3+.checkbox_btn_wrap{margin-top:20px;}

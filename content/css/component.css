@@ -58,6 +58,7 @@
 .form_item .td.email_inp .input input{padding-right:60px;}
 .form_item .td.email_inp .inp_del{right:20px;}
 .form_item .td.email_inp .btn_sel{display:block;position:absolute;right:0;top:0;width:23px;height:100%;font-size:3px;color:transparent;background:url(../images/common/select_arrow.png) 100% 50% no-repeat;background-size:12px auto;overflow:hidden;}
+.form_item .front_unit{position:absolute;left:10px;top:0;line-height:44px;font-size:1.4rem;color:#bbb;}
 .form_item .unit{display:block;position:absolute;right:10px;top:0;color:#111;line-height:44px;font-size:1.4rem;}
 .form_item .unit:first-child{left:10px;right:auto;}
 
@@ -76,9 +77,6 @@
 .chk_item>.checkbox .lbl_child{padding:14px 0;margin:0 19px;border-top:1px solid #eaeaea;line-height:1.5;font-size:1.2rem;color:#333;}
 .chk_item>.radio>i+.lbl .lbl_child,
 .chk_item>.checkbox>i+.lbl .lbl_child{margin:13px 0 0 -30px;padding-bottom:0;}
-/* .chk_item.ty2 .checkbox>.lbl{font-size:1.6rem;font-weight:500;color:#333;}
-.chk_item.ty2 .checkbox>.lbl>.lbl_child{font-weight:400;}
-.chk_item.ty2>.checkbox .lbl_child{font-size:1.4rem;word-wrap:break-word;word-break:break-all;} */
 .chk_item+.chk_item{margin-top:10px;}
 
 .chk_list .chk_item{border-radius:0;}
@@ -240,6 +238,19 @@
 .box_list_2 .list_data li .td{text-align:right;padding-left:10px;}
 .box_list_2 .list_data li.last{font-weight:500;color:#111;margin-top:9px;border-top:1px dashed #ddd;}
 .box_list_2 .list_data li.last>div{padding-top:9px;}
+
+.box_list_3 .box_link{position:relative;display:block;margin-top:27px;padding-bottom:20px;font-size:1.8rem;font-weight:500;color:#111;}
+.box_list_3 .box_link:after{content:'';position:absolute;top:8px;right:3px;display:block;width:8px;height:8px;border:1px solid #333;border-top:none;border-left:none;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);}
+.box_list_3 .line_item{padding:20px 22px;border:1px solid #ddd;border-radius:4px;}
+.box_list_3 .line_item>li{display:table;width:100%;font-size:1.2rem;color:#666;}
+.box_list_3 .line_item>li+li{margin-top:6px;}
+.box_list_3 .line_item>li>.th,
+.box_list_3 .line_item>li>.td{display:table-cell;}
+.box_list_3 .line_item>li>.td{text-align:right;}
+.box_list_3 .line_item>li>.td span{font-weight:500;}
+.box_list_3 .line_item>li.last{color:#111;}
+.box_list_3 .line_item>li.last>.th,
+.box_list_3 .line_item>li.last>.td{font-weight:500;}
 
 /*가입완료*/
 .finish_wrap{text-align:center;}
