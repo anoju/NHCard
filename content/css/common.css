@@ -212,6 +212,7 @@ common
 .hr_line{display:block;border:0 none;height:10px;margin:33px 0;background:#f8f8f8;}
 .hr_line.ty2{height:1px;background:#ddd;margin:30px 0;}
 .section .hr_line{margin-left:-20px;margin-right:-20px;}
+.section .hr_line.short{margin:20px 0;}
 
 /*****************************************************************
 Layout
@@ -873,6 +874,7 @@ html:not(.isApp) .btn_toggle li input:focus+label{box-shadow:0px 0px 1px 1px rgb
 html.isApp.ios.inpFocus .tab_wrap.fixed .tab_track{position:absolute;top:0;}
 #contents>.tab_wrap:first-child,
 #contents>.section>.tab_wrap:first-child,
+#contents>.section>.tabmenu,
 .dialog_content>.section>.tab_wrap:first-child{margin-top:-30px;}
 .section .tab_wrap{margin-left:-20px;margin-right:-20px;}
 .tab_wrap .tabmenu{position:relative;overflow:hidden;margin-bottom:0;}
@@ -988,6 +990,10 @@ html.isApp.ios.inpFocus .tab_wrap.fixed .tab_track{position:absolute;top:0;}
 .txt_list .dash:before{width:4px;height:1px;margin-top:1px;}
 .txt_list li .dot:before,
 .txt_list li .dash:before{background-color:#888;}
+.txt_list .tit{font-weight:500;color:#111;}
+.txt_list+.txt_list{margin-top:15px;}
+.txt_list dd ul li{margin-top:0;}
+.txt_list dt+dd{margin-top:3px;}
 .fc_gray>.dot:before,
 .fc_gray>.dash:before,
 .fc_gray.dot:before,
@@ -1129,6 +1135,7 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .accordion_list .panel .txt_list li li{font-size:1.2rem;}
 .accordion_dl .tit a{font-size:1.6rem;font-weight:500;color:#111;padding-left:42px;}
 .accordion_dl .tit .i_ico_20{position:absolute;left:14px;top:50%;margin-top:-10px;}
+.accordion_list+.accordion_list{margin-top:10px;}
 
 /*swipe*/
 .ui-swiper-wrap{margin:40px 0 0;}
