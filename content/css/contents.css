@@ -66,3 +66,4 @@
 .form_item.pay_op .select+.input,
 .form_item.pay_op .select+.input+.input{margin-top:12px;}
 .form_item.pay_op .caution_info{margin:19px 0 5px;}
+.tit_h3+.checkbox_btn_wrap{margin-top:20px;}
