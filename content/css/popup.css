@@ -87,8 +87,9 @@ html.iPhoneX.isApp .popup:not(.modal) .pop_cont .in_touch_scl{height:calc(100vh 
 .popup.modal .btn_wrap.bottom_fixed>div{position:absolute;}
 
 .popup.alert .pop_wrap{width:280px;}
-.popup.alert .pop_head{position:relative;border-bottom:1px solid #ddd;text-align:center;}
-.popup.alert .pop_head h1{padding-right:20px;}
+.popup.alert .pop_head{position:relative;}
+/* .popup.alert .pop_head{position:relative;border-bottom:1px solid #ddd;text-align:center;}
+.popup.alert .pop_head h1{padding-right:20px;} */
 .popup.alert .pop_cont{padding:20px 0;}
 .popup.alert .message{display:table;width:100%;}
 .popup.alert .message>div{display:table-cell;height:65px;text-align:center;vertical-align:middle;word-break:break-all;}
