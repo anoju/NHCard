@@ -85,8 +85,9 @@
 .chk_item>.checkbox .lbl_child{padding:14px 0;margin:0 19px;border-top:1px solid #eaeaea;line-height:1.5;font-size:1.2rem;color:#333;}
 .chk_item>.radio>i+.lbl .lbl_child,
 .chk_item>.checkbox>i+.lbl .lbl_child{margin:13px 0 0 -30px;padding-bottom:0;}
-.chk_item.ty2 .checkbox>.lbl{font-size:1.6rem;font-weight:500;color:#333;}
-.chk_item.ty2>.checkbox .lbl_child{font-size:1.4rem;word-wrap:break-word;word-break:break-all;}
+/* .chk_item.ty2 .checkbox>.lbl{font-size:1.6rem;font-weight:500;color:#333;}
+.chk_item.ty2 .checkbox>.lbl>.lbl_child{font-weight:400;}
+.chk_item.ty2>.checkbox .lbl_child{font-size:1.4rem;word-wrap:break-word;word-break:break-all;} */
 .chk_item+.chk_item{margin-top:10px;}
 
 .chk_list .chk_item{border-radius:0;}
