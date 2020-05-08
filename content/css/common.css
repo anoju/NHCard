@@ -617,10 +617,11 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 .input input[type="date"]{position:absolute;right:0;top:0;width:55px;height:100%;opacity:0;padding-right:0;}
 .input input[type="password"],
 .input input.no_del{padding-right:11px;}
-.input input[readonly]{color:#858585;}
-.input input[readonly]+.unit{color:#858585;}
-.input input:disabled{background:#f0f0f0;}
+.input input[readonly],
+.input input:disabled{background:#f0f0f0;color:#858585;}
 .input input:disabled+.ui-datepicker-trigger{opacity:0.3;z-index:-1;}
+.input input.readonly{background:#fff;color:#858585;}
+.input input.readonly+.unit{color:#858585;}
 .input+.input{margin-top:6px;}
 .inp_del{position:absolute;top:50%;right:11px;display:block;width:24px;height:24px;margin-top:-12px;font-size:3px;color:transparent;overflow:hidden;background:url(../images/common/inp_del.png) no-repeat center center;background-size:contain;}
 .input input[readonly]+.inp_del,
