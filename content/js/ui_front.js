@@ -418,7 +418,6 @@ var deviceCheck = function(){
 };
 
 //공통: 헤더, gnb, 레이아웃, 앱용플로팅버튼, 스킵네비, meta[og:image]
-var $isFixedBtn = false;
 var common = {
 	isApp:function(){
 	//앱일때만 'html'에 isApp 클래스추가
@@ -682,30 +681,24 @@ var common = {
 	},
 	footer: function(){
 		/* floatingBar */
-		var $naviBar = $('#floatingBar');
+		var $naviBar = $('#floatingBar'),
+			$naviBarH = '';
 		if($naviBar.length){
-			$('#footer').addClass('add_floatingBar');
-			if($('.floating_btn').length){
-				$('.floating_btn').each(function(){
-					var $this = $(this);
-					$naviBar.find('.ft_wrap').append($this);
-				});
-			}
+			$naviBarH = $naviBar.outerHeight();
+			$('.fixed_space').height($naviBarH);
 		}
 
 		/* fixed Button Check */
 		var $content = $('#contents'),
 			$footer = $('#footer'),
-			$floatingBtn = $('.floating_btn'),
-			$fixedBtn = '';
+			$fixedBtn = '',
+			$fixedBtnH = '';
 		
-		if($content.find('.btn_wrap.bottom_fixed').not('.pop_btn').length)$fixedBtn = $content.find('.btn_wrap.bottom_fixed').not('.pop_btn');
+		if($content.find('.bottom_fixed').not('.pop_btn').length)$fixedBtn = $content.find('.bottom_fixed').not('.pop_btn');
 
 		if($fixedBtn != '' && $fixedBtn.is(':visible')){
-			$fixedBtnH = $fixedBtn.children().height();
-			$footer.addClass('add_fixed_btn');
-			$('#floatingBar').addClass('hide');
-			if($floatingBtn.length)$floatingBtn.addClass('is_fixed_btn');
+			$fixedBtnH = $fixedBtn.children().outerHeight();
+			if($('.fixed_space').height() < $fixedBtnH)$('.fixed_space').height($fixedBtnH);
 		}
 	},
 	skipNavi: function(){
@@ -714,6 +707,7 @@ var common = {
 		if($('#contents').length && !$('#skipNavi').length)$('body').prepend($naviHtml);
 	},
 	init:function(){
+		if(!$('.fixed_space').length)$('body').append('<div class="fixed_space"></div>');
 		common.gnb();
 		common.header();
 		common.footer();
@@ -1083,7 +1077,7 @@ var Layer = {
 		}
 
 		//fixed버튼 있을때 빈공간삽입
-		if($(tar).find('.pop_cont').next('.btn_wrap.bottom_fixed').length){
+		if($(tar).find('.pop_cont').next('.bottom_fixed').length){
 			$(tar).find('.pop_cont').addClass('after_btn');
 		}
 
@@ -1510,7 +1504,7 @@ var buttonUI ={
 		});
 	},
 	top: function(){
-	//top 버튼ㄴ
+	//top 버튼
 		var settings ={
 			button: '#btnTop',
 			text: '컨텐츠 상단으로 이동',
@@ -1522,15 +1516,13 @@ var buttonUI ={
 		var btnHtml = '<div class="floating_btn btn_top"><a href="#" id="'+settings.button.substring(1)+'" class="btn" title="'+settings.text+'" role="button"><span class="blind">'+settings.text+'</span></a></div>';
 		if(!$(settings.button).length && $('#footer').length){
 			if($('#floatingBar').length){
-				if($('#floatingBar').hasClass('hide')){
-					$('#footer').append(btnHtml);
-				}else{
-					$('#floatingBar .ft_wrap').append(btnHtml);
-				}
+				$('#floatingBar .ft_wrap').append(btnHtml);
 			}else{
 				$('#footer').append(btnHtml);
+				var $spaceH = $('.fixed_space').height();
+				if($spaceH>0)$(settings.button).parent().css('bottom',$spaceH+20);
 			}
-			if($isFixedBtn)$(settings.button).parent().addClass('is_fixed_btn');
+			
 		
 			$(document).on('click',settings.button,function(e){
 				e.preventDefault();
@@ -1596,7 +1588,7 @@ var buttonUI ={
 
 				if($target == undefined){
 					$($href).addClass('active').attr('aria-expanded',true).siblings('.tab_panel').attr('aria-expanded',false).removeClass('active');
-					if($($href).find('.btn_wrap.bottom_fixed').length)$($href).addClass('add_fixed_btn');
+					if($($href).find('.bottom_fixed').length)$($href).addClass('add_fixed_btn');
 				}else{
 					$($target).attr('aria-expanded',false).removeClass('active');
 					$($href).addClass('active').attr('aria-expanded',true);
@@ -1605,10 +1597,10 @@ var buttonUI ={
 				$this.attr('aria-selected',true).closest('li').siblings().find('[role=tab]').attr('aria-selected',false);
 
 				//fixedBtn
-				if($($href).find('.btn_wrap.bottom_fixed').length){
+				if($($href).find('.bottom_fixed').length){
 					$('#footer').addClass('add_fixed_btn');
 					$('#floatingBar').addClass('hide');
-				}else if(!$('.btn_wrap.bottom_fixed:visible').length){
+				}else if(!$('.bottom_fixed:visible').length){
 					$('#footer').removeClass('add_fixed_btn');
 					$('#floatingBar').removeClass('hide');
 				}
@@ -1906,7 +1898,7 @@ var tooltip = {
 				$btnW	= $btn.width(),
 				$winW	= $(window).width(),
 				$scrollEnd	= $(window).height()+$(window).scrollTop();
-			if($('.btn_wrap.bottom_fixed:visible').not('.pop_btn').length)$scrollEnd = $scrollEnd-60;
+			if($('.bottom_fixed:visible').not('.pop_btn').length)$scrollEnd = $scrollEnd-60;
 			$tar.children('.arr').css({
 				'left': $btnX-20+($btnW/2)
 			});
@@ -3504,7 +3496,7 @@ var accordion = {
 		//아코디언 열릴때 스크롤 함수
 		var $scrollTop = $(window).scrollTop(),
 			$winHeight = $(window).height();
-		if($('.btn_wrap.bottom_fixed').not('.pop_btn').length)$winHeight = $winHeight - 60;
+		if($('.bottom_fixed').not('.pop_btn').length)$winHeight = $winHeight - 60;
 		var $winEnd = $scrollTop+$winHeight,
 			$btnTop = $(btn).offset().top - 50,
 			$thisTop = $(panel).offset().top,
