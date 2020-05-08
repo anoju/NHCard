@@ -347,7 +347,7 @@ html.ie9 #gnb.show{right:0;}
 [class*=min_height_btn-]{padding-bottom:30px;}
 .min_height_btn-153{min-height:calc(100vh - 153px)}
 
-#footer{position:relative;text-align:center;border-top:1px solid #d5d9da;}
+#footer{position:relative;text-align:center;border-top:1px solid #d5d9da;background:#fff;}
 #footer.add_fixed_btn:after,
 #footer.add_floatingBar:after{content:'';display:block;height:70px;}
 html.iPhoneX #footer.add_fixed_btn:after,
@@ -868,7 +868,7 @@ html:not(.isApp) .btn_toggle li input:focus+label{box-shadow:0px 0px 1px 1px rgb
 .tabmenu .tab_line{position:absolute;left:0;bottom:0;width:0;height:2px;background:#3182f7;border-radius:2px;-webkit-transition:left 0.3s,width 0.3s;transition:left 0.3s,width 0.3s;}
 
 /* fixed tab */
-.tab_wrap{position:relative;margin-bottom:30px;}
+.tab_wrap{position:relative;margin-bottom:30px;background:#fff;}
 .tab_wrap.fixed{height:51px;}
 html.isApp.ios.inpFocus .tab_wrap.fixed .tab_track{position:absolute;top:0;}
 #contents>.tab_wrap:first-child,
