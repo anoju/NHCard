@@ -69,6 +69,8 @@
 .tit_h3+.checkbox_btn_wrap,
 .tit_h3+.price_box_wrap,
 .tit_h3+.box_list_2{margin-top:20px;}
+.use_flt_box{margin-top:18px;}
+.use_flt_box .checkbox_btn_wrap{margin-top:14px;}
 .detail_pay dt{margin-top:30px;font-size:1.8rem;font-weight:500;color:#111;}
 .detail_pay dt:first-child{margin-top:0;}
 .detail_pay dt+dd{margin-top:19px;}

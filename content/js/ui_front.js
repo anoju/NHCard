@@ -3365,8 +3365,8 @@ var listUI = {
 				$chk.prop('checked',false).change();
 			}
 		});
-		$('.ui-all-chk>ul .checkbox input').change(function(){
-			var $closest = $(this).closest('ul'),
+		$('.ui-all-chk>.chk_list .checkbox input').change(function(){
+			var $closest = $(this).closest('.chk_list'),
 				$allchk = $closest.prev().find('.checkbox input');
 				checkBoxLength = $closest.find('.checkbox input').length;
 				checkedLength = $closest.find('.checkbox input:checked').length;
