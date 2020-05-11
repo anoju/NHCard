@@ -332,3 +332,9 @@
 .txt_box_content img{margin-top:20px;width:100%;}
 .txt_box_content .table{margin-top:24px;}
 .txt_box_content .table table th,.txt_box_content .table table td{padding:11px;text-align:center;border-width:0 0 1px 0;}
+
+/*이용안내-gray박스*/
+.gray_info_box{padding:22px 20px 23px;background:#f8f8f8;border-radius:4px;}
+.gray_info_box dt{position:relative;margin-bottom:10px;padding-left:25px;font-size:1.5rem;font-weight:500;color:#111;}
+.gray_info_box dt>i{position:absolute;top:50%;margin-top:-8px;left:0;}
+.gray_info_box dd{font-size:1.3rem;color:#666;word-wrap:break-word;word-break:break-word;}

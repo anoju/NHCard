@@ -84,18 +84,18 @@ common
 .fz_25{font-size:2.5rem !important;}
 
 /*color*/
-.fc_blue{color:#3182f7;}
-.fc_skyblue{color:#00c7e6;}
-.fc_yellow{color:#ffb81c;}
-.fc_green{color:#07a814;}
-.fc_green2{color:#94cc2b;}
-.fc_red{color:#ff4019;}
-.fc_black{color:#111;}
-.fc_normal{color:#333;}
-.fc_gray{color:#666;}
-.fc_gray2{color:#858585;}
-.fc_gray3{color:#ddd;}
-.fc_bluegray{color:#8997af;}
+.fc_blue{color:#3182f7 !important;}
+.fc_skyblue{color:#00c7e6 !important;}
+.fc_yellow{color:#ffb81c !important;}
+.fc_green{color:#07a814 !important;}
+.fc_green2{color:#94cc2b !important;}
+.fc_red{color:#ff4019 !important;}
+.fc_black{color:#111 !important;}
+.fc_normal{color:#333 !important;}
+.fc_gray{color:#666 !important;}
+.fc_gray2{color:#858585 !important;}
+.fc_gray3{color:#ddd !important;}
+.fc_bluegray{color:#8997af !important;}
 
 /* align */
 .t_center{text-align:center !important;}
@@ -347,6 +347,7 @@ html.ie9 #gnb.show{right:0;}
 .section .outer{margin-left:-20px;margin-right:-20px;}
 
 .area_next_bottom{padding-bottom:30px;min-height:calc(100vh - 153px)}
+.area_next_bottom.ty2{min-height:calc(100vh - 203px)}
 .area_next_bottom+.btn_wrap{margin-top:0;}
 
 #footer{position:relative;text-align:center;border-top:1px solid #d5d9da;background:#fff;}
@@ -1042,7 +1043,7 @@ html.isApp.ios.inpFocus .tab_wrap.fixed .tab_track{position:absolute;top:0;}
 .table{position:relative;border-top:1px solid #bbb;background-color:#fff;}
 .table table{word-break:break-all;font-size:1.4rem;}
 .table table th,
-.table table td{padding:18px 15px;border:1px solid #ddd;border-width:0 1px 1px 0;}
+.table table td{padding:17px 12px;border:1px solid #ddd;border-width:0 1px 1px 0;}
 .table table th{color:#666;background:#f0f0f0;font-weight:400;}
 .table table td{color:#111}
 .table table th:last-child,
@@ -1093,6 +1094,7 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .tbl_unit{color:#767676;font-size:1.3rem;}
 
 [class*=i_ico_]{display:inline-block;font-size:3px;color:transparent;overflow:hidden;background-repeat:no-repeat;background-position:0 0;}
+.i_ico_17{width:17px;height:17px;background-color:#bbb;background-image:url(../images/common/ico_17_01.png);border-radius:50%;background-size:17px auto;}
 .i_ico_20{width:20px;height:20px;background-color:#bbb;background-image:url(../images/common/spr_i_ico_20.png);border-radius:100%;background-size:20px auto;}
 .i_ico_20.ico_1{background-position:0 0;}
 .i_ico_20.ico_2{background-position:0 -20px;}

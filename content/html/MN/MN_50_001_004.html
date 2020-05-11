@@ -36,6 +36,8 @@
 <script>
 	$(function(){
 		common.title('바로출금');
+		//조회리스트 정렬
+		//Layer.open('#inquiryListPop');
 	});
 </script>
 </head>
@@ -73,10 +75,10 @@
 							</span>
 						</div>
 						<div class="f_right">
-							<a href="#" class="btn_filter" title="팝업으로 필터 설정">필터<i class="bt_ic_plus" aria-hidden="true"></i></a>
+							<a href="#" class="btn_filter" title="팝업으로 필터 설정" onclick="Layer.open('#inquiryListPop')">필터<i class="bt_ic_plus" aria-hidden="true"></i></a>
 						</div>
 					</div>
-					<ul>
+					<ul class="chk_list">
 						<li>
 							<div class="checkbox ty2 large"><input type="checkbox" id="cardChk3_1"><i aria-hidden="true"></i></div>
 							<label for="cardChk3_1" class="inner">
@@ -184,6 +186,93 @@
 			</div>
 		</section>
 	</div>
+
+	<!-- 조회리스트 정렬 팝업 -->
+	<div id="inquiryListPop" class="popup modal" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_cont">
+				<div class="section">
+					<h2 class="tit_h2">조회리스트 정렬</h2>
+					<dl class="range_set_wrap">
+						<dt class="tit">이용내역</dt>
+						<dd>
+							<ul class="btn_toggle ty2 grid col3 h30 round">
+								<li>
+									<input type="radio" id="totalBt" name="useBt" value="1" checked>
+									<label for="totalBt"><span>전체이용건</span></label>
+								</li>
+								<li>
+									<input type="radio" id="todayBt" name="useBt" value="2">
+									<label for="todayBt"><span>당월 결제예정</span></label>
+								</li>
+								<li>
+									<input type="radio" id="tmrBt" name="useBt" value="3">
+									<label for="tmrBt"><span>익월 결제예정</span></label>
+								</li> 
+							</ul>
+						</dd>
+						<dt class="tit">조회지역</dt>
+						<dd>
+							<ul class="btn_toggle ty2 grid col3 h30 round">
+								<li>
+									<input type="radio" id="inqyPlace" name="inqyPlace" value="4" checked>
+									<label for="inqyPlace"><span>국내+해외</span></label>
+								</li>
+								<li>
+									<input type="radio" id="inqyPlace2" name="inqyPlace" value="5">
+									<label for="inqyPlace2"><span>국내</span></label>
+								</li>
+								<li>
+									<input type="radio" id="inqyPlace3" name="inqyPlace" value="6">
+									<label for="inqyPlace3"><span>해외</span></label>
+								</li> 
+							</ul>
+						</dd>
+						<dt class="tit">정렬</dt>
+						<dd>
+							<ul class="btn_toggle ty2 grid col3 h30 round">
+								<li>
+									<input type="radio" id="rangeSet" name="rangeSet" value="7" checked>
+									<label for="rangeSet"><span>오래된순</span></label>
+								</li>
+								<li>
+									<input type="radio" id="rangeSet2" name="rangeSet" value="8">
+									<label for="rangeSet2"><span>최신순</span></label>
+								</li>
+							</ul>
+						</dd>
+						<dt class="tit">이용금액</dt>
+						<dd>
+							<ul class="btn_toggle ty2 grid col3 h30 round">
+								<li>
+									<input type="radio" id="priceSet" name="priceSet" value="9" checked>
+									<label for="priceSet"><span>조회내역순</span></label>
+								</li>
+								<li>
+									<input type="radio" id="priceSet2" name="priceSet" value="10">
+									<label for="priceSet2"><span>고액순</span></label>
+								</li>
+								<li>
+									<input type="radio" id="priceSet3" name="priceSet" value="11">
+									<label for="priceSet3"><span>저액순</span></label>
+								</li> 
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h48 gray ui-pop-close">취소</a><!-- ui-pop-close클래스로 팝업 닫기 가능 -->
+						<a href="#" class="button h48 blue" id="autoLoginOK">조회</a>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- //조회리스트 정렬 팝업 -->
+
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>
