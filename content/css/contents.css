@@ -51,7 +51,7 @@
 .login_strat .tbl{margin-top:28px;}
 .login_banner .swiper-navi{margin-top:0;position:absolute;z-index:2;left:20px;bottom:13px;}
 
-/*선결제*/
+/*결제서비스*/
 .price_box_wrap{padding:20px 24px;background:#f8f8f8;border-radius:4px;}
 .price_box_wrap .txt{font-size:1.2rem;color:#666;}
 .price_box_wrap .total_num{color:#3182f7;}
@@ -69,3 +69,25 @@
 .tit_h3+.checkbox_btn_wrap,
 .tit_h3+.price_box_wrap,
 .tit_h3+.box_list_2{margin-top:20px;}
+.detail_pay dt{margin-top:30px;font-size:1.8rem;font-weight:500;color:#111;}
+.detail_pay dt:first-child{margin-top:0;}
+.detail_pay dt+dd{margin-top:19px;}
+.detail_pay dd:last-child{margin-bottom:30px;}
+.list_box_table{padding:14px;border-top:1px solid #bbb;border-bottom:1px solid #ddd;color:#666;}
+.list_box_table.ty2{border-bottom:none;}
+.list_box_table>li{display:table;width:100%;}
+.list_box_table>li+li{margin-top:3px;}
+.list_box_table>li.line{margin-top:13px;padding-top:14px;border-top:1px dashed #ddd;}
+.list_box_table>li.last{color:#111;}
+.list_box_table>li .th,
+.list_box_table>li .td{display:table-cell;}
+.list_box_table>li .td{text-align:right;}
+.inp_enter_box{position:relative;display:table;width:100%;padding:16px 14px;background:#eaf2fe;border:1px solid #b2d0fc;border-width:1px 0 1px 0;}
+.inp_enter_box .th{display:table-cell;width:33%;color:#3182f7;vertical-align:middle;}
+.inp_enter_box .td{display:table-cell;width:67%;vertical-align:middle;}
+.inp_enter_box input{border-color:#3182f7;}
+.inp_enter_box .unit{display:block;position:absolute;right:10px;top:0;color:#111;line-height:44px;font-size:1.4rem;}
+.tit_h2+.range_set_wrap{margin-top:20px;}
+.range_set_wrap .tit{clear:both;margin-top:12px;}
+.range_set_wrap .tit:first-child{margin-top:0;}
+.range_set_wrap>dd{margin-top:8px;}
