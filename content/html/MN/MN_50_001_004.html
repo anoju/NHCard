@@ -172,7 +172,7 @@
 							<div class="th">총 <strong>21</strong> 건</div>
 							<div class="td">
 								<div class="price"><strong>123,456,789</strong> 원</div>
-								<a href="#" class="button h25 round gray btn_modify" role="button">금액수정</a>
+								<a href="#" class="button h25 round gray btn_modify" role="button" title="금액수정 팝업열기" onclick="Layer.open('#withdrawPop1')">금액수정</a>
 							</div>
 						</div>
 						<div class="btn_wrap">
@@ -272,6 +272,66 @@
 		</article>
 	</div>
 	<!-- //조회리스트 정렬 팝업 -->
+
+	<!-- 바로출금 신청원금 수정 팝업 -->
+	<div id="withdrawPop1" class="popup full" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_head">
+				<h1>바로출금 신청원금 수정</h1>
+				<a href="#" class="pop_close ui-pop-close"><span class="blind">팝업창 닫기</span></a>
+			</div>
+			<div class="pop_cont">
+				<div class="section">
+					<div class="area_next_bottom ty2">
+						<h2 class="tit_h2 t_center mt20">변경할 신청 원금을<br>입력하세요.</h2>
+						<ul class="list_box_table ty2 mt40">
+							<li>
+								<div class="th">이용금액</div>
+								<div class="td"><strong>123,456</strong> 원</div>
+							</li>
+							<li>
+								<div class="th">잔여원금</div>
+								<div class="td"><strong>123,456</strong> 원</div>
+							</li>
+							<li>
+								<div class="th">수수료</div>
+								<div class="td"><strong>123,456</strong> 원</div>
+							</li>
+							<li class="line last">
+								<div class="th">합계</div>
+								<div class="td"><strong>123,123,456</strong> 원</div>
+							</li>
+							<li class="last">
+								<div class="th">최소결제금액</div>
+								<div class="td"><strong>123,456</strong> 원</div>
+							</li>
+							<li class="last">
+								<div class="th">최대결제금액</div>
+								<div class="td"><strong>123,456</strong> 원</div>
+							</li>
+						</ul>
+						<div class="inp_enter_box">
+							<label for="inpEnt1" class="th">수정금액</label>
+							<div class="td">
+								<div class="input add_unit_1"><!--error시 error클래스 추가-->
+								<!-- <div class="input add_unit_1 error"> 참고-->
+									<input type="tel" id="inpEnt1" title="수정금액">
+									<div class="unit">원</div>
+								</div>
+							</div>
+						</div>
+						<div class="error_txt" style="display:block;">수정금액은 최소결제금액보다 작을 수 없습니다.</div>
+					</div>
+					<div class="btn_wrap">
+						<div class="flex">
+							<button type="button" class="button blue">확인</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- //바로출금 신청원금 수정 팝업 -->
 
 	<div data-include-html="../include/footer.html"></div>
 </article>

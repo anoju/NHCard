@@ -347,7 +347,7 @@ html.ie9 #gnb.show{right:0;}
 .section .outer{margin-left:-20px;margin-right:-20px;}
 
 .area_next_bottom{padding-bottom:30px;min-height:calc(100vh - 153px)}
-.area_next_bottom.ty2{min-height:calc(100vh - 203px)}
+.area_next_bottom.ty2{min-height:calc(100vh - 173px)}
 .area_next_bottom+.btn_wrap{margin-top:0;}
 
 #footer{position:relative;text-align:center;border-top:1px solid #d5d9da;background:#fff;}
