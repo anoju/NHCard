@@ -45,6 +45,14 @@
 	<div data-include-html="../include/gnb.html"></div>
 	<div id="container">
 		<section id="contents">
+			<div class="step_wrap">
+				<h2 class="step_tit">조회내역</h2>
+				<ol class="step_state">
+					<li class="on">1<span class="blind">단계(현재단계)</span></li>
+					<li>2<span class="blind">단계</span></li>
+					<li>3<span class="blind">단계</span></li>
+				</ol>
+			</div>
 			<div class="section">
 				<h3 class="tit_h3 fz_18 mt0">이용 조회내역</h3>
 				<div class="price_box_wrap">
@@ -55,17 +63,120 @@
 						<div class="sub_num">수수료 <span class="num"><strong>123,456,789</strong>원</span></div>
 					</div>
 				</div>
-				<h3 class="tit_h3 fz_18 mt0">일시불 이용내역</h3>
+				<h3 class="tit_h3 fz_18">일시불 이용내역</h3>
+				<div class="box_list_2 ui-all-chk"><!-- ui-all-chk클래스로 전체선택 기능 -->
+					<div class="list_util">
+						<div class="f_left">
+							<span class="checkbox large">
+								<input type="checkbox" id="allChk3"><i aria-hidden="true"></i>
+								<label for="allChk3" class="lbl fz_14">전체선택</label>
+							</span>
+						</div>
+						<div class="f_right">
+							<a href="#" class="btn_filter" title="팝업으로 필터 설정">필터<i class="bt_ic_plus" aria-hidden="true"></i></a>
+						</div>
+					</div>
+					<ul>
+						<li>
+							<div class="checkbox ty2 large"><input type="checkbox" id="cardChk3_1"><i aria-hidden="true"></i></div>
+							<label for="cardChk3_1" class="inner">
+								<div class="list_tit"><strong>하나로마트</strong></div>
+								<div class="list_sub">2020.04.01</div>
+								<div class="list_data">
+									<ul>
+										<li>
+											<div class="th">이용금액</div>
+											<div class="td">123,456,789 원</div>
+										</li>
+										<li>
+											<div class="th">수수료(이자)</div>
+											<div class="td">0 원</div>
+										</li>
+										<li>
+											<div class="th">잔여원금</div>
+											<div class="td">123,456,789 원</div>
+										</li>
+										<li class="last">
+											<div class="th">합계</div>
+											<div class="td">123,456,789 원</div>
+										</li>
+									</ul>
+								</div>
+							</label>
+						</li>
+						<li>
+							<div class="checkbox ty2 large"><input type="checkbox" id="cardChk3_2"><i aria-hidden="true"></i></div>
+							<label for="cardChk3_2" class="inner">
+								<div class="list_tit"><strong>하나로마트</strong></div>
+								<div class="list_sub">2020.04.01</div>
+								<div class="list_data">
+									<ul>
+										<li>
+											<div class="th">이용금액</div>
+											<div class="td">123,456,789 원</div>
+										</li>
+										<li>
+											<div class="th">수수료(이자)</div>
+											<div class="td">0 원</div>
+										</li>
+										<li>
+											<div class="th">잔여원금</div>
+											<div class="td">123,456,789 원</div>
+										</li>
+										<li class="last">
+											<div class="th">합계</div>
+											<div class="td">123,456,789 원</div>
+										</li>
+									</ul>
+								</div>
+							</label>
+						</li>
+						<li>
+							<div class="checkbox ty2 large"><input type="checkbox" id="cardChk3_3"><i aria-hidden="true"></i></div>
+							<label for="cardChk3_2" class="inner">
+								<div class="list_tit"><strong>하나로마트</strong></div>
+								<div class="list_sub">2020.04.01</div>
+								<div class="list_data">
+									<ul>
+										<li>
+											<div class="th">이용금액</div>
+											<div class="td">123,456,789 원</div>
+										</li>
+										<li>
+											<div class="th">수수료(이자)</div>
+											<div class="td">0 원</div>
+										</li>
+										<li>
+											<div class="th">잔여원금</div>
+											<div class="td">123,456,789 원</div>
+										</li>
+										<li class="last">
+											<div class="th">합계</div>
+											<div class="td">123,456,789 원</div>
+										</li>
+									</ul>
+								</div>
+							</label>
+						</li>
+					</ul>
+				</div>
+				<div class="btn_more mt20">
+					<a href="#" class="button line">더보기 (<strong>20</strong>/25)</a>
+				</div>
 
 				<div class="bottom_fixed ty2">
 					<div>
 						<div class="tbl total_price">
-							<div class="th">결제금액</div>
-							<div class="td"><strong>123,456,789</strong> 원</div>
+							<div class="th">총 <strong>21</strong> 건</div>
+							<div class="td">
+								<div class="price"><strong>123,456,789</strong> 원</div>
+								<a href="#" class="button h25 round gray btn_modify" role="button">금액수정</a>
+							</div>
 						</div>
 						<div class="btn_wrap">
 							<div class="flex">
-								<button type="button" class="button blue">바로출금</button>
+								<button type="button" class="button line blue">이전</button>
+								<button type="button" class="button blue">다음</button>
 							</div>
 						</div>
 					</div>
