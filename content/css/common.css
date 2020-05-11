@@ -498,10 +498,10 @@ div[class*=tit_h]>div+div:last-child{text-align:right;width:100px;}
 .tit_h2:first-child{margin-top:0;}
 .tit_h2:not(div),
 div.tit_h2 .tit{font-size:1.8rem;color:#111}
-.tit_h3{margin-top:30px;}
+.tit_h3{margin-top:35px;}
 .tit_h3:not(div),
 div.tit_h3 .tit{font-size:1.6rem;color:#111}
-.tit_h4{margin-top:25px;}
+.tit_h4{margin-top:35px;}
 .tit_h4:not(div),
 div.tit_h4 .tit{font-size:1.5rem;color:#111}
 

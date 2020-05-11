@@ -2378,7 +2378,7 @@ var formUI = {
 		$(document).on('change','.chk_item.ty2 input',function(){
 			var $this = $(this);
 			if($this.prop('checked') == true){
-				$this.closest('.chk_item').addClass('checked');
+				$this.closest('.chk_item').addClass('checked').siblings('.chk_item').removeClass('checked');
 			}else{
 				$this.closest('.chk_item').removeClass('checked');
 			}
