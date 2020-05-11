@@ -40,6 +40,11 @@
 .fm_cont .fm_btn .button{width:87px;font-size:1.4rem;font-weight:400;}
 
 /*본인인증*/
+.user_check_wrap .tab_wrap{margin-bottom:0;}
+.user_check_wrap .tab_panel{padding:30px 20px 0;min-height:calc(100vh - 154px);}
+.user_check_wrap .tab_panel.bg_blue{background:#eaf2fe;}
+.user_check_wrap .pwd_wrap{padding-top:45px;}
+.user_check_wrap .pwd_wrap .password{margin-top:17px;}
 .tbl.card_num .td{width:25%;padding-left:4px;}
 .tbl.card_num .td:nth-child(-n+3){width:21.875%;}
 .tbl.card_num .td:nth-child(n+3){width:26.25%;}

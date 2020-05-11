@@ -347,6 +347,7 @@ html.ie9 #gnb.show{right:0;}
 .section .outer{margin-left:-20px;margin-right:-20px;}
 
 .area_next_bottom{padding-bottom:30px;min-height:calc(100vh - 153px)}
+.area_next_bottom+.btn_wrap{margin-top:0;}
 
 #footer{position:relative;text-align:center;border-top:1px solid #d5d9da;background:#fff;}
 #footer.add_fixed_btn:after,
@@ -707,6 +708,9 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 .password .dot span:after{content:'';display:block;position:absolute;left:-150%;top:0;width:100%;height:100%;border-radius:50%;background:#333;-webkit-transition:0.3s;transition:0.3s;}
 .password .dot span.on:after{left:0;}
 .password input{position:absolute;top:0;left:0;width:100%;height:100%;background:none;border:0 none;color:transparent;opacity:0;}
+.password.ty2 .dot span{width:16px;height:16px;background:#fff;margin:0 8px;}
+.password.ty2 .dot span:before{display:none;}
+.password.ty2 .dot span:after{background:#111;}
 
 /*radio, checkbox*/
 input[type="radio"], input[type="checkbox"]{margin:0;}

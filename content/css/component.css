@@ -33,7 +33,8 @@
 
 .form_item{position:relative;margin-top:22px;}
 .tit_h2+.form_item{margin-top:25px;}
-.section>.form_item:first-child{margin-top:0;}
+.section>.form_item:first-child,
+.tab_panel>.form_item:first-child{margin-top:0;}
 .form_item .fm_lb{display:block;font-size:1.5rem;cursor:default;color:#111;}
 .form_item .fm_lb>.tooltip_wrap{vertical-align:1px;}
 .form_item .fm_lb>.tooltip_btn{vertical-align:-3px;}
