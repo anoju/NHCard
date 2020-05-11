@@ -558,9 +558,12 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 .bottom_fixed.ty2 .btn_wrap{padding-top:20px;margin-top:0;}
 .bottom_fixed.ty2 div+.btn_wrap{border-top:1px solid #ddd;}
 .bottom_fixed.ty2 .total_price>div{height:58px;vertical-align:middle;}
+.bottom_fixed.ty2 .total_price .th strong{color:#3182f7;}
 .bottom_fixed.ty2 .total_price .td{color:#111;}
 .bottom_fixed.ty2 .total_price .td{text-align:right;color:#3182f7;}
-.bottom_fixed.ty2 .total_price .td strong{font-size:2.4rem;}
+.bottom_fixed.ty2 .total_price .td .price strong{font-size:2.4rem;}
+.bottom_fixed.ty2 .total_price .td .price{display:inline-block;vertical-align:middle;}
+.bottom_fixed.ty2 .total_price .td .btn_modify{margin-left:5px;display:inline-block;vertical-align:middle;color:#333;}
 
 /* icon in button */
 [class*=bt_ic_]{position:relative;display:inline-block;vertical-align:0;background-repeat:no-repeat;background-position:center center;background-size:contain;}
