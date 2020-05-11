@@ -3333,10 +3333,10 @@ var listUI = {
 		accordion.btn('.ui-toggle-btn');
 
 		//테이블 스크롤 가이드 실행
-		if($('.tbl_scroll').length){
+		/*if($('.tbl_scroll').length){
 			tblUI.guideScl('.tbl_scroll');
 			tblUI.guide('.tbl_scroll');
-		}
+		}*/
 
 		//테이블 rowspan
 		if($('table th[rowspan]').length){

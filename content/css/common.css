@@ -576,6 +576,7 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 :disabled>.bt_ic_faceId{background-image:url(../images/btn/bt_ic_faceId_off.png);}
 .bt_ic_setting{width:31px;height:31px;background-image:url(../images/btn/bt_ic_setting.png);vertical-align:middle;}
 :disabled>.bt_ic_setting{background-image:url(../images/btn/bt_ic_setting_off.png);}
+.bt_ic_pin{width:31px;height:31px;background-image:url(../images/btn/bt_ic_pin.png);vertical-align:middle;}
 .bt_ic_finger{width:26px;height:31px;background-image:url(../images/btn/bt_ic_finger.png);vertical-align:middle;}
 :disabled>.bt_ic_finger{background-image:url(../images/btn/bt_ic_finger_off.png);}
 .bt_ic_allone{width:34px;height:14px;background-image:url(../images/btn/bt_ic_allone.png);vertical-align:middle;}
