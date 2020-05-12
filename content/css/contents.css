@@ -101,6 +101,6 @@
 .inp_enter_box input{border-color:#3182f7;}
 .inp_enter_box .unit{display:block;position:absolute;right:10px;top:0;color:#111;line-height:44px;font-size:1.4rem;}
 .tit_h2+.range_set_wrap{margin-top:20px;}
-.range_set_wrap .tit{clear:both;margin-top:12px;}
+.range_set_wrap .tit{clear:both;margin-top:12px;font-size:1.3rem;}
 .range_set_wrap .tit:first-child{margin-top:0;}
 .range_set_wrap>dd{margin-top:8px;}
