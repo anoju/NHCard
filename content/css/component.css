@@ -30,6 +30,7 @@
 .error_txt.checked{color:#3182f7;background-image:url(../images/common/ico_error_txt_on.png);}
 .caution_info{font-size:1.2rem;color:#858585;}
 .caution_info:before{content:'*';display:inline-block;padding-right:3px;}
+.noti_txt{padding-left:20px;background:url(../images/common/ico_noti_txt.png) no-repeat left 3px;background-size:14px auto;font-size:1.3rem;color:#666;}
 
 .form_item{position:relative;margin-top:22px;}
 .tit_h2+.form_item{margin-top:25px;}
@@ -155,10 +156,11 @@
 .sel_item .del{position:absolute;top:50%;right:5px;display:inline-block;width:20px;height:20px;margin-top:-10px;vertical-align:middle;background:url(../images/common/inp_del.png);font-size:3px;color:transparent;background-size:contain;}
 
 /*※ 불릿*/
-.caution_txt{display:inline-block;font-size:1.3rem;color:#666;line-height:21px;word-wrap:normal;word-break:break-all;}
-.caution_txt:before{content:'※';display:inline-block;padding-right:3px;color:#666;}
-.caution_txt2{position:relative;display:block;padding-left:12px;color:#8997af;font-size:1.2rem;word-wrap:normal;word-break:break-all;}
-.caution_txt2:before{content:'※';position:absolute;top:0;left:0;display:inline-block;padding-right:3px;color:#666;}
+[class*=caution_txt]{position:relative;display:inline-block;padding-left:15px;font-size:1.3rem;color:#666;word-wrap:normal;word-break:break-all;}
+div.caution_txt{display:block;}
+[class*=caution_txt]:before{content:'※';position:absolute;top:0;left:0;display:inline-block;padding-right:3px;color:#666;}
+.caution_txt2{display:block;color:#8997af;padding-left:12px;font-size:1.2rem;}
+.caution_txt2:before{color:#8997af;}
 
 /*리스트*/
 .line_list_1{border-top:1px solid #bbb;}

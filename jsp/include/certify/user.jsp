@@ -768,7 +768,7 @@
 		<div class="pop_btn btn_wrap bottom_fixed">
 			<div>
 				<div class="flex">
-					<a href="#" class="button h48 blue ui-pop-close">확인</a>
+					<a href="#" class="button h54 blue ui-pop-close">확인</a><!-- 2020-05-12: 클래스 수정 -->
 				</div>
 			</div>
 		</div>
@@ -810,7 +810,7 @@
 		<div class="pop_btn btn_wrap bottom_fixed">
 			<div>
 				<div class="flex">
-					<a href="#" class="button h48 blue ui-pop-close">확인</a>
+					<a href="#" class="button h54 blue ui-pop-close">확인</a><!-- 2020-05-12: 클래스 수정 -->
 				</div>
 			</div>
 		</div>
@@ -852,7 +852,7 @@
 		<div class="pop_btn btn_wrap bottom_fixed">
 			<div>
 				<div class="flex">
-					<a href="#" class="button h48 blue ui-pop-close">확인</a>
+					<a href="#" class="button h54 blue ui-pop-close">확인</a><!-- 2020-05-12: 클래스 수정 -->
 				</div>
 			</div>
 		</div>
