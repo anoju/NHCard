@@ -65,46 +65,42 @@
 			</div>
 			<div class="section">
 				<h2 class="tit_h2">서비스 신청 내역</h2>
-				<div class="table">
-					<table>
-						<caption>서비스신청내역</caption>
-						<colgroup>
-							<col style="width:120px">
-							<col style="width:auto">
-						</colgroup>
-						<tbody>
-							<tr>
-								<th scope="row">성명</th>
-								<td>김*협</td>
-							</tr>
-							<tr>
-								<th scope="row">서비스 종류</th>
-								<td>NH신용Manager (800원/월)</td>
-							</tr>
-							<tr>
-								<th scope="row">신청일</th>
-								<td>2020년 04월 13일</td>
-							</tr>
-							<tr>
-								<th scope="row">휴대폰</th>
-								<td>010-12**-56**</td>
-							</tr>
-							<tr>
-								<th scope="row">이메일</th>
-								<td>non*****@nonghyup.com</td>
-							</tr>
-							<tr>
-								<th scope="row">서비스 이용료<br>결제방식</th>
-								<td>카드 결제</td>
-							</tr>
-						</tbody>
-					</table>
+				<div class="form_item">
+					<div class="fm_lb">이름</div>
+					<div class="fm_val">김*협</div>
+				</div>
+				<div class="form_item">
+					<label for="phoneNum" class="fm_lb">휴대폰번호</label>
+					<div class="fm_cont">
+						<div class="input"><input type="tel" id="phoneNum" maxlength="8" title="휴대폰번호 나머지 7~8자리 입력" placeholder="&prime;-&prime; 없이 입력"></div>
+						<div class="error_txt">휴대폰번호를 입력해주세요.</div><!-- 에러메세지 입력영역 -->
+					</div>
+				</div>
+				<div class="form_item">
+					<label for="email" class="fm_lb">이메일</label>
+					<div class="fm_cont email_form">
+						<div class="input"><input type="text" id="email" title="이메일 입력" placeholder="이메일주소 입력"></div>
+						<div class="error_txt">이메일를 입력해주세요.</div><!-- 에러메세지 입력영역 -->
+					</div>
+				</div>
+				<div class="form_item">
+					<div class="fm_lb">서비스 이용료 결제방식</div>
+					<div class="fm_cont">
+						<span class="checkbox">
+							<input type="radio" id="payType1" name="payType"><i aria-hidden="true"></i>
+							<label for="payType1" class="lbl">카드 결제</label>
+						</span>
+						<span class="checkbox">
+							<input type="radio" id="payType2" name="payType"><i aria-hidden="true"></i>
+							<label for="payType2" class="lbl">NH포인트 결제</label>
+						</span>
+					</div>
 				</div>
 
 				<div class="btn_wrap mt60">
 					<div class="flex">
-						<a href="#" class="button line blue">변경</a>
-						<a href="#" class="button blue">해지</a>
+						<a href="#" class="button line blue">취소</a>
+						<a href="#" class="button blue">변경</a>
 					</div>
 				</div>
 			</div>
