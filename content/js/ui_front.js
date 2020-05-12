@@ -96,9 +96,8 @@ var htmlnclude = function(){
 
 					if($htmlFile == 'user.html'){
 						htmlnclude();
-						buttonUI.tabNavi();
+						//buttonUI.tabNavi();
 						formUI.select();
-						$('#userCertifyPop .tabmenu li').first().find('a').click();
 					}
 				}
 			});
@@ -1662,7 +1661,11 @@ var buttonUI ={
 				$(this).data('target',tarAry.join(','));
 				if(isHash == false){
 					$(this).data('isFirst',true);
-					$(this).find('li').eq(0).find('a').trigger('click');
+					if($(this).find('.active').length){
+						$(this).find('.active').find('a').trigger('click');
+					}else{
+						$(this).find('li').eq(0).find('a').trigger('click');
+					}
 				}
 				if(isHash == true){
 					isHashClk.trigger('click');
@@ -1721,7 +1724,7 @@ var buttonUI ={
 			});
 		}
 	},
-	tabNavi:function(el){
+	tabNavi:function(){
 		$('.tab_wrap .tabmenu').each(function(i){
 			var $this = $(this);
 			if($(this).hasClass('swiper-container-initialized')){
@@ -2388,7 +2391,7 @@ var formUI = {
 		//input 삭제버튼
 		$(document).on('keyup focus','.input input, .textarea textarea',function(){
 			var $this = $(this), $val = $this.val();
-			if($this.prop('readonly') || $this.prop('disabled') || $this.attr('type') == 'password' || $this.hasClass('no_del') || $this.hasClass('datepicker') || $this.hasClass('time')){
+			if($this.prop('readonly') || $this.prop('disabled') || $this.attr('type') == 'password' || $this.hasClass('no_del') || $this.hasClass('datepicker') || $this.hasClass('time') || $this.hasClass('t_right')){
 				return false;
 			}
 			if($val != ''){
@@ -3654,6 +3657,7 @@ var swiperUI = {
 										}
 										var $length = $swiper.pagination.bullets.length;
 										swiperUI.focusAria($this,$swiper.snapIndex,$itemLength-$length);
+										$(window).resize();
 									},10);
 								},
 								resize:function(){
@@ -3677,11 +3681,12 @@ var swiperUI = {
 									if($swiper != undefined){
 										var $length = $swiper.pagination.bullets.length;
 										swiperUI.focusAria($this,$swiper.snapIndex,$itemLength-$length);
-
-										var $autoCtl = $this.closest('.ui-swiper-wrap').find('.swiper-auto-ctl');
-										if($autoCtl.length){
-											$autoCtl.addClass('play').find('.blind').changeTxt('중지','시작');
-										}
+									}
+								},
+								touchStart:function(e){
+									var $autoCtl = $this.closest('.ui-swiper-wrap').find('.swiper-auto-ctl');
+									if($autoCtl.length){
+										$autoCtl.addClass('play').find('.blind').changeTxt('중지','시작');
 									}
 								}
 							}

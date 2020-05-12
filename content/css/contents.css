@@ -23,9 +23,10 @@
 .com_result.small_ico .txt{margin-top:25px;}
 .caution_txt2{margin:4px 0 13px;}
 .cont_box .btn_wrap .flex+.flex{margin-top:10px;}
-.login_wrap{position:relative;min-height:calc(100vh - 120px);padding-bottom:27.81vh;}
+.login_wrap{position:relative;min-height:calc(100vh - 120px);}
 .login_wrap .swipe_tab{position:relative;z-index:2;}
-.login_wrap .login_banner{position:absolute;left:0;bottom:0;width:100%;text-align:center;}
+.login_wrap .login_banner{height:27.81vh;}
+.login_wrap .login_banner>div{position:absolute;left:0;bottom:0;width:100%;text-align:center;margin-top:0;}
 .login_strat_box{padding:18px 20px 11px;}
 .login_strat{padding:28px 24px;min-height:230px;border-radius:4px;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.05);text-align:center;}
 .login_strat h3{font-size:1.7rem;color:#3182f7;}
