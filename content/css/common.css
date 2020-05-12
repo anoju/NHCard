@@ -227,7 +227,7 @@ Layout
 .lock body{height:100%;overflow:hidden;-webkit-overflow-scrolling:none;}
 .lock #wrap{position:fixed;left:0;bottom:0;width:100%;-webkit-overflow-scrolling:none;}
 
-#wrap{position:relative;min-width:360px;}
+#wrap{position:relative;min-width:320px;}
 #header{position:relative;height:50px;}
 #header.ty2{position:absolute;top:0;left:0;width:100%;}
 #header>div{position:relative;min-height:50px;top:0;width:100%;left:0;background:#fff;border-bottom:1px solid #ddd;-webkit-transition:0.5s;transition:0.5s;z-index:100;}
@@ -656,12 +656,9 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 .add_time_tbl .button:last-child{margin-left:3px;}
 .input[class*=add_unit_] input{text-align:right;}
 .input[class*=add_unit_] .unit+input{padding-left:20px;}
-.input.add_unit_1 input{padding-right:55px;}
-.input.add_unit_1 .inp_del{right:25px;}
-.input.add_unit_2 input{padding-right:70px;}
-.input.add_unit_2 .inp_del{right:40px;}
-.input.add_unit_3 input{padding-right:85px;}
-.input.add_unit_3 .inp_del{right:55px;}
+.input.add_unit_1 input{padding-right:27px;}
+.input.add_unit_2 input{padding-right:42px;}
+.input.add_unit_3 input{padding-right:57px;}
 
 .select{display:inline-block;position:relative;width:100%;}
 .select select,

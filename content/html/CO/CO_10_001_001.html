@@ -45,11 +45,19 @@
 			$('.swipe_tab .navi>ul>li').slice(0,3).remove();
 			$('.swipe_tab .swiper-slide').slice(0,3).remove();
 			$('.swipe_tab .swiper-slide').eq(2).find('.cont_box').first().hide().next().show();
+			
 			buttonUI.swipeTab(); //로그인 영역 swipe 실행
+			//buttonUI.swipeTab(탭의 index 값); //원하는 탭을 활성화 시키고 싶을때
+			//buttonUI.swipeTab(1); //2번째탭 활성화 시킬때
+			//buttonUI.swipeTab(2); //3번째탭 활성화 시킬때
 		}else{ 												//모바일 앱일때
 			$('.swipe_tab .navi>ul>li').eq(3).remove();
 			$('.swipe_tab .swiper-slide').eq(3).remove();
+			
 			buttonUI.swipeTab(); //로그인 영역 swipe 실행
+			//buttonUI.swipeTab(탭의 index 값); //원하는 탭을 활성화 시키고 싶을때
+			//buttonUI.swipeTab(1); //2번째탭 활성화 시킬때
+			//buttonUI.swipeTab(2); //3번째탭 활성화 시킬때
 		}
 
 		//다른기기 사용안내 팝업
@@ -143,6 +151,14 @@
 
 		//자동로그인 설정시 화면잠금 미설정 안내 팝업
 		//Layer.open('#autoLoginClearPop');
+
+		//배너영역 높이값 설정
+		$(window).resize(function(){
+			$('.login_banner').removeAttr('style');
+			var $bannerH = $('.login_banner').height(),
+				$bannerChildH = $('.login_banner').children().height();
+			if($bannerH<$bannerChildH)$('.login_banner').height($bannerChildH);
+		});
 	});
 </script>
 </head>
@@ -364,7 +380,7 @@
 								<!--올원페이-->
 								<div class="swiper-slide">
 									<div class="cont_box">
-										<div class="cont_txt">올원페이 앱카드로<br>로그인 할 수 없습니다.</div>
+										<div class="cont_txt">올원페이 앱카드로<br>로그인 할 수 있습니다.</div>
 										<div class="btn_wrap">
 											<div class="flex">
 												<a href="#" class="button line icon"><i class="bt_ic_allone" aria-hidden="true"></i>올원페이로 로그인하기<i class="bt_ic_arr" aria-hidden="true"></i></a>
@@ -407,19 +423,21 @@
 				
 			
 				<!-- 배너 -->
-				<div class="ui-swiper-wrap full login_banner">
-					<div class="ui-swiper autoplay">
-						<div class="item">
-							<a href="#"><img src="../../images/temp/login_banner_1.png" alt="올원페이로 10만원 결제 시 스타벅스 증정. 2020년 4월1부터 4월 30일까지"></a>
-						</div>
-						<div class="item">
-							<a href="#"><img src="../../images/temp/login_banner_2.png" alt="올원페이로 10만원 결제 시 스타벅스 증정. 2020년 4월1부터 4월 30일까지"></a>
-						</div>
-						<div class="item">
-							<a href="#"><img src="../../images/temp/login_banner_1.png" alt="올원페이로 10만원 결제 시 스타벅스 증정. 2020년 4월1부터 4월 30일까지"></a>
-						</div>
-						<div class="item">
-							<a href="#"><img src="../../images/temp/login_banner_2.png" alt="올원페이로 10만원 결제 시 스타벅스 증정. 2020년 4월1부터 4월 30일까지"></a>
+				<div class="login_banner">
+					<div class="ui-swiper-wrap full">
+						<div class="ui-swiper autoplay">
+							<div class="item">
+								<a href="#"><img src="../../images/temp/login_banner_1.png" alt="올원페이로 10만원 결제 시 스타벅스 증정. 2020년 4월1부터 4월 30일까지"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="../../images/temp/login_banner_2.png" alt="올원페이로 10만원 결제 시 스타벅스 증정. 2020년 4월1부터 4월 30일까지"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="../../images/temp/login_banner_1.png" alt="올원페이로 10만원 결제 시 스타벅스 증정. 2020년 4월1부터 4월 30일까지"></a>
+							</div>
+							<div class="item">
+								<a href="#"><img src="../../images/temp/login_banner_2.png" alt="올원페이로 10만원 결제 시 스타벅스 증정. 2020년 4월1부터 4월 30일까지"></a>
+							</div>
 						</div>
 					</div>
 				</div>
