@@ -104,3 +104,10 @@
 .range_set_wrap .tit{clear:both;margin-top:12px;font-size:1.3rem;}
 .range_set_wrap .tit:first-child{margin-top:0;}
 .range_set_wrap>dd{margin-top:8px;}
+
+/* 신청정보입력 약관동의 */
+.vip_freeservice li{float:left;width:50%}
+.vip_freeservice li:nth-child(odd){clear:both;}
+.vip_freeservice li .tit_h2{font-size:14px}
+.vip_freeservice li .txt{font-size:13px}
+.vip_freeservice:after{content:'';clear:both;display:block;}

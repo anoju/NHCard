@@ -173,6 +173,7 @@ common
 .ml10{margin-left:10px !important;}
 .ml15{margin-left:15px !important;}
 .ml20{margin-left:20px !important;}
+.ml25{margin-left:25px !important;}
 .ml30{margin-left:30px !important;}
 
 /* padding */
@@ -949,9 +950,10 @@ html.isApp.ios.inpFocus .tab_wrap.fixed .tab_track{position:absolute;top:0;}
 .ico_txt{display:inline-block;background:#111;font-size:1rem;height:16px;line-height:16px;border-radius:11px;color:#fff;padding:0px 8px;vertical-align:middle;}
 .ico_txt.h22{height:22px;line-height:22px;font-size:1.2rem;}
 .ico_txt.red{background:#ff4019;}
-.ico_txt.blue{background:#3182f7;} 
-.ico_txt.yellow{background:#ffb81c;}
-.ico_txt.green{background:#07a814;}
+.ico_txt.blue1{background:#3182f7;} 
+.ico_txt.blue2{background:#6075f3;} 
+.ico_txt.yellow{background:#f2cf64;}
+.ico_txt.green{background:#38c979;}
 .ico_txt.green2{background:#94cc2b;}
 .ico_txt.skyblue{background:#00c7e6;}
 .ico_txt.purple{background:#7865ca;}
@@ -1037,8 +1039,8 @@ html.isApp.ios.inpFocus .tab_wrap.fixed .tab_track{position:absolute;top:0;}
 .step_wrap .step_state>li.on{background-color:#3182f7;font-weight:500;}
 
 /*table*/
-.table{position:relative;border-top:1px solid #bbb;background-color:#fff;}
-.table table{word-break:break-all;font-size:1.4rem;}
+.table{position:relative;}
+.table table{word-break:break-all;font-size:1.4rem;border-top:1px solid #bbb;background-color:#fff;}
 .table table th,
 .table table td{padding:17px 12px;border:1px solid #ddd;border-width:0 1px 1px 0;}
 .table table th{color:#666;background:#f0f0f0;font-weight:400;}
@@ -1049,11 +1051,11 @@ html.isApp.ios.inpFocus .tab_wrap.fixed .tab_track{position:absolute;top:0;}
 .table table tbody th ~ td{text-align:right;}
 .table table colgroup+tbody th{border-right-width:0;}
 
-.tbl_scroll{position:relative;border-bottom:1px solid #ddd;overflow:auto;min-height:150px;max-height:60vh;-webkit-overflow-scrolling:touch;}
-.tbl_scroll table>*:last-child>tr:last-child>*{border-bottom-width:0;}
+.tbl_scroll{position:relative;overflow:auto;-webkit-overflow-scrolling:touch;}
 html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
-.tbl_scroll table{border-top:0 none;border-bottom:0 none;table-layout:fixed}
-.tbl_scroll.vertical table{table-layout:auto;}
+.section .tbl_scroll{margin-left:-20px;margin-right:-20px;}
+.tbl_scroll .table{padding:0 20px;float:left;}
+.tbl_scroll table{table-layout:fixed;}
 .tbl_guide{position:absolute;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.7);text-align:center;z-index:2}
 .tbl_guide div{display:block;position:absolute;left:0%;top:50%;width:100%;padding:10px 20px;font-size:1.7rem;color:#fff;box-sizing:border-box;-webkit-transform:translateY(-50%);transform:translateY(-50%);}
 .tbl_guide .icon{position:relative;display:block;margin:0 auto 15px;width:98px;height:95px;border-radius:50%;background-color:rgba(0,0,0,.54);}
@@ -1098,6 +1100,14 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .i_ico_50{position:relative;width:50px;height:50px;background-color:#3182f7;border-radius:100%;background-size:50px auto;}
 .i_ico_50.ico_1:before{content:'';position:absolute;top:18px;left:50%;margin-left:-10px;display:block;box-sizing:border-box;width:20px;height:10px;border:3px solid #fff;border-top:none;border-right:none;-webkit-transform:rotate(-43deg);transform:rotate(-43deg);}
 .i_ico_50.ico_2{background-color:#f8f8f8;background-image:url(../images/common/ico_50_02.png);}
+.i_ico_75{width:75px;height:75px;background-size:75px auto;}
+.i_ico_75.ico_1{background-image:url(../images/common/ico_75_01.png);}
+.i_ico_75.ico_2{background-image:url(../images/common/ico_75_02.png);}
+.i_ico_75.ico_3{background-image:url(../images/common/ico_75_03.png);}
+.i_ico_75.ico_4{background-image:url(../images/common/ico_75_04.png);}
+.i_ico_75.ico_5{background-image:url(../images/common/ico_75_05.png);}
+.i_ico_75.ico_6{background-image:url(../images/common/ico_75_06.png);}
+.i_ico_75.ico_7{background-image:url(../images/common/ico_75_07.png);}
 .i_ico_80{width:80px;height:80px;background-color:#f8f8f8;border-radius:100%;background-size:80px auto;}
 .i_ico_80.ico_1{background-image:url(../images/common/ico_80_01.png);}
 .i_ico_80.ico_2{background-image:url(../images/common/ico_80_02.png);}
