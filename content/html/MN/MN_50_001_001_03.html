@@ -106,7 +106,7 @@
 				</div>
 
 				<div class="box_list_3">
-					<a href="#" class="box_link">전액선결제</a>
+					<a href="#useDivPop" class="box_link" onclick="Layer.open('#useDivPop')">전액선결제</a>
 					<ul class="line_item">
 						<li>
 							<div class="th">일시불</div>
@@ -221,6 +221,168 @@
 			</div>
 		</section>
 	</div>
+	<!-- 이용구분 별 상세금액 팝업 -->
+	<div id="useDivPop" class="popup full" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_head">
+				<h1>이용구분 별 상세금액</h1>
+				<a href="#" class="pop_close ui-pop-close"><span class="blind">팝업창 닫기</span></a>
+			</div>
+			<div class="pop_cont">
+				<div class="section">
+					<dl class="detail_pay">
+						<dt>일시불</dt>
+						<dd>
+							<ul class="list_box_table">
+								<li>
+									<div class="th">당월청구 원금</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li>
+									<div class="th">미청구 원금</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li>
+									<div class="th">선결제 수수료</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li class="line">
+									<div class="th">합계</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+							</ul>
+						</dd>
+						<dt>할부</dt>
+						<dd>
+							<ul class="list_box_table">
+								<li>
+									<div class="th">당월청구 원금</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li>
+									<div class="th">미청구 원금</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li>
+									<div class="th">선결제 수수료</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li class="line">
+									<div class="th">합계</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+							</ul>
+						</dd>
+						<dt>단기카드대출(현금서비스)</dt>
+						<dd>
+							<ul class="list_box_table">
+								<li>
+									<div class="th">당월청구 원금</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li>
+									<div class="th">미청구 원금</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li>
+									<div class="th">선결제 수수료</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li class="line">
+									<div class="th">합계</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+							</ul>
+						</dd>
+						<dt>장기카드대출(카드론)</dt>
+						<dd>
+							<ul class="list_box_table">
+								<li>
+									<div class="th">당월청구 원금</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li>
+									<div class="th">미청구 원금</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li>
+									<div class="th">선결제 수수료</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li class="line">
+									<div class="th">합계</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+							</ul>
+						</dd>
+						<dt>일부결제금액이월약정(리볼빙)</dt>
+						<dd>
+							<ul class="list_box_table">
+								<li>
+									<div class="th">당월청구 원금</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li>
+									<div class="th">미청구 원금</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li>
+									<div class="th">선결제 수수료</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li class="line">
+									<div class="th">합계</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+							</ul>
+						</dd>
+						<dd>
+							<ul class="list_box_table">
+								<li>
+									<div class="th">당월청구 원금</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li>
+									<div class="th">미청구 원금</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li>
+									<div class="th">선결제 수수료</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li class="line">
+									<div class="th">합계</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+							</ul>
+						</dd>
+						<dt>연회비/부가서비스</dt>
+						<dd>
+							<ul class="list_box_table">
+								<li>
+									<div class="th">당월청구 원금</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li>
+									<div class="th">미청구 원금</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li>
+									<div class="th">선결제 수수료</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+								<li class="line">
+									<div class="th">합계</div>
+									<div class="td"><strong>123,456</strong> 원</div>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- //이용구분 별 상세금액 팝업 -->
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>
