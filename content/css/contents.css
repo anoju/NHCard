@@ -123,13 +123,16 @@
 .chaeumletter .swiper-next{right:10px;background-image:url(../images/contents/chaeumletter_arr_R.png);}
 .chaeumletter .swiper-pagination{display:none;}
 .chaeum_top{margin-top:-30px;position:relative;height:171px;background:#3a4895;font-size:1.3rem;color:#fff;overflow:hidden;}
-.chaeum_top .bg_1{position:absolute;top:0;right:178px;width:88px;height:49px;background:url(../images/contents/chaeum_top_bg1.png) no-repeat center center;background-size:contain;}
-.chaeum_top .bg_2{position:absolute;bottom:0;right:0;width:176px;height:165px;background:url(../images/contents/chaeum_top_bg2.png) no-repeat center center;background-size:contain;}
+.chaeum_top .bg_1{position:absolute;top:0;right:178px;width:88px;height:49px;background:url(../images/contents/chaeumletter_top_bg1.png) no-repeat center center;background-size:contain;}
+.chaeum_top .bg_2{position:absolute;bottom:0;right:0;width:176px;height:165px;background:url(../images/contents/chaeumletter_top_bg2.png) no-repeat center center;background-size:contain;}
 .chaeum_top .inner{position:relative;padding:25px 20px 0;}
 .chaeum_top .tit{font-size:1.8rem;color:#ffee96;}
 .chaeum_top .sub{font-size:1.6rem;margin-bottom:10px;}
-.chaeum_top.ty2{background:#00a99c;}
+.chaeum_top.ty2{background-color:#00a99c;background-image:repeating-linear-gradient(-45deg, #00a99c, #00a99c 4px, #00ada2 4px, #00ada2 6px);}
+.chaeum_top.ty2:before{content:'';display:block;width:59px;height:111px;position:absolute;right:0;top:0;background:rgba(0,0,0,0.2);}
+.chaeum_top.ty2:after{content:'';display:block;width:5px;height:5px;position:absolute;left:20px;top:8px;background:#fffb7b;border-radius:50px;box-shadow:0 0 5px rgba(0,0,0,0.3);}
 .chaeum_top.ty2 .tit{color:#ffe657;}
+.chaeum_top.ty2 .bg_1{top:auto;bottom:7px;right:24px;width:109px;height:90px;background:url(../images/contents/chaeumsketch_top_bg1.png) no-repeat center center;background-size:contain;}
 .evnt_banner_wrap{position:relative;margin-top:65px;}
 .evnt_banner_wrap .btn_link{position:absolute;top:-30px;right:0;}
 .evnt_banner .item img{border-radius:4px;box-shadow:0 8px 10px rgba(0,0,0,0.08);}
