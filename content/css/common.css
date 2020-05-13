@@ -512,6 +512,8 @@ div.tit_h3 .tit{font-size:1.6rem;color:#111}
 .tit_h4{margin-top:35px;}
 .tit_h4:not(div),
 div.tit_h4 .tit{font-size:1.5rem;color:#111}
+.tit_h2 .price{font-size:1.7rem;font-weight:400;}
+.tit_h2 .price strong{font-size:1.8rem;}
 
 /*button*/
 .button{position:relative;display:inline-block;width:auto;height:44px;line-height:42px;padding:0 11px;border:1px solid transparent;text-align:center;vertical-align:middle;font-size:1.5rem;font-weight:500;white-space:nowrap;text-decoration:none;overflow:hidden;box-sizing:border-box;border-radius:4px;-webkit-appearance:none;}
@@ -572,6 +574,7 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 .bottom_fixed.ty2 .total_price .td .price strong{font-size:2.4rem;}
 .bottom_fixed.ty2 .total_price .td .price{display:inline-block;vertical-align:middle;}
 .bottom_fixed.ty2 .total_price .td .btn_modify{margin-left:5px;display:inline-block;vertical-align:middle;color:#333;}
+.btn_wrap+.txt_desc{font-size:1.3rem;color:#666;margin-top:5px;}
 
 /* icon in button */
 [class*=bt_ic_]{position:relative;display:inline-block;vertical-align:0;background-repeat:no-repeat;background-position:center center;background-size:contain;}
@@ -617,6 +620,7 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 	0%{-webkit-transform:scale(0);transform:scale(0);opacity:1;}
 	100%{-webkit-transform:scale(2.5);transform:scale(2.5);opacity:0;}
 }
+.btn_more{margin-top:30px;}
 .btn_more .button{display:block;}
 .btn_more .button strong{font-weight:700;}
 .btn_more .button:after{content:'';display:inline-block;width:10px;height:6px;margin-left:10px;vertical-align:1px;background:url(../images/btn/bt_ic_arr_down.png) no-repeat center center;background-size:contain;}
@@ -669,6 +673,9 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 .input.add_unit_1 input{padding-right:27px;}
 .input.add_unit_2 input{padding-right:42px;}
 .input.add_unit_3 input{padding-right:57px;}
+
+.add_price_btn{display:flex;display:-webkit-flex;justify-content:space-between;-webkit-justify-content:space-between;margin-top:10px;width:100%;}
+.add_price_btn>.btn{display:block;height:35px;padding:6px;width:18.44%;border:1px solid #ddd;border-radius:4px;background:#f6f6f6;color:#666;text-align:center;}
 
 .select{display:inline-block;position:relative;width:100%;}
 .select select,
@@ -882,6 +889,8 @@ html:not(.isApp) .btn_toggle li input:focus+label{box-shadow:0px 0px 1px 1px rgb
 .btn_toggle.grid.col3.row2 li:nth-last-child(1) input+label{border-bottom-right-radius:4px;}
 
 .datepicker_box{padding:18px 11px;margin-top:10px;background:#f4f6fa;border:1px solid #ddd;border-radius:4px;}
+.form_item .datepicker_box .td.dash{position:relative;width:26px;}
+.form_item .datepicker_box .td.dash:before{content:'';position:absolute;top:50%;left:50%;margin:-1px 0 0 -7px;display:block;width:15px;height:2px;background:#666;}
 
 /*tab*/
 .tabmenu{position:relative;margin-bottom:30px;}

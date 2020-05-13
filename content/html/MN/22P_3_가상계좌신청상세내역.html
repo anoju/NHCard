@@ -35,7 +35,7 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('할부기간 변경');
+		common.title('가상계좌예약/조회/취소');
 	});
 </script>
 </head>
@@ -45,42 +45,64 @@
 	<div data-include-html="../include/gnb.html"></div>
 	<div id="container">
 		<section id="contents">
-			<div class="step_wrap">
-				<h2 class="step_tit">이용내역 선택</h2>
-				<ol class="step_state">
-					<li class="on">1<span class="blind">단계(현재단계)</span></li>
-					<li>2<span class="blind">단계</span></li>
-					<li>3<span class="blind">단계</span></li>
-				</ol>
-			</div>
 			<div class="section">
-				<div class="card_info_box blue">
-					<div class="name">채움(농협은행)</div>
-					<div class="info">
-						<div>올바른 BASIC+ 카드</div>
-						<div>
-							<span class="type master"><span class="blind">마스터카드</span></span>
-							<!-- <span class="type visa"><span class="blind">비자카드</span></span> -->
-							<span class="num">1234-56**-****3456</span>
-						</div>
-					</div>
-				</div>
-				<div class="total_num_box">총 <strong>50</strong>건</div>	
-			</div>
-			<div class="section">
-				<div class="btn_more">
-				<a href="#" class="button line">더보기 (<strong>20</strong>/25)</a>
-				</div>
-			</div>
-			
-			<div class="btn_wrap bottom_fixed">
-				<div class="flex">
-					<a href="#" class="button h54 gray">이전</a>
-					<button type="button" class="button h54 blue">신청</button><!-- disabled속성 추가:버튼 비활성, disabled속성 제거:버튼 활성-->
-				</div>
+                <a href="#" onclick="Layer.open('#virAccInquiry')">팝업열기</a>
 			</div>
 		</section>
+    </div>
+    <!-- 가상계좌신청 상세내역 팝업 -->
+	<div id="virAccInquiry" class="popup full" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_head">
+				<h1>가상계좌신청 상세내역</h1>
+				<a href="#" class="pop_close ui-pop-close"><span class="blind">팝업창 닫기</span></a>
+			</div>
+			<div class="pop_cont">
+				<div class="section">
+                    <h2 class="tit_h2">결제항목<br><span class="price"><strong>123,456,789</strong> 원</span></h2>
+                    <ul class="list_box_table mt25">
+                        <li>
+                            <div class="th">예약일</div>
+                            <div class="td">2020.03.23 00:00:00</div>
+                        </li>
+                        <li>
+                            <div class="th">입금일</div>
+                            <div class="td">-</div>
+                        </li>
+                        <li class="line">
+                            <div class="th">청구결제번호</div>
+                            <div class="td">0001</div>
+                        </li>
+                        <li>
+                            <div class="th">예약일련번호</div>
+                            <div class="td">0001</div>
+                        </li>
+                        <li>
+                            <div class="th">예약경로</div>
+                            <div class="td">스마트뱅킹</div>
+                        </li>
+                        <li>
+                            <div class="th">진행상태</div>
+                            <div class="td">입금대기</div>
+                        </li>
+                        <li>
+                            <div class="th">취소여부</div>
+                            <div class="td"></div>
+                        </li>
+                    </ul>
+				</div>
+            </div>
+            
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h48 blue" onclick="Layer.close('#modalDialog');">신청 취소하기</a>
+					</div>
+				</div>
+			</div>
+		</article>
 	</div>
+	<!-- //가상계좌신청 상세내역 팝업 -->
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>
