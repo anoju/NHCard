@@ -110,6 +110,8 @@
 .range_set_wrap .tit:first-child{margin-top:0;}
 .range_set_wrap>dd{margin-top:8px;}
 
+.input_div+.card_info_box{margin-top:12px;}
+
 /* 신청정보입력 약관동의 */
 .vip_freeservice li{float:left;width:50%}
 .vip_freeservice li:nth-child(odd){clear:both;}
