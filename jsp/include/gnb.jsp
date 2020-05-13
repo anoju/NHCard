@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <nav id="gnb" aria-hidden="true">
 	<div class="gnb_header">
 		<div class="gnb_head_top">

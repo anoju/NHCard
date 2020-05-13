@@ -532,11 +532,13 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 .button.line:active{border-color:#ccc;}
 .button.line.blue{border-color:#3182f7;color:#3182f7;}
 .button.line.white{border-color:#fff;color:#fff;background:none;}
+.button.line.gray{color:#666;background:#f6f6f6;}
 .button.line.disabled,
 .button.line:disabled{border-color:#f0f0f0 !important;color:#858585 !important;cursor:default !important;}
 
 .button.h54{height:54px;line-height:52px;font-size:1.8rem;}
 .button.h48{height:48px;line-height:46px;font-size:1.8rem;}
+.button.h35{height:35px;line-height:33px;font-size:1.4rem;font-weight:400;}
 .button.h32{height:32px;line-height:30px;font-size:1.3rem;}
 .button.h25{height:25px;line-height:23px;font-size:1.4rem;font-weight:400;}
 .button.h25.line{color:#666;}
@@ -673,9 +675,6 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 .input.add_unit_1 input{padding-right:27px;}
 .input.add_unit_2 input{padding-right:42px;}
 .input.add_unit_3 input{padding-right:57px;}
-
-.add_price_btn{display:flex;display:-webkit-flex;justify-content:space-between;-webkit-justify-content:space-between;margin-top:10px;width:100%;}
-.add_price_btn>.btn{display:block;height:35px;padding:6px;width:18.44%;border:1px solid #ddd;border-radius:4px;background:#f6f6f6;color:#666;text-align:center;}
 
 .select{display:inline-block;position:relative;width:100%;}
 .select select,

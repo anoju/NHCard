@@ -181,9 +181,13 @@ div.caution_txt{display:block;}
 .card_info_box .sub{font-size:1.3rem;color:#111;}
 .card_info_box .name+.sub{margin-top:4px;}
 .card_info_box .date{margin-right:10px;}
-.card_info_box .type{display:inline-block;margin-right:5px;width:17px;height:11px;background-repeat:no-repeat;background-position:center center;background-size:contain;}
+.card_info_box .type{display:inline-block;margin-right:5px;width:17px;height:10px;background-repeat:no-repeat;background-position:center center;background-size:contain;}
 .card_info_box .type.master{background-image:url(../images/common/card_type_master.png);}
 .card_info_box .type.visa{background-image:url(../images/common/card_type_visa.png);}
+.card_info_box .type.jcb{background-image:url(../images/common/card_type_jcb.png);}
+.card_info_box .type.w{background-image:url(../images/common/card_type_w.png);}
+.card_info_box .type.unionpay{background-image:url(../images/common/card_type_unionpay.png);}
+.card_info_box .type.domestic{background-image:url(../images/common/card_type_domestic.png);}
 .card_info_box .info{font-size:1.2rem;color:#666;}
 .card_info_box .name+.info{margin-top:10px;}
 .card_info_box .sub+.info{margin-top:8px;}

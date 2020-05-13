@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <script>
 	/* 일부 탭을 안쓸경우(예시로 NH농협카드 안쓴다면)
 	$('[href=#tabCertify2]').closest('li').remove();	//탭버튼을 갖고 있는 li까지 없애고
