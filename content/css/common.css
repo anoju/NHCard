@@ -155,6 +155,7 @@ common
 .mt20{margin-top:20px !important;}
 .mt25{margin-top:25px !important;}
 .mt30{margin-top:30px !important;}
+.mt35{margin-top:35px !important;}
 .mt40{margin-top:40px !important;}
 .mt50{margin-top:50px !important;}
 .mt60{margin-top:60px !important;}
@@ -672,6 +673,7 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 .select{display:inline-block;position:relative;width:100%;}
 .select select,
 .btn_select{position:relative;width:100%;line-height:32px;padding:5px 30px 5px 11px;border:1px solid #ddd;font-size:1.4rem;color:#111;vertical-align:middle;box-sizing:border-box;-webkit-appearance:none;-moz-appearance:none;appearance:none;-webkit-transition:border 0.3s;transition:border 0.3s;-webkit-appearance:none;border-radius:4px;}
+.btn_select.on{border-color:#3182f7;}
 .select select{height:44px;background:url(../images/common/select_arrow.png) 100% 50% no-repeat;background-size:23px auto;}
 .btn_select{display:inline-block;}
 .btn_select:after{content:'';display:block;position:absolute;right:0;top:50%;width:23px;height:6px;margin-top:-3px;background:url(../images/common/select_arrow.png) no-repeat right center;background-size:23px auto;-webkit-transform:rotate3d(1,0,0,0deg);transform:rotate3d(1,0,0,0deg);-webkit-transition:0.3s;transition:0.3s;}
