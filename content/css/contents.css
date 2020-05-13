@@ -171,3 +171,14 @@
 .sketch_circle_list>li span{display:block;font-size:1.2rem;color:#333;}
 .sketch_circle_list>li strong{display:block;margin-top:3px;line-height:1.8rem;font-weight:500;color:#111;}
 .sketch_wrap+.btn_more{margin-top:57px;}
+
+/* 납부타입 동그라미 */
+.type_round ul{display:table;width:100%}
+.type_round ul li{display:table-cell;text-align:center}
+.type_round ul li .bt_ic_arr{margin-top:65px;margin-left:0}
+.type_round ul li .round_txt{display:flex;margin:auto;width:130px;height:130px;border-radius:50%;color:#fff;justify-content:center;align-items:center;}
+.type_round ul li .round_txt+p{margin-top:10px}
+
+
+
+
