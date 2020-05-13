@@ -45,56 +45,73 @@
 	<div data-include-html="../include/gnb.html"></div>
 	<div id="container">
 		<section id="contents">
-			<div class="step_wrap">
-				<h2 class="step_tit">조회내역</h2>
-				<ol class="step_state">
-					<li class="on">1<span class="blind">단계(현재단계)</span></li>
-					<li>2<span class="blind">단계</span></li>
-					<li>3<span class="blind">단계</span></li>
-				</ol>
-			</div>
 			<div class="section">
-                <div class="input_div">개인회원</div>
-                <div class="form_item pay_op">
-					<div class="fm_lb">결제정보</div>
-					<div class="fm_cont">
-                        <ul class="list_box_table">
-                            <li>
-                                <div class="th">원금</div>
-                                <div class="td"><span>123,456,789</span> 원</div>
-                            </li>
-                            <li>
-                                <div class="th">수수료</div>
-                                <div class="td"><span>0</span> 원</div>
-                            </li>
-                            <li>
-                                <div class="th">연체금액</div>
-                                <div class="td"><span>123,456,789</span> 원</div>
-                            </li>
-                            <li class="line last">
-                                <div class="th">합계</div>
-                                <div class="td"><span>123,456,789</span> 원</div>
-                            </li>
-                        </ul>
-					</div>
-                </div>
-                <div class="form_item pay_op">
-					<label for="payCountInpt" class="fm_lb">결제금액 입력</label>
-					<div class="fm_cont">
-                        <div class="input add_unit_1">
-							<input type="tel" class="t_right" id="payCountInpt" title="결제금액 입력">
-							<div class="unit">원</div>
-						</div>
-					</div>
-				</div>
-                <div class="btn_wrap bottom_fixed">
-					<div class="flex">
-						<a href="#" class="button h54 blue">다음</a>
-					</div>
-				</div>
+                <a href="#" onclick="Layer.open('#applyDetail')">팝업열기</a>
 			</div>
 		</section>
+    </div>
+    <!-- 가상계좌신청 상세내역 팝업 -->
+	<div id="applyDetail" class="popup modal" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_head">
+				<h1>상세조회</h1>
+			</div>
+			<div class="pop_cont">
+				<div class="section">
+                    <ul class="list_box_table">
+                        <li>
+                            <div class="th">청구일</div>
+                            <div class="td">YYY.MM.DD</div>
+                        </li>
+                        <li>
+                            <div class="th">청구결제번호</div>
+                            <div class="td">0001</div>
+                        </li>
+                        <li>
+                            <div class="th">이용구분</div>
+                            <div class="td">일시불 국내</div>
+                        </li>
+                        <li>
+                            <div class="th">이용가맹점</div>
+                            <div class="td">ooo마트</div>
+                        </li>
+                        <li>
+                            <div class="th">매출일</div>
+                            <div class="td">YYYY.MM.DD</div>
+                        </li>
+                        <li>
+                            <div class="th">매출금액</div>
+                            <div class="td"><span>123,456,789</span> 원</div>
+                        </li>
+                        <li class="line">
+                            <div class="th">선결제 입금구분</div>
+                            <div class="td">상품별 미청구분</div>
+                        </li>
+                        <li>
+                            <div class="th">선결제 금액</div>
+                            <div class="td"><span>123,456,789</span> 원</div>
+                        </li>
+                        <li>
+                            <div class="th">선결제 원금</div>
+                            <div class="td"><span>123,456,789</span> 원</div>
+                        </li>
+                        <li>
+                            <div class="th">선결제 수수료</div>
+                            <div class="td"><span>123,456,789</span> 원</div>
+                        </li>
+                    </ul>
+                </div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h48 blue" onclick="Layer.close('#modalDialog');">닫기</a>
+					</div>
+				</div>
+			</div>
+		</article>
 	</div>
+	<!-- //가상계좌신청 상세내역 팝업 -->
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>
