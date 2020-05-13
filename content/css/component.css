@@ -191,7 +191,6 @@ div.caution_txt{display:block;}
 .card_info_box .info dt{display:inline;}
 .card_info_box .info dd{display:inline;}
 .card_info_box .info dt+dd{margin-left:6px;}
-.card_info_box .price{}
 .btn_select .card_info_box{border-width:0;padding:13px 0 13px 12px;line-height:1.5;}
 
 /*리스트*/
