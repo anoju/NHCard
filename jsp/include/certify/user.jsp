@@ -291,10 +291,10 @@
 					</div>
 					<div class="btn_wrap">
 						<div class="flex">
-							<a href="#" class="button blue" role="button">공인인증서 인증</a>
+							<a href="#" class="button blue">공인인증서 인증</a>
 						</div>
 						<div class="t_center mt17">
-							<a href="#" class="btn_link2" role="button">공인인증서 등록</a>
+							<a href="#" class="btn_link2">공인인증서 등록</a>
 						</div>
 					</div>
 				</div>
@@ -332,7 +332,7 @@
 					</div>
 					<div class="btn_wrap">
 						<div class="flex">
-							<a href="#" class="button blue" role="button">브라우저인증서 인증</a>
+							<a href="#" class="button blue">브라우저인증서 인증</a>
 						</div>
 					</div>
 				</div>
@@ -449,7 +449,7 @@
 							<p class="txt only">설정된 잠금번호가 없습니다.<br>잠금번호 설정 후 이용해 주세요.</p>
 						</div>
 						<div class="t_center mt17">
-							<a href="#" class="btn_link2" role="button">잠금번호 설정</a>
+							<a href="#" class="btn_link2">잠금번호 설정</a>
 						</div>
 					</div>
 
@@ -478,7 +478,7 @@
 							<p class="txt only">설정된 PIN번호가 없습니다.<br>PIN번호 설정 후 이용해 주세요.</p>
 						</div>
 						<div class="t_center mt17">
-							<a href="#" class="btn_link2" role="button">PIN번호 설정</a>
+							<a href="#" class="btn_link2">PIN번호 설정</a>
 						</div>
 					</div>
 
@@ -503,7 +503,7 @@
 							<p class="txt only">설정된 지문이 없습니다.<br>지문 설정 후 이용해 주세요.</p>
 						</div>
 						<div class="t_center mt17">
-							<a href="#" class="btn_link2" role="button">지문 설정</a>
+							<a href="#" class="btn_link2">지문 설정</a>
 						</div>
 					</div>
 					<!--//설정된 지문이 없을 경우-->
@@ -536,7 +536,7 @@
 							<p class="txt only">설정된 Face ID가 없습니다.<br>Face ID 설정 후 이용해 주세요.</p>
 						</div>
 						<div class="t_center mt17">
-							<a href="#" class="btn_link2" role="button">Face ID 설정</a>
+							<a href="#" class="btn_link2">Face ID 설정</a>
 						</div>
 					</div>
 					<!--//설정된 Face ID가 없을 경우--> 
@@ -588,7 +588,7 @@
 					</div>
 					<div class="btn_wrap">
 						<div class="flex">
-							<a href="#" class="button blue" role="button">올원페이 인증</a>
+							<a href="#" class="button blue">올원페이 인증</a>
 						</div>
 					</div>
 
