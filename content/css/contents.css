@@ -91,9 +91,9 @@
 .detail_pay dt:first-child{margin-top:0;}
 .detail_pay dt+dd{margin-top:19px;}
 .detail_pay dd:last-child{margin-bottom:30px;}
-.list_box_table{padding:14px;border-top:1px solid #bbb;border-bottom:1px solid #ddd;color:#666;}
+.list_box_table{padding:14px 0;border-top:1px solid #bbb;border-bottom:1px solid #ddd;color:#666;}
 .list_box_table.ty2{border-bottom:none;}
-.list_box_table>li{display:table;width:100%;}
+.list_box_table>li{display:table;width:100%;padding:0 14px;}
 .list_box_table>li+li{margin-top:3px;}
 .list_box_table>li.line{margin-top:13px;padding-top:14px;border-top:1px dashed #ddd;}
 .list_box_table>li.last{color:#111;}

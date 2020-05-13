@@ -162,7 +162,7 @@ div.caution_txt{display:block;}
 .caution_txt2:before{color:#8997af;}
 
 /*인풋모양 user정보 박스*/
-.pay_user_info{width:100%;height:44px;padding:10px 25px 10px 11px;background:#f0f0f0;border:1px solid #ddd;border-radius:4px;color:#858585;font-size:1.4rem;}
+.input_div{width:100%;height:44px;padding:10px 25px 10px 11px;background:#f0f0f0;border:1px solid #ddd;border-radius:4px;color:#858585;font-size:1.4rem;}
 
 /*총 X건 box*/
 .total_num_box{margin:30px -20px 0;padding:12px 20px;background:#eaf2fe;color:#111;}
