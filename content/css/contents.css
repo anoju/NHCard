@@ -115,8 +115,8 @@
 .vip_freeservice li{float:left;width:50%}
 .vip_freeservice li:nth-child(odd){clear:both;}
 .vip_freeservice li .complete_wrap{padding:0 0 24px}
-.vip_freeservice li .tit_h2{font-size:14px}
-.vip_freeservice li .txt{font-size:13px}
+.vip_freeservice li .tit_h2{font-size:1.4rem}
+.vip_freeservice li .txt{font-size:1.3rem}
 .vip_freeservice:after{content:'';clear:both;display:block;}
 
 /*채움레터, 채움스케치*/
