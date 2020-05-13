@@ -162,6 +162,14 @@ div.caution_txt{display:block;}
 .caution_txt2{display:block;color:#8997af;padding-left:12px;font-size:1.2rem;}
 .caution_txt2:before{color:#8997af;}
 
+/*인풋모양 user정보 박스*/
+.pay_user_info{width:100%;height:44px;padding:10px 25px 10px 11px;background:#f0f0f0;border:1px solid #ddd;border-radius:4px;color:#858585;font-size:1.4rem;}
+
+/*총 X건 box*/
+.total_num_box{margin:30px -20px 0;padding:12px 20px;background:#eaf2fe;color:#111;}
+.total_num_box strong{font-size:1.5rem;font-weight:700;color:#3182f7;}
+.total_num_box+.line_list_2.ty2{border-top:none;}
+
 /*리스트*/
 .line_list_1{border-top:1px solid #bbb;}
 .line_list_1>ul>li{position:relative;border-bottom:1px solid #ddd;}
@@ -180,10 +188,6 @@ div.caution_txt{display:block;}
 .card_info_tbl .sub ul strong{font-weight:400;margin-right:8px;}
 .card_info_tbl .tit+.sub{margin-top:2px;}
 .card_info_tbl .num+.sub{margin-top:6px;}
-
-.total_num_box{margin:30px -20px 0;padding:12px 20px;background:#eaf2fe;color:#111;}
-.total_num_box strong{font-size:1.5rem;font-weight:700;color:#3182f7;}
-.total_num_box+.line_list_2.ty2{border-top:none;}
 
 .line_list_2{border-top:1px solid #bbb;}
 .section .line_list_2{margin:0 -20px;}
