@@ -8,7 +8,7 @@
 .ico_box_wrap .txt.only{margin-top:30px;color:#111;}
 
 /*완료*/
-.complete_wrap{padding:18px 0 26px;text-align:center;font-size:0;}
+.complete_wrap{padding:18px 0 15px;text-align:center;font-size:0;}
 .complete_wrap .tit_h2{margin-top:17px;font-size:2.2rem;}
 .complete_wrap .txt{margin-bottom:12px;font-size:1.5rem;}
 
@@ -63,6 +63,7 @@
 .first_blue_box .tit strong{font-size:1.8rem;}
 
 /*결제서비스*/
+.price_box_wrap + .price_box_wrap{margin-top:10px}
 .price_box_wrap{padding:20px 24px;background:#f8f8f8;border-radius:4px;}
 .price_box_wrap .txt{font-size:1.2rem;color:#666;}
 .price_box_wrap .total_num{color:#3182f7;}
@@ -71,12 +72,16 @@
 .price_box_wrap .sub_num{font-size:1.2rem;color:#666;}
 .price_box_wrap .sub_num .num{color:#111;}
 .price_box_wrap .sub_num .num strong{font-size:1.4rem;}
+.price_box_wrap.ty2 .total_num strong{font-size:1.4rem}
+.price_box_wrap.ty2 .flex .sub_num{font-size:1.4rem}
+.price_box_wrap.ty2 .flex .sub_num:first-child strong{font-weight:normal}
 .form_item.pay_op{margin-top:30px;}
 .form_item.pay_op .fm_lb{font-size:1.8rem;font-weight:500;}
 .form_item.pay_op .fm_cont{margin-top:17px;}
 .form_item.pay_op .select+.input,
 .form_item.pay_op .select+.input+.input{margin-top:12px;}
 .form_item.pay_op .caution_info{margin:19px 0 5px;}
+.form_item.ip_none input{border:none;}
 .tit_h3+.checkbox_btn_wrap,
 .tit_h3+.price_box_wrap,
 .tit_h3+.box_list_2{margin-top:20px;}
