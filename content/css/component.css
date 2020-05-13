@@ -165,9 +165,12 @@ div.caution_txt{display:block;}
 .input_div{width:100%;height:44px;padding:10px 25px 10px 11px;background:#f0f0f0;border:1px solid #ddd;border-radius:4px;color:#858585;font-size:1.4rem;}
 
 /*총 X건 box*/
-.total_num_box{margin:30px -20px 0;padding:12px 20px;background:#eaf2fe;color:#111;}
+.total_num_box{margin-top:30px;padding:12px 20px;background:#eaf2fe;color:#111;}
+.section .total_num_box{margin-left:-20px;margin-right:-20px;}
+.total_num_box:after{content:'';display:block;clear:both;}
 .total_num_box strong{font-size:1.5rem;font-weight:700;color:#3182f7;}
-.total_num_box+.line_list_2.ty2{border-top:none;}
+.total_num_box+.line_list_2.ty2,
+.total_num_box+.line_list_3{border-top:none;}
 
 .card_info_box{border:1px solid #ddd;border-radius:4px;padding:20px 23px;background:#fff;}
 .card_info_box.blue{border-color:#eaf2fe;background:#eaf2fe;}
@@ -192,6 +195,9 @@ div.caution_txt{display:block;}
 .card_info_box .info dd{display:inline;}
 .card_info_box .info dt+dd{margin-left:6px;}
 .btn_select .card_info_box{border-width:0;padding:13px 0 13px 12px;line-height:1.5;}
+
+.chart_bar{position:relative;height:7px;background:#f0f0f0;border-radius:4px;overflow:hidden;}
+.chart_bar>div{position:absolute;left:0;top:0;width:0;height:100%;border-radius:4px;background:#306edf;}
 
 /*리스트*/
 .line_list_1{border-top:1px solid #bbb;}
@@ -236,10 +242,19 @@ div.caution_txt{display:block;}
 .line_list_2 .sub_info>li+li:before{content:'';position:absolute;top:4px;left:0;display:block;width:1px;height:12px;background:#666;}
 .line_list_2 .sub_info strong{color:#333;}
 
+.line_list_3{border-top:1px solid #ddd;}
+.section .line_list_3{margin-left:-20px;margin-right:-20px;}
+.line_list_3>ul>li{position:relative;border-bottom:1px solid #ddd;}
+.line_list_3 .inner{display:block;padding:20px;}
+.line_list_3 .checkbox{position:absolute;left:20px;top:20px;}
+.line_list_3 .checkbox+.inner{padding-left:48px;}
+.line_list_3 .card_info_box{border-width:0;padding:0;}
+
 .list_util{position:relative;}
 .list_util:after{content:'';display:block;clear:both;}
 [class*=box_list_] .list_util{margin-bottom:15px;}
 
+.total_num_box+.box_list_1{margin-top:20px;}
 .box_list_1>ul>li{position:relative;border:1px solid #ddd;border-radius:4px;-webkit-transition:border 0.3s;transition:border 0.3s;}
 .box_list_1>ul>li.checked{border-color:#3182f7;}
 .box_list_1>ul>li+li{margin-top:10px;}
@@ -267,6 +282,9 @@ div.caution_txt{display:block;}
 .box_list_1 li.open .expend_btn .bt_ic_arr_down{-webkit-transform:rotate3d(1,0,0,180deg);transform:rotate3d(1,0,0,180deg);}
 .box_list_1 .expend_wrap.on>.expend_btn{display:none;}
 .box_list_1 .expend_wrap.on>.expend_cont{display:block;}
+.box_list_1 .card_info_box{border-width:0;padding:0;}
+.box_list_1 .chart_wrap{border-top:1px dashed #ddd;margin-top:17px;padding-top:12px;font-size:1.3rem;color:#666;}
+.box_list_1 .chart_bar{margin-top:9px;}
 
 .box_list_2>ul>li{position:relative;border:1px solid #ddd;border-radius:4px;-webkit-transition:border 0.3s;transition:border 0.3s;}
 .box_list_2>ul>li.checked{border-color:#3182f7;}
