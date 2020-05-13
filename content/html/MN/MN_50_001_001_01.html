@@ -252,7 +252,7 @@
 								<option value="농협은행 123-45**-****-456">농협은행 123-45**-****-456</option>
 							</select>
 						</div>
-						<div class="input"><input type="text" class="" readonly value="농협은행 123-45**-****-456"></div>
+						<div class="input"><input type="text" class="" readonly value="농협은행 123-45**-****-456" title="결제계좌정보"></div><!--#200513 title 추가-->
 						
 					</div>
 				</div>
@@ -270,8 +270,8 @@
 						<div class="caution_info">본인명의 농협계좌 입력 시 거래 가능합니다.</div>
 						<div class="tbl">
 							<div class="td">
-								<div class="input checked"><input type="text" id="inputText5" placeholder="&prime;-&prime;없이 숫자만 입력"></div><!-- 유호성 O때: checked 클래스 추가 / 유호성 X 때:error 클래스 추가-->
-								<!-- <div class="input error"><input type="text" id="inputText5" placeholder="&prime;-&prime;없이 숫자만 입력"></div> -->
+								<div class="input checked"><input type="text" id="inputText5" placeholder="&prime;-&prime;없이 숫자만 입력" title="본인명의 계좌입력"></div><!-- 유호성 O때: checked 클래스 추가 / 유호성 X 때:error 클래스 추가--><!--#200513 title 추가-->
+								<!-- <div class="input error"><input type="text" id="inputText5" placeholder="&prime;-&prime;없이 숫자만 입력" title="본인명의 계좌입력"></div> --><!--#200513 title 추가-->
 							</div>
 							<div class="td va_mid fm_btn"><a href="#" class="button blue" role="button">계좌확인</a></div>
 						</div>
@@ -305,7 +305,7 @@
 							</select>
 						</div>
 						<div class="caution_info">입력된 휴대폰번호로 문자(는) 발송됩니다.</div>
-						<div class="input"><input type="text" value="01033338888"></div>
+						<div class="input"><input type="text" value="01033338888" title="휴대폰번호 입력"></div><!--#200513 title추가-->
 						
 					</div>
 				</div>
@@ -322,12 +322,12 @@
 						</div>
 						<div class="input add_unit_1">
 							<div class="front_unit">NH 잔여포인트</div>
-							<input type="tel" id="inpPoint" class="t_right readonly" value="123,456" readonly>
+							<input type="tel" id="inpPoint" class="t_right readonly" value="123,456" title="NH 잔여포인트" readonly><!--#200513 title 추가-->
 							<div class="unit">P</div>
 						</div>
 						<div class="input add_unit_1">
 							<div class="front_unit">즉시결제금액</div>
-							<input type="tel" id="inpPoint2" class="t_right" value="123,456">
+							<input type="tel" id="inpPoint2" class="t_right" title="즉시결제금액 입력" value="123,456"><!--#200513 title 추가-->
 							<div class="unit">원</div>
 						</div>
 						<div class="error_txt" style="display:block;">포인트가 부족하여 다른 결제방법으로 변경 바랍니다.</div><!-- 에러메세지 입력영역 -->

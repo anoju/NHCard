@@ -3615,6 +3615,7 @@ var swiperUI = {
 					$swipeIdx = swiperUI.array.length+1,
 					$itemLength = $this.children().length,
 					$autoplayOpt = '',
+					$navigationOpt = '',
 					$isLoop = false;
 				if($itemLength == 1){
 					$this.closest('.ui-swiper-wrap').addClass('only');
@@ -3624,12 +3625,26 @@ var swiperUI = {
 					if(!$this.hasClass('swiper-container-initialized')){
 						$this.children('.item').addClass('swiper-slide');
 						$this.wrapInner('<div class="swiper-wrapper"></div>');
+						if($this.hasClass('loop'))$isLoop = true;
+						if($this.hasClass('autoplay') || $this.hasClass('navi')){
+							$this.addClass('swipe-container').append('<div class="swiper-navi"></div>');
+						}
 						if($this.hasClass('autoplay')){
-							$this.addClass('swipe-container').append('<div class="swiper-navi"><button type="button" class="swiper-auto-ctl"><span class="blind">자동롤링 중지</span></button><div class="swiper-pagination"></div></div>');
+							$this.find('.swiper-navi').append('<button type="button" class="swiper-auto-ctl"><span class="blind">자동롤링 중지</span></button>');
 							$autoplayOpt = {
 								delay: 3000
 							};
 							$isLoop = true;
+						}
+						if($this.hasClass('navi')){
+							$this.find('.swiper-navi').append('<button type="button" class="swiper-arr swiper-prev"><span class="blind">이전슬라이드</span></button><button type="button" class="swiper-arr swiper-next"><span class="blind">다음슬라이드</span></button>');
+							$navigationOpt = {
+								prevEl: '.swiper-prev',
+								nextEl: '.swiper-next',
+							};
+						}
+						if($this.find('.swiper-navi').length){
+							$this.find('.swiper-navi').append('<div class="swiper-pagination"></div>');
 						}else{
 							$this.addClass('swipe-container').append('<div class="swiper-pagination"></div>');
 						}
@@ -3639,6 +3654,7 @@ var swiperUI = {
 							slideClass:'item',
 							resizeReInit:true,
 							autoplay:$autoplayOpt,
+							navigation:$navigationOpt,
 							loop:$isLoop,
 							pagination:{
 								el: '.swiper-pagination',
@@ -3706,85 +3722,23 @@ var swiperUI = {
 								$(this).addClass('play').find('.blind').changeTxt('중지','시작');
 							}
 						});
+						$this.on('click','.swiper-prev',function(e){
+							e.preventDefault();
+							if($(this).hasClass('play')){
+								$swiper.autoplay.start();
+								$(this).removeClass('play').find('.blind').changeTxt('시작','중지');
+							}else{
+								$swiper.autoplay.stop();
+								$(this).addClass('play').find('.blind').changeTxt('중지','시작');
+							}
+						});
 					}
-				}
-			});
-		}
-	},
-	arrow:function(tar){
-		if ($(tar).length > 0){
-			$(tar).each(function(i, element){
-				var $this = $(this),
-					$prev = $this.find('.swiper-button-prev'),
-					$next = $this.find('.swiper-button-next'),
-					$pagination = $this.find('.swiper-pagination'),
-					$type = $this.data('swiper');						//data-swiper
-		
-				//setting
-				if($this.find('.swiper-container').length > 0){
-					$container = $this.find('.swiper-container');
-				}else{
-					$container = $this;
-				}
-				$container.addClass('ui-swipe-s'+i);
-				if($prev.length > 0)$prev.addClass('ui-swipe-l'+i);
-				if($next.length > 0)$next.addClass('ui-swipe-r'+i);
-				if($pagination.length > 0)$pagination.addClass('ui-swipe-p'+i);
-		
-				//option
-				var $option,
-					$isNaviIn = false;
-				switch($type){
-					case 'navi':
-						$option ={
-							slidesPerView: 'auto',
-							freeMode: true,
-							//centerInsufficientSlides: true,
-							navigation:{
-								prevEl: '.ui-swipe-l'+i,
-								nextEl: '.ui-swipe-r'+i,
-							}
-						};
-						$isNaviIn = true;
-						break;
-					case 'vertical':
-						$option ={
-							direction: 'vertical',
-							autoHeight: true,
-							pagination:{
-								el: '.ui-swipe-p'+i
-							}
-						};
-						break;
-					default:
-						$option ={
-							autoHeight: true,
-							pagination:{
-								el: '.ui-swipe-p'+i
-							}
-						};
-						break;
-				}
-		
-				//Swiper init
-				var $swiper = new Swiper('.ui-swipe-s'+i,$option);
-				$uiSwipers.push($swiper);
-		
-				//event
-				if($isNaviIn == true){
-					var $active = $this.find('.active'),
-						$activeIdx = $active.index(),
-						$activeLeft = $active.position().left,
-						$activeWidth = $active.outerWidth();
-		
-					if($(window).width() < ($activeLeft+$activeWidth))$uiSwipers[i].slideTo($activeIdx);
 				}
 			});
 		}
 	},
 	init:function(){
 		swiperUI.item('.ui-swiper');
-		swiperUI.arrow('.ui-swiper2');
 	}
 };
 

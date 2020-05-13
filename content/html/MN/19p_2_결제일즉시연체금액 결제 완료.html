@@ -35,7 +35,7 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('채움레터');
+		common.title('결제일즉시/연체금액 결제');
 	});
 </script>
 </head>
@@ -45,72 +45,60 @@
 	<div data-include-html="../include/gnb.html"></div>
 	<div id="container">
 		<section id="contents">
-			<div class="chaeum_top">
-				<div class="bg_1" aria-hidden="true" data-animation="fadeInDown"></div>
-				<div class="bg_2" aria-hidden="true" data-animation="fadeInRight"></div>
-				<div class="inner">
-					<h2 class="tit">채움레터</h2>
-					<div class="sub">채움이 드리는 다양한 혜택!</div>
-					<div>할인꿀팁, 무이자 혜택, 채움만의<br>특별한 혜택 등 다양한 소식을<br>전해 드립니다.</div>
-				</div>
+			<div class="step_wrap">
+				<h2 class="step_tit">즉시출금 완료</h2>
+				<ol class="step_state">
+					<li>1<span class="blind">단계</span></li>
+					<li>2<span class="blind">단계</span></li>
+					<li class="on">3<span class="blind">단계(현재단계)</span></li>
+				</ol>
 			</div>
 			<div class="section">
-				<div class="form_item mt40">
-					<div class="fm_cont">
-						<div class="tbl">
-							<div class="td">
-								<div class="select">
-									<select id="inpCompany1" title="채움레터 연도 선택">
-										<option value="">연도 선택</option>
-										<option value="1" selected>2020년</option>
-										<option value="2">2020년</option>
-									</select>
-								</div>
-							</div>
-							<div class="td">
-								<div class="select">
-									<select id="inpCompany2" title="채움레터 월 선택">
-										<option value="">월 선택</option>
-										<option value="1">12월</option>
-										<option value="2">11월</option>
-										<option value="3">10월</option>
-										<option value="4">9월</option>
-										<option value="5">8월</option>
-										<option value="6">7월</option>
-										<option value="7">6월</option>
-										<option value="8" selected>5월</option>
-										<option value="9">4월</option>
-										<option value="10">3월</option>
-										<option value="11">2월</option>
-										<option value="12">1월</option>
-									</select>
-								</div>
-							</div>
-						</div>
+                <div class="complete_wrap">
+                    <i class="i_ico_50 ico_1" aria-hidden="true"></i>
+                    <h2 class="tit_h2">결제일즉시/연체금액 결제 완료</h2>
+                </div>
+                <div class="table">
+                    <table>
+                        <caption>이용대금 선결제 완료를 결제방법, 총 결제금액, 원금, 수수료, 사용한 NH포인트로 나눠 나타낸 표</caption>
+                        <colgroup>
+                            <col style="width:40%">
+                            <col style="width:auto">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">결제방법</th>
+                                <td>NH포인트 결제</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="fc_blue">총 결제금액</th>
+                                <td class="fc_blue"><span>123,456</span> 원</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">원금</th>
+                                <td><span>123,456</span> 원</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">수수료</th>
+                                <td><span>123,456</span> 원</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="fc_blue">사용한 NH포인트</th>
+                                <td class="fc_blue"><span>123,456</span> 원</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h54 blue">확인</a>
 					</div>
 				</div>
-				
-				<!--뷰영역-->
-				<div class="chaeumletter">
-					<div class="ui-swiper-wrap full">
-						<div class="ui-swiper navi">
-							<div class="item">
-								<img src="../../images/temp/chaeumletter.png" alt="채움레터 임시 이미지">
-							</div>
-							<div class="item">
-								<img src="../../images/temp/20-580x250.jpg" alt="채움레터 임시 이미지">
-							</div>
-							<div class="item">
-								<img src="../../images/temp/30-580x250.jpg" alt="채움레터 임시 이미지">
-							</div>
-						</div>
-					</div>
-				</div>
-				<!--//뷰영역-->
 			</div>
 		</section>
 	</div>
-	
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>
