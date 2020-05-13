@@ -1101,6 +1101,15 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .i_ico_20{width:20px;height:20px;background-color:#bbb;background-image:url(../images/common/spr_i_ico_20.png);border-radius:100%;background-size:20px auto;}
 .i_ico_20.ico_1{background-position:0 0;}
 .i_ico_20.ico_2{background-position:0 -20px;}
+.i_ico_30{width:30px;height:30px;background-image:url(../images/common/spr_i_ico_30.png);background-size:30px auto;}
+.i_ico_30.ico_1{background-position:0 0;}
+.i_ico_30.ico_2{background-position:0 -30px;}
+.i_ico_30.ico_3{background-position:0 -60px;}
+.i_ico_30.ico_4{background-position:0 -90px;}
+.i_ico_30.ico_5{background-position:0 -120px;}
+.i_ico_30.ico_6{background-position:0 -150px;}
+.i_ico_30.ico_7{background-position:0 -180px;}
+.i_ico_30.ico_8{background-position:0 -210px;}
 .i_ico_50{position:relative;width:50px;height:50px;background-color:#3182f7;border-radius:100%;background-size:50px auto;}
 .i_ico_50.ico_1:before{content:'';position:absolute;top:18px;left:50%;margin-left:-10px;display:block;box-sizing:border-box;width:20px;height:10px;border:3px solid #fff;border-top:none;border-right:none;-webkit-transform:rotate(-43deg);transform:rotate(-43deg);}
 .i_ico_50.ico_2{background-color:#f8f8f8;background-image:url(../images/common/ico_50_02.png);}
@@ -1128,16 +1137,6 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .i_ico_122{width:122px;height:122px;background-color:#f8f8f8;border-radius:100%;background-size:122px auto;}
 .i_ico_122.ico_1{background-image:url(../images/common/ico_122_01.png);}
 .i_ico_122.ico_2{background-image:url(../images/common/ico_122_02.png);}
-
-.i_ico_travel{width:30px;height:30px;background-image:url(../images/common/spr_ico_travel.png);background-size:30px auto;}
-.i_ico_travel.ico_1{background-position:0 0;}
-.i_ico_travel.ico_2{background-position:0 -30px;}
-.i_ico_travel.ico_3{background-position:0 -60px;}
-.i_ico_travel.ico_4{background-position:0 -90px;}
-.i_ico_travel.ico_5{background-position:0 -120px;}
-.i_ico_travel.ico_6{background-position:0 -150px;}
-.i_ico_travel.ico_7{background-position:0 -180px;}
-.i_ico_travel.ico_8{background-position:0 -210px;}
 
 /* scl_datepicker */
 .scl_cal_wrap{display:none;position:relative;margin-top:-4px;padding-top:4px;border:1px solid #ddd;border-top-width:0;overflow:hidden;}
