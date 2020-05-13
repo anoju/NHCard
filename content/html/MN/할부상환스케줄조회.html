@@ -35,7 +35,7 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('결제일즉시/연체금액 결제');
+		common.title('할부상환스케줄 조회');
 	});
 </script>
 </head>
@@ -45,51 +45,46 @@
 	<div data-include-html="../include/gnb.html"></div>
 	<div id="container">
 		<section id="contents">
-			<div class="step_wrap">
-				<h2 class="step_tit">조회내역</h2>
-				<ol class="step_state">
-					<li class="on">1<span class="blind">단계(현재단계)</span></li>
-					<li>2<span class="blind">단계</span></li>
-					<li>3<span class="blind">단계</span></li>
-				</ol>
-			</div>
 			<div class="section">
-                <div>개인회원</div>
-                <div class="form_item pay_op">
-					<div class="fm_lb">결제정보</div>
-					<div class="fm_cont">
-                        <ul class="list_box_table">
-                            <li>
-                                <div class="th">원금</div>
-                                <div class="td"><span>123,456,789</span> 원</div>
-                            </li>
-                            <li>
-                                <div class="th">수수료</div>
-                                <div class="td"><span>0</span> 원</div>
-                            </li>
-                            <li>
-                                <div class="th">연체금액</div>
-                                <div class="td"><span>123,456,789</span> 원</div>
-                            </li>
-                            <li class="line last">
-                                <div class="th">합계</div>
-                                <div class="td"><span>123,456,789</span> 원</div>
-                            </li>
-                        </ul>
-					</div>
-                </div>
-                <div class="form_item pay_op">
-					<label for="payCountInpt" class="fm_lb">결제금액 입력</label>
-					<div class="fm_cont">
-                        <div class="input add_unit_1">
-							<input type="tel" class="t_right" id="payCountInpt" title="결제금액 입력">
-							<div class="unit">원</div>
-						</div>
+				
+				
+				<hr class="hr_line" aria-hidden="true">
+				<div class="tit_h2">
+					<div><h2 class="tit">상환일정</h2></div>
+					<div class="w_160">
+						<span>원금+이자=총상환액</span>
 					</div>
 				</div>
-                <div class="btn_wrap bottom_fixed">
+				<div class="price_box_wrap ty2">
+					<span class="txt">1회차</span>
+					<div class="total_num"><strong>123,456 + 12,345= 123,456,789</strong>원</div>
 					<div class="flex">
-						<a href="#" class="button h54 blue">다음</a>
+						<div class="sub_num">청구일 <span class="num"><strong>2020.04.01</strong></span></div>
+						<div class="sub_num">결제후 잔액 <span class="num"><strong>123,456,789</strong>원</span></div>
+					</div>
+				</div>
+				<div class="price_box_wrap ty2">
+					<span class="txt">2회차</span>
+					<div class="total_num"><strong>123,456 + 12,345= 123,456,789</strong>원</div>
+					<div class="flex">
+						<div class="sub_num">청구일 <span class="num"><strong>2020.04.01</strong></span></div>
+						<div class="sub_num">결제후 잔액 <span class="num"><strong>123,456,789</strong>원</span></div>
+					</div>
+				</div>
+				<div class="price_box_wrap ty2">
+					<span class="txt">3회차</span>
+					<div class="total_num"><strong>123,456 + 12,345= 123,456,789</strong>원</div>
+					<div class="flex">
+						<div class="sub_num">청구일 <span class="num"><strong>2020.04.01</strong></span></div>
+						<div class="sub_num">결제후 잔액 <span class="num"><strong>123,456,789</strong>원</span></div>
+					</div>
+				</div>
+				<div class="price_box_wrap ty2">
+					<span class="txt">4회차</span>
+					<div class="total_num"><strong>123,456 + 12,345= 123,456,789</strong>원</div>
+					<div class="flex">
+						<div class="sub_num">청구일 <span class="num"><strong>2020.04.01</strong></span></div>
+						<div class="sub_num">결제후 잔액 <span class="num"><strong>123,456,789</strong>원</span></div>
 					</div>
 				</div>
 			</div>
