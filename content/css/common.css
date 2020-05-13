@@ -1195,6 +1195,9 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .ui-swiper .swiper-pagination{text-align:center;margin-top:15px;}
 .ui-swiper .swiper-navi{text-align:center;margin-top:15px;}
 
+.ui-swiper.loop.swiper-container-initialized{padding:0 25px;overflow:hidden;}
+.ui-swiper.loop.swiper-container-initialized .item{width:100%;}
+
 .ui-swiper-wrap.full .ui-swiper.swiper-container-initialized{padding:0;}
 .ui-swiper-wrap.full .item{padding:0;}
 .ui-swiper-wrap.full .ui-swiper.swiper-container-initialized .item{width:100%;}

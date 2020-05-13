@@ -114,11 +114,22 @@
 .vip_freeservice:after{content:'';clear:both;display:block;}
 
 /*채움레터, 채움스케치*/
-#contents>.blue_top_box{margin-top:-30px;}
-.blue_top_box{padding:25px 20px 27px;background:#eaf2fe;}
-.blue_top_box h3{font-size:1.8rem;color:#3182f7;}
-.blue_top_box .sub_tit{font-size:1.6rem;font-weight:400;color:#111;}
-.blue_top_box .txt{margin-top:7px;color:#333;}
+.chaeumletter{margin-top:30px;}
+.chaeumletter .ui-swiper-wrap{margin:0;}
+.chaeumletter .ui-swiper{position:relative;}
+.chaeumletter .ui-swiper .item{background:#f1f1f1;display:flex;align-items:center;}
+.chaeumletter .swiper-arr{position:absolute;top:50%;width:30px;height:30px;margin-top:-15px;background-repeat:no-repeat;background-position:center center;background-size:contain;z-index:2;}
+.chaeumletter .swiper-prev{left:10px;background-image:url(../images/contents/chaeumletter_arr_L.png);}
+.chaeumletter .swiper-next{right:10px;background-image:url(../images/contents/chaeumletter_arr_R.png);}
+.chaeumletter .swiper-pagination{display:none;}
+.chaeum_top{margin-top:-30px;position:relative;height:171px;background:#3a4895;font-size:1.3rem;color:#fff;overflow:hidden;}
+.chaeum_top .bg_1{position:absolute;top:0;right:178px;width:88px;height:49px;background:url(../images/contents/chaeum_top_bg1.png) no-repeat center center;background-size:contain;}
+.chaeum_top .bg_2{position:absolute;bottom:0;right:0;width:176px;height:165px;background:url(../images/contents/chaeum_top_bg2.png) no-repeat center center;background-size:contain;}
+.chaeum_top .inner{position:relative;padding:25px 20px 0;}
+.chaeum_top .tit{font-size:1.8rem;color:#ffee96;}
+.chaeum_top .sub{font-size:1.6rem;margin-bottom:10px;}
+.chaeum_top.ty2{background:#00a99c;}
+.chaeum_top.ty2 .tit{color:#ffe657;}
 .evnt_banner_wrap{position:relative;margin-top:65px;}
 .evnt_banner_wrap .btn_link{position:absolute;top:-30px;right:0;}
 .evnt_banner .item img{border-radius:4px;box-shadow:0 8px 10px rgba(0,0,0,0.08);}
