@@ -35,7 +35,7 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('결제결과조회');
+		common.title('가상계좌예약 조회/취소');
 	});
 </script>
 </head>
@@ -46,12 +46,66 @@
 	<div id="container">
 		<section id="contents">
 			<div class="section">
-                <div class="total_num_box">총 <strong>50</strong>건</div>
-                <div class="line_list_2 ty2">
+				<h3 class="tit_h2">개인회원</h3>
+				<div>20.04.01~20.04.07</div>
+				<div class="form_item">
+					<div class="fm_cont">
+						<ul class="btn_toggle grid col5 ui-tab-rdo" data-hide="#datepickerTxt">
+							<li>
+								<input type="radio" id="periodTo" name="periodSel" value="1" checked="">
+								<label for="periodTo"><span>당일</span></label>
+							</li>
+							<li>
+								<input type="radio" id="periodWe" name="periodSel" value="3">
+								<label for="periodWe"><span>1주</span></label>
+							</li>
+							<li>
+								<input type="radio" id="period15D" name="periodSel" value="6">
+								<label for="period15D"><span>15일</span></label>
+							</li>
+							<li>
+								<input type="radio" id="period1M" name="periodSel" value="12">
+								<label for="period1M"><span>1개월</span></label>
+							</li>
+							<li>
+								<input type="radio" id="periodEtc" name="periodSel" value="etc" data-show="#datepickerTxt">
+								<label for="periodEtc"><span>직접입력</span></label>
+							</li>
+						</ul>
+						<div id="datepickerTxt" class="datepicker_box hide">
+							<div class="tbl date_wrap"><!-- 달력 2개일때 data_wrap 클래스 필요-->
+								<div class="td">
+									<div class="input"><input type="tel" class="datepicker hasDatepicker" placeholder="YYYY.MM.DD" title="YYYY.MM.DD 형식으로 입력" id="dp1589359842386"><button type="button" class="ui-datepicker-trigger" aria-hidden="true" tabindex="-1">기간조회</button></div>
+								</div>
+								<div class="td dash"></div>
+								<div class="td">
+									<div class="input"><input type="tel" class="datepicker hasDatepicker" placeholder="YYYY.MM.DD" title="YYYY.MM.DD 형식으로 입력" id="dp1589359842387"><button type="button" class="ui-datepicker-trigger" aria-hidden="true" tabindex="-1">기간조회</button></div>
+								</div>
+							</div>
+						</div>
+						<div class="error_txt">기간를 입력해주세요.</div><!-- 에러메세지 입력영역 -->
+					</div>
+				</div>
+				<div class="btn_wrap mt10">
+					<div class="flex">
+						<a href="#" class="button blue" role="button">조회</a>
+					</div>
+				</div>
+				<div class="txt_desc">조회기간은 최대 1개월 단위로 조회 할 수 있습니다.</div>
+				<div class="total_num_box">
+					총 <strong>50</strong>건
+					<div class="f_right">
+						<span class="checkbox">
+							<input type="checkbox" id="chk1"><i aria-hidden="true"></i>
+							<label for="chk1" class="lbl">체크박스</label>
+						</span>
+					</div>
+				</div>
+				<div class="line_list_2 ty2">
                     <ul>
                         <li>
                             <a href="#" class="inner" role="button">
-                                <div class="tit">청구결제번호 0001</div>
+                                <div class="tit">결제항목</div>
                                 <ul class="sub_info">
                                     <li>2020.03.20</li>
                                     <li><strong>123,456,789</strong> 원</li>
@@ -65,7 +119,7 @@
                         </li>
                         <li>
                             <a href="#" class="inner" role="button">
-                                <div class="tit">청구결제번호 0001</div>
+                                <div class="tit">결제항목</div>
                                 <ul class="sub_info">
                                     <li>2020.03.20</li>
                                     <li><strong>123,456,789</strong> 원</li>
@@ -79,7 +133,7 @@
                         </li>
                         <li>
                             <a href="#" class="inner" role="button">
-                                <div class="tit">청구결제번호 0001</div>
+                                <div class="tit">하나로마트</div>
                                 <ul class="sub_info">
                                     <li>2020.03.20</li>
                                     <li><strong>123,456,789</strong> 원</li>
@@ -93,12 +147,9 @@
                         </li>
                     </ul>
                 </div>
-                <div class="btn_more mt30">
-                    <a href="#" class="button line" role="button">더보기 (<strong>20</strong>/25)</a>
-                </div>
 			</div>
 		</section>
-    </div>
+	</div>
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>
