@@ -1043,8 +1043,8 @@ html.isApp.ios.inpFocus .tab_wrap.fixed .tab_track{position:absolute;top:0;}
 .step_wrap{display:table;width:100%;padding:13px 20px;margin-bottom:30px;background:#eaf2fe;}
 .step_wrap:first-child,
 .tab_wrap+.step_wrap{margin-top:-30px;}
-.step_wrap .step_tit{display:table-cell;width:70%;color:#3182f7;font-size:1.6rem;}
-.step_wrap .step_state{display:table-cell;width:30%;font-size:0;text-align:right;vertical-align:middle;}
+.step_wrap .step_tit{display:table-cell;width:60%;color:#3182f7;font-size:1.6rem;}
+.step_wrap .step_state{display:table-cell;width:40%;font-size:0;text-align:right;vertical-align:middle;}
 .step_wrap .step_state>li{display:inline-block;width:21px;height:21px;border-radius:50%;background:#bbbbbb;font-size:1.3rem;color:#fff;text-align:center;}
 .step_wrap .step_state>li+li{margin-left:9px;}
 .step_wrap .step_state>li.on{background-color:#3182f7;font-weight:500;}
