@@ -35,7 +35,7 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('바로출금');
+		common.title('결제일즉시/연체금액 결제');
 	});
 </script>
 </head>
@@ -46,59 +46,50 @@
 	<div id="container">
 		<section id="contents">
 			<div class="step_wrap">
-				<h2 class="step_tit">결제방법 선택</h2>
+				<h2 class="step_tit">조회내역</h2>
 				<ol class="step_state">
-					<li>1<span class="blind">단계</span></li>
-					<li class="on">2<span class="blind">단계(현재단계)</span></li>
+					<li class="on">1<span class="blind">단계(현재단계)</span></li>
+					<li>2<span class="blind">단계</span></li>
 					<li>3<span class="blind">단계</span></li>
 				</ol>
 			</div>
 			<div class="section">
-				<div class="price_box_wrap">
-					<span class="txt">결제금액</span>
-					<div class="total_num"><strong>123,456,789</strong>원</div>
-					<div class="flex">
-						<div class="sub_num">원금 <span class="num"><strong>123,456,789</strong>원</span></div>
-						<div class="sub_num">수수료 <span class="num"><strong>123,456,789</strong>원</span></div>
-					</div>
-                </div>
-                
+                <div>개인회원</div>
                 <div class="form_item pay_op">
-					<label for="payCount" class="fm_lb">결제방법</label>
+					<div class="fm_lb">결제정보</div>
 					<div class="fm_cont">
-						<div class="select">
-							<select id="payCount" title="결제계좌 선택">
-								<option value="" selected="selected">결제계좌</option>
-								<option value="농협은행 123-45**-****-456">농협은행 123-45**-****-456</option>
-							</select>
-						</div>
-						<div class="input"><input type="text" class="" readonly value="농협은행 123-45**-****-456" title="결제계좌정보"></div><!--#200513 title추가-->
+                        <ul class="list_box_table">
+                            <li>
+                                <div class="th">원금</div>
+                                <div class="td"><span>123,456,789</span> 원</div>
+                            </li>
+                            <li>
+                                <div class="th">수수료</div>
+                                <div class="td"><span>0</span> 원</div>
+                            </li>
+                            <li>
+                                <div class="th">연체금액</div>
+                                <div class="td"><span>123,456,789</span> 원</div>
+                            </li>
+                            <li class="line last">
+                                <div class="th">합계</div>
+                                <div class="td"><span>123,456,789</span> 원</div>
+                            </li>
+                        </ul>
 					</div>
                 </div>
-                <dl class="accordion_list accordion_dl">
-					<dt class="tit">
-						<a href="#" class="ui-toggle-btn open"><i class="i_ico_20 ico_1" aria-hidden="true"></i>유의사항</a>
-					</dt>
-					<dd class="panel">
-						<div class="txt_list">
-							<ul>
-                                <li class="dot">NH포인트로 카드이용대금을 결제하실 수 있습니다.</li>
-                                <li class="dot">NH포인트 결제와 계좌 출금으로 동시에 결제하실 수 없습니다.</li>
-                                <li class="dot">카드결제대금은 수수료 차이로 인하여 이전 화면의 &lt;결제하실 금액&gt;과 차이가 있을 수 있습니다.</li>
-                                <li class="dot">상호저축은행, 산림조합, BOA, 증권사(유안타증권, 미래에셋대우, 삼성증권, 한화투자증권 제외)계좌를 결제계좌로 사용하시는 고객님은 농협계좌 직접입력 또는 가상계좌 예약 및 입금 방법으로 결제하실 수 있습니다.</li>
-							</ul>
+                <div class="form_item pay_op">
+					<label for="payCountInpt" class="fm_lb">결제금액 입력</label>
+					<div class="fm_cont">
+                        <div class="input add_unit_1">
+							<input type="tel" class="t_right" id="payCountInpt" title="결제금액 입력">
+							<div class="unit">원</div>
 						</div>
-					</dd>
-				</dl>
-
-				<div class="bottom_fixed ty2">
-					<div>
-						<div class="btn_wrap">
-							<div class="flex">
-								<button type="button" class="button line blue">이전</button>
-								<button type="button" class="button blue">바로출금</button>
-							</div>
-						</div>
+					</div>
+				</div>
+                <div class="btn_wrap bottom_fixed">
+					<div class="flex">
+						<a href="#" class="button h54 blue">다음</a>
 					</div>
 				</div>
 			</div>
