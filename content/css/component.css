@@ -250,8 +250,6 @@ div.caution_txt{display:block;}
 .line_list_2 .sub_info>li+li{position:relative;padding:0 7px;}
 .line_list_2 .sub_info>li+li:before{content:'';position:absolute;top:4px;left:0;display:block;width:1px;height:12px;background:#666;}
 .line_list_2 .sub_info strong{color:#333;}
-
-.line_list_2 .inner .td{}
 .line_list_2 .sub_info_etr{margin-top:5px;font-size:1.3rem;color:#666;}
 .line_list_2 .info_right{padding-right:17px;text-align:right;}
 .line_list_2 .info_right .price strong{font-size:1.5rem;}
