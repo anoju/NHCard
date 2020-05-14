@@ -35,7 +35,7 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('즉시결제서비스');
+		common.title('일시불 분할 납부신청');
 	});
 </script>
 </head>
@@ -46,7 +46,7 @@
 	<div id="container">
 		<section id="contents">
 			<div class="step_wrap">
-				<h2 class="step_tit">결제계좌 완료</h2>
+				<h2 class="step_tit">분할납부 전환취소</h2>
 				<ol class="step_state">
 					<li>1<span class="blind">단계</span></li>
 					<li class="on">2<span class="blind">단계(현재단계)</span></li>
@@ -55,54 +55,56 @@
 			<div class="section">
 				<div class="complete_wrap">
 					<i class="i_ico_50 ico_1" aria-hidden="true"></i>
-					<h2 class="tit_h2">카드 결제계좌 변경완료</h2>
+					<h2 class="tit_h2">신청내역 취소 완료</h2>
 				</div>
-				<!-- 공통 영역 -->
-				
-				<!--// 공통 영역 -->
-				<h3 class="tit_h2">변경내역</h3>
-				<div class="table">
-					<table>
-						<caption>변경 전과 변경 후 계좌내역을 나타낸 표</caption>
-						<colgroup>
-							<col style="width:40%">
-							<col style="width:auto">
-						</colgroup>
-						<tbody>
-							<tr>
-								<th class="va_top" scope="row">변경 전</th>
-								<td>농협은행(김농협)<br>123-456-7890-12</td>
-							</tr>
-							<tr>
-								<th class="va_top" scope="row">변경 후</th>
-								<td class="fc_blue">농협은행(김농협)<br>123-456-7890-12</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<dl class="accordion_list accordion_dl mt30">
-					<dt class="tit">
-						<a href="#" class="ui-toggle-btn open"><i class="i_ico_20 ico_1" aria-hidden="true"></i>이용안내</a>
-					</dt>
-					<dd class="panel">
-						<div class="txt_list">
-							<ul>
-								<li class="dot">농협계좌와 타행 결제계좌로 변경 요청하신경우
-									신청하신 다음 영업일로부터 변경된 계좌로
-									출금됩니다.</li>
-								<li class="dot">결제일 당일 또는 카드대금을 미납하신 회원의
-									결제계좌 변경 시 연체발생 및 이중 출금이
-									발생할 수 있으니 유의하시기 바랍니다.</li>
-							</ul>
+				<hr class="hr_line" aria-hidden="true">
+				<h3 class="tit_h2">신청내역</h3>
+				<div class="card_info_box">
+					<div class="name">하나로마트</div>
+					<div class="info mt5">
+						<div>
+							<span class="date">2020.03.20</span>
+							<span class="type master"><span class="blind">마스터카드</span></span>
+							<!-- <span class="type visa"><span class="blind">비자카드</span></span>
+							<span class="type jcb"><span class="blind">jcb카드</span></span>
+							<span class="type w"><span class="blind">w카드</span></span>
+							<span class="type unionpay"><span class="blind">unionpay카드</span></span>
+							<span class="type domestic"><span class="blind">국내전용카드</span></span> -->
+							<span class="num">1234-56**-****3456</span>
 						</div>
-					</dd>
-				</dl>
+						<div>
+							<dl>
+								<dt>이용금액</dt>
+								<dd><strong class="fc_black">3,456,789</strong> 원</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<div class="tit_h2">
+					<div><h2 class="tit">신청일</h2></div>
+					<div class="w_160">
+						<span>2020.03.20 12:30:45</span>
+					</div>
+				</div>
+				<div class="type_round">
+					<ul>
+						<li>
+							<div class="round_txt">할부<strong class="num">12</strong>개월</div>
+							<p>변경 전</p>
+						</li>
+						<li><span class="bt_ic_arr"></span></li>
+						<li>
+							<div class="round_txt bg_blue"><strong>일시불</strong></div>
+							<p>변경 후</p>
+						</li>
+					</ul>
+				</div>
 			</div>
 			
 			<div class="btn_wrap bottom_fixed">
 				<div>
 					<div class="flex">
-						<a href="#" class="button h54 gray">추가변경</a>
+						<a href="#" class="button h54 gray">취소</a>
 						<a href="#" class="button h54 blue">확인</a>
 					</div>
 				</div>
