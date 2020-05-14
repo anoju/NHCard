@@ -142,7 +142,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#" class="inner">
+							<a href="#" class="inner" onclick="Layer.open('#virAccInquiry')">
 								<div class="flex">
 									<div class="td">
 										<div class="tit">결제항목</div>
@@ -168,6 +168,60 @@
 			</div>
 		</section>
 	</div>
+	<!-- 가상계좌신청 상세내역 팝업 -->
+	<div id="virAccInquiry" class="popup full" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_head">
+				<h1>가상계좌신청 상세내역</h1>
+				<a href="#" class="pop_close ui-pop-close"><span class="blind">팝업창 닫기</span></a>
+			</div>
+			<div class="pop_cont">
+				<div class="section">
+					<h2 class="tit_h2">결제항목<br><span class="price"><strong>123,456,789</strong> 원</span></h2>
+					<ul class="list_box_table mt25">
+						<li>
+							<div class="th">예약일</div>
+							<div class="td">2020.03.23 00:00:00</div>
+						</li>
+						<li>
+							<div class="th">입금일</div>
+							<div class="td">-</div>
+						</li>
+						<li class="line">
+							<div class="th">청구결제번호</div>
+							<div class="td">0001</div>
+						</li>
+						<li>
+							<div class="th">예약일련번호</div>
+							<div class="td">0001</div>
+						</li>
+						<li>
+							<div class="th">예약경로</div>
+							<div class="td">스마트뱅킹</div>
+						</li>
+						<li>
+							<div class="th">진행상태</div>
+							<div class="td">입금대기</div>
+						</li>
+						<li>
+							<div class="th">취소여부</div>
+							<div class="td"></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h48 blue" onclick="Layer.close('#modalDialog');">신청 취소하기</a>
+						<!-- <a href="#" class="button h48 blue" onclick="Layer.close('#modalDialog');">취소완료</a> -->
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- //가상계좌신청 상세내역 팝업 -->
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>
