@@ -82,12 +82,10 @@
 .price_box_wrap.ty2 .total_num strong{font-size:1.4rem}
 .price_box_wrap.ty2 .flex .sub_num{font-size:1.4rem}
 .price_box_wrap.ty2 .flex .sub_num:first-child strong{font-weight:normal}
-.form_item.pay_op{margin-top:30px;}
-.form_item.pay_op .fm_lb{font-size:1.8rem;font-weight:500;}
-.form_item.pay_op .fm_cont{margin-top:17px;}
-.form_item.pay_op .select+.input,
-.form_item.pay_op .select+.input+.input{margin-top:12px;}
-.form_item.pay_op .caution_info{margin:19px 0 5px;}
+.form_item .fm_lb.pay_op{font-size:1.8rem;font-weight:500;}
+.form_item .caution_info.pay_op{margin:19px 0 5px;}
+.fm_cont .select+.input,
+.fm_cont .select+.input+.input{margin-top:12px;}
 .form_item.ip_none input{border:none;}
 .tit_h3+.checkbox_btn_wrap,
 .tit_h3+.price_box_wrap,
@@ -116,8 +114,8 @@
 .range_set_wrap .tit{clear:both;margin-top:12px;font-size:1.3rem;}
 .range_set_wrap .tit:first-child{margin-top:0;}
 .range_set_wrap>dd{margin-top:8px;}
-
 .input_div+.card_info_box{margin-top:12px;}
+.sub_date_txt{font-size:1.3rem;color:#666;}
 
 /* 신청정보입력 약관동의 */
 .vip_freeservice li{float:left;width:50%}
