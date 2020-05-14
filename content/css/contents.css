@@ -86,6 +86,12 @@
 .contact_tbl .td+.td:before{content:'';display:block;width:1px;height:38px;position:absolute;left:0;top:50%;margin-top:-19px;background:#ddd;}
 .contact_tbl .td strong{color:#3182df;}
 .contact_tbl .td div{font-size:1.3rem;}
+.address_info{font-size:1.4rem;color:#858585;}
+.address_info dl:after{content:'';display:block;clear:both;}
+.address_info dl+dl{margin-top:7px;}
+.address_info dl dt{float:left;width:57px;border:1px solid #ddd;text-align:center;border-radius:12px;font-weight:500;}
+.address_info dl dt+dd{margin-left:70px;}
+.address_info.box{background:#f0f0f0;border-radius:4px;padding:19px;border:1px solid #ddd;margin-top:10px;color:#333;}
 
 /*결제서비스*/
 .price_box_wrap + .price_box_wrap{margin-top:10px}
@@ -117,12 +123,15 @@
 .list_box_table{padding:14px 0;border-top:1px solid #bbb;border-bottom:1px solid #ddd;color:#666;}
 .list_box_table.ty2{border-bottom:none;}
 .list_box_table>li{display:table;width:100%;padding:0 14px;}
-.list_box_table>li+li{margin-top:3px;}
+.list_box_table>li+li{margin-top:5px;}
 .list_box_table>li.line{margin-top:13px;padding-top:14px;border-top:1px dashed #ddd;}
 .list_box_table>li.last{color:#111;}
 .list_box_table>li .th,
 .list_box_table>li .td{display:table-cell;}
+.list_box_table>li .th{min-width:80px;}
 .list_box_table>li .td{text-align:right;}
+.list_box_table.blue{background:#eaf2fe;color:#3182f7;border-color:#b9d5fd;}
+.list_box_table+.list_box_table{border-top-width:0;}
 .inp_enter_box{position:relative;display:table;width:100%;padding:16px 14px;background:#eaf2fe;border:1px solid #b2d0fc;border-width:1px 0 1px 0;}
 .inp_enter_box .th{display:table-cell;width:33%;color:#3182f7;vertical-align:middle;}
 .inp_enter_box .td{display:table-cell;width:67%;vertical-align:middle;}
