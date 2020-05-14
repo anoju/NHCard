@@ -227,6 +227,7 @@
 .ht_vip_club_wrap .ht_vip_club span{display:inline-block;padding:4px 20px;margin:15px 0 40px;background-color:#eaf2fe;border-radius:20px;}
 .ht_vip_club_wrap .tel{display:block;margin:15px 0 20px;font-size:1.2rem;text-align:right;}
 
+
 /*** ahj ***/
 
 
@@ -236,6 +237,47 @@
 
 
 /*** ksy ***/
+.ht_vip_club_wrap.grade{position:relative;padding-top:90%;margin:-30px -20px 0;}
+.ht_vip_club_wrap.grade.nob .ht_vip_club_wrap{position:absolute;top:0;height:100%;width:100%;background:url('../images/contents/img_grade_nobless.png') center no-repeat;background-size:cover;}
+.ht_vip_club_wrap.grade.sr .ht_vip_club_wrap{position:absolute;top:0;height:100%;width:100%;background:url('../images/contents/img_grade_superroyal.png') center no-repeat;background-size:cover;}
+.ht_vip_club_wrap.grade.r .ht_vip_club_wrap{position:absolute;top:0;height:100%;width:100%;background:url('../images/contents/img_grade_royal.png') center no-repeat;background-size:cover;}
+.ht_vip_club_wrap.grade.p .ht_vip_club_wrap{position:absolute;top:0;height:100%;width:100%;background:url('../images/contents/img_grade_p.png') center no-repeat;background-size:cover;}
+.ht_vip_club_wrap.grade .ht_club{text-align:center;position:absolute;width:100%;}
+.ht_vip_club_wrap .vip_grade{margin-top:13px}
+.ht_vip_club_wrap .vip_grade ul{display:flex;}
+.ht_vip_club_wrap .vip_grade ul li{position:relative;flex:1;padding:5px 10px;margin:0 10px;display:inline-block;}
+.ht_vip_club_wrap .vip_grade ul li a{color:#666;font-size:1.3rem}
+.ht_vip_club_wrap .vip_grade ul li.active{border-radius:20px;box-shadow:2px 2px 2px 1px rgba(0, 0, 0, 0.2);;}
+.ht_vip_club_wrap .vip_grade ul li.active a{color:#fff;}
+.ht_vip_club_wrap .vip_grade ul li.active:first-child{background: linear-gradient(120deg, rgba(161,117,243,1) 0%, rgba(99,117,243,1) 100%);}
+.ht_vip_club_wrap .vip_grade ul li.active:nth-child(2){background: linear-gradient(120deg, rgba(83,205,144,1) 0%, rgba(55,192,144,1) 100%);}
+.ht_vip_club_wrap .vip_grade ul li.active:nth-child(3){background: linear-gradient(120deg, rgba(246,178,71,1) 0%, rgba(242,153,39,1) 100%);}
+.ht_vip_club_wrap .vip_grade ul li.active:nth-child(4){background: linear-gradient(120deg, rgba(50,177,241,1) 0%, rgba(49,133,247,1) 100%);}
+.ht_vip_club_wrap .vip_grade ul li:not(:last-of-type):after{content:'';right:-10px;top:10px;display:inline-block;position:absolute;width:1px;height:12px;background-color:#bbb;}
 
+.panel .txt_list li.last{margin-top:20px;padding-top:12px;border-top:1px dotted #ddd;}
+.panel .txt_list li.last strong{position:relative;font-size:1.8rem;padding-left:25px;}
+.panel .txt_list li.last strong:before{content:'';position:absolute;left:0;top:6px;width:17px;height:17px;display:inline-block;background:url('../images/common/ico_tooltip.png') no-repeat;background-size:cover}
+.panel .txt_list li.last p{font-size:1.3rem}
 
+.vip_ht li .service_list dl{padding-left:35%;position:relative;}
+.vip_ht li .service_list dl dt{position:absolute;left:0;top:50%;transform:translateY(-50%);}
+.vip_ht li .service_list dl dd .ico_txt:not(:last-of-type){margin-right:3px}
+.vip_ht li .service_list dl dd.txt{margin:17px 0 10px;font-size:1.3rem;color:#858585}
+.vip_ht li .service_list dl dd.txt + dd{position:relative;}
+.vip_ht li .service_list dl dd strong{font-size:1.7rem}
+.vip_ht li+li{margin-top:30px}
+.vip_ht li .service_list dl dd .tooltip_wrap{position:absolute;top:5px;right:0}
 
+.complete_wrap.ty2 h2{color:#333}
+.complete_wrap .notice.line{padding:30px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd;margin-top:50px}
+.complete_wrap .notice.line strong{color:#b2a46e;font-size:1.7rem}
+.complete_wrap .notice.line p{font-size:1.3rem;margin-top:15px;}
+.benefit_banner{position:relative;padding:27px;margin-top:-30px;overflow:hidden;background:url('../images/contents/benefit_banner_nob.png') no-repeat;background-size:cover;}
+.benefit_banner .benefit_period{padding-left:40%}
+.benefit_banner .benefit_period *{color:#fff;}
+.benefit_banner .benefit_period .ico_txt.line{font-size:1.1rem;padding:5px;height:inherit;line-height:7px;background:none;border:1px solid #fff;border-radius:20px}
+.benefit_banner .benefit_period strong{display:block;font-size:1.7rem;margin:9px 0;}
+
+.blueBox_list{background-color:#eaf2fe;border-radius:10px;padding:24px 20px;display:table;width:100%;}
+.blueBox_list div{display:table-cell}
