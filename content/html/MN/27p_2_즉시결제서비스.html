@@ -38,13 +38,15 @@
 		common.title('즉시결제서비스');
 
 		var $btnChk = $('.checkbox_btn_wrap .checkbox input');
-		$btnChk.on('change',function(){
-			var $this = $(this);
-			if($this.hasClass){
-				
+		$btnChk.on('click', function(){
+			if($(this).prop('checked')){
+				$(this).parent().addClass("selected");
+			}else{
+				$(this).parent().removeClass("selected");
 			}
-		});
+		}); 
 	});
+
 </script>
 </head>
 <body>
@@ -86,7 +88,7 @@
 				<div class="use_flt_box">
 					<div class="checkbox_btn_wrap full">
 						<span class="checkbox btn">
-							<input type="radio" id="btnPayAll" name="payDiv1" checked>
+							<input type="radio" class="allBtn" id="btnPayAll" name="payDiv1" checked>
 							<label for="btnPayAll" class="lbl">모든거래</label>
 						</span>
 						<span class="checkbox btn">

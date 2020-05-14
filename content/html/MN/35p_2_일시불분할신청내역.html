@@ -35,7 +35,7 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('즉시결제서비스');
+		common.title('일시불 분할 신청내역');
 	});
 </script>
 </head>
@@ -46,32 +46,28 @@
 	<div id="container">
 		<section id="contents">
 			<div class="section">
+                <h3 class="tit_h2">카드선택</h3>
                 <div class="box_list_1">
                     <ul>
                         <li>
                             <div class="inner">
                                 <div class="card_info_box">
-                                    <div class="img">
-                                        <img src="../../images/temp/card_228_144.png" alt="채움카드">
-                                    </div>
-                                    <div>
-                                        <div class="name">채움(농협은행)</div>
-                                        <div class="sub">
+                                    <div class="name">채움(농협은행)</div>
+                                    <div class="info mt5">
+                                        <div>올바른 BASIC+ 카드</div>
+                                        <div>
+                                            <span class="type master"><span class="blind">마스터카드</span></span>
+                                            <!-- <span class="type visa"><span class="blind">비자카드</span></span>
+                                            <span class="type jcb"><span class="blind">jcb카드</span></span>
+                                            <span class="type w"><span class="blind">w카드</span></span>
+                                            <span class="type unionpay"><span class="blind">unionpay카드</span></span>
+                                            <span class="type domestic"><span class="blind">국내전용카드</span></span> -->
                                             <span class="num">1234-56**-****3456</span>
-                                        </div>
-                                        <div class="info">
-                                            <div>올바른 BASIC+ 카드</div>
-                                            <div>
-                                                <dl>
-                                                    <dt>농협은행</dt>
-                                                    <dd>123-1234-1234-12</dd>
-                                                </dl>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="btm_box">
-                                        <a href="#" class="button line round h25">해지<i class="bt_ic_arr" aria-hidden="true"></i></a>
-                                        <a href="#" class="button line round h25">변경<i class="bt_ic_arr" aria-hidden="true"></i></a>
+                                        <a href="#" class="button line round h25">조회<i class="bt_ic_arr" aria-hidden="true"></i></a>
+                                        <a href="#" class="button line round h25 fc_gray4">신청내역<i class="bt_ic_arr" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -79,26 +75,22 @@
                         <li>
                             <div class="inner">
                                 <div class="card_info_box">
-                                    <div class="img">
-                                        <img src="../../images/temp/card_228_144.png" alt="채움카드">
-                                    </div>
-                                    <div>
-                                        <div class="name">채움(농협은행)</div>
-                                        <div class="sub">
+                                    <div class="name">채움(농협은행)</div>
+                                    <div class="info mt5">
+                                        <div>올바른 BASIC+ 카드</div>
+                                        <div>
+                                            <span class="type master"><span class="blind">마스터카드</span></span>
+                                            <!-- <span class="type visa"><span class="blind">비자카드</span></span>
+                                            <span class="type jcb"><span class="blind">jcb카드</span></span>
+                                            <span class="type w"><span class="blind">w카드</span></span>
+                                            <span class="type unionpay"><span class="blind">unionpay카드</span></span>
+                                            <span class="type domestic"><span class="blind">국내전용카드</span></span> -->
                                             <span class="num">1234-56**-****3456</span>
-                                        </div>
-                                        <div class="info">
-                                            <div>올바른 BASIC+ 카드</div>
-                                            <div>
-                                                <dl>
-                                                    <dt>농협은행</dt>
-                                                    <dd>123-1234-1234-12</dd>
-                                                </dl>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="btm_box">
-                                        <a href="#" class="button line round h25">신청<i class="bt_ic_arr" aria-hidden="true"></i></a>
+                                        <a href="#" class="button line round h25">조회<i class="bt_ic_arr" aria-hidden="true"></i></a>
+                                        <a href="#" class="button line round h25 fc_gray4">신청내역<i class="bt_ic_arr" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -106,28 +98,24 @@
                     </ul>
                 </div>
                 
+                <h3 class="tit_h2">연관 서비스</h3>
+                <div class="txt_list">
+					<ul>
+						<li class="dot"><a href="#" class="btn_link2">나의 수수료율 확인</a></li>
+						<li class="dot"><a href="#" class="btn_link2">일부결제금액이월약정(리볼빙) 안내</a></li>
+					</ul>
+				</div>
 
-                <!--서비스 신청가능한 카드 없을 때-->
-                <div class="no_list">
-					<i class="i_ico_50 ico_2" aria-hidden="true"></i>
-					<div class="txt">즉시결제서비스 신청이 가능한 카드가 없습니다.</div>
-                </div>
-
-                <!--서비스 적용이 불가한 카드일 때-->
-                <div class="no_list">
-					<i class="i_ico_50 ico_2" aria-hidden="true"></i>
-					<div class="txt">죄송합니다.<br>즉시결제 서비스 적용이 불가한 제휴카드입니다.<br>다시 확인 하신 후 거래하시기 바랍니다.<br><br>오류코드 03883, 16.63.01</div>
-                </div>
-                
                 <dl class="accordion_list accordion_dl mt30">
 					<dt class="tit">
 						<a href="#" class="ui-toggle-btn open"><i class="i_ico_20 ico_1" aria-hidden="true"></i>이용안내</a>
 					</dt>
 					<dd class="panel">
 						<dl class="txt_list">
-							<dt class="tit">서비스 이용시간</dt>
-							<dd class="dot">24시간(평일,토요일,일요일/공휴일)</dd>
-						</dl>
+                            <dt class="tit">서비스 이용시간</dt>
+                            <dd class="dot">평일 : 08:00~22:00</dd>
+                            <dd class="dot">토요일/일요일/공휴일 : 이용불가</dd>
+                        </dl>
 					</dd>
 				</dl>
 			</div>
