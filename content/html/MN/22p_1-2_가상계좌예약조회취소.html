@@ -47,7 +47,7 @@
 		<section id="contents">
 			<div class="section">
 				<h3 class="tit_h2">개인회원</h3>
-				<div>20.04.01~20.04.07</div>
+				<div class="sub_date_txt">20.04.01~20.04.07</div>
 				<div class="form_item">
 					<div class="fm_cont">
 						<ul class="btn_toggle grid col5 ui-tab-rdo" data-hide="#datepickerTxt">
@@ -96,8 +96,8 @@
 					총 <strong>50</strong>건
 					<div class="f_right">
 						<span class="checkbox">
-							<input type="checkbox" id="chk1"><i aria-hidden="true"></i>
-							<label for="chk1" class="lbl">체크박스</label>
+							<input type="checkbox" id="standByCk"><i aria-hidden="true"></i>
+							<label for="standByCk" class="lbl">입금대기만 보기</label>
 						</span>
 					</div>
 				</div>
@@ -105,47 +105,65 @@
 					<ul>
 						<li>
 							<a href="#" class="inner">
-								<div class="tit">결제항목</div>
-								<ul class="sub_info">
-									<li>2020.03.20</li>
-									<li><strong>123,456,789</strong> 원</li>
-								</ul>
-								<ul class="sub_info">
-									<li>스마트뱅킹-가상계좌</li>
-									<li>선결제</li>
-									<li><span class="fc_blue">정상</span></li>
-								</ul>
+								<div class="flex">
+									<div class="td">
+										<div class="tit">결제항목</div>
+										<ul class="sub_info_etr">
+											<li>예약일 2020.03.20</li>
+											<li>입금대기 (남은시간 01:20:25)</li>
+										</ul>
+									</div>
+									<div class="td">
+										<ul class="info_right">
+											<li class="price"><strong>123,456,789</strong> 원</li>
+											<li class="state">입금대기</li>
+										</ul>
+									</div>
+								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#" class="inner">
-								<div class="tit">결제항목</div>
-								<ul class="sub_info">
-									<li>2020.03.20</li>
-									<li><strong>123,456,789</strong> 원</li>
-								</ul>
-								<ul class="sub_info">
-									<li>스마트뱅킹-가상계좌</li>
-									<li>선결제</li>
-									<li><span class="fc_blue">정상</span></li>
-								</ul>
+								<div class="flex">
+									<div class="td">
+										<div class="tit">결제항목</div>
+										<ul class="sub_info_etr">
+											<li>예약일 2020.03.20</li>
+											<li>입금대기 (남은시간 01:20:25)</li>
+										</ul>
+									</div>
+									<div class="td">
+										<ul class="info_right">
+											<li class="price"><strong>123,456,789</strong> 원</li>
+											<li class="state cancel">취소완료</li>
+										</ul>
+									</div>
+								</div>
 							</a>
 						</li>
 						<li>
 							<a href="#" class="inner">
-								<div class="tit">결제항목</div>
-								<ul class="sub_info">
-									<li>2020.03.20</li>
-									<li><strong>123,456,789</strong> 원</li>
-								</ul>
-								<ul class="sub_info">
-									<li>스마트뱅킹-가상계좌</li>
-									<li>선결제</li>
-									<li><span class="fc_blue">정상</span></li>
-								</ul>
+								<div class="flex">
+									<div class="td">
+										<div class="tit">결제항목</div>
+										<ul class="sub_info_etr">
+											<li>예약일 2020.03.20</li>
+											<li>입금대기 (남은시간 01:20:25)</li>
+										</ul>
+									</div>
+									<div class="td">
+										<ul class="info_right">
+											<li class="price"><strong>123,456,789</strong> 원</li>
+											<li class="state cmplt">입금완료</li>
+										</ul>
+									</div>
+								</div>
 							</a>
 						</li>
 					</ul>
+				</div>
+				<div class="btn_more">
+					<a href="#" class="button line" role="button">더보기 (<strong>20</strong>/25)</a>
 				</div>
 			</div>
 		</section>

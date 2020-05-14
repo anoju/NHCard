@@ -107,8 +107,8 @@
 .range_set_wrap .tit{clear:both;margin-top:12px;font-size:1.3rem;}
 .range_set_wrap .tit:first-child{margin-top:0;}
 .range_set_wrap>dd{margin-top:8px;}
-
 .input_div+.card_info_box{margin-top:12px;}
+.sub_date_txt{font-size:1.3rem;color:#666;}
 
 /* 신청정보입력 약관동의 */
 .vip_freeservice li{float:left;width:50%}
