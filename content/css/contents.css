@@ -251,8 +251,8 @@
 .panel .txt_list li.last strong:before{content:'';position:absolute;left:0;top:6px;width:17px;height:17px;display:inline-block;background:url('../images/common/ico_tooltip.png') no-repeat;background-size:cover}
 .panel .txt_list li.last p{font-size:1.3rem}
 
-.vip_ht li .service_list dl{padding-left:40%;position:relative;}
-.vip_ht li .service_list dl dt{position:absolute;left:0;}
+.vip_ht li .service_list dl{padding-left:35%;position:relative;}
+.vip_ht li .service_list dl dt{position:absolute;left:0;top:50%;transform:translateY(-50%);}
 .vip_ht li .service_list dl dd .ico_txt:not(:last-of-type){margin-right:3px}
 .vip_ht li .service_list dl dd.txt{margin:17px 0 10px;font-size:1.3rem;color:#858585}
 .vip_ht li .service_list dl dd.txt + dd{position:relative;}
