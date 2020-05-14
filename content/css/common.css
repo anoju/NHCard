@@ -221,6 +221,7 @@ common
 
 .hr_line{display:block;border:0 none;height:10px;margin:33px 0;background:#f8f8f8;}
 .hr_line.ty2{height:1px;background:#ddd;margin:30px 0;}
+.hr_line.ty3{height:1px;background:#ddd;margin:30px 0 !important;}
 .section .hr_line{margin-left:-20px;margin-right:-20px;}
 .section .hr_line.short{margin:20px 0;}
 
