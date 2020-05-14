@@ -194,6 +194,13 @@
 .type_round ul li .round_txt{display:flex;margin:auto;width:130px;height:130px;border-radius:50%;color:#fff;justify-content:center;align-items:center;}
 .type_round ul li .round_txt+p{margin-top:10px}
 
+/* vip */
+.ht_vip_club_wrap .ht_vip_club{text-align:center;}
+.ht_vip_club_wrap .ht_vip_club img{width:100%;margin-top:20px}
+.ht_vip_club_wrap .ht_vip_club span{display:inline-block;padding:4px 20px;margin:15px 0 40px;background-color:#eaf2fe;border-radius:20px;}
+.ht_vip_club_wrap .tel{display:block;margin:15px 0 20px;font-size:1.2rem;text-align:right;}
+
+
 
 
 
