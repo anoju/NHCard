@@ -362,6 +362,7 @@ html.ie9 #gnb.show{right:0;}
 html.iPhoneX #footer.add_fixed_btn:after,
 html.iPhoneX #footer.add_floatingBar:after{height:calc(constant(safe-area-inset-bottom) + 70px);height:calc(env(safe-area-inset-bottom) + 70px);}
 #footer>.section{padding:0;}
+.tel_icon{display:inline-block;vertical-align:middle;margin-right:7px;width:24px;height:25px;box-shadow:none;border-radius:0;background: url(../images/common/ico_tel.png) no-repeat 0 center;background-size:24px 19px;}
 .foot_contact{margin:15px 0 20px;line-height:25px;font-size:1.3rem;color:#111;}
 .foot_contact .tel,
 .foot_contact span,
