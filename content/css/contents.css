@@ -106,8 +106,6 @@
 .price_box_wrap.ty2 .total_num strong{font-size:1.4rem}
 .price_box_wrap.ty2 .flex .sub_num{font-size:1.4rem}
 .price_box_wrap.ty2 .flex .sub_num:first-child strong{font-weight:normal}
-.form_item .fm_lb.pay_op{font-size:1.8rem;font-weight:500;}
-.form_item .caution_info.pay_op{margin:19px 0 5px;}
 .fm_cont .select+.input,
 .fm_cont .select+.input+.input{margin-top:12px;}
 .form_item.ip_none input{border:none;}
