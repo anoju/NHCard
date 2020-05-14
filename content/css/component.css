@@ -204,6 +204,9 @@ div.caution_txt{display:block;}
 .chart_bar>div{position:absolute;left:0;top:0;width:0;height:100%;border-radius:4px;background:#306edf;}
 
 /*리스트*/
+.no_list{text-align:center;padding:25px 0;font-size:1.5rem;}
+.no_list .i_ico_50{margin-bottom:15px;}
+
 .line_list_1{border-top:1px solid #bbb;}
 .line_list_1>ul>li{position:relative;border-bottom:1px solid #ddd;}
 .line_list_1>ul>li>.checkbox{position:absolute;left:1px;top:50%;margin-top:-11px;}
