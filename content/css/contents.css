@@ -62,6 +62,13 @@
 .first_blue_box .tit{font-size:1.6rem;color:#111;}
 .first_blue_box .tit strong{font-size:1.8rem;}
 
+/*자동납부*/
+.contact_tbl{background:#eaf2fe;border-radius:4px;}
+.contact_tbl .td{position:relative;padding:10px 0;height:73px;vertical-align:middle;}
+.contact_tbl .td+.td:before{content:'';display:block;width:1px;height:38px;position:absolute;left:0;top:50%;margin-top:-19px;background:#ddd;}
+.contact_tbl .td strong{color:#3182df;}
+.contact_tbl .td div{font-size:1.3rem;}
+
 /*결제서비스*/
 .price_box_wrap + .price_box_wrap{margin-top:10px}
 .price_box_wrap{padding:20px 24px;background:#f8f8f8;border-radius:4px;}

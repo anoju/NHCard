@@ -115,6 +115,7 @@ common
 .w_60{width:60px !important;}
 .w_70{width:70px !important;}
 .w_80{width:80px !important;}
+.w_85{width:85px !important;}
 .w_90{width:90px !important;}
 .w_100{width:100px !important;}
 .w_110{width:110px !important;}
@@ -163,6 +164,7 @@ common
 .mb0{margin-bottom:0px !important;}
 .mb3{margin-bottom:3px !important;}
 .mb5{margin-bottom:5px !important;}
+.mb6{margin-bottom:6px !important;}
 .mb10{margin-bottom:10px !important;}
 .mb15{margin-bottom:15px !important;}
 .mb20{margin-bottom:20px !important;}
@@ -648,11 +650,14 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111}
 .input input[type="password"],
 .input input.no_del{padding-right:11px;}
 .input input[readonly],
-.input input:disabled{background:#f0f0f0;color:#858585;}
+.input input:disabled{background:#f0f0f0;}
+.input input:disabled{color:#858585;}
 .input input:disabled+.ui-datepicker-trigger{opacity:0.3;z-index:-1;}
 .input input.readonly{background:#fff;color:#858585;}
 .input input.readonly+.unit{color:#858585;}
-.input+.input{margin-top:6px;}
+.input+.input,
+.input+.select,
+.select+.select{margin-top:10px;}
 .inp_del{position:absolute;top:50%;right:11px;display:block;width:24px;height:24px;margin-top:-12px;font-size:3px;color:transparent;overflow:hidden;background:url(../images/common/inp_del.png) no-repeat center center;background-size:contain;}
 .input input[readonly]+.inp_del,
 .input input:disabled+.inp_del{display:none;}
@@ -960,7 +965,7 @@ html.isApp.ios.inpFocus .tab_wrap.fixed .tab_track{position:absolute;top:0;}
 .tab_panel,
 .tab_rdo_panel{display:none;}
 .tab_panel.active,
-.tab_rdo_panel.active{display:block;}
+.tab_rdo_panel.show{display:block;}
 .tab_panel.fade,
 .tab_rdo_panel.fade{-webkit-animation:fadeIn 0.3s;animation:fadeIn 0.3s;}
 
@@ -1150,6 +1155,8 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .i_ico_88.ico_7{background-image:url(../images/common/ico_88_07.png);}
 .i_ico_88.ico_8{background-image:url(../images/common/ico_88_08.png);}
 .i_ico_88.ico_9{background-image:url(../images/common/ico_88_09.png);}
+.i_ico_88.ico_10{background-image:url(../images/common/ico_88_10.png);}
+.i_ico_88.ico_11{background-image:url(../images/common/ico_88_11.png);}
 .i_ico_122{width:122px;height:122px;background-color:#f8f8f8;border-radius:100%;background-size:122px auto;}
 .i_ico_122.ico_1{background-image:url(../images/common/ico_122_01.png);}
 .i_ico_122.ico_2{background-image:url(../images/common/ico_122_02.png);}
