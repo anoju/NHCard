@@ -36,6 +36,11 @@
 <script>
 	$(function(){
 		common.title('VIP우대서비스');
+
+		$('.btn_filter').click(function(e){
+			e.preventDefault();
+			$('.filter_opt').stop(true,false).slideToggle(500);
+		});
 	});
 </script>
 </head>
@@ -76,63 +81,69 @@
 						<div class="right fz_20 va_mid t_right"><strong class="fc_blue">369,000</strong>원</div>
 					</div>
 				</div>
-				<hr class="hr_line ty2">
-				<div class="form_item">
-					<label for="date2" class="fm_lb">조회기간</label>
-					<div class="fm_cont">
-						<ul class="btn_toggle grid col4 ui-tab-rdo" data-hide="#datepickerTxt">
-							<li>
-								<input type="radio" id="thisMonth" name="togDate" value="1" checked>
-								<label for="thisMonth"><span>당월</span></label>
-							</li>
-							<li>
-								<input type="radio" id="months" name="togDate" value="3">
-								<label for="months"><span>월간</span></label>
-							</li>
-							<li>
-								<input type="radio" id="month1" name="togDate" value="6">
-								<label for="month1"><span>1개월</span></label>
-							</li>
-							<li>
-								<input type="radio" id="dateEtc" name="togDate" value="etc" data-show="#datepickerTxt">
-								<label for="dateEtc"><span>직접입력</span></label>
-							</li>
-						</ul>
-						<div id="datepickerTxt" class="datepicker_box hide">
-							<div class="tbl date_wrap"><!-- 달력 2개일때 data_wrap 클래스 필요-->
-								<div class="td">
-									<div class="input"><input type="tel" class="datepicker" placeholder="YYYY.MM.DD" title="YYYY.MM.DD 형식으로 입력"></div>
-								</div>
-								<div class="td dash">-</div>
-								<div class="td">
-									<div class="input"><input type="tel" class="datepicker" placeholder="YYYY.MM.DD" title="YYYY.MM.DD 형식으로 입력"></div>
+				<div class="filter_opt hide">
+					<hr class="hr_line ty2 short">
+					<div class="form_item">
+						<label for="date2" class="fm_lb">조회기간</label>
+						<div class="fm_cont">
+							<ul class="btn_toggle grid col4 ui-tab-rdo" data-hide="#datepickerTxt">
+								<li>
+									<input type="radio" id="thisMonth" name="togDate" value="1" checked>
+									<label for="thisMonth"><span>당월</span></label>
+								</li>
+								<li>
+									<input type="radio" id="months" name="togDate" value="3">
+									<label for="months"><span>월간</span></label>
+								</li>
+								<li>
+									<input type="radio" id="month1" name="togDate" value="6">
+									<label for="month1"><span>1개월</span></label>
+								</li>
+								<li>
+									<input type="radio" id="dateEtc" name="togDate" value="etc" data-show="#datepickerTxt">
+									<label for="dateEtc"><span>직접입력</span></label>
+								</li>
+							</ul>
+							<div id="datepickerTxt" class="datepicker_box hide">
+								<div class="tbl date_wrap"><!-- 달력 2개일때 data_wrap 클래스 필요-->
+									<div class="td">
+										<div class="input"><input type="tel" class="datepicker" placeholder="YYYY.MM.DD" title="YYYY.MM.DD 형식으로 입력"></div>
+									</div>
+									<div class="td dash">-</div>
+									<div class="td">
+										<div class="input"><input type="tel" class="datepicker" placeholder="YYYY.MM.DD" title="YYYY.MM.DD 형식으로 입력"></div>
+									</div>
 								</div>
 							</div>
+							<div class="error_txt">기간를 입력해주세요.</div><!-- 에러메세지 입력영역 -->
 						</div>
-						<div class="error_txt">기간를 입력해주세요.</div><!-- 에러메세지 입력영역 -->
 					</div>
-				</div>
-				<div class="flex">
-					<a href="#" class="button line blue mt10">차기선정기준</a>
-				</div>
-				<div class="form_item">
-					<label for="inpSel1" class="fm_lb">구분</label>
-					<div class="fm_cont">
-						<div class="select">
-							<select id="inpSel1" title="은행 선택">
-								<option value="1">NH채움 농협은행</option>
-								<option value="2">NH채움 농협은행</option>
-								<option value="3">NH채움 농협은행</option>
-							</select>
+					<div class="btn_wrap mt10">
+						<div class="flex">
+							<a href="#" class="button line blue">차기선정기준</a>
 						</div>
-						<div class="error_txt">날짜를 선택해주세요.</div><!-- 에러메세지 입력영역 -->
 					</div>
+					<div class="form_item">
+						<label for="inpSel1" class="fm_lb">구분</label>
+						<div class="fm_cont">
+							<div class="select">
+								<select id="inpSel1" title="구분 선택">
+									<option value="1">NH채움 농협은행</option>
+									<option value="2">NH채움 농협은행</option>
+									<option value="3">NH채움 농협은행</option>
+								</select>
+							</div>
+							<div class="error_txt">구분을 선택해주세요.</div><!-- 에러메세지 입력영역 -->
+						</div>
+					</div>
+					<div class="btn_wrap mt10">
+						<div class="flex">
+							<a href="#" class="button  blue">조회</a>
+						</div>
+					</div>
+					<hr class="hr_line ty2 short">
 				</div>
-				<div class="flex">
-					<a href="#" class="button  blue mt10">조회</a>
-				</div>
-				<hr class="hr_line ty2">
-				<div class="box_list_2">
+				<div class="box_list_2 mt30">
 					<ul class="chk_list">
 						<li>
 							<div class="inner">
@@ -217,6 +228,10 @@
 							</div>
 						</li>
 					</ul>
+				</div>
+				<div class="no_list"><div class="no_list">
+					<i class="i_ico_50 ico_2" aria-hidden="true"></i>
+					<div class="txt">조회내역이 없습니다.</div>
 				</div>
 				<!--// 이용내역 -->
 				<!-- VIP전용 서비스 -->
