@@ -84,7 +84,7 @@
 							</label>
 							<div class="inner">
 								<div class="price">
-									<a href="#" title="이용구분별 상세금액 팝업열기" role="button" onclick="Layer.open('#useDivPop')"><strong>123,456,789</strong>원</a>
+									<a href="#" title="이용구분별 상세금액 팝업열기" onclick="Layer.open('#useDivPop')"><strong>123,456,789</strong>원</a>
 								</div>
 								<div class="expend_wrap">
 									<div class="expend_cont">
@@ -142,7 +142,7 @@
 										</ul>
 									</div>
 									<div class="expend_btn">
-										<a href="#" class="button line round h25" role="button"><span>더보기</span><i class="bt_ic_arr_down" aria-hidden="true"></i></a>
+										<a href="#" class="button line round h25"><span>더보기</span><i class="bt_ic_arr_down" aria-hidden="true"></i></a>
 									</div>
 								</div>
 							</div>
@@ -225,7 +225,7 @@
 										</ul>
 									</div>
 									<div class="expend_btn">
-										<a href="#" class="button line round h25" role="button"><span>더보기</span><i class="bt_ic_arr_down" aria-hidden="true"></i></a>
+										<a href="#" class="button line round h25"><span>더보기</span><i class="bt_ic_arr_down" aria-hidden="true"></i></a>
 									</div>
 								</div>
 							</div>
@@ -243,8 +243,8 @@
 				</div>
 
 				<!--결제계좌 선택 시-->
-				<div class="form_item pay_op">
-					<label for="payCount" class="fm_lb">결제방법</label>
+				<div class="form_item"><!--#200512 pay_op클래스 삭제-->
+					<label for="payCount" class="fm_lb pay_op">결제방법</label><!--#200512 pay_op클래스 추가-->
 					<div class="fm_cont">
 						<div class="select">
 							<select id="payCount" title="결제계좌 선택">
@@ -258,8 +258,8 @@
 				</div>
 
 				<!--본인명의 타계좌 선택 시-->
-				<div class="form_item pay_op">
-					<label for="payCountAnother" class="fm_lb">결제방법</label>
+				<div class="form_item"><!--#200512 pay_op클래스 삭제-->
+					<label for="payCountAnother" class="fm_lb pay_op">결제방법</label><!--#200512 pay_op클래스 추가-->
 					<div class="fm_cont">
 						<div class="select">
 							<select id="payCountAnother" title="결제계좌 선택">
@@ -267,13 +267,13 @@
 								<option value="농협은행 123-45**-****-456">농협은행 123-45**-****-456</option>
 							</select>
 						</div>
-						<div class="caution_info">본인명의 농협계좌 입력 시 거래 가능합니다.</div>
+						<div class="caution_info pay_op">본인명의 농협계좌 입력 시 거래 가능합니다.</div><!--#200512 pay_op클래스 추가-->
 						<div class="tbl">
 							<div class="td">
 								<div class="input checked"><input type="text" id="inputText5" placeholder="&prime;-&prime;없이 숫자만 입력" title="본인명의 계좌입력"></div><!-- 유호성 O때: checked 클래스 추가 / 유호성 X 때:error 클래스 추가--><!--#200513 title 추가-->
 								<!-- <div class="input error"><input type="text" id="inputText5" placeholder="&prime;-&prime;없이 숫자만 입력" title="본인명의 계좌입력"></div> --><!--#200513 title 추가-->
 							</div>
-							<div class="td va_mid fm_btn"><a href="#" class="button blue" role="button">계좌확인</a></div>
+							<div class="td va_mid fm_btn"><a href="#" class="button blue">계좌확인</a></div>
 						</div>
 						<div class="error_txt checked" style="display:block;">계좌가 확인되었습니다.</div><!-- display:block;, 유호성 O때: checked 클래스 추가, X일때에는 checked 클래스 삭제 -->
 						<!-- <div class="error_txt" style="display:block;">계좌가 확인되었습니다.</div> -->
@@ -295,8 +295,8 @@
 				</div>
 
 				<!--가상계좌 선택 시-->
-				<div class="form_item pay_op">
-					<label for="vtlAcc" class="fm_lb">결제방법</label>
+				<div class="form_item"><!--#200512 pay_op클래스 삭제-->
+					<label for="vtlAcc" class="fm_lb pay_op">결제방법</label><!--#200512 pay_op클래스 추가-->
 					<div class="fm_cont">
 						<div class="select">
 							<select id="vtlAcc" title="결제계좌 선택">
@@ -304,15 +304,15 @@
 								<option value="농협은행 123-45**-****-456">농협은행 123-45**-****-456</option>
 							</select>
 						</div>
-						<div class="caution_info">입력된 휴대폰번호로 문자(는) 발송됩니다.</div>
+						<div class="caution_info pay_op">입력된 휴대폰번호로 문자(는) 발송됩니다.</div><!--#200512 pay_op클래스 추가-->
 						<div class="input"><input type="text" value="01033338888" title="휴대폰번호 입력"></div><!--#200513 title추가-->
 						
 					</div>
 				</div>
 
 				<!--NH 포인트 선택 시-->
-				<div class="form_item pay_op">
-					<label for="vtlAcc" class="fm_lb">결제방법</label>
+				<div class="form_item"><!--#200512 pay_op클래스 삭제-->
+					<label for="vtlAcc" class="fm_lb pay_op">결제방법</label><!--#200512 pay_op클래스 추가-->
 					<div class="fm_cont">
 						<div class="select">
 							<select id="pointWay" title="결제계좌 선택">

@@ -47,22 +47,26 @@
 		<section id="contents">
 			<div class="section">
 				<!-- 카드선택 전 -->
-				<div class="btn_select_wrap">
-					<a href="#" class="btn_select off" title="팝업으로 카드 선택" role="button" onclick="Layer.open('#cardSelectPop')">카드선택</a><!-- 선택전 off 클래스 -->
+				<div class="select btn">
+					<a href="#" class="btn_select off" title="팝업으로 카드 선택" onclick="Layer.open('#cardSelectPop')">카드선택</a><!-- 선택전 off 클래스 -->
 				</div>
 				<!-- //카드선택 전 -->
 				<!-- 카드선택 후 -->
-				<div class="btn_select_wrap">
-					<a href="#" class="btn_select on" title="팝업으로 카드 선택" role="button" onclick="Layer.open('#cardSelectPop')">전체카드</a><!-- 선택후 on 클래스 -->
+				<div class="select btn">
+					<a href="#" class="btn_select on" title="팝업으로 카드 선택" onclick="Layer.open('#cardSelectPop')">전체카드</a><!-- 선택후 on 클래스 -->
 				</div>
 				
-				<div class="btn_select_wrap">
-					<a href="#" class="btn_select on" title="팝업으로 카드 선택" role="button" onclick="Layer.open('#cardSelectPop')"><!-- 선택후 on 클래스 -->
+				<div class="select btn">
+					<a href="#" class="btn_select on" title="팝업으로 카드 선택" onclick="Layer.open('#cardSelectPop')"><!-- 선택후 on 클래스 -->
 						<div class="card_info_box">
 							<div class="name">채움(농협은행)</div>
 							<div class="sub">
 								<span class="type master"><span class="blind">마스터카드</span></span>
-								<!-- <span class="type visa"><span class="blind">비자카드</span></span> -->
+								<!-- <span class="type visa"><span class="blind">비자카드</span></span>
+								<span class="type jcb"><span class="blind">jcb카드</span></span>
+								<span class="type w"><span class="blind">w카드</span></span>
+								<span class="type unionpay"><span class="blind">unionpay카드</span></span>
+								<span class="type domestic"><span class="blind">국내전용카드</span></span> -->
 								<span class="num">1234-56**-****3456</span>
 							</div>
 							<div class="info">
@@ -129,73 +133,7 @@
 	</div>
 
 	<!--카드선택 팝업-->
-	<div id="cardSelectPop" class="popup bottom" role="dialog" aria-hidden="true">
-		<div class="pop_wrap">
-			<div class="pop_head">
-				<h1>카드 선택</h1>
-				<a href="#" class="pop_close ui-pop-close" role="button"><span class="blind">팝업창 닫기</span></a>
-			</div>
-			<div class="pop_cont">
-				<ul class="select_item_wrap card">
-					<li>
-						<div class="select_item">
-							<a href="#"><strong class="tit">전체카드</strong></a>
-						</div>
-					</li>
-					<li>
-						<div class="select_item">
-							<a href="#"><strong class="tit">전체NH채움카드</strong></a>
-						</div>
-					</li>
-					<li>
-						<div class="select_item">
-							<a href="#"><strong class="tit">전체NHBC카드</strong></a>
-						</div>
-					</li>
-					<li>
-						<div class="select_item">
-							<a href="#">
-								<strong class="tit">채움 스마티</strong>
-								<div class="sub"><span>5430-****-****-4747</span><span>제*구</span></div>
-							</a>
-						</div>
-					</li>
-					<li>
-						<div class="select_item selected"><!-- selected 클래스:열릴때 선택되어 있는 항목 -->
-							<a href="#">
-								<strong class="tit">올바른 OIL&amp;PASS카드</strong>
-								<div class="sub"><span>5430-****-****-4747</span><span>제*구</span></div>
-							</a>
-						</div>
-					</li>
-					<li>
-						<div class="select_item">
-							<a href="#">
-								<strong class="tit">라이언 치즈 체크카드</strong>
-								<div class="sub"><span>5430-****-****-4747</span><span>제*구</span></div>
-							</a>
-						</div>
-					</li>
-					<li>
-						<div class="select_item">
-							<a href="#">
-								<strong class="tit">NH20 해봄체크</strong>
-								<div class="sub"><span>5430-****-****-4747</span><span>제*구</span></div>
-							</a>
-						</div>
-					</li>
-					<li>
-						<div class="select_item">
-							<a href="#">
-								<strong class="tit">NH농협 콕체크(면세유)</strong>
-								<div class="sub"><span>5430-****-****-4747</span><span>제*구</span></div>
-							</a>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+	<div data-include-html="../include/pop/cardSelect.html"></div>
 	<!--//카드선택 팝업-->
 
 	<div data-include-html="../include/footer.html"></div>

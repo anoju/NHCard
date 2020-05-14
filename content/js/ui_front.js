@@ -2283,7 +2283,7 @@ var formUI = {
 		});
 	},
 	select:function(){
-		var $select = $('.select');
+		var $select = $('.select').not('.btn');
 		if($select.length){
 			$select.each(function(){
 				var $this = $(this),
@@ -3227,11 +3227,11 @@ var sclCalendar = {
 			if($type == undefined)$type = 'date';
 			if($type == 'full')$todayDate = $todayDate + ' '+autoTimeFormet($nowDateOnlyTime.toString(),sclCalendar.timeMark);
 			if($type == 'time')$todayDate = autoTimeFormet($nowDateOnlyTime.toString(),sclCalendar.timeMark);
-			if($this.hasClass('on')){
+			if($this.hasClass('open')){
 				$wrap.removeClass('expend');
 				//Body.unlock();
 				$wrap.find('.scl_cal_wrap').stop(true,false).slideUp(200);
-				$this.removeClass('on');
+				$this.removeClass('open');
 			}else{
 				$wrap.addClass('expend');
 				$wrap.find('.scl_cal_wrap').stop(true,false).slideDown(200,function(){
@@ -3239,7 +3239,7 @@ var sclCalendar = {
 						//Body.lock();
 					});
 				});
-				$this.addClass('on');
+				$this.addClass('open');
 				if($input.val() == ''){
 					$input.val($todayDate).change().keyup();
 				}else{
