@@ -36,6 +36,12 @@
 <script>
 	$(function(){
 		common.title('즉시결제서비스');
+
+		var $btnChk = $('.checkbox_btn_wrap .checkbox input');
+		$btnChk.on('change',function(){
+			var $this = $(this);
+			if($this.hasClass)
+		});
 	});
 </script>
 </head>
@@ -76,51 +82,67 @@
                 
                 <h3 class="tit_h2">즉시결제 구분</h3>
 				<div class="use_flt_box">
-					<div class="checkbox_btn_wrap chk_list full">
+					<div class="checkbox_btn_wrap full">
 						<span class="checkbox btn">
-							<input type="radio" id="btnPayFast" name="payDiv1" checked>
-							<label for="btnPayFast" class="lbl">모든거래</label>
+							<input type="radio" id="btnPayAll" name="payDiv1" checked>
+							<label for="btnPayAll" class="lbl">모든거래</label>
 						</span>
 						<span class="checkbox btn">
-							<input type="radio" id="btnPayFast2" name="payDiv1">
-							<label for="btnPayFast2" class="lbl">건당 이용금액</label>
+							<input type="radio" id="btnPayPer" name="payDiv1">
+							<label for="btnPayPer" class="lbl">건당 이용금액</label>
 						</span>
 						<span class="checkbox btn">
-							<input type="radio" id="btnPayFast3" name="payDiv1">
-							<label for="btnPayFast3" class="lbl">월 누계이용금액</label>
+							<input type="radio" id="btnPayMon" name="payDiv1">
+							<label for="btnPayMon" class="lbl">월 누계이용금액</label>
 						</span>
 						<span class="checkbox btn">
-							<input type="radio" id="btnPayFast4" name="payDiv1">
-							<label for="btnPayFast4" class="lbl">월 누적 초과거래</label>
+							<input type="radio" id="btnPayOver" name="payDiv1">
+							<label for="btnPayOver" class="lbl">월 누적 초과거래</label>
 						</span>
 					</div>
-                </div>
-				<div class="form_item">
-					<label for="inpPrcStand" class="fm_lb fw_500">기준금액</label>
-					<div class="fm_cont">
-						<div class="input add_unit_1"><!--에러일 때, error클래스 추가-->
-						<!-- <div class="input add_unit_1 error"> 참고-->
-							<input type="tel" class="t_right" id="inpPrcStand">
-							<div class="unit">원</div>
-						</div>
-						<div class="btn_wrap mt10">
-							<div class="flex">
-								<a href="#" class="button line h35 gray" role="button">+100만</a>
-								<a href="#" class="button line h35 gray" role="button">+10만</a>
-								<a href="#" class="button line h35 gray" role="button">+5만</a>
-								<a href="#" class="button line h35 gray" role="button">+1만</a>
-								<a href="#" class="button line h35 gray" role="button">정정</a>
+				</div>
+				<!--모든 거래일 때-->
+				<div id="chkPanel1">
+					<div class="txt_list mt20">
+						<ul>
+							<li class="dot">해당 카드 모든 거래를 체크카드 방식으로 처리</li>
+							<li class="dot">일부 신용카드 상품의 경우 즉시결제서비스 신청 시 체크카드 할인(적립)율이 적용됩니다.<br>(카드고객상담센터 1644-4000)</li>
+						</ul>
+					</div>
+				</div>
+				<!--//모든 거래일 때-->
+
+				<!--그 외일 때-->
+				<div id="chkPanel2">
+					<div class="form_item">
+						<label for="inpPrcStand" class="fm_lb fw_500">기준금액</label>
+						<div class="fm_cont">
+							<div class="input add_unit_1"><!--에러일 때, error클래스 추가-->
+							<!-- <div class="input add_unit_1 error"> 참고-->
+								<input type="tel" class="t_right" id="inpPrcStand">
+								<div class="unit">원</div>
 							</div>
+							<div class="btn_wrap mt10">
+								<div class="flex">
+									<a href="#" class="button line h35 gray" role="button">+100만</a>
+									<a href="#" class="button line h35 gray" role="button">+10만</a>
+									<a href="#" class="button line h35 gray" role="button">+5만</a>
+									<a href="#" class="button line h35 gray" role="button">+1만</a>
+									<a href="#" class="button line h35 gray" role="button">정정</a>
+								</div>
+							</div>
+							<div class="error_txt">금액을 입력해주세요.</div><!-- 에러메세지 입력영역, 사용시 style="display:block;" -->
 						</div>
-						<div class="error_txt">금액을 입력해주세요.</div><!-- 에러메세지 입력영역, 사용시 style="display:block;" -->
+					</div>
+					<div class="txt_list mt20">
+						<ul>
+							<li class="dot">건별 이용금액이 기준 금액 미만 거래만 체크카드 방식으로 처리</li>
+							<li class="dot">일부 신용카드 상품의 경우 즉시결제서비스 신청 시 체크카드 할인(적립)율이 적용됩니다.<br>(카드고객상담센터 1644-4000)</li>
+						</ul>
 					</div>
 				</div>
-                <div class="txt_list mt20">
-					<ul>
-						<li class="dot">해당 카드 모든 거래를 체크카드 방식으로 처리</li>
-						<li class="dot">일부 신용카드 상품의 경우 즉시결제서비스 신청 시 체크카드 할인(적립)율이 적용됩니다.<br>(카드고객상담센터 1644-4000)</li>
-					</ul>
-				</div>
+				<!--//그 외일 때-->
+
                 <div class="btn_wrap bottom_fixed">
 					<div class="flex">
 						<a href="#" class="button h54 gray">취소</a>

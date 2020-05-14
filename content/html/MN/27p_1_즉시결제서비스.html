@@ -35,7 +35,7 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('결제일즉시/연체금액 결제');
+		common.title('즉시결제서비스');
 	});
 </script>
 </head>
@@ -45,76 +45,34 @@
 	<div data-include-html="../include/gnb.html"></div>
 	<div id="container">
 		<section id="contents">
-			<div class="step_wrap">
-				<h2 class="step_tit">조회내역</h2>
-				<ol class="step_state">
-					<li class="on">1<span class="blind">단계(현재단계)</span></li>
-					<li>2<span class="blind">단계</span></li>
-					<li>3<span class="blind">단계</span></li>
-				</ol>
-			</div>
 			<div class="section">
-				<div class="input_div">개인회원</div>
-				<div class="card_info_box blue">
-					<div class="img">
-						<img src="../../images/temp/card_228_144.png" alt="채움카드">
-					</div>
-					<div>
-						<div class="name">채움(농협은행)</div>
-						<div class="sub">
-							<span class="num">1234-56**-****3456</span>
-						</div>
-						<div class="info">
-							<div>올바른 BASIC+ 카드</div>
-							<div>
-								<dl>
-									<dt>농협은행</dt>
-									<dd>123-1234-1234-12</dd>
-								</dl>
-							</div>
-						</div>
-					</div>
-				</div>
-				<h3 class="tit_h2">결제정보</h3>
-				<ul class="list_box_table">
-					<li>
-						<div class="th">원금</div>
-						<div class="td"><span>123,456,789</span> 원</div>
-					</li>
-					<li>
-						<div class="th">수수료</div>
-						<div class="td"><span>0</span> 원</div>
-					</li>
-					<li>
-						<div class="th">연체금액</div>
-						<div class="td"><span>123,456,789</span> 원</div>
-					</li>
-					<li class="line last">
-						<div class="th">합계</div>
-						<div class="td"><span>123,456,789</span> 원</div>
-					</li>
-				</ul>
-				<div class="form_item">
-					<label for="payCountInpt" class="fm_lb pay_op">결제금액 입력</label>
-					<div class="fm_cont">
-						<div class="input add_unit_1">
-							<input type="tel" class="t_right" id="payCountInpt" title="결제금액 입력">
-							<div class="unit">원</div>
-						</div>
-					</div>
-				</div>
-				<div class="no_list">
+
+
+                <!--서비스 신청가능한 카드 없을 때-->
+                <div class="no_list">
 					<i class="i_ico_50 ico_2" aria-hidden="true"></i>
-					<div class="txt">결제금액이 없습니다.</div>
+					<div class="txt">즉시결제서비스 신청이 가능한 카드가 없습니다.</div>
+                </div>
+
+                <!--서비스 적용이 불가한 카드일 때-->
+                <div class="no_list">
+					<i class="i_ico_50 ico_2" aria-hidden="true"></i>
+					<div class="txt">죄송합니다.<br>즉시결제 서비스 적용이 불가한 제휴카드입니다.<br>다시 확인 하신 후 거래하시기 바랍니다.<br><br>오류코드 03883, 16.63.01</div>
 				</div>
-				<div class="btn_wrap bottom_fixed">
-					<div class="flex">
-						<a href="#" class="button h54 blue">다음</a>
-					</div>
-				</div>
+                <dl class="accordion_list accordion_dl">
+					<dt class="tit">
+						<a href="#" class="ui-toggle-btn open"><i class="i_ico_20 ico_1" aria-hidden="true"></i>이용안내</a>
+					</dt>
+					<dd class="panel">
+						<dl class="txt_list">
+							<dt class="tit">서비스 이용시간</dt>
+							<dd class="dot">24시간(평일,토요일,일요일/공휴일)</dd>
+						</dl>
+					</dd>
+				</dl>
 			</div>
 		</section>
-	</div>
+    </div>
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>
