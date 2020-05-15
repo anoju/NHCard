@@ -684,6 +684,8 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .i_ico_50b.ico_5{background-image:url(../images/common/ico_75_05.png);}
 .i_ico_50b.ico_6{background-image:url(../images/common/ico_75_06.png);}
 .i_ico_50b.ico_7{background-image:url(../images/common/ico_75_07.png);}
+.i_ico_56{position:relative;width:56px;height:50px;background-size:56px auto;}
+.i_ico_56.ico_1{background-image:url(../images/common/ico_56_01.png);}
 .i_ico_80{width:80px;height:80px;background-color:#f8f8f8;border-radius:100%;background-size:80px auto;}
 .i_ico_80.ico_1{background-image:url(../images/common/ico_80_01.png);}
 .i_ico_80.ico_2{background-image:url(../images/common/ico_80_02.png);}

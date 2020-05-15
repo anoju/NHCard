@@ -49,11 +49,14 @@
 		<section id="contents">
 			<div class="section">
 				<h3 class="tit_h4 mt0">회원님의 총 이용한도</h3>
-				<p><strong class="fc_blue fz_23">123,456,789</strong><span class="fc_blue fz_13">원 (USD $13,500)</span></p>
+				<p><strong class="fc_blue fz_23">123,456,789</strong><span class="fc_blue fz_13"> 원 (USD $13,500)</span></p>
+				<!-- 그래프 -->
+
+				<!--// 그래프 -->
 				<div class="txt_list ty2 tb mt30">
 					<ul>
-						<li class="dot blue fz_15">이용금액<div class="f_right"><strong>2,897,514</strong>원 <span class="f_right">USD $5,004</span></div></li>
-						<li class="dot fz_15">이용가능금액<div class="f_right"><strong>2,897,514</strong>원</span> <span class="f_right">USD $5,004</span><div></div></li>
+						<li class="dot blue fz_15">이용금액<div class="f_right"><strong>2,897,514</strong> 원 <span class="f_right">USD $5,004</span></div></li>
+						<li class="dot fz_15">이용가능금액<div class="f_right"><strong>2,897,514</strong> 원</span> <span class="f_right">USD $5,004</span><div></div></li>
 					</ul>
 				</div>
 				<div class="btn_wrap mt30">
@@ -66,20 +69,21 @@
 				<h3 class="tit_h2">단기카드 대출한도</h3>
 				<div class="txt_list ty2 tb dot-none">
 					<ul>
-						<li class="dot fz_15">이용금액<div class="f_right"><strong>2,897,514</strong>원 <span class="f_right">USD $5,004</span></div></li>
+						<li class="dot fz_15">이용금액<div class="f_right"><strong>2,897,514</strong> 원 <span class="f_right">USD $5,004</span></div></li>
 					</ul>
 				</div>
+				<hr class="hr_line">
 				<h3 class="tit_h2">목적별 임시한도(가전구매)</h3>
 				<div class="txt_list ty2 tb dot-none">
 					<ul>
-						<li class="dot fz_15">특별한도<div class="f_right"><strong>2,897,514</strong>원</div></li>
-						<li class="dot fz_15">잔여한도<div class="f_right"><strong>2,897,514</strong>원</div></li>
+						<li class="dot fz_15">특별한도<div class="f_right"><strong>2,897,514 원</strong></div></li>
+						<li class="dot fz_15">잔여한도<div class="f_right"><strong>2,897,514 원</strong></div></li>
 					</ul>
 				</div>
 				<div class="btn_wrap">
 					<div class="flex">
-					<a href="#" class="button line">내역조회</a>
-					<a href="#" class="button line">한도신청</a>
+					<a href="#" class="button line fc_gray2">내역조회</a>
+					<a href="#" class="button line fc_gray2">한도신청</a>
 					</div>
 				</div>
 				<hr class="hr_line">
@@ -89,18 +93,54 @@
 						<a href="#" class="btn_link w_110">희망한도 등록<i class="bt_ic_arr"></i></a>
 					</div>
 				</div>
-				<div class="accordion_list ">
+				<div class="accordion_list">
 					<div class="tit">
-						<a href="#panel" class="ui-toggle-btn"><div>라이언 치즈 체크카드</div></a>
+						<a href="#card_listl" class="ui-toggle-btn open"><div>라이언 치즈 체크카드</div></a>
 					</div>
-					<div id="panel" class="panel">
+					<div id="card_listl" class="panel">
 						<div class="txt_list ty2 tb dot-none">
 							<ul>
-								<li class="dot fz_15">1회 한도<div class="f_right"><strong>2,897,514</strong>원 <span class="f_right">USD $5,004</span><br><span class="fc_blue">잔여한도 <strong>19,998,900원</strong></span></div></li>
-								<li class="dot fz_15">2회 한도<div class="f_right"><strong>2,897,514</strong>원 <span class="f_right">USD $5,004</span><br><span class="fc_blue">잔여한도 <strong>19,998,900원</strong></span></div></li>
-								<li class="dot last fz_15">월간 한도<div class="f_right"><strong>2,897,514</strong>원 <span class="f_right">USD $5,004</span><br><span class="fc_blue">잔여한도 <strong>19,998,900원</strong></span></div></li>
+								<li class="dot fz_14">1회 한도<div class="f_right"><strong>2,897,514</strong> 원 <span class="f_right">USD $5,004</span><br><span class="fc_blue">잔여한도 <strong>19,998,900</strong> 원</span></div></li>
+								<li class="dot fz_14">2회 한도<div class="f_right"><strong>2,897,514</strong> 원 <span class="f_right">USD $5,004</span><br><span class="fc_blue">잔여한도 <strong>19,998,900</strong> 원</span></div></li>
+								<li class="dot end fz_14">월간 한도<div class="f_right"><strong>2,897,514</strong> 원 <span class="f_right">USD $5,004</span><br><span class="fc_blue">잔여한도 <strong>19,998,900</strong> 원</span></div></li>
 							</ul>
 						</div>
+					</div>
+				</div>
+				<div class="accordion_list">
+					<div class="tit">
+						<a href="#card_list2" class="ui-toggle-btn"><div>가족카드</div></a>
+					</div>
+					<div id="card_list2" class="panel">
+						<div class="txt_list ty2 tb dot-none">
+							<ul>
+								<li class="dot fz_14">1회 한도<div class="f_right"><strong>2,897,514</strong> 원 <span class="f_right">USD $5,004</span><br><span class="fc_blue">잔여한도 <strong>19,998,900</strong> 원</span></div></li>
+								<li class="dot fz_14">2회 한도<div class="f_right"><strong>2,897,514</strong> 원 <span class="f_right">USD $5,004</span><br><span class="fc_blue">잔여한도 <strong>19,998,900</strong> 원</span></div></li>
+								<li class="dot end fz_14">월간 한도<div class="f_right"><strong>2,897,514</strong> 원 <span class="f_right">USD $5,004</span><br><span class="fc_blue">잔여한도 <strong>19,998,900</strong> 원</span></div></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<dl class="accordion_list accordion_dl mt50">
+					<dt class="tit">
+						<a href="#" class="ui-toggle-btn open"><i class="i_ico_20 ico_1" aria-hidden="true"></i>이용안내</a>
+					</dt>
+					<dd class="panel">
+						<div class="txt_list">
+							<ul>
+								<li class="dot">고객 총한도는 보유하고 계신 채움 및 비씨카드로 이용할 수 있는 한도입니다. (채움 및 비씨카드 한도정보가 다를 경우 한도금액이 다르게 조회될 수도 있음)</li>
+								<li class="dot">신용구매(일시불/할부)와 단기카드대출(현금서비스)은 총한도 범위 내에서 이용가능합니다. </li>
+								<li class="dot">단기카드대출(현금서비스) 한도는 추가로 부여되는 것이 아니므로 고객님의 총한도 이용가능금액이 없으면 단기카드대출(현금서비스) 사용여부와 관계없이 단기카드대출(현금서비스) 사용이 불가능합니다.</li>
+								<li class="dot">카드 이용은 이용가능금액 이내에서 가능하며, 임시한도 요청금액은 이용가능금액에 반영됩니다.</li>
+								<li class="dot">카드별 이용한도를 별도 설정하신 고객님은 「카드별 이용한도」 메뉴에서 확인 가능합니다.</li>
+							</ul>
+						</div>
+					</dd>
+				</dl>
+				<div class="btn_wrap">
+					<div class="flex">
+						<a href="#" class="btn_link t_center fz_15">카드고객 상담센터<i class="bt_ic_arr"></i></a>
+						<a href="#" class="btn_link t_center fz_15">자주 묻는 질문<i class="bt_ic_arr"></i></a>
 					</div>
 				</div>
 			</div>
