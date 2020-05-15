@@ -236,6 +236,8 @@
 /*** jeg ***/
 .info_txt_list dt{margin-top:22px;font-weight:500;}
 .info_txt_list dd{margin-top:13px;color:#666;}
+.card_info_box .cancel_area{position:absolute;right:0;top:0;}
+.card_info_box .cancel_area.txt{top:initial;bottom:0;}
 
 
 /*** ksy ***/

@@ -35,7 +35,7 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('바로출금');
+		common.title('할부기간 변경');
 	});
 </script>
 </head>
@@ -45,73 +45,59 @@
 	<div data-include-html="../include/gnb.html"></div>
 	<div id="container">
 		<section id="contents">
-			<div class="step_wrap">
-				<h2 class="step_tit">결제신청</h2>
-				<ol class="step_state">
-					<li class="on">1<span class="blind">단계(현재단계)</span></li>
-					<li>2<span class="blind">단계</span></li>
-					<li>3<span class="blind">단계</span></li>
-					<li>4<span class="blind">단계</span></li>
-				</ol>
-			</div>
 			<div class="section">
-				<div class="input_div">개인회원</div>
-				<div class="price_box_wrap mt30">
-					<span class="txt">결제하실 금액</span>
-					<div class="total_num"><strong>123,456,789</strong>원</div>
+                <h3 class="tit_h2">카드선택</h3>
+                <div class="box_list_1">
+                    <ul>
+                        <li>
+                            <div class="inner">
+                                <div class="card_info_box">
+                                    <div class="name">채움(농협은행)</div>
+                                    <div class="info mt5">
+                                        <div>올바른 BASIC+ 카드</div>
+                                        <div>
+                                            <span class="type master"><span class="blind">마스터카드</span></span>
+                                            <!-- <span class="type visa"><span class="blind">비자카드</span></span>
+                                            <span class="type jcb"><span class="blind">jcb카드</span></span>
+                                            <span class="type w"><span class="blind">w카드</span></span>
+                                            <span class="type unionpay"><span class="blind">unionpay카드</span></span>
+                                            <span class="type domestic"><span class="blind">국내전용카드</span></span> -->
+                                            <span class="num">1234-56**-****3456</span>
+                                        </div>
+                                    </div>
+                                    <div class="btm_box">
+                                        <a href="#" class="button line round h25">조회<i class="bt_ic_arr" aria-hidden="true"></i></a>
+                                        <a href="#" class="button line round h25 fc_gray4">신청내역<i class="bt_ic_arr" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <h3 class="tit_h2">연관 서비스</h3>
+                <div class="txt_list">
+					<ul>
+						<li class="dot"><a href="#" class="btn_link2">스마트 할부 안내</a></li>
+						<li class="dot"><a href="#" class="btn_link2">일부결제금액이월약정(리볼빙) 안내</a></li>
+					</ul>
 				</div>
-				<h3 class="tit_h2">결제방법</h3>
-				<div class="checkbox_btn_wrap chk_list full">
-					<span class="checkbox btn">
-						<input type="radio" id="btnChkPay" name="payment_type">
-						<label for="btnChkPay" class="lbl">결제계좌</label>
-					</span>
-					<span class="checkbox btn">
-						<input type="radio" id="btnChkPay2" name="payment_type">
-						<label for="btnChkPay2" class="lbl">본인명의 타계좌</label>
-					</span>
-					<span class="checkbox btn">
-						<input type="radio" id="btnChkPay3" name="payment_type">
-						<label for="btnChkPay3" class="lbl">농협 가상계좌</label>
-					</span>
-					<span class="checkbox btn">
-						<input type="radio" id="btnChkPay4" name="payment_type">
-						<label for="btnChkPay4" class="lbl">NH 포인트</label>
-					</span>
-				</div>
-				<div class="input_div mt10">농협은행 123-45**-****-456</div>
-				<dl class="accordion_list accordion_dl mt30">
+
+                <dl class="accordion_list accordion_dl mt30">
 					<dt class="tit">
 						<a href="#" class="ui-toggle-btn open"><i class="i_ico_20 ico_1" aria-hidden="true"></i>이용안내</a>
 					</dt>
 					<dd class="panel">
-						<div class="txt_list">
-							<ul>
-								<li class="dot">NH포인트로 카드이용대금을 결제하실 수 있습니다.
-								</li>
-								<li class="dot">NH포인트 결제와 계좌 출금으로 동시에 결제하실 수 없습니다.</li>
-								<li class="dot">카드결제대금은 수수료 차이로 인하여 이전 화면의 <결제하실 금액>과 차이가 있을 수 있습니다.</li>
-								<li class="dot">상호저축은행, 산림조합, BOA, 증권사(유안타증권, 미래에셋대우, 삼성증권, 한화투자증권 제외)계좌를 결제계좌로 사용하시는 고객님은 농협계좌 직접입력 또는 가상계좌 예약 및 입금 방법으로 결제하실 수 있습니다.</li>
-							</ul>
-						</div>
+						<dl class="txt_list">
+                            <dt class="tit">서비스 이용시간</dt>
+                            <dd class="dot">평일 : 08:00~22:00</dd>
+                            <dd class="dot">토요일/일요일/공휴일 : 이용불가</dd>
+                        </dl>
 					</dd>
 				</dl>
-				<div class="bottom_fixed ty2">
-					<div>
-						<div class="tbl total_price">
-							<div class="th">전액</div>
-							<div class="td"><strong class="fz_23">123,456,789</strong>원</div>
-						</div>
-						<div class="btn_wrap">
-							<div class="flex">
-								<button type="button" class="button blue">바로출금</button>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</section>
-	</div>
+    </div>
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>

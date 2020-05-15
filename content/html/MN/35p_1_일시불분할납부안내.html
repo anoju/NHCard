@@ -35,7 +35,7 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('할부상환스케줄 조회');
+		common.title('일시불 분할 납부');
 	});
 </script>
 </head>
@@ -46,50 +46,39 @@
 	<div id="container">
 		<section id="contents">
 			<div class="section">
-				
-				
-				<hr class="hr_line" aria-hidden="true">
-				<div class="tit_h2">
-					<div><h2 class="tit">상환일정</h2></div>
-					<div class="w_160">
-						<span>원금+이자=총상환액</span>
-					</div>
-				</div>
-				<div class="price_box_wrap ty2">
-					<span class="txt">1회차</span>
-					<div class="total_num"><strong>123,456 + 12,345= 123,456,789</strong>원</div>
-					<div class="flex">
-						<div class="sub_num">청구일 <span class="num"><strong>2020.04.01</strong></span></div>
-						<div class="sub_num">결제후 잔액 <span class="num"><strong>123,456,789</strong>원</span></div>
-					</div>
-				</div>
-				<div class="price_box_wrap ty2">
-					<span class="txt">2회차</span>
-					<div class="total_num"><strong>123,456 + 12,345= 123,456,789</strong>원</div>
-					<div class="flex">
-						<div class="sub_num">청구일 <span class="num"><strong>2020.04.01</strong></span></div>
-						<div class="sub_num">결제후 잔액 <span class="num"><strong>123,456,789</strong>원</span></div>
-					</div>
-				</div>
-				<div class="price_box_wrap ty2">
-					<span class="txt">3회차</span>
-					<div class="total_num"><strong>123,456 + 12,345= 123,456,789</strong>원</div>
-					<div class="flex">
-						<div class="sub_num">청구일 <span class="num"><strong>2020.04.01</strong></span></div>
-						<div class="sub_num">결제후 잔액 <span class="num"><strong>123,456,789</strong>원</span></div>
-					</div>
-				</div>
-				<div class="price_box_wrap ty2">
-					<span class="txt">4회차</span>
-					<div class="total_num"><strong>123,456 + 12,345= 123,456,789</strong>원</div>
-					<div class="flex">
-						<div class="sub_num">청구일 <span class="num"><strong>2020.04.01</strong></span></div>
-						<div class="sub_num">결제후 잔액 <span class="num"><strong>123,456,789</strong>원</span></div>
-					</div>
-				</div>
-			</div>
+                <dl class="gray_info_box no_ico">
+                    <dt>일시불 분할 납부</dt>
+                    <dd>결제 부담은 줄이고, 여유는 늘리는 분할 납부 서비스</dd>
+                </dl>
+                <dl class="info_txt_list mb30">
+                    <dt>대상회원</dt>
+                    <dd>모든 회원(리볼빙 회원, 연체 등의 이유로 거래정지 회원 제외)</dd>
+                    <dt>대상매출</dt>
+                    <dd>건당 5만원 이상 사용한 국내/외 일시불</dd>
+                    <dt>할부개월</dt>
+                    <dd>2개월~24개월</dd>
+                    <dt>수수료율</dt>
+                    <dd>회원 별 할부 수수료율(일시불 이용시점의 할부 수수료율 적용)</dd>
+                    <dt>계산방법</dt>
+                    <dd>할부대금잔액 X 할부수수료율 X 이용일수 ÷ 365(일할계산)</dd>
+                    <dt>등록 및 취소 가능기간</dt>
+                    <dd>결제일 1영업일 전까지 등록/취소 가능합니다.</dd>
+                    <dd>할부거래 제한 가맹점에서 이용하신 건, 일부 금액을 이미 결제하신건 등은 상기 서비스가 불가할 수 있습니다.<br>일시불에서 2개월 이상 분할납부로 변경된 경우 항변권과 철회권 행사 대상이 아닙니다.</dd>
+                </dl>
+			
+                <div class="btn_wrap bottom_fixed">
+                    <div class="flex">
+                        <a href="#" class="button h54 blue">신청 및 내역확인</a>
+                    </div>
+                </div>
+            </div>
 		</section>
 	</div>
+
+	<!--카드선택 팝업-->
+	<div data-include-html="../include/pop/cardSelect.html"></div>
+	<!--//카드선택 팝업-->
+
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>
