@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+
+<meta name="title" content="농협카드 모바일">
+<meta name="description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
+<meta property="og:title" content="농협카드 모바일">
+<meta property="og:url" content="https://card.nonghyup.com">
+<!-- <meta property="og:image" content="https://card.nonghyup.com/content/images/logo_1200x1200.png"> -->
+<meta property="og:image" content="http://localhost:8080/content/images/logo_1200x1200.png">
+<meta property="og:description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
+<meta name="format-detection" content="telephone=no">
+
+<title>농협카드 모바일</title>
+<meta name="apple-mobile-web-app-title" content="농협카드 모바일">
+<link rel="apple-touch-startup-image" href="../../images/icons/touch-icon-iphone-retina.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png"><!-- 196x196-->
+<link rel="apple-touch-icon" href="../../images/icons/touch-icon-iphone.png"><!-- 120x120-->
+<link rel="apple-touch-icon" sizes="152x152" href="../../images/icons/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../images/icons/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="167x167" href="../../images/icons/touch-icon-ipad-retina.png">
+<link rel="manifest" href="../../manifest.json">
+
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/contents.css">
+
+<script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/jquery-ui-1.12.1.min.js"></script>
+<script src="../../js/ui_plugins.js"></script>
+<script src="../../js/ui_front.js"></script>
+<script>
+	$(function(){
+		common.title('이용한도');
+		//조회리스트 정렬
+		//Layer.open('#inquiryListPop');
+	});
+</script>
+</head>
+<body>
+<article id="wrap">
+	<div data-include-html="../include/top.html"></div>
+	<div data-include-html="../include/gnb.html"></div>
+	<div id="container">
+		<section id="contents">
+			<div class="section">
+				<h3 class="tit_h4 mt0">회원님의 총 이용한도</h3>
+				<p><strong class="fc_blue fz_23">123,456,789</strong><span class="fc_blue fz_13">원 (USD $13,500)</span></p>
+				<div class="txt_list ty2 tb mt30">
+					<ul>
+						<li class="dot blue fz_15">이용금액<div class="f_right"><strong>2,897,514</strong>원 <span class="f_right">USD $5,004</span></div></li>
+						<li class="dot fz_15">이용가능금액<div class="f_right"><strong>2,897,514</strong>원</span> <span class="f_right">USD $5,004</span><div></div></li>
+					</ul>
+				</div>
+				<div class="btn_wrap mt30">
+					<div class="flex">
+						<a href="#" class="button blue">한도상향</a>
+						<a href="#" class="button blue">한도하향</a>
+					</div>
+				</div>
+				<hr class="hr_line">
+				<h3 class="tit_h2">단기카드 대출한도</h3>
+				<div class="txt_list ty2 tb dot-none">
+					<ul>
+						<li class="dot fz_15">이용금액<div class="f_right"><strong>2,897,514</strong>원 <span class="f_right">USD $5,004</span></div></li>
+					</ul>
+				</div>
+				<h3 class="tit_h2">목적별 임시한도(가전구매)</h3>
+				<div class="txt_list ty2 tb dot-none">
+					<ul>
+						<li class="dot fz_15">특별한도<div class="f_right"><strong>2,897,514</strong>원</div></li>
+						<li class="dot fz_15">잔여한도<div class="f_right"><strong>2,897,514</strong>원</div></li>
+					</ul>
+				</div>
+				<div class="btn_wrap">
+					<div class="flex">
+					<a href="#" class="button line">내역조회</a>
+					<a href="#" class="button line">한도신청</a>
+					</div>
+				</div>
+				<hr class="hr_line">
+				<div class="tit_h2">
+					<div><h2 class="tit">체크카드 이용한도</h2></div>
+					<div>
+						<a href="#" class="btn_link w_110">희망한도 등록<i class="bt_ic_arr"></i></a>
+					</div>
+				</div>
+				<div class="accordion_list ">
+					<div class="tit">
+						<a href="#panel" class="ui-toggle-btn"><div>라이언 치즈 체크카드</div></a>
+					</div>
+					<div id="panel" class="panel">
+						<div class="txt_list ty2 tb dot-none">
+							<ul>
+								<li class="dot fz_15">1회 한도<div class="f_right"><strong>2,897,514</strong>원 <span class="f_right">USD $5,004</span><br><span class="fc_blue">잔여한도 <strong>19,998,900원</strong></span></div></li>
+								<li class="dot fz_15">2회 한도<div class="f_right"><strong>2,897,514</strong>원 <span class="f_right">USD $5,004</span><br><span class="fc_blue">잔여한도 <strong>19,998,900원</strong></span></div></li>
+								<li class="dot last fz_15">월간 한도<div class="f_right"><strong>2,897,514</strong>원 <span class="f_right">USD $5,004</span><br><span class="fc_blue">잔여한도 <strong>19,998,900원</strong></span></div></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div data-include-html="../include/footer.html"></div>
+</article>
+</body>
+</html>

@@ -579,6 +579,9 @@ html.isApp.ios.inpFocus .tab_wrap.fixed .tab_track{position:absolute;top:0;}
 .txt_list+.txt_list{margin-top:15px;}
 .txt_list dd ul li{margin-top:0;}
 .txt_list dt+dd{margin-top:3px;}
+.txt_list.ty2 .dot{padding-left:14px;}
+.txt_list.ty2 .dot.blue:before{background-color:#306edf}
+.txt_list.ty2 .dot:before{content:'';width:6px;height:6px;border-radius:100%;background-color:#f0f0f0}
 .fc_gray>.dot:before,
 .fc_gray>.dash:before,
 .fc_gray.dot:before,
