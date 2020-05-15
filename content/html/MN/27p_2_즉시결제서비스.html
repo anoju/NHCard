@@ -37,14 +37,17 @@
 	$(function(){
 		common.title('즉시결제서비스');
 
-		var $btnChk = $('.checkbox_btn_wrap .checkbox input');
-		$btnChk.on('click', function(){
-			if($(this).prop('checked')){
-				$(this).parent().addClass("selected");
+		$(document).on('change','.use_flt_box input',function(e){
+			var $this = $(this);
+
+			if($this.hasClass('allBtn')){
+				$('#chkPanel1').show();
+				$('#chkPanel2').hide();
 			}else{
-				$(this).parent().removeClass("selected");
+				$('#chkPanel1').hide();
+				$('#chkPanel2').show();
 			}
-		}); 
+		});
 	});
 
 </script>

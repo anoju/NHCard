@@ -969,7 +969,7 @@ div.caution_txt{display:block;}
 .total_num_box+.line_list_2.ty2{border-top:none;}
 .total_num_box .checkbox>i+.lbl{color:#666;}
 
-.card_info_box{border:1px solid #ddd;border-radius:4px;padding:20px 23px;background:#fff;}
+.card_info_box{position:relative;border:1px solid #ddd;border-radius:4px;padding:20px 23px;background:#fff;}
 .card_info_box.blue{border-color:#eaf2fe;background:#eaf2fe;}
 .card_info_box .img{width:69px;float:left;}
 .card_info_box .img img{width:100%;}
