@@ -62,10 +62,54 @@
 					</ul>
 				</div>
 				<hr class="hr_line ty2">
-				
+				<ul class="btn_toggle grid col3 row2 ui-tab-rdo" data-hide="#etcSelect">
+					<li>
+						<input type="radio" id="togRdo1" name="togRdo">
+						<label for="togRdo1">세금납부</label>
+					</li>
+					<li>
+						<input type="radio" id="togRdo2" name="togRdo">
+						<label for="togRdo2">여행</label>
+					</li>
+					<li>
+						<input type="radio" id="togRdo3" name="togRdo">
+						<label for="togRdo3">병원비</label>
+					</li>
+					<li>
+						<input type="radio" id="togRdo4" name="togRdo">
+						<label for="togRdo4">가전구매</label>
+					</li>
+					<li>
+						<input type="radio" id="togRdo5" name="togRdo">
+						<label for="togRdo5">손해보험</label>
+					</li>
+					<li class="in_sel">
+						<input type="radio" id="togRdo6" name="togRdo" data-show="#etcSelect">
+						<label for="togRdo6">기타</label>
+					</li>
+				</ul>
+
+				<div id="etcSelect" class="tab_rdo_panel">
+					<div class="select mt10">
+						<select name="" id="" title="기타 선택">
+							<option value="">기타 선택</option>
+							<option value="1">세금납부</option>
+							<option value="2">여행</option>
+							<option value="3">병원비</option>
+							<option value="4">손해보험(자동차보험 포함)</option>
+							<option value="5">결혼식</option>
+							<option value="6">교육비</option>
+							<option value="7">신차구매</option>
+							<option value="8">중고차구매</option>
+							<option value="9">우량유통업체</option>
+						</select>
+					</div>
+				</div>
+
 				<div class="txt_list mt30">
 					<p>* 국세 또는 지방세 납부처(관공서 및 온라인)</p>
 				</div>
+
 				<dl class="accordion_list accordion_dl mt50">
 					<dt class="tit">
 						<a href="#" class="ui-toggle-btn open"><i class="i_ico_20 ico_1" aria-hidden="true"></i>이용안내</a>
