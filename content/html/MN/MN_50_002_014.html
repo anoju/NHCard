@@ -35,9 +35,7 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('이용한도 상향조정');
-		//조회리스트 정렬
-		//Layer.open('#inquiryListPop');
+		common.title('목적별 임시한도');
 	});
 </script>
 </head>
@@ -47,48 +45,45 @@
 	<div data-include-html="../include/gnb.html"></div>
 	<div id="container">
 		<section id="contents">
+			<div class="step_wrap">
+				<h2 class="step_tit">Step2. 이용목적 선택</h2>
+				<ol class="step_state">
+					<li>1<span class="blind">단계</span></li>
+					<li class="on">2<span class="blind">단계(현재단계)</span></li>
+				</ol>
+			</div>
 			<div class="section">
-				<h3 class="tit_h2 mt0">변경하실 항목을 선택 해 주세요.</h3>
-				<div class="chk_item ty2 mt25">
-					<div class="checkbox">
-						<input type="radio" id="change_menu1" name="change_menu"><i aria-hidden="true"></i>
-						<label for="change_menu1" class="lbl">이용한도 상향조정</label>
-					</div>
-				</div>
-				<div class="chk_item ty2">
-					<div class="checkbox">
-						<input type="radio" id="change_menu2" name="change_menu"><i aria-hidden="true"></i>
-						<label for="change_menu2" class="lbl">희망한도 등록</label>
-					</div>
-				</div>
-				<div class="chk_item ty2">
-					<div class="checkbox">
-						<input type="radio" id="change_menu3" name="change_menu"><i aria-hidden="true"></i>
-						<label for="change_menu3" class="lbl">상향제외등록</label>
-					</div>
-				</div>
-				<div class="chk_item ty2">
-					<div class="checkbox">
-						<input type="radio" id="change_menu4" name="change_menu"><i aria-hidden="true"></i>
-						<label for="change_menu4" class="lbl">목적별 임시한도</label>
-					</div>
-				</div>
-				<div class="txt_list mt20">
-					<div class="dot">목적별 임시한도는 고객님의 이벤트성(세금, 병원, 가전, 자동차보험 등) 구매를 돕기 위해 총 한도와 별도로 운영하고 있는 전용한도입니다.</div>
-				</div>
-				
-				<dl class="accordion_list accordion_dl mt50">
-					<dt class="tit">
-						<a href="#" class="ui-toggle-btn open"><i class="i_ico_20 ico_1" aria-hidden="true"></i>이용안내</a>
-					</dt>
-					<dd class="panel">
-						<div class="txt_list">
-							<ul>
-								<li class="dot">서비스 이용시간 : 평일/토요일 24시간(일요일, 공휴일 포함)</li>
-							</ul>
+				<h3 class="tit_h2">신청가능 금액</h3>
+				<div class="form_item">
+					<label for="inpPrice" class="fm_lb">신청금액 입력</label>
+					<div class="fm_cont">
+						<div class="input add_unit_2">
+							<input type="tel" class="t_right" id="inpPrice">
+							<div class="unit">만원</div>
 						</div>
-					</dd>
-				</dl>
+						<p class="fc_blue t_right fz_13 mt10">최대 1,500 만원</p>
+					</div>
+				</div>
+				<div class="caution_txt fc_gray2 mt30">한도 부여 후 00일 이내에 해당 이용처에서 결제 가능합니다. 
+					(일시불/할부 이용 가능)</div>
+				<hr class="hr_line">
+				<h3 class="tit_h2">이용처</h3>
+				<p class="fc_gray mt25">국세 또는 지방세 납부처(관공서 및 온라인)</p>
+				<hr class="hr_line">
+				<h3 class="tit_h2">카드선택</h3>
+				<div class="accordion_list">
+					<div class="tit">
+						<a href="#card_listl" class="ui-toggle-btn fz_16 open"><div>채움아시아나클럽카드</div></a>
+					</div>
+					<div id="card_listl" class="panel bt-none">
+						<p class="fc_gray fz_13">1234-****-****-1234</p>
+					</div>
+				</div>	
+			</div>
+			<div class="btn_wrap bottom_fixed">
+				<div class="flex">
+					<a href="#limit_up" class="button h54 blue ui-pop-open">다음</a>
+				</div>
 			</div>
 		</section>
 	</div>

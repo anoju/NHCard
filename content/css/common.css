@@ -199,6 +199,7 @@ common
 .hide.show{display:block;}
 .blind{position:absolute;overflow:hidden;width:0px;height:0px;text-indent:-9999px;color:transparent;}
 .line_thrgh{text-decoration:line-through;}
+.bt-none{border-top:none !important}
 
 /* bg-color */
 .bg_gray{background-color:#8997af}

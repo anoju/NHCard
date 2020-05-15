@@ -752,6 +752,7 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .accordion_list .tit a:after{content:'';display:block;position:absolute;top:18px;right:17px;width:7px;height:7px;border:1px solid #333;border-width:0 0 1px 1px;-webkit-transform:rotate3d(1,0,0,0deg) rotate(-45deg);transform:rotate3d(1,0,0,0deg) rotate(-45deg);-webkit-transition:0.3s;transition:0.3s;}
 .accordion_list .tit a.open:after{top:23px;-webkit-transform:rotate3d(1,0,0,180deg) rotate(-45deg);transform:rotate3d(1,0,0,180deg) rotate(-45deg);}
 .accordion_list .panel{display:none;padding:20px 14px;border-top:1px solid #ddd;}
+.accordion_list .panel.bt-none{padding-top:0}
 .accordion_list .panel .txt_list{font-size:1.4rem;}
 .accordion_list .panel .txt_list li li{font-size:1.2rem;}
 .accordion_dl .tit a{font-size:1.6rem;font-weight:500;color:#111;padding-left:42px;}
