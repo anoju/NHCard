@@ -291,3 +291,12 @@
 
 .blueBox_list{background-color:#eaf2fe;border-radius:10px;padding:24px 20px;display:table;width:100%;}
 .blueBox_list div{display:table-cell}
+
+.txt_list.ty2.tb.dot-none .dot{padding-left:0;}
+.txt_list.ty2.tb.dot-none .dot:before{display:none}
+.txt_list.ty2.tb li div{color:#111;text-align:right;}
+.txt_list.ty2.tb li div span{color:#666;margin-left:19px;}
+
+.accordion_list .txt_list.ty2 li{display:table;width:100%}
+.accordion_list .txt_list.ty2 li + li{margin-top:15px}
+.accordion_list .txt_list.ty2 li.last{border-top:1px dotted #666;padding-top:20px;}
