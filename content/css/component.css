@@ -511,7 +511,7 @@ html.isApp.ios.inpFocus .tab_wrap.fixed .tab_track{position:absolute;top:0;}
 /*icon*/
 .ico_new{display:inline-block;width:17px;height:17px;border-radius:50%;overflow:hidden;background:#3182f7 url(../images/common/ico_new.png) no-repeat center center;background-size:auto 7px;}
 
-.ico_txt{display:inline-block;background:#111;font-size:1.1rem;height:18px;line-height:18px;border-radius:11px;color:#fff;padding:0px 8px;vertical-align:middle;}
+.ico_txt{display:inline-block;background:#111;font-size:1.1rem;border-radius:11px;color:#fff;padding:3px 9px;vertical-align:middle;}
 .ico_txt.h22{height:22px;line-height:22px;font-size:1.2rem;}
 .ico_txt.red{background:#ff4019;}
 .ico_txt.blue1{background:#3182f7;} 
