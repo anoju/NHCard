@@ -284,22 +284,22 @@
 .complete_wrap .notice.line strong{color:#b2a46e;font-size:1.7rem}
 .complete_wrap .notice.line p{font-size:1.3rem;margin-top:15px;}
 
-.mebership_info{position:relative;padding:10px 0;color:#fff;background-color:#f0f0f0;background-repeat:no-repeat;background-size:cover;background-position:center center;}
-.mebership_info.lv_prime{background-image:url(../images/contents/mebership_info_bg1.png);}
-.mebership_info.lv_royal{background-image:url(../images/contents/mebership_info_bg2.png);}
-.mebership_info.lv_super{background-image:url(../images/contents/mebership_info_bg3.png);}
-.mebership_info.lv_nobless{background-image:url(../images/contents/mebership_info_bg4.png);}
-.mebership_info:before{content:'';display:grid;}
-.mebership_info .tbl .td{vertical-align:middle;height:100px;}
-.mebership_info .tbl .td.ic{width:37%;text-align:center;}
-.mebership_info .icon{display:inline-block;width:84px;height:84px;margin:8px 0 0 6px;background-repeat:no-repeat;background-size:cover;background-position:center center;}
-.mebership_info.lv_prime .icon{background-image:url(../images/contents/mebership_info_ico1.png);}
-.mebership_info.lv_royal .icon{background-image:url(../images/contents/mebership_info_ico2.png);}
-.mebership_info.lv_super .icon{background-image:url(../images/contents/mebership_info_ico3.png);}
-.mebership_info.lv_nobless .icon{background-image:url(../images/contents/mebership_info_ico4.png);}
-.mebership_info .ico_txt.line{font-size:1.1rem;padding:5px;height:inherit;line-height:7px;background:none;border:1px solid #fff;border-radius:20px}
-.mebership_info .tit{font-size:1.7rem;margin:3px 0;}
-.mebership_info .date{font-size:1.3rem;}
+.membership_info{position:relative;padding:10px 0;color:#fff;background-color:#f0f0f0;background-repeat:no-repeat;background-size:cover;background-position:center center;}
+.membership_info.lv_prime{background-image:url(../images/contents/membership_info_bg1.png);}
+.membership_info.lv_royal{background-image:url(../images/contents/membership_info_bg2.png);}
+.membership_info.lv_super{background-image:url(../images/contents/membership_info_bg3.png);}
+.membership_info.lv_nobless{background-image:url(../images/contents/membership_info_bg4.png);}
+.membership_info:before{content:'';display:grid;}
+.membership_info .tbl .td{vertical-align:middle;height:100px;}
+.membership_info .tbl .td.ic{width:37%;text-align:center;}
+.membership_info .icon{display:inline-block;width:84px;height:84px;margin:8px 0 0 6px;background-repeat:no-repeat;background-size:cover;background-position:center center;}
+.membership_info.lv_prime .icon{background-image:url(../images/contents/membership_info_ico1.png);}
+.membership_info.lv_royal .icon{background-image:url(../images/contents/membership_info_ico2.png);}
+.membership_info.lv_super .icon{background-image:url(../images/contents/membership_info_ico3.png);}
+.membership_info.lv_nobless .icon{background-image:url(../images/contents/membership_info_ico4.png);}
+.membership_info .ico_txt.line{font-size:1.1rem;padding:5px;height:inherit;line-height:7px;background:none;border:1px solid #fff;border-radius:20px}
+.membership_info .tit{font-size:1.7rem;margin:3px 0;}
+.membership_info .date{font-size:1.3rem;}
 
 .blueBox_list{background-color:#eaf2fe;border-radius:10px;padding:24px 20px;display:table;width:100%;}
 .blueBox_list div{display:table-cell}
