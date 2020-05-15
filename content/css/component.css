@@ -229,8 +229,8 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111;font-weight:400;}
 .btn_select{display:inline-block;}
 .btn_select:after{content:'';display:block;position:absolute;right:0;top:50%;width:23px;height:6px;margin-top:-3px;background:url(../images/common/select_arrow.png) no-repeat right center;background-size:23px auto;-webkit-transform:rotate3d(1,0,0,0deg);transform:rotate3d(1,0,0,0deg);-webkit-transition:0.3s;transition:0.3s;}
 .btn_select.open:after{-webkit-transform:rotate3d(1,0,0,180deg);transform:rotate3d(1,0,0,180deg);}
-.btn_select .val{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.btn_select .val .sub{display:block;color:#858585;line-height:1.2;font-size:1.1rem;}
+.btn_select .val{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:1.6rem;}
+.btn_select .val .sub{display:block;padding:5px 0 10px;color:#858585;line-height:1.2;font-size:1.3rem;}
 .select select:focus,
 .btn_select:focus{border-color:#3182f7;}
 .select select.off,
