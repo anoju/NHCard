@@ -75,7 +75,7 @@
 
 /*신용보호 서비스*/
 .first_blue_box{position:relative;margin-top:-30px;background:#eaf2fe;overflow:hidden;}
-.first_blue_box .bg{position:absolute;right:21px;bottom:21px;width:108px;height:151px;background:url(../images/contents/first_blue_box_bg_01.png) no-repeat right bottom;background-size:contain;}
+.first_blue_box .bg{position:absolute;right:21px;bottom:15px;width:99px;height:157px;background:url(../images/contents/first_blue_box_bg_01.png) no-repeat right bottom;background-size:contain;}
 .first_blue_box .inner{position:relative;padding:25px 20px;}
 .first_blue_box .tit{font-size:1.6rem;color:#111;}
 .first_blue_box .tit strong{font-size:1.8rem;}

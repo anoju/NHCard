@@ -816,8 +816,6 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .form_item{position:relative;margin-top:25px;}
 .section>.form_item:first-child,
 .tab_panel>.form_item:first-child{margin-top:0;}
-.form_item.large{margin-top:35px;}
-.form_item.large .fm_lb{font-size:1.8rem;font-weight:500;}
 .form_item .fm_lb{display:block;font-size:1.5rem;cursor:default;color:#111;}
 .form_item .fm_lb>.tooltip_wrap{vertical-align:1px;}
 .form_item .fm_lb>.tooltip_btn{vertical-align:-3px;}
@@ -845,6 +843,11 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .form_item .front_unit{position:absolute;left:10px;top:0;line-height:44px;font-size:1.4rem;color:#bbb;}
 .form_item .unit{display:block;position:absolute;right:10px;top:0;color:#111;line-height:44px;font-size:1.4rem;}
 .form_item .unit:first-child{left:10px;right:auto;}
+
+.form_item.large{margin-top:35px;}
+.form_item.large .fm_lb{font-size:1.8rem;font-weight:500;}
+.form_item.large .fm_lb + .fm_val,
+.form_item.large .fm_lb + .fm_cont{margin-top:15px;}
 
 /*약관*/
 .chk_item{border:1px solid #dddddd;border-radius:4px;-webkit-transition:border 0.3s;transition:border 0.3s;}
