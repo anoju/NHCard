@@ -282,8 +282,8 @@
 .complete_wrap .notice.line strong{color:#b2a46e;font-size:1.7rem}
 .complete_wrap .notice.line p{font-size:1.3rem;margin-top:15px;}
 .benefit_banner{position:relative;padding:27px 31px;margin-top:-30px;overflow:hidden;background:url('../images/contents/benefit_banner_nob.png') no-repeat;background-size:cover;}
-.benefit_banner .benefit_period{position:relative;padding-left:35%}
-.benefit_banner .benefit_period:before{content:'';width:84px;height:84px;position:absolute;left:0;top:0;background:url('../images/contents/ico_84_noble.png') no-repeat;background-size:84px auto}
+.benefit_banner .benefit_period{position:relative;padding-left:134px}
+.benefit_banner .benefit_period:before{content:'';width:84px;height:84px;position:absolute;left:15px;top:0;background:url('../images/contents/ico_84_noble.png') no-repeat;background-size:84px auto}
 .benefit_banner .benefit_period *{color:#fff;}
 .benefit_banner .benefit_period .ico_txt.line{font-size:1.1rem;padding:5px;height:inherit;line-height:7px;background:none;border:1px solid #fff;border-radius:20px}
 .benefit_banner .benefit_period span{font-size:1.3rem}
