@@ -745,6 +745,18 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .accordion_dl .tit .i_ico_20{position:absolute;left:14px;top:50%;margin-top:-10px;}
 .accordion_list+.accordion_list{margin-top:10px;}
 
+.accordion_list_1{margin-top:20px;border-top:1px solid #bbb;}
+.accordion_list_1>li{border-bottom:1px solid #ddd;}
+.accordion_list_1 .tit a{display:block;position:relative;padding:15px;}
+.accordion_list_1 .tit a:before,
+.accordion_list_1 .tit a:after{content:'';display:block;width:13px;height:1px;position:absolute;right:12px;top:27px;background:#333;}
+.accordion_list_1 .tit a:after{-webkit-transform:rotate(90deg);transform:rotate(90deg);-webkit-transition:0.3s;transition:0.3s;}
+.accordion_list_1 li.open .tit a:after{-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+.accordion_list_1 .title{font-size:1.6rem;font-weight:500;color:#111;padding-right:15px;}
+.accordion_list_1 .sub{margin-top:5px;}
+.accordion_list_1 .date{font-size:1.3rem;color:#666;margin-top:12px;}
+.accordion_list_1 .panel{display:none;background:#f8f8f8;padding:16px 24px;}
+
 /*swipe*/
 .ui-swiper-wrap{margin:40px 0 0;}
 .section .ui-swiper-wrap{margin-left:-20px;margin-right:-20px;}
