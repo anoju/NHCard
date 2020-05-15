@@ -239,13 +239,13 @@
 
 
 /*** ksy ***/
-.ht_vip_club_wrap .ht_vip_club_bg{position:relative;padding-top:90%;margin:-30px -20px 0;}
+.ht_vip_club_wrap .ht_vip_club_bg{position:relative;height:86.1111vw;margin:-30px -20px 0;}
 .ht_vip_club_wrap .ht_vip_club_bg.grade .ht_club{text-align:center;position:absolute;top:0;height:100%;width:100%;}
 .ht_vip_club_wrap .ht_vip_club_bg.grade .ht_club h3{margin-top:40px}
-.ht_vip_club_wrap .ht_vip_club_bg.grade.nob .ht_club{background:url('../images/contents/img_grade_nobless.png') center no-repeat;background-size:cover;}
-.ht_vip_club_wrap .ht_vip_club_bg.grade.sr .ht_club{background:url('../images/contents/img_grade_superroyal.png') center no-repeat;background-size:cover;}
-.ht_vip_club_wrap .ht_vip_club_bg.grade.r .ht_club{background:url('../images/contents/img_grade_royal.png') center no-repeat;background-size:cover;}
-.ht_vip_club_wrap .ht_vip_club_bg.grade.p .ht_club{background:url('../images/contents/img_grade_p.png') center no-repeat;background-size:cover;}
+.ht_vip_club_wrap .ht_vip_club_bg.grade.lv_nobless .ht_club{background:url('../images/contents/img_grade_nobless.png') center no-repeat;background-size:cover;}
+.ht_vip_club_wrap .ht_vip_club_bg.grade.lv_super .ht_club{background:url('../images/contents/img_grade_superroyal.png') center no-repeat;background-size:cover;}
+.ht_vip_club_wrap .ht_vip_club_bg.grade.lv_royal .ht_club{background:url('../images/contents/img_grade_royal.png') center no-repeat;background-size:cover;}
+.ht_vip_club_wrap .ht_vip_club_bg.grade.lv_prime .ht_club{background:url('../images/contents/img_grade_prime.png') center no-repeat;background-size:cover;}
 .ht_vip_club_wrap h4{margin:49px 0 21px;}
 .ht_vip_club_wrap .txt_list{font-size:1.4rem}
 .ht_vip_club_wrap .txt_list .dot:before{top:1rem}
@@ -281,13 +281,23 @@
 .complete_wrap .notice.line{padding:30px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd;margin-top:50px}
 .complete_wrap .notice.line strong{color:#b2a46e;font-size:1.7rem}
 .complete_wrap .notice.line p{font-size:1.3rem;margin-top:15px;}
-.benefit_banner{position:relative;padding:27px 31px;margin-top:-30px;overflow:hidden;background:url('../images/contents/benefit_banner_nob.png') no-repeat;background-size:cover;}
-.benefit_banner .benefit_period{position:relative;padding-left:35%}
-.benefit_banner .benefit_period:before{content:'';width:84px;height:84px;position:absolute;left:0;top:0;background:url('../images/contents/ico_84_noble.png') no-repeat;background-size:84px auto}
-.benefit_banner .benefit_period *{color:#fff;}
-.benefit_banner .benefit_period .ico_txt.line{font-size:1.1rem;padding:5px;height:inherit;line-height:7px;background:none;border:1px solid #fff;border-radius:20px}
-.benefit_banner .benefit_period span{font-size:1.3rem}
-.benefit_banner .benefit_period strong{display:block;font-size:1.7rem;margin:9px 0;}
+
+.mebership_info{position:relative;padding:10px 0;color:#fff;background-color:#f0f0f0;background-repeat:no-repeat;background-size:cover;background-position:center center;}
+.mebership_info.lv_prime{background-image:url(../images/contents/mebership_info_bg1.png);}
+.mebership_info.lv_royal{background-image:url(../images/contents/mebership_info_bg2.png);}
+.mebership_info.lv_super{background-image:url(../images/contents/mebership_info_bg3.png);}
+.mebership_info.lv_nobless{background-image:url(../images/contents/mebership_info_bg4.png);}
+.mebership_info:before{content:'';display:grid;}
+.mebership_info .tbl .td{vertical-align:middle;height:100px;}
+.mebership_info .tbl .td.ic{width:37%;text-align:center;}
+.mebership_info .icon{display:inline-block;width:84px;height:84px;margin:8px 0 0 6px;background-repeat:no-repeat;background-size:cover;background-position:center center;}
+.mebership_info.lv_prime .icon{background-image:url(../images/contents/mebership_info_ico1.png);}
+.mebership_info.lv_royal .icon{background-image:url(../images/contents/mebership_info_ico2.png);}
+.mebership_info.lv_super .icon{background-image:url(../images/contents/mebership_info_ico3.png);}
+.mebership_info.lv_nobless .icon{background-image:url(../images/contents/mebership_info_ico4.png);}
+.mebership_info .ico_txt.line{font-size:1.1rem;padding:5px;height:inherit;line-height:7px;background:none;border:1px solid #fff;border-radius:20px}
+.mebership_info .tit{font-size:1.7rem;margin:3px 0;}
+.mebership_info .date{font-size:1.3rem;}
 
 .blueBox_list{background-color:#eaf2fe;border-radius:10px;padding:24px 20px;display:table;width:100%;}
 .blueBox_list div{display:table-cell}
