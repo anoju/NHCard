@@ -22,7 +22,7 @@ input,select,textarea{box-sizing:border-box;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
 legend,caption{overflow:hidden;width:0px;height:0px;font-size:3px;line-height:0;text-indent:-9999px;color:transparent;clip:rect(0px 0px 0px 0px);opacity:0;text-indent:-9999rem;overflow:hidden;}
 li{list-style:none;}
-table{width:100%;border-spacing:0;border-collapse:collapse;line-height:1.2;}
+table{width:100%;border-spacing:0;border-collapse:collapse;}
 a{text-decoration:none;color:inherit;cursor:pointer;}
 a[href*='tel']{cursor:default;}
 button,input[type="button"]{border:none;background:none;cursor:pointer;letter-spacing:inherit;}
@@ -89,6 +89,7 @@ common
 .fc_yellow{color:#ffb81c !important;}
 .fc_green{color:#07a814 !important;}
 .fc_green2{color:#94cc2b !important;}
+.fc_orange{color:#fc775c !important;}
 .fc_red{color:#ff4019 !important;}
 .fc_black{color:#111 !important;}
 .fc_normal{color:#333 !important;}
@@ -197,6 +198,8 @@ common
 .hide{display:none;}
 .hide.show{display:block;}
 .blind{position:absolute;overflow:hidden;width:0px;height:0px;text-indent:-9999px;color:transparent;}
+.line_thrgh{text-decoration:line-through;}
+.bt-none{border-top:none !important}
 
 /* bg-color */
 .bg_gray{background-color:#8997af}

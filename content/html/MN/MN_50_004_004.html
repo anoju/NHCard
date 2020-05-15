@@ -35,7 +35,7 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('할부기간변경');
+		common.title('카드별 이용한도');
 	});
 </script>
 </head>
@@ -45,50 +45,32 @@
 	<div data-include-html="../include/gnb.html"></div>
 	<div id="container">
 		<section id="contents">
-			<div class="step_wrap">
-				<h2 class="step_tit">할부기간 변경 신청</h2>
-				<ol class="step_state">
-					<li class="on">1<span class="blind">단계(현재단계)</span></li>
-					<li>2<span class="blind">단계</span></li>
-					<li>3<span class="blind">단계</span></li>
-				</ol>
-			</div>
 			<div class="section">
-
-                <h3 class="tit_h2">신청 할부건</h3>
-				
-				<h3 class="tit_h2">할부개월 선택</h3>
-				<div class="form_item ip_none">
-					<label for="selectMonth1" class="fm_lb">이전 할부 개월</label>
-					<input type="text" class="fc_red" readonly id="selectMonth1" title="할부 개월 수" value="12개월">
+				<div class="complete_wrap">
+					<i class="i_ico_50 ico_1" aria-hidden="true"></i>
+					<h2 class="tit_h2">신청 완료</h2>
+					<p class="txt">고객님의 채움아시아나클럽카드 이용한도 등록이<br>
+						완료 되었습니다. 
+						</p>
 				</div>
-				<div class="form_item">
-					<label for="installmentPeriod" class="fm_lb">신청 할부 개월</label>
-					<div class="fm_cont">
-						<div class="select">
-							<select id="installmentPeriod" title="할부기간 선택">
-								<option value="" selected="selected">할부기간 선택</option>
-								<option value="01">01</option>
-								<option value="02">02</option>
-								<option value="03">03</option>
-								<option value="04">04</option>
-							</select>
-						</div>
-						<div class="error_txt">할부기간을 선택해주세요.</div><!-- 에러메세지 입력영역 -->
-					</div>
-				</div>
-				<div class="form_item ip_none">
-					<label for="charge1" class="fm_lb">예상 수수료율</label>
-					<input type="text" class="fc_red" readonly id="charge1" title="할부 개월 수" value="10.23%">
-				</div>
-            </div>
-            
+				<div class="table mt30">
+					<table>
+						<caption>신청된 카드한도를 나타내는 표</caption>
+						<colgroup>
+							<col style="width:120px">
+							<col style="width:auto">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">카드한도</th>
+								<td>630만원</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>	
 			<div class="btn_wrap bottom_fixed">
-				<div>
-					<div class="flex">
-                        <a href="#" class="button h54 gray">취소</a>
-                        <a href="#" class="button h54 blue">신청</a>
-					</div>
+				<div class="flex">
+					<a href="#" class="button h54 blue">확인</a>
 				</div>
 			</div>
 		</section>

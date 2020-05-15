@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+
+<meta name="title" content="농협카드 모바일">
+<meta name="description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
+<meta property="og:title" content="농협카드 모바일">
+<meta property="og:url" content="https://card.nonghyup.com">
+<!-- <meta property="og:image" content="https://card.nonghyup.com/content/images/logo_1200x1200.png"> -->
+<meta property="og:image" content="http://localhost:8080/content/images/logo_1200x1200.png">
+<meta property="og:description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
+<meta name="format-detection" content="telephone=no">
+
+<title>농협카드 모바일</title>
+<meta name="apple-mobile-web-app-title" content="농협카드 모바일">
+<link rel="apple-touch-startup-image" href="../../images/icons/touch-icon-iphone-retina.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png"><!-- 196x196-->
+<link rel="apple-touch-icon" href="../../images/icons/touch-icon-iphone.png"><!-- 120x120-->
+<link rel="apple-touch-icon" sizes="152x152" href="../../images/icons/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../images/icons/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="167x167" href="../../images/icons/touch-icon-ipad-retina.png">
+<link rel="manifest" href="../../manifest.json">
+
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/contents.css">
+
+<script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/jquery-ui-1.12.1.min.js"></script>
+<script src="../../js/ui_plugins.js"></script>
+<script src="../../js/ui_front.js"></script>
+<script>
+	$(function(){
+		common.title('목적별 임시한도');
+	});
+</script>
+</head>
+<body>
+<article id="wrap">
+	<div data-include-html="../include/top.html"></div>
+	<div data-include-html="../include/gnb.html"></div>
+	<div id="container">
+		<section id="contents">
+			<div class="step_wrap">
+				<h2 class="step_tit">Step2. 이용목적 선택</h2>
+				<ol class="step_state">
+					<li>1<span class="blind">단계</span></li>
+					<li class="on">2<span class="blind">단계(현재단계)</span></li>
+				</ol>
+			</div>
+			<div class="section">
+				<h3 class="tit_h2">신청가능 금액</h3>
+				<div class="form_item">
+					<label for="inpPrice" class="fm_lb">신청금액 입력</label>
+					<div class="fm_cont">
+						<div class="input add_unit_2">
+							<input type="tel" class="t_right" id="inpPrice">
+							<div class="unit">만원</div>
+						</div>
+						<p class="fc_blue t_right fz_13 mt10">최대 1,500 만원</p>
+					</div>
+				</div>
+				<div class="caution_txt fc_gray2 mt30">한도 부여 후 00일 이내에 해당 이용처에서 결제 가능합니다. 
+					(일시불/할부 이용 가능)</div>
+				<hr class="hr_line">
+				<h3 class="tit_h2">이용처</h3>
+				<p class="fc_gray mt25">국세 또는 지방세 납부처(관공서 및 온라인)</p>
+				<hr class="hr_line">
+				<h3 class="tit_h2">카드선택</h3>
+				<div class="accordion_list">
+					<div class="tit">
+						<a href="#card_listl" class="ui-toggle-btn fz_16 open"><div>채움아시아나클럽카드</div></a>
+					</div>
+					<div id="card_listl" class="panel bt-none">
+						<p class="fc_gray fz_13">1234-****-****-1234</p>
+					</div>
+				</div>	
+			</div>
+			<div class="btn_wrap bottom_fixed">
+				<div class="flex">
+					<a href="#limit_up" class="button h54 blue ui-pop-open">다음</a>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div data-include-html="../include/footer.html"></div>
+</article>
+</body>
+</html>

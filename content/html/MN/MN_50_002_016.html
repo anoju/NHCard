@@ -35,7 +35,7 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('할부상환스케줄 조회');
+		common.title('목적별 임시한도 조회');
 	});
 </script>
 </head>
@@ -46,46 +46,81 @@
 	<div id="container">
 		<section id="contents">
 			<div class="section">
-				
-				
-				<hr class="hr_line" aria-hidden="true">
-				<div class="tit_h2">
-					<div><h2 class="tit">상환일정</h2></div>
-					<div class="w_160">
-						<span>원금+이자=총상환액</span>
-					</div>
+				<h3 class="tit_h2">신청내역</h3>
+				<div class="table mt25">
+					<table>
+						<caption>임시한도 신청 내역을 나타내는 표</caption>
+						<colgroup>
+							<col style="width:120px">
+							<col style="width:auto">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">신청구분</th>
+								<td>여행</td>
+							</tr>
+							<tr>
+								<th scope="row">신청일자</th>
+								<td>2020-05.01</td>
+							</tr>
+							<tr>
+								<th scope="row">이용처</th>
+								<td>항공권구매,여행사 예약 등</td>
+							</tr>
+							<tr>
+								<th scope="row">한도</th>
+								<td>1,500만원</td>
+							</tr>
+							<tr>
+								<th scope="row">잔여한도</th>
+								<td>1,500만원</td>
+							</tr>
+							<tr>
+								<th scope="row">한도부여기간</th>
+								<td>2020.05.01~2020.05.31</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
-				<div class="price_box_wrap ty2">
-					<span class="txt">1회차</span>
-					<div class="total_num"><strong>123,456 + 12,345= 123,456,789</strong>원</div>
-					<div class="flex">
-						<div class="sub_num">청구일 <span class="num"><strong>2020.04.01</strong></span></div>
-						<div class="sub_num">결제후 잔액 <span class="num"><strong>123,456,789</strong>원</span></div>
-					</div>
-				</div>
-				<div class="price_box_wrap ty2">
-					<span class="txt">2회차</span>
-					<div class="total_num"><strong>123,456 + 12,345= 123,456,789</strong>원</div>
-					<div class="flex">
-						<div class="sub_num">청구일 <span class="num"><strong>2020.04.01</strong></span></div>
-						<div class="sub_num">결제후 잔액 <span class="num"><strong>123,456,789</strong>원</span></div>
-					</div>
-				</div>
-				<div class="price_box_wrap ty2">
-					<span class="txt">3회차</span>
-					<div class="total_num"><strong>123,456 + 12,345= 123,456,789</strong>원</div>
-					<div class="flex">
-						<div class="sub_num">청구일 <span class="num"><strong>2020.04.01</strong></span></div>
-						<div class="sub_num">결제후 잔액 <span class="num"><strong>123,456,789</strong>원</span></div>
-					</div>
-				</div>
-				<div class="price_box_wrap ty2">
-					<span class="txt">4회차</span>
-					<div class="total_num"><strong>123,456 + 12,345= 123,456,789</strong>원</div>
-					<div class="flex">
-						<div class="sub_num">청구일 <span class="num"><strong>2020.04.01</strong></span></div>
-						<div class="sub_num">결제후 잔액 <span class="num"><strong>123,456,789</strong>원</span></div>
-					</div>
+				<h3 class="tit_h2">신청내역</h3>
+				<div class="table mt25">
+					<table>
+						<caption>임시한도 신청 내역을 나타내는 표</caption>
+						<colgroup>
+							<col style="width:120px">
+							<col style="width:auto">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">신청구분</th>
+								<td>가전</td>
+							</tr>
+							<tr>
+								<th scope="row">신청일자</th>
+								<td>2020-05.01</td>
+							</tr>
+							<tr>
+								<th scope="row">이용처</th>
+								<td>국내 주요 가전제품점<br>등록 가맹점</td>
+							</tr>
+							<tr>
+								<th scope="row">한도</th>
+								<td>1,500만원</td>
+							</tr>
+							<tr>
+								<th scope="row">잔여한도</th>
+								<td>1,500만원</td>
+							</tr>
+							<tr>
+								<th scope="row">한도부여기간</th>
+								<td>2020.05.01~2020.05.31</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>		
+			<div class="btn_wrap bottom_fixed">
+				<div class="flex">
+					<a href="#" class="button h54 blue">확인</a>
 				</div>
 			</div>
 		</section>

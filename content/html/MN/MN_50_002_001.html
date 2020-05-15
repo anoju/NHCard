@@ -35,7 +35,9 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('바로출금');
+		common.title('이용한도 상향조정');
+		//조회리스트 정렬
+		//Layer.open('#inquiryListPop');
 	});
 </script>
 </head>
@@ -45,62 +47,48 @@
 	<div data-include-html="../include/gnb.html"></div>
 	<div id="container">
 		<section id="contents">
-			<div class="step_wrap">
-				<h2 class="step_tit">결제방법 선택</h2>
-				<ol class="step_state">
-					<li>1<span class="blind">단계</span></li>
-					<li class="on">2<span class="blind">단계(현재단계)</span></li>
-					<li>3<span class="blind">단계</span></li>
-				</ol>
-			</div>
 			<div class="section">
-				<div class="price_box_wrap">
-					<span class="txt">결제금액</span>
-					<div class="total_num"><strong>123,456,789</strong>원</div>
-					<div class="flex">
-						<div class="sub_num">원금 <span class="num"><strong>123,456,789</strong>원</span></div>
-						<div class="sub_num">수수료 <span class="num"><strong>123,456,789</strong>원</span></div>
+				<h3 class="tit_h2 mt0">변경하실 항목을 선택 해 주세요.</h3>
+				<div class="chk_item ty2 mt25">
+					<div class="checkbox">
+						<input type="radio" id="change_menu1" name="change_menu"><i aria-hidden="true"></i>
+						<label for="change_menu1" class="lbl">이용한도 상향조정</label>
 					</div>
-                </div>
-                
-                <div class="form_item large"><!--#200512 pay_op > large 클래스변경-->
-					<label for="payCount" class="fm_lb">결제방법</label>
-					<div class="fm_cont">
-						<div class="select">
-							<select id="payCount" title="결제계좌 선택">
-								<option value="" selected="selected">결제계좌</option>
-								<option value="농협은행 123-45**-****-456">농협은행 123-45**-****-456</option>
-							</select>
-						</div>
-						<div class="input"><input type="text" class="" readonly value="농협은행 123-45**-****-456" title="결제계좌정보"></div><!--#200513 title추가-->
+				</div>
+				<div class="chk_item ty2">
+					<div class="checkbox">
+						<input type="radio" id="change_menu2" name="change_menu"><i aria-hidden="true"></i>
+						<label for="change_menu2" class="lbl">희망한도 등록</label>
 					</div>
-                </div>
-                <dl class="accordion_list accordion_dl">
+				</div>
+				<div class="chk_item ty2">
+					<div class="checkbox">
+						<input type="radio" id="change_menu3" name="change_menu"><i aria-hidden="true"></i>
+						<label for="change_menu3" class="lbl">상향제외등록</label>
+					</div>
+				</div>
+				<div class="chk_item ty2">
+					<div class="checkbox">
+						<input type="radio" id="change_menu4" name="change_menu"><i aria-hidden="true"></i>
+						<label for="change_menu4" class="lbl">목적별 임시한도</label>
+					</div>
+				</div>
+				<div class="txt_list mt20">
+					<div class="dot">목적별 임시한도는 고객님의 이벤트성(세금, 병원, 가전, 자동차보험 등) 구매를 돕기 위해 총 한도와 별도로 운영하고 있는 전용한도입니다.</div>
+				</div>
+				
+				<dl class="accordion_list accordion_dl mt50">
 					<dt class="tit">
-						<a href="#" class="ui-toggle-btn open"><i class="i_ico_20 ico_1" aria-hidden="true"></i>유의사항</a>
+						<a href="#" class="ui-toggle-btn open"><i class="i_ico_20 ico_1" aria-hidden="true"></i>이용안내</a>
 					</dt>
 					<dd class="panel">
 						<div class="txt_list">
 							<ul>
-                                <li class="dot">NH포인트로 카드이용대금을 결제하실 수 있습니다.</li>
-                                <li class="dot">NH포인트 결제와 계좌 출금으로 동시에 결제하실 수 없습니다.</li>
-                                <li class="dot">카드결제대금은 수수료 차이로 인하여 이전 화면의 &lt;결제하실 금액&gt;과 차이가 있을 수 있습니다.</li>
-                                <li class="dot">상호저축은행, 산림조합, BOA, 증권사(유안타증권, 미래에셋대우, 삼성증권, 한화투자증권 제외)계좌를 결제계좌로 사용하시는 고객님은 농협계좌 직접입력 또는 가상계좌 예약 및 입금 방법으로 결제하실 수 있습니다.</li>
+								<li class="dot">서비스 이용시간 : 평일/토요일 24시간(일요일, 공휴일 포함)</li>
 							</ul>
 						</div>
 					</dd>
 				</dl>
-
-				<div class="bottom_fixed ty2">
-					<div>
-						<div class="btn_wrap">
-							<div class="flex">
-								<button type="button" class="button line blue">이전</button>
-								<button type="button" class="button blue">바로출금</button>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</section>
 	</div>

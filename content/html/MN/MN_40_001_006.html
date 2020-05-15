@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+
+<meta name="title" content="농협카드 모바일">
+<meta name="description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
+<meta property="og:title" content="농협카드 모바일">
+<meta property="og:url" content="https://card.nonghyup.com">
+<!-- <meta property="og:image" content="https://card.nonghyup.com/content/images/logo_1200x1200.png"> -->
+<meta property="og:image" content="http://localhost:8080/content/images/logo_1200x1200.png">
+<meta property="og:description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
+<meta name="format-detection" content="telephone=no">
+
+<title>농협카드 모바일</title>
+<meta name="apple-mobile-web-app-title" content="농협카드 모바일">
+<link rel="apple-touch-startup-image" href="../../images/icons/touch-icon-iphone-retina.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png"><!-- 196x196-->
+<link rel="apple-touch-icon" href="../../images/icons/touch-icon-iphone.png"><!-- 120x120-->
+<link rel="apple-touch-icon" sizes="152x152" href="../../images/icons/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../images/icons/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="167x167" href="../../images/icons/touch-icon-ipad-retina.png">
+<link rel="manifest" href="../../manifest.json">
+
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/contents.css">
+
+<script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/jquery-ui-1.12.1.min.js"></script>
+<script src="../../js/ui_plugins.js"></script>
+<script src="../../js/ui_front.js"></script>
+<script>
+	$(function(){
+		common.title('바로출금');
+	});
+</script>
+</head>
+<body>
+<article id="wrap">
+	<div data-include-html="../include/top.html"></div>
+	<div data-include-html="../include/gnb.html"></div>
+	<div id="container">
+		<section id="contents">
+			<div class="step_wrap">
+				<h2 class="step_tit">결제방법 선택</h2>
+				<ol class="step_state">
+					<li>1<span class="blind">단계</span></li>
+					<li class="on">2<span class="blind">단계(현재단계)</span></li>
+					<li>3<span class="blind">단계</span></li>
+				</ol>
+			</div>
+			<div class="section">
+				<div class="price_box_wrap">
+					<span class="txt">결제금액</span>
+					<div class="total_num"><strong>123,456,789</strong>원</div>
+					<div class="flex">
+						<div class="sub_num">원금 <span class="num"><strong>123,456,789</strong>원</span></div>
+						<div class="sub_num">수수료 <span class="num"><strong>123,456,789</strong>원</span></div>
+					</div>
+                </div>
+                
+                <div class="form_item large"><!--#200512 pay_op > large 클래스변경-->
+					<label for="payCount" class="fm_lb">결제방법</label>
+					<div class="fm_cont">
+						<div class="select">
+							<select id="payCount" title="결제계좌 선택">
+								<option value="" selected="selected">결제계좌</option>
+								<option value="농협은행 123-45**-****-456">농협은행 123-45**-****-456</option>
+							</select>
+						</div>
+						<div class="input"><input type="text" class="" readonly value="농협은행 123-45**-****-456" title="결제계좌정보"></div><!--#200513 title추가-->
+					</div>
+                </div>
+                <dl class="accordion_list accordion_dl">
+					<dt class="tit">
+						<a href="#" class="ui-toggle-btn open"><i class="i_ico_20 ico_2" aria-hidden="true"></i>유의사항</a><!--#200515 ico_1->ico_2 로 클래스 수정-->
+					</dt>
+					<dd class="panel">
+						<div class="txt_list">
+							<ul>
+                                <li class="dot">NH포인트로 카드이용대금을 결제하실 수 있습니다.</li>
+                                <li class="dot">NH포인트 결제와 계좌 출금으로 동시에 결제하실 수 없습니다.</li>
+                                <li class="dot">카드결제대금은 수수료 차이로 인하여 이전 화면의 &lt;결제하실 금액&gt;과 차이가 있을 수 있습니다.</li>
+                                <li class="dot">상호저축은행, 산림조합, BOA, 증권사(유안타증권, 미래에셋대우, 삼성증권, 한화투자증권 제외)계좌를 결제계좌로 사용하시는 고객님은 농협계좌 직접입력 또는 가상계좌 예약 및 입금 방법으로 결제하실 수 있습니다.</li>
+							</ul>
+						</div>
+					</dd>
+				</dl>
+
+				<div class="bottom_fixed ty2">
+					<div>
+						<div class="btn_wrap">
+							<div class="flex">
+								<button type="button" class="button line blue">이전</button>
+								<button type="button" class="button blue">바로출금</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div data-include-html="../include/footer.html"></div>
+</article>
+</body>
+</html>
