@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+
+<meta name="title" content="농협카드 모바일">
+<meta name="description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
+<meta property="og:title" content="농협카드 모바일">
+<meta property="og:url" content="https://card.nonghyup.com">
+<!-- <meta property="og:image" content="https://card.nonghyup.com/content/images/logo_1200x1200.png"> -->
+<meta property="og:image" content="http://localhost:8080/content/images/logo_1200x1200.png">
+<meta property="og:description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
+<meta name="format-detection" content="telephone=no">
+
+<title>농협카드 모바일</title>
+<meta name="apple-mobile-web-app-title" content="농협카드 모바일">
+<link rel="apple-touch-startup-image" href="../../images/icons/touch-icon-iphone-retina.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png"><!-- 196x196-->
+<link rel="apple-touch-icon" href="../../images/icons/touch-icon-iphone.png"><!-- 120x120-->
+<link rel="apple-touch-icon" sizes="152x152" href="../../images/icons/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../images/icons/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="167x167" href="../../images/icons/touch-icon-ipad-retina.png">
+<link rel="manifest" href="../../manifest.json">
+
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/contents.css">
+
+<script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/jquery-ui-1.12.1.min.js"></script>
+<script src="../../js/ui_plugins.js"></script>
+<script src="../../js/ui_front.js"></script>
+<script>
+	$(function(){
+		common.title('카드이용내역');
+	});
+</script>
+</head>
+<body>
+<article id="wrap">
+	<div data-include-html="../include/top.html"></div>
+	<div data-include-html="../include/gnb.html"></div>
+	<div id="container">
+		<section id="contents">
+			<div class="section">
+                <div class="tabmenu">
+                    <ul>
+                        <li class="active"><a href="#" title="현재선택">승인내역</a></li>
+                        <li><a href="#">이용내역</a></li>
+                    </ul>
+                    <div class="tab_line" aria-hidden="true"></div>
+                </div>
+                <div class="card_info_box filter">
+					<div class="img">
+						<img src="../../images/temp/card_228_144.png" alt="채움카드">
+					</div>
+					<div>
+						<div class="name">Global Unlimited(글로벌 언리미티드)체크카드</div>
+						<div class="sub">
+							<span class="num">1234-56**-****3456</span>
+						</div>
+						<div class="info">
+							<div>국내/가족카드 포함</div>
+							<div>2020.04.01 ~ 2020.05.01(이번달)</div>
+						</div>
+                    </div>
+                    <a href="#" class="btn_filter" title="팝업으로 필터 설정" onclick="Layer.open('#inquiryListPop')"><span class="blind">필터</span></a>
+                </div>
+                <div class="price_box_wrap ty3 mt20">
+					<span class="txt">카드이용내역 (총 6건)</span>
+					<div class="total_num"><strong>123,456,789</strong> 원</div>
+					<div class="flex">
+						<div class="sub_num">정상 5건 <span class="num"><strong>100,000,000</strong> 원</span></div>
+						<div class="sub_num">취소 5건  <span class="num"><strong>100,000,000</strong> 원</span></div>
+					</div>
+                </div>
+				<div class="total_num_box">
+					<div class="f_left">총 <strong>50</strong>건</div>
+					<div class="f_right">
+                        <div class="btn_range">
+                            <a href="#" class="active">최신순</a>
+                            <a href="#">고액순</a>
+                        </div>
+					</div>
+                </div>
+                <div class="line_list_2 ty2">
+                    <ul>
+                        <!--기본-->
+                        <li>
+							<a href="#" class="inner">
+								<div class="flex">
+									<div class="td">
+                                        <div class="tit">웅진싱크빅</div>
+                                        <div class="date fc_gray">2020.03.16 15:15:56</div>
+                                        <ul class="sub_info">
+                                            <li><span class="fc_blue">예금인출</span></li>
+                                            <li>12345678</li>
+                                        </ul>
+									</div>
+									<div class="td">
+										<ul class="info_right">
+											<li class="price"><strong>123,456,789</strong> 원</li>
+										</ul>
+									</div>
+								</div>
+							</a>
+                        </li>
+                        
+                        <!--부분취소 내역-->
+                        <li>
+							<a href="#" class="inner">
+								<div class="flex">
+									<div class="td">
+                                        <div class="tit">웅진싱크빅</div>
+                                        <div class="date fc_gray">2020.03.16 15:15:56</div>
+                                        <ul class="sub_info">
+                                            <li><span class="fc_blue">예금인출</span></li>
+                                            <li>12345678</li>
+                                        </ul>
+									</div>
+									<div class="td">
+										<ul class="info_right">
+											<li class="cancel_txt"><strong>123,456,789</strong> 원</li>
+											<li class="price"><strong>123,456,789</strong> 원</li>
+											<li class="state cancel">부분취소</li>
+										</ul>
+									</div>
+								</div>
+							</a>
+                        </li>
+                        
+                        <!--취소 내역-->
+                        <li>
+							<a href="#" class="inner">
+								<div class="flex">
+									<div class="td cancel"><!--취소시, cancel 추가-->
+                                        <div class="tit">웅진싱크빅</div>
+                                        <div class="date fc_gray">2020.03.16 15:15:56</div>
+                                        <ul class="sub_info">
+                                            <li>예금인출</li>
+                                            <li>12345678</li>
+                                        </ul>
+									</div>
+									<div class="td">
+										<ul class="info_right">
+											<li class="cancel_txt"><strong>123,456,789</strong> 원</li>
+											<li class="state cancel">취소</li>
+										</ul>
+									</div>
+								</div>
+							</a>
+						</li>
+                    </ul>
+                </div>
+				<div class="btn_more">
+					<a href="#" class="button line">더보기 (<strong>20</strong>/25)</a>
+                </div>
+                <!--리스트데이터 없음-->
+				<div class="no_list">
+					<i class="i_ico_50 ico_2" aria-hidden="true"></i>
+					<div class="txt">조회내역이 없습니다.</div>
+				</div>
+                <!--//리스트데이터 없음-->
+                <dl class="accordion_list accordion_dl">
+					<dt class="tit">
+						<a href="#" class="ui-toggle-btn open"><i class="i_ico_20 ico_1" aria-hidden="true"></i>이용안내</a>
+					</dt>
+					<dd class="panel">
+						<div class="txt_list">
+							<ul>
+                                <li class="dot">조회기간은 1년 이내에 3개월 단위로 선택 하실 수 있습니다.</li>
+                                <li class="dot">수수료 및 결제금액은 체크카드만 조회되며 신용카드는 해외이용내역에서 조회하실 수 있습니다.</li>
+                                <li class="dot">승인내역과 실제 청구내역은 다를 수 있습니다.</li>
+                                <li class="dot">승인취소는 가맹점 승인취소요청 등의 사유로 정상처리가 되지 않는 경우가 있사오니 정상처리여부를 확인하고자 하는 경우 반드시 카드고객상담센터(☎<a href="tel:1644-4000" class="tel">1644-4000</a>)로 문의하여 주시기 바랍니다.</li>
+							</ul>
+						</div>
+					</dd>
+				</dl>
+            </div>
+		</section>
+	</div>
+	<div data-include-html="../include/footer.html"></div>
+</article>
+</body>
+</html>
