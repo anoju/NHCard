@@ -35,7 +35,7 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('카드이용내역');
+		common.title('교통카드이용내역');
 	});
 </script>
 </head>
@@ -46,42 +46,23 @@
 	<div id="container">
 		<section id="contents">
 			<div class="section">
-                <div class="tabmenu">
-                    <ul>
-                        <li><a href="#">승인내역</a></li>
-                        <li class="active"><a href="#" title="현재선택">이용내역</a></li>
-                    </ul>
-                    <div class="tab_line" aria-hidden="true"></div>
-                </div>
                 <div class="card_info_box filter">
 					<div class="img">
-						<img src="../../images/temp/card_228_144.png" alt="채움카드">
+						<img src="../../images/contents/img_card_traffic.png" alt="교통카드">
 					</div>
 					<div>
-						<div class="name">Global Unlimited(글로벌 언리미티드)체크카드</div>
-						<div class="sub">
-							<span class="num">1234-56**-****3456</span>
-						</div>
+						<div class="name">채움(농·축협) 회원</div>
 						<div class="info">
-							<div>해외/가족카드 만</div>
-							<div>2020.04.01 ~ 2020.05.01(이번달)</div>
+							<div>2020.04.01 ~ 2020.05.01(1주일)</div>
 						</div>
                     </div>
                     <a href="#" class="btn_filter" title="팝업으로 필터 설정" onclick="Layer.open('#inquiryListPop')"><span class="blind">필터</span></a>
                 </div>
                 <div class="price_box_wrap mt20">
-					<div class="txt">카드이용내역 (총 6건)</div>
+					<div class="txt">교통카드이용내역 (총 6건)</div>
 					<div class="total_num"><strong>123,456,789</strong> 원</div>
                 </div>
-				<div class="total_num_box">
-					<div class="f_left">총 <strong>50</strong>건</div>
-					<div class="f_right">
-                        <div class="btn_range">
-                            <a href="#" class="active">최신순</a>
-                            <a href="#">고액순</a>
-                        </div>
-					</div>
-                </div>
+				<div class="total_num_box">총 <strong>50</strong>건</div>
                 <div class="line_list_2 ty2">
                     <ul>
                         <!--기본-->
@@ -89,12 +70,8 @@
 							<a href="#" class="inner">
 								<div class="flex">
 									<div class="td">
-                                        <div class="tit">Itunes.com/bill</div>
-                                        <div class="date fc_gray">2020.03.16 15:15:56</div>
-                                        <ul class="sub_info">
-                                            <li>일시불</li>
-                                            <li>12345678</li>
-                                        </ul>
+                                        <div class="tit">티머니 지하철</div>
+                                        <div class="date fc_gray">14:55~15:10</div>
 									</div>
 									<div class="td">
 										<ul class="info_right">
@@ -104,50 +81,21 @@
 								</div>
 							</a>
                         </li>
-                        
-                        <!-- 삭제 부분취소 내역 <li>
-							<a href="#" class="inner">
-								<div class="flex">
-									<div class="td">
-                                        <div class="tit">Itunes.com/bill</div>
-                                        <div class="date fc_gray">2020.03.16 15:15:56</div>
-                                        <ul class="sub_info">
-                                            <li>일시불</li>
-                                            <li>12345678</li>
-                                        </ul>
-									</div>
-									<div class="td">
-										<ul class="info_right">
-											<li class="cancel_txt"><strong>123,456,789</strong> 원</li>
-											<li class="price"><strong>123,456,789</strong> 원</li>
-											<li class="state cancel">부분취소</li>
-										</ul>
-									</div>
-								</div>
-							</a>
-                        </li> -->
-                        
-                        <!--취소 내역-->
                         <li>
 							<a href="#" class="inner">
 								<div class="flex">
-									<div class="td cancel"><!--취소시, cancel 추가-->
-                                        <div class="tit">Itunes.com/bill</div>
-                                        <div class="date fc_gray">2020.03.16 15:15:56</div>
-                                        <ul class="sub_info">
-                                            <li>일시불</li>
-                                            <li>12345678</li>
-                                        </ul>
+									<div class="td">
+                                        <div class="tit">티머니 버스</div>
+                                        <div class="date fc_gray">14:55~15:10</div>
 									</div>
 									<div class="td">
 										<ul class="info_right">
-											<li class="cancel_txt"><strong>123,456,789</strong> 원</li>
-											<li class="state cancel">취소</li>
+											<li class="price"><strong>123,456,789</strong> 원</li>
 										</ul>
 									</div>
 								</div>
 							</a>
-						</li>
+                        </li>
                     </ul>
                 </div>
 				<div class="btn_more">
@@ -166,11 +114,8 @@
 					<dd class="panel">
 						<div class="txt_list">
 							<ul>
-                                <li class="dot">조회기간은 1년 이내에 3개월 단위로 선택 하실 수 있습니다.</li>
-                                <li class="dot">구매하신 상품 또는 용역에 대한 매출표가 농협에 접수 확정이 되어야 조회가 가능하며, 당행으로 접수되기 이전의 사용내역은 국내/해외 승인내역을 통해 확인하실 수 있습니다.</li>
-                                <li class="dot">합계금액은 매출표가 농협에 접수 확정된 정상 이용내역만을 합산한 금액입니다.</li>
-                                <li class="dot">매출취소금액은 가맹점 매출취소 요청 등의 사유로 취소 매출표가 농협에 접수 확정된 금액 입니다.</li>
-                                <li class="dot">자세한 사항은 카드고객상담센터(☎<a href="tel:1644-4000" class="tel">1644-4000</a>)로 문의하여 주시기 바랍니다.</li>
+                                <li class="dot">당일 교통카드 이용내역은 익일 오후부터 조회 가능합니다.</li>
+                                <li class="dot">조회가능기간은 최근 1년 이내, 최대 2개월 단위로 조회 가능합니다.</li>
 							</ul>
 						</div>
 					</dd>
