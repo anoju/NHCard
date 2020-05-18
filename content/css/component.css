@@ -771,6 +771,9 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .accordion_list_1 .date{font-size:1.3rem;color:#666;margin-top:12px;}
 .accordion_list_1 .panel{display:none;background:#f8f8f8;padding:16px 24px;}
 
+.accordion_list.ty2 .tit{font-size:1.6rem;font-weight:500;}
+.accordion_list.ty2 .panel{border-top:0;}
+
 /*swipe*/
 .ui-swiper-wrap{margin:40px 0 0;}
 .section .ui-swiper-wrap{margin-left:-20px;margin-right:-20px;}
