@@ -35,7 +35,7 @@ $(window).on('load',function(){
 	swiperUI.init();
 	Loading.aria();
 
-	if($('.finish_effect').length > 0) finishEffect('.finish_effect');
+	if($('.item_effect').length > 0) itemEffect('.item_effect');
 
 	//이미지 미리로딩
 	var preLoadingImgArry = [
@@ -4057,14 +4057,15 @@ var chartUI = function(target,speed){
 
 /*** 애니메이션 ***/
 //완료 효과
-var finishEffect = function(wrap){
+var itemEffect = function(wrap){
 	var $wrap = $(wrap),
 		$itemLength = 10,			//20 넘지 않게
 		rdClass, rdLeft, rdTop, rdDelay,rdDirection, rdSpeed, 
 		$html = '',
 		rdLeftAry = [];
 
-	if($wrap.hasClass('type1') || $wrap.hasClass('type3'))$itemLength = 20;
+	if($wrap.hasClass('type1'))$itemLength = 20;
+	if($wrap.hasClass('type2'))$itemLength = 12;
 
 	for(var i = 0; i < $itemLength;i++){
 		rdClass = randomNumber(1,3,0);
@@ -4087,7 +4088,14 @@ var finishEffect = function(wrap){
 				$html = '<span class="item item'+rdClass+' color'+rdColor+' size'+rdSize+'" style="left:'+rdLeft+'%;';
 					$html += '-webkit-animation:finishSwing'+rdDirection+' '+(rdSpeed/2)+'ms infinite '+rdDelay+'ms, finishDrop '+rdSpeed+'ms infinite ease-out '+rdDelay+'ms;';
 					$html += 'animation:finishSwing'+rdDirection+' '+(rdSpeed/2)+'ms infinite '+rdDelay+'ms, finishDrop '+rdSpeed+'ms infinite ease-out '+rdDelay+'ms;';
-				$html += '"><span></span></span>';
+				$html += '" aria-hidden="true"><span></span></span>';
+			}else if($wrap.hasClass('type2')){
+				//금가루
+				rdClass = randomNumber(1,6,0);
+				$html = '<span class="item item'+rdClass+' size'+rdSize+'" style="left:'+rdLeft+'%;';
+					$html += '-webkit-animation:finishSwing'+rdDirection+' '+(rdSpeed/2)+'ms infinite '+rdDelay+'ms, finishDrop '+rdSpeed+'ms infinite ease-out '+rdDelay+'ms;';
+					$html += 'animation:finishSwing'+rdDirection+' '+(rdSpeed/2)+'ms infinite '+rdDelay+'ms, finishDrop '+rdSpeed+'ms infinite ease-out '+rdDelay+'ms;';
+				$html += '" aria-hidden="true"><span></span></span>';
 			}else{
 				console.log('인터렉션 타입 클래스를 적용해주세요');
 				break;
@@ -4109,12 +4117,12 @@ var scrollItem ={
 			var $el = $(this),
 				$elHeight = $($el).outerHeight(),
 				//$elTop = $($el).offset().top,
-				$elTop = $($el).offset().top + 50,
+				$elTop = $($el).offset().top + 80,
 				//$elCenter = $elTop + ($elHeight/2),
 				$elCenter = $elTop + ($elHeight/5),
 				//$elBottom = $elTop + $elHeight,
 				//$elBottom = $elTop + ($elHeight/5)*4,
-				$elBottom = $elTop + $elHeight - 50,
+				$elBottom = $elTop + $elHeight - 80,
 				$animationClass = $el.data('animation'),
 				$delay = $el.data('delay'),
 				$duration = $el.data('duration'),

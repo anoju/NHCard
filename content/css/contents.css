@@ -230,14 +230,37 @@
 
 
 /*** ahj ***/
-
-
+.vip_intro{color:#666;}
+.vip_intro .tit_h2{color:#8e702f;}
+.vip_intro .section{padding-top:50px;padding-bottom:30px;background:#f8f8f8;}
+.vip_intro_txt{text-align:center;padding:23px;}
+.vip_intro_txt .tit_h2{margin-bottom:20px;}
+.vip_intro_txt .tit_h2 span{border-bottom:1px solid #8e702f;}
+.vip_intro_card{position:relative;height:67.777vw;overflow:hidden;}
+.vip_intro_card .card_1{position:absolute;bottom:-7%;left:10.3%;width:53.51vw;height:47.40vw;background:url(../images/contents/vip_intro_card1.png) no-repeat center bottom;background-size:contain;}
+.vip_intro_card .card_2{position:absolute;bottom:11.5%;right:18.5%;width:51.48vw;height:55.18vw;background:url(../images/contents/vip_intro_card2.png) no-repeat center bottom;background-size:contain;}
+.vip_intro_card .bg{position:absolute;bottom:18%;left:12.5%;width:65.74vw;height:38.88vw;background:url(../images/contents/vip_intro_card_bg.png) no-repeat center center;background-size:contain;}
+.gold_line_box{margin:20px 0 15px;padding:14px;border:1px solid #c3b493;border-radius:4px;background:#fff;}
 
 /*** jeg ***/
 .info_txt_list dt{margin-top:22px;font-weight:500;}
 .info_txt_list dd{margin-top:13px;color:#666;}
 .card_info_box .cancel_area{position:absolute;right:0;top:0;}
 .card_info_box .cancel_area.txt{top:initial;bottom:0;}
+.gray_form_box{margin-top:12px;padding:17px;background:#f8f8f8;border-radius:4px;}
+.gray_form_box .form_item{margin-top:0;}
+.gray_form_box .form_item+.form_item{margin-top:10px;}
+h3.tit_h2+h4.tit_h3{margin-top:16px;}
+.vip_visual{margin:0 -20px;padding-top:33px;background:url(../images/contents/bg_vip_visual01.jpg) 0 0 no-repeat;}
+.vip_visual>img{width:100%;}
+.vip_visual>h3{text-align:center;;font-size:1.8rem;font-weight:500;color:#e4d394;}
+.grade_vip_list{margin-top:26px;padding:0 20px 33px;display:flex;display:-webkit-flex;flex-wrap:wrap;-webkit-flex-wrap:wrap;}
+.grade_vip_list>li{width:50%;text-align:center;}
+.grade_vip_list>li:nth-child(n+3){margin-top:12px;}
+.grade_vip_list>li>a{display:inline-block;width:58.542%;color:#fff;}
+.grade_vip_list>li img{width:100%;}
+.grade_vip_list .vip_ko{display:inline-block;font-size:1.6rem;font-weight:500;border-bottom:1px solid #fff;}
+.grade_vip_list .vip_en{display:block;margin-top:5px;font-weight:300;}
 
 
 /*** ksy ***/

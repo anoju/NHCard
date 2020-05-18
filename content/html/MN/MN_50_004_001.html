@@ -54,12 +54,26 @@
 			</div>
 			<div class="section">
 				<h3 class="tit_h2">카드선택</h3>
-				<div class="accordion_list">
-					<div class="tit">
-						<a href="#card_listl" class="ui-toggle-btn bt-none fz_16 open"><div>채움아시아나클럽카드</div></a>
-					</div>
-					<div id="card_listl" class="panel bt-none">
-						<p class="fc_gray fz_13">1234-****-****-1234</p>
+				<div class="form_item">
+					<div class="fm_cont">
+						<div class="tbl">
+							<div class="td">
+								<div class="select">
+									<select id="CrdNbr" name="CrdNbr" title="카드 선택">
+										<option value="">카드선택</option>
+										<option value="allCard">전체카드</option>
+										<option value="nhcard">전체NH채움카드</option>
+										<option value="bccard">전체NHBC카드</option>
+										<option value="1">5430-****-****-4747 채움 스마티(제*구)</option>
+										<option value="2">5430-****-****-4747 올바른 OIL&amp;PASS카드(제*구)</option>
+										<option value="3" selected>5430-****-****-4747 라이언 치즈 체크카드(제*구)</option>
+										<option value="4">5430-****-****-4747 NH20 해봄체크(제*구)</option>
+										<option value="5">5430-****-****-4747 NH농협 콕체크(면세유)(제*구)</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="error_txt">카드를 선택해주세요.</div>
 					</div>
 				</div>	
 				<span class="checkbox mt25">
