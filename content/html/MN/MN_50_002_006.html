@@ -62,10 +62,54 @@
 					</ul>
 				</div>
 				<hr class="hr_line ty2">
-				
+				<ul class="btn_toggle grid col3 row2 ui-tab-rdo" data-hide="#etcSelect">
+					<li>
+						<input type="radio" id="togRdo1" name="togRdo">
+						<label for="togRdo1">세금납부</label>
+					</li>
+					<li>
+						<input type="radio" id="togRdo2" name="togRdo">
+						<label for="togRdo2">여행</label>
+					</li>
+					<li>
+						<input type="radio" id="togRdo3" name="togRdo">
+						<label for="togRdo3">병원비</label>
+					</li>
+					<li>
+						<input type="radio" id="togRdo4" name="togRdo">
+						<label for="togRdo4">가전구매</label>
+					</li>
+					<li>
+						<input type="radio" id="togRdo5" name="togRdo">
+						<label for="togRdo5">손해보험</label>
+					</li>
+					<li class="in_sel">
+						<input type="radio" id="togRdo6" name="togRdo" data-show="#etcSelect">
+						<label for="togRdo6">기타</label>
+					</li>
+				</ul>
+
+				<div id="etcSelect" class="tab_rdo_panel">
+					<div class="select mt10">
+						<select name="" id="" title="기타 선택">
+							<option value="">기타 선택</option>
+							<option value="1">세금납부</option>
+							<option value="2">여행</option>
+							<option value="3">병원비</option>
+							<option value="4">손해보험(자동차보험 포함)</option>
+							<option value="5">결혼식</option>
+							<option value="6">교육비</option>
+							<option value="7">신차구매</option>
+							<option value="8">중고차구매</option>
+							<option value="9">우량유통업체</option>
+						</select>
+					</div>
+				</div>
+
 				<div class="txt_list mt30">
 					<p>* 국세 또는 지방세 납부처(관공서 및 온라인)</p>
 				</div>
+
 				<dl class="accordion_list accordion_dl mt50">
 					<dt class="tit">
 						<a href="#" class="ui-toggle-btn open"><i class="i_ico_20 ico_1" aria-hidden="true"></i>이용안내</a>
@@ -73,22 +117,12 @@
 					<dd class="panel">
 						<div class="txt_list">
 							<ul>
-								<li class="dot">목적별 임시한도 신청 시, 개인(신용)정보가 
-								조회되며 해당 조회내역은 회원님의 신용도에 
-								영향을 미치지 않습니다. 
-								<li class="dot">목적별 추가한도는 총한도 이외 추가로 부여되는 
-								한도로 사용처(세금, 여행, 병원비 등)가 지정되어 
-								있습니다.</li>
-								<li class="dot">목적별 추가한도는 일회성 한도로 사용 후 
-								소멸하며결제 후에는 한도가 복원되지 않습니다.</li>
-								<li class="dot">목적별 추가한도를 받아 이용한 금액은 일부결제
-								검액이월약정(리볼빙) 서비스 적용대상이 아니며, 
-								(추가) 할부전환도 불가합니다.</li>
-								<li class="dot">신용도 하락 및 연체, 대출증가 등에 따라 이용이 
-								제한되거나 이용가능금액이 변동될 수 있습니다.</li>
-								<li class="dot">상기 이용처 이외 일시적으로 고액한도가 필요한 
-								경우 가까운 영업점을 방문하여 임시한도를 
-								신청해 주시기 바랍니다. </li>
+								<li class="dot">목적별 임시한도 신청 시, 개인(신용)정보가 조회되며 해당 조회내역은 회원님의 신용도에 영향을 미치지 않습니다.</li>
+								<li class="dot">목적별 추가한도는 총한도 이외 추가로 부여되는 한도로 사용처(세금, 여행, 병원비 등)가 지정되어 있습니다.</li>
+								<li class="dot">목적별 추가한도는 일회성 한도로 사용 후 소멸하며결제 후에는 한도가 복원되지 않습니다.</li>
+								<li class="dot">목적별 추가한도를 받아 이용한 금액은 일부결제 검액이월약정(리볼빙) 서비스 적용대상이 아니며, (추가) 할부전환도 불가합니다.</li>
+								<li class="dot">신용도 하락 및 연체, 대출증가 등에 따라 이용이 제한되거나 이용가능금액이 변동될 수 있습니다.</li>
+								<li class="dot">상기 이용처 이외 일시적으로 고액한도가 필요한 경우 가까운 영업점을 방문하여 임시한도를 신청해 주시기 바랍니다.</li>
 							</ul>
 						</div>
 					</dd>
