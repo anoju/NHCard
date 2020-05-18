@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+
+<meta name="title" content="농협카드 모바일">
+<meta name="description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
+<meta property="og:title" content="농협카드 모바일">
+<meta property="og:url" content="https://card.nonghyup.com">
+<!-- <meta property="og:image" content="https://card.nonghyup.com/content/images/logo_1200x1200.png"> -->
+<meta property="og:image" content="http://localhost:8080/content/images/logo_1200x1200.png">
+<meta property="og:description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
+<meta name="format-detection" content="telephone=no">
+
+<title>농협카드 모바일</title>
+<meta name="apple-mobile-web-app-title" content="농협카드 모바일">
+<link rel="apple-touch-startup-image" href="../../images/icons/touch-icon-iphone-retina.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png"><!-- 196x196-->
+<link rel="apple-touch-icon" href="../../images/icons/touch-icon-iphone.png"><!-- 120x120-->
+<link rel="apple-touch-icon" sizes="152x152" href="../../images/icons/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../images/icons/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="167x167" href="../../images/icons/touch-icon-ipad-retina.png">
+<link rel="manifest" href="../../manifest.json">
+
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/contents.css">
+
+<script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/jquery-ui-1.12.1.min.js"></script>
+<script src="../../js/ui_plugins.js"></script>
+<script src="../../js/ui_front.js"></script>
+<script>
+	$(function(){
+		common.title('연체내역');
+	});
+</script>
+</head>
+<body>
+<article id="wrap">
+	<div data-include-html="../include/top.html"></div>
+	<div data-include-html="../include/gnb.html"></div>
+	<div id="container">
+		<section id="contents">
+			<div class="step_wrap">
+				<h2 class="step_tit">Step1. 소득공제내역 조회</h2>
+				<ol class="step_state">
+					<li class="on">1<span class="blind">단계(현재단계)</span></li>
+					<li>2<span class="blind">단계</span></li>
+				</ol>
+			</div>
+			<div class="section">
+				<h2 class="tit_h2">신청정보</h2>
+				<!-- 카드선택 후 -->
+				<div class="select btn">
+					<a href="#" class="btn_select on" title="팝업으로 카드 선택" onclick="Layer.open('#cardSelectPop')">전체카드</a><!-- 선택후 on 클래스 -->
+				</div>
+				
+				<div class="select btn">
+					<a href="#" class="btn_select on" title="팝업으로 카드 선택" onclick="Layer.open('#cardSelectPop')"><!-- 선택후 on 클래스 -->
+						<div class="card_info_box">
+							<div class="name">채움(농협은행)</div>
+							<div class="sub">
+								<span class="type master"><span class="blind">마스터카드</span></span>
+								<!-- <span class="type visa"><span class="blind">비자카드</span></span>
+								<span class="type jcb"><span class="blind">jcb카드</span></span>
+								<span class="type w"><span class="blind">w카드</span></span>
+								<span class="type unionpay"><span class="blind">unionpay카드</span></span>
+								<span class="type domestic"><span class="blind">국내전용카드</span></span> -->
+								<span class="num">1234-56**-****3456</span>
+							</div>
+							<div class="info">
+								<div>
+									<dl>
+										<dt>청구결제번호</dt>
+										<dd>00102</dd>
+									</dl>
+									<dl>
+										<dt>출금일</dt>
+										<dd>20.04.25</dd>
+									</dl>
+								</div>
+								<div>
+									<dl>
+										<dt>농협은행</dt>
+										<dd>123-1234-1234-12</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="select btn">
+					<a href="#" class="btn_select on" title="팝업으로 카드 선택" onclick="Layer.open('#cardSelectPop')"><!-- 선택후 on 클래스 -->
+						<div class="card_info_box">
+							<div class="name">채움(농협은행)</div>
+							<div class="info">
+								<div>올바른 BASIC+ 카드</div>
+								<div>
+									<span class="type master"><span class="blind">마스터카드</span></span>
+									<!-- <span class="type visa"><span class="blind">비자카드</span></span>
+									<span class="type jcb"><span class="blind">jcb카드</span></span>
+									<span class="type w"><span class="blind">w카드</span></span>
+									<span class="type unionpay"><span class="blind">unionpay카드</span></span>
+									<span class="type domestic"><span class="blind">국내전용카드</span></span> -->
+									<span class="num">1234-56**-****3456</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<!-- //카드선택 후 -->
+				
+				<h2 class="tit_h2">조회연도</h2>
+				<div class="form_item">
+					<div class="fm_cont">
+						<div class="select">
+							<select id="selYear" title="날짜 선택">
+								<option value="1">2020</option>
+								<option value="2">2019</option>
+								<option value="3">2018</option>
+							</select>
+						</div>
+						<div class="error_txt">조회연도를 선택해주세요.</div><!-- 에러메세지 입력영역 -->
+					</div>
+						<div class="flex mt10">
+							<a href="#" class="button blue" role="button">조회</a>
+						</div>
+				</div>
+				<div class="selYear_div" style="display:none"><!-- 조회시 노출 -->
+				<h2 class="tit_h2">2019년 합계</h2>
+				<h3 class="tit_h4">신용카드 사용금액 (①)</h3>
+				<div class="table t_center mt15">
+					<table>
+						<caption>신용카드 사용금액을 나타낸 표</caption>
+						<colgroup>
+							<col width="#33.33%">
+							<col width="#33.33%">
+							<col width="*">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">구분</th>
+								<th scope="col">신용카드</th>
+								<th scope="col">체크카드</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>합계</td>
+								<td><strong>206,340</strong> 원</td>
+								<td><strong>591,095</strong> 원</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<h3 class="tit_h4">사용별 소득공제대상금액 (②)</h3>
+				<div class="table t_center mt15">
+					<table>
+						<caption>사용별 소득공제대상금액을 나타낸 표</caption>
+						<colgroup>
+							<col width="#33.33%">
+							<col width="#33.33%">
+							<col width="*">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">구분</th>
+								<th scope="col">신용카드</th>
+								<th scope="col">체크카드</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>비정상 및<br>
+									공제제외<br>
+									대상금액</td>
+								<td><strong>206,340</strong> 원</td>
+								<td><strong>591,095</strong> 원</td>
+							</tr>
+							<tr>
+								<td>전통시장</td>
+								<td><strong>206,340</strong> 원</td>
+								<td><strong>591,095</strong> 원</td>
+							</tr>
+							<tr>
+								<td>대중교통</td>
+								<td><strong>206,340</strong> 원</td>
+								<td><strong>591,095</strong> 원</td>
+							</tr>
+							<tr>
+								<td>문화비</td>
+								<td><strong>206,340</strong> 원</td>
+								<td><strong>591,095</strong> 원</td>
+							</tr>
+							<tr>
+								<td>합계</td>
+								<td><strong>206,340</strong> 원</td>
+								<td><strong>591,095</strong> 원</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<h3 class="tit_h4">소득공제대상금액 (①-②)</h3>
+				<div class="table t_center mt15">
+					<table>
+						<caption>소득공제대상금액을 나타낸 표</caption>
+						<colgroup>
+							<col width="#33.33%">
+							<col width="#33.33%">
+							<col width="*">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">구분</th>
+								<th scope="col">신용카드</th>
+								<th scope="col">체크카드</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>합계</td>
+								<td><strong>206,340</strong> 원</td>
+								<td><strong>591,095</strong> 원</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="caution_txt2 fz_13m">(신용카드 사용금액 합계①) – (사용별 소득공제대상
+					금액 합계 ②) 금액입니다</div>
+				<h2 class="tit_h2">2019년 월별</h2>
+				<ul class="accordion_list_1 ui-accordion">
+					<li>
+						<div class="tit">
+							<a href="#">
+								<div class="title">2019년 01월</div>
+							</a>
+						</div>
+						<div class="panel">
+							<div class="txt_list">
+								<ul>
+									<li class="dot">펼쳐진화면 누락</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="tit">
+							<a href="#">
+								<div class="title">2019년 02월</div>
+							</a>
+						</div>
+						<div class="panel">
+							<div class="txt_list">
+								<ul>
+									<li class="dot">펼쳐진화면 누락</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="tit">
+							<a href="#">
+								<div class="title">2019년 03월</div>
+							</a>
+						</div>
+						<div class="panel">
+							<div class="txt_list">
+								<ul>
+									<li class="dot">펼쳐진화면 누락</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>	
+				<div class="btn_wrap bottom_fixed">
+					<div class="flex">
+						<a href="#" class="button h54 blue">발급 신청</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!--카드선택 팝업-->
+	<div data-include-html="../include/pop/cardSelect.html"></div>
+	<!--//카드선택 팝업-->
+	<div data-include-html="../include/footer.html"></div>
+</article>
+</body>
+</html>

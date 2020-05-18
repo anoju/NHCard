@@ -338,3 +338,5 @@ h3.tit_h2+h4.tit_h3{margin-top:16px;}
 .accordion_list .txt_list.ty2 li{display:table;width:100%}
 .accordion_list .txt_list.ty2 li + li{margin-top:15px}
 .accordion_list .txt_list.ty2 li.end{border-top:1px dotted #ddd;padding-top:20px;}
+
+.card_info_box + .card_info_box{margin-top:12px}
