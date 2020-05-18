@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+
+<meta name="title" content="농협카드 모바일">
+<meta name="description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
+<meta property="og:title" content="농협카드 모바일">
+<meta property="og:url" content="https://card.nonghyup.com">
+<!-- <meta property="og:image" content="https://card.nonghyup.com/content/images/logo_1200x1200.png"> -->
+<meta property="og:image" content="http://localhost:8080/content/images/logo_1200x1200.png">
+<meta property="og:description" content="신용카드에서 체크카드까지! 맞춤 혜택 한번에 비교! 쉽고 빠른 온라인 카드 발급!">
+<meta name="format-detection" content="telephone=no">
+
+<title>농협카드 모바일</title>
+<meta name="apple-mobile-web-app-title" content="농협카드 모바일">
+<link rel="apple-touch-startup-image" href="../../images/icons/touch-icon-iphone-retina.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.png"><!-- 196x196-->
+<link rel="apple-touch-icon" href="../../images/icons/touch-icon-iphone.png"><!-- 120x120-->
+<link rel="apple-touch-icon" sizes="152x152" href="../../images/icons/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../images/icons/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="167x167" href="../../images/icons/touch-icon-ipad-retina.png">
+<link rel="manifest" href="../../manifest.json">
+
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../css/contents.css">
+
+<script src="../../js/jquery-3.3.1.min.js"></script>
+<script src="../../js/jquery-ui-1.12.1.min.js"></script>
+<script src="../../js/ui_plugins.js"></script>
+<script src="../../js/ui_front.js"></script>
+<script>
+	$(function(){
+		common.title('소득공제');
+	});
+</script>
+</head>
+<body>
+<article id="wrap">
+	<div data-include-html="../include/top.html"></div>
+	<div data-include-html="../include/gnb.html"></div>
+	<div id="container">
+		<section id="contents">
+			<div class="step_wrap">
+				<h2 class="step_tit">Step2. 발급신청</h2>
+				<ol class="step_state">
+					<li>1<span class="blind">단계</span></li>
+					<li class="on">2<span class="blind">단계(현재단계)</span></li>
+				</ol>
+			</div>
+			<div class="section">
+				<h2 class="tit_h2">신청정보</h2>
+				<div class="input_div">NH비씨카드</div>
+				<div class="card_info_box blue">
+					<div class="img">
+						<img src="../../images/temp/card_228_144.png" alt="채움카드">
+					</div>
+					<div>
+						<div class="name">채움(농협은행)</div>
+						<div class="info">
+							<div>
+								<dl>
+									<dt>계좌번호</dt>
+									<dd>301-0000-0***-**</dd>
+								</dl>
+							</div>
+							<div>
+								<dl>
+									<dt>유효기간</dt>
+									<dd>2020.06</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card_info_box blue">
+					<div class="img">
+						<img src="../../images/temp/card_228_144.png" alt="채움카드">
+					</div>
+					<div>
+						<div class="name">채움(농협은행)</div>
+						<div class="info">
+							<div>
+								<dl>
+									<dt>계좌번호</dt>
+									<dd>301-0000-0***-**</dd>
+								</dl>
+							</div>
+							<div>
+								<dl>
+									<dt>유효기간</dt>
+									<dd>2020.06</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+				<h2 class="tit_h2">조회연도</h2>
+				<div class="input_div">2019</div>
+				<h2 class="tit_h2">발급방법</h2>
+				<ul class="btn_toggle grid col2 ui-tab-rdo" data-hide="#mailTogCont,#faxTogCont">
+					<li>
+						<input type="radio" id="togWay1" name="togContType" data-show="#mailTogCont" checked="">
+						<label for="togWay1">이메일</label>
+					</li>
+					<li>
+						<input type="radio" id="togWay2" name="togContType" data-show="#faxTogCont">
+						<label for="togWay2">팩스</label>
+					</li>
+				</ul>
+				<div id="mailTogCont" class="form_item tab_rdo_panel">
+					<label for="mail2" class="fm_lb">이메일</label>
+					<div class="fm_cont email_form">
+						<div class="input"><input type="text" id="mail2" title="이메일 입력" placeholder="이메일주소 입력"></div>
+						<div class="caution_txt2">이메일 주소변경 가능</div>
+					</div>
+					<dl class="accordion_list accordion_dl mt35">
+						<dt class="tit">
+							<a href="#" class="ui-toggle-btn open"><i class="i_ico_20 ico_1" aria-hidden="true"></i>이용안내</a>
+						</dt>
+						<dd class="panel">
+							<div class="txt_list">
+								<ul>
+									<li class="dot">보안이메일로만 발송되며 열람 시 생년월일 6자리를 입력하시기 바랍니다.</li>
+									<li class="dot">이메일주소가 정확히 입력되어 있는지 확인하여 주시기 바랍니다. </li>
+									<li class="dot">잘못된 이메일 주소, 수신 서버의 결함 및 스팸메일 처리, 네트워크 상태 등의 요인으로 인해 이메일로 전달되지 못하는 경우가 발생할 수 있습니다.</li>
+								</ul>
+							</div>
+						</dd>
+					</dl>
+				</div>
+				<div id="faxTogCont" class="form_item tab_rdo_panel">
+					<label for="mail2" class="fm_lb">팩스</label>
+					<div class="fm_cont email_form">
+						<div class="input"><input type="text" id="mail2" title="이메일 입력" placeholder="‘-’없이 팩스번호 입력"></div>
+					</div>
+					<dl class="accordion_list accordion_dl mt35">
+						<dt class="tit">
+							<a href="#" class="ui-toggle-btn open"><i class="i_ico_20 ico_1" aria-hidden="true"></i>이용안내</a>
+						</dt>
+						<dd class="panel">
+							<div class="txt_list">
+								<ul>
+									<li class="dot">팩스 번호가 정확히 입력되어 있는지 확인하여 주시기 바랍니다.</li>
+									<li class="dot">잘못된 팩스번호, 팩스의 수신 상태 결함, 네트워크 상태 등의 요인으로 인해 팩스로 전달되지 못하는 경우가 발생할 수 있습니다.</li>
+								</ul>
+							</div>
+						</dd>
+					</dl>	
+				</div>
+				<div class="btn_wrap bottom_fixed">
+					<div class="flex">
+						<a href="#" class="button h54 blue">이메일 신청</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div data-include-html="../include/footer.html"></div>
+</article>
+</body>
+</html>
