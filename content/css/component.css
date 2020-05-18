@@ -1016,6 +1016,9 @@ div.caution_txt{display:block;}
 .btn_select .card_info_box{border-width:0;padding:13px 0 13px 12px;line-height:1.5;}
 .card_info_box .btm_box{margin-top:14px;padding-top:16px;border-top:1px dashed #ddd;text-align:right;font-size:0;}
 .card_info_box .btm_box .button+.button{margin-left:6px;}
+.card_info_box.filter{border-color:#3182f7;}
+.card_info_box.filter .name{padding-right:25px;}
+.card_info_box .btn_filter{position:absolute;top:20px;right:20px;}
 
 .chart_bar{position:relative;height:7px;background:#f0f0f0;border-radius:4px;overflow:hidden;}
 .chart_bar>div{position:absolute;left:0;top:0;width:0;height:100%;border-radius:4px;background:#306edf;}
@@ -1057,6 +1060,9 @@ div.caution_txt{display:block;}
 .line_list_2.ty2>li{border-bottom:1px solid #e7e7e7;}
 .line_list_2.ty2 .tit{font-size:1.4rem;color:#111;}
 .line_list_2.ty2 a.inner:before{width:7px;height:7px;margin-top:-3px;}
+.line_list_2.ty2 .td.cancel>div,
+.line_list_2.ty2 .td.cancel>ul>li{color:#bbb !important;}
+.line_list_2.ty2 .td.cancel>.sub_info>li+li:before{background:#bbb;}
 
 .line_list_2 .sub_info{margin-top:5px;}
 .line_list_2 .sub_info+.sub_info{margin-top:3px;}
@@ -1068,8 +1074,11 @@ div.caution_txt{display:block;}
 .line_list_2 .sub_info strong{color:#333;}
 .line_list_2 .sub_info_etr{margin-top:5px;font-size:1.3rem;color:#666;}
 .line_list_2 .info_right{padding-right:17px;text-align:right;}
+.line_list_2 .info_right .cancel_txt{color:#bbb;text-decoration:line-through;}
+.line_list_2 .info_right .cancel_txt strong{font-size:1.5rem;}
+.line_list_2 .info_right .cancel_txt+.price{margin-top:2px;}
 .line_list_2 .info_right .price strong{font-size:1.5rem;}
-.line_list_2 .info_right .state{margin-top:3px;font-size:1.3rem;color:#666;font-weight:500;}
+.line_list_2 .info_right .state{margin-top:4px;font-size:1.3rem;color:#666;font-weight:500;}
 .line_list_2 .info_right .state.cancel{color:#fd775c;}
 .line_list_2 .info_right .state.cmplt{color:#3182f7;}
 
