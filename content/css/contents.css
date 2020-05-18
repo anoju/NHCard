@@ -250,6 +250,13 @@
 .gray_form_box .form_item{margin-top:0;}
 .gray_form_box .form_item+.form_item{margin-top:10px;}
 h3.tit_h2+h4.tit_h3{margin-top:16px;}
+.vip_visual{margin:0 -20px;padding:0 20px;background:url(../images/contents/bg_vip_visual01.jpg) 0 0 no-repeat;}
+.vip_visual>img{width:100%;}
+.grade_vip_list{display:flex;display:-webkit-flex;flex-wrap:wrap;justify-content: space-around;align-content: space-around;}
+.grade_vip_list>li{width:50%;}
+.grade_vip_list>li>a{display:block;}
+.grade_vip_list>li img{width:100%;}
+
 
 /*** ksy ***/
 .ht_vip_club_wrap .ht_vip_club_bg{position:relative;height:86.1111vw;margin:-30px -20px 0;}
