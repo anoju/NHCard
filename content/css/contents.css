@@ -250,12 +250,16 @@
 .gray_form_box .form_item{margin-top:0;}
 .gray_form_box .form_item+.form_item{margin-top:10px;}
 h3.tit_h2+h4.tit_h3{margin-top:16px;}
-.vip_visual{margin:0 -20px;padding:0 20px;background:url(../images/contents/bg_vip_visual01.jpg) 0 0 no-repeat;}
+.vip_visual{margin:0 -20px;padding-top:33px;background:url(../images/contents/bg_vip_visual01.jpg) 0 0 no-repeat;}
 .vip_visual>img{width:100%;}
-.grade_vip_list{display:flex;display:-webkit-flex;flex-wrap:wrap;justify-content: space-around;align-content: space-around;}
-.grade_vip_list>li{width:50%;}
-.grade_vip_list>li>a{display:block;}
+.vip_visual>h3{text-align:center;;font-size:1.8rem;font-weight:500;color:#e4d394;}
+.grade_vip_list{margin-top:26px;padding:0 20px 33px;display:flex;display:-webkit-flex;flex-wrap:wrap;-webkit-flex-wrap:wrap;}
+.grade_vip_list>li{width:50%;text-align:center;}
+.grade_vip_list>li:nth-child(n+3){margin-top:12px;}
+.grade_vip_list>li>a{display:inline-block;width:58.542%;color:#fff;}
 .grade_vip_list>li img{width:100%;}
+.grade_vip_list .vip_ko{display:inline-block;font-size:1.6rem;font-weight:500;border-bottom:1px solid #fff;}
+.grade_vip_list .vip_en{display:block;margin-top:5px;font-weight:300;}
 
 
 /*** ksy ***/
