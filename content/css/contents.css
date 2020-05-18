@@ -99,13 +99,16 @@
 .price_box_wrap .txt{font-size:1.2rem;color:#666;}
 .price_box_wrap .total_num{color:#3182f7;}
 .price_box_wrap .total_num strong{font-size:2.4rem;}
-.price_box_wrap .flex{margin-top:5px;}
+.price_box_wrap .flex{margin-top:5px;align-items:center;-webkit-align-items:center;}
 .price_box_wrap .sub_num{font-size:1.2rem;color:#666;}
 .price_box_wrap .sub_num .num{color:#111;}
 .price_box_wrap .sub_num .num strong{font-size:1.4rem;}
+.price_box_wrap.ty2 .total_num{font-size:1.2rem;}
 .price_box_wrap.ty2 .total_num strong{font-size:1.4rem}
-.price_box_wrap.ty2 .flex .sub_num{font-size:1.4rem}
+.price_box_wrap.ty2 .flex .sub_num{font-size:1.2rem}
 .price_box_wrap.ty2 .flex .sub_num:first-child strong{font-weight:normal}
+.price_box_wrap.ty3 .flex{flex-wrap:wrap;-webkit-flex-wrap:wrap;}
+.price_box_wrap.ty3 .flex .sub_num{width:100%;}
 .fm_cont .select+.input,
 .fm_cont .select+.input+.input{margin-top:12px;}
 .form_item.ip_none input{border:none;}
