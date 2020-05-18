@@ -1720,7 +1720,7 @@ var buttonUI ={
 						$($tar).addClass('show');
 					}
 				});
-				$(this).data('hide',tarAry.join(','));
+				if($(this).data('hide') == undefined)$(this).data('hide',tarAry.join(','));
 			});
 		}
 	},

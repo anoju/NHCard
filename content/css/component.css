@@ -79,8 +79,8 @@ div.tit_h4 .tit{font-size:1.5rem;color:#111;font-weight:400;}
 .button.h54{height:54px;line-height:52px;font-size:1.8rem;}
 .button.h48{height:48px;line-height:46px;font-size:1.8rem;}
 .button.h35{height:35px;line-height:33px;font-size:1.4rem;font-weight:400;}
-.button.h32{height:32px;line-height:30px;font-size:1.3rem;}
-.button.h25{height:25px;line-height:23px;font-size:1.4rem;font-weight:400;}
+.button.h32{height:32px;line-height:30px;font-size:1.3rem;font-weight:400;}
+.button.h25{height:25px;line-height:23px;font-size:1.3rem;font-weight:400;}
 .button.h25.line{color:#666;}
 .button.h25 .bt_ic_arr{vertical-align:-1px;}
 
@@ -770,6 +770,9 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .accordion_list_1 .sub{margin-top:5px;}
 .accordion_list_1 .date{font-size:1.3rem;color:#666;margin-top:12px;}
 .accordion_list_1 .panel{display:none;background:#f8f8f8;padding:16px 24px;}
+
+.accordion_list.ty2 .tit{font-size:1.6rem;font-weight:500;}
+.accordion_list.ty2 .panel{border-top:0;}
 
 /*swipe*/
 .ui-swiper-wrap{margin:40px 0 0;}
