@@ -109,6 +109,9 @@
 .price_box_wrap.ty2 .flex .sub_num:first-child strong{font-weight:normal}
 .price_box_wrap.ty3 .flex{flex-wrap:wrap;-webkit-flex-wrap:wrap;}
 .price_box_wrap.ty3 .flex .sub_num{width:100%;}
+.price_box_wrap.ty3 .sub_num:after{content:'';display:block;clear:both;}
+.price_box_wrap.ty3 .sub_num .num{float:right;}
+
 .fm_cont .select+.input,
 .fm_cont .select+.input+.input{margin-top:12px;}
 .form_item.ip_none input{border:none;}
@@ -246,6 +249,11 @@
 .gold_line_box{margin:20px 0 15px;padding:14px;border:1px solid #c3b493;border-radius:4px;background:#fff;}
 
 /*** jeg ***/
+.btn_range{display:flex;display:-webkit-flex;}
+.btn_range>a{position:relative;display:inline-block;padding:0 10px;font-size:1.3rem;color:#666;}
+.btn_range>a.active:after{content:'';display:block;width:100%;height:1px;background:#666;}
+.btn_range>a+a{position:relative;}
+.btn_range>a+a:before{content:'';position:absolute;top:50%;margin-top:-4px;left:0;display:block;width:1px;height:9px;background:#ddd;}
 .info_txt_list dt{margin-top:22px;font-weight:500;}
 .info_txt_list dd{margin-top:13px;color:#666;}
 .card_info_box .cancel_area{position:absolute;right:0;top:0;}
