@@ -230,8 +230,16 @@
 
 
 /*** ahj ***/
-
-
+.vip_intro{color:#666;}
+.vip_intro .tit_h2{color:#8e702f;}
+.vip_intro .section{padding-top:50px;padding-bottom:30px;background:#f8f8f8;}
+.vip_intro_txt{text-align:center;padding:23px;}
+.vip_intro_txt .tit_h2{margin-bottom:20px;}
+.vip_intro_txt .tit_h2 span{border-bottom:1px solid #8e702f;}
+.vip_intro_card{position:relative;height:67.777vw;overflow:hidden;}
+.vip_intro_card .card_1{position:absolute;bottom:-7%;left:10.3%;width:53.51vw;height:47.40vw;background:url(../images/contents/vip_intro_card1.png) no-repeat center bottom;background-size:contain;}
+.vip_intro_card .card_2{position:absolute;bottom:11.5%;right:18.5%;width:51.48vw;height:55.18vw;background:url(../images/contents/vip_intro_card2.png) no-repeat center bottom;background-size:contain;}
+.vip_intro_card .bg{position:absolute;bottom:18%;left:12.5%;width:65.74vw;height:38.88vw;background:url(../images/contents/vip_intro_card_bg.png) no-repeat center center;background-size:contain;}
 
 /*** jeg ***/
 .info_txt_list dt{margin-top:22px;font-weight:500;}
