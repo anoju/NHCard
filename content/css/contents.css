@@ -238,7 +238,10 @@
 .info_txt_list dd{margin-top:13px;color:#666;}
 .card_info_box .cancel_area{position:absolute;right:0;top:0;}
 .card_info_box .cancel_area.txt{top:initial;bottom:0;}
-
+.gray_form_box{margin-top:12px;padding:17px;background:#f8f8f8;border-radius:4px;}
+.gray_form_box .form_item{margin-top:0;}
+.gray_form_box .form_item+.form_item{margin-top:10px;}
+h3.tit_h2+h4.tit_h3{margin-top:16px;}
 
 /*** ksy ***/
 .ht_vip_club_wrap .ht_vip_club_bg{position:relative;height:86.1111vw;margin:-30px -20px 0;}
