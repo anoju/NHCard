@@ -36,6 +36,30 @@
 <script>
 	$(function(){
 		common.title('목적별 임시한도');
+
+		$('.btn_toggle input').change(function(){
+			if($(this).val() != 'etc')$('#etcSelect select').val('').change();
+		});
+		$('#etcSelect select').change(function(){
+			var $selected =  $(this).find(':selected'),
+				$selectedTxt = $selected.text(),
+				$tar = '';
+			$('[id^=togPanel]').removeClass('show');
+			if($(this).val() != ''){
+				if($selectedTxt == '결혼식'){
+					$tar = '#togPanel6';
+				}else if($selectedTxt == '교육비'){
+					$tar = '#togPanel7';
+				}else if($selectedTxt == '신차구매'){
+					$tar = '#togPanel8';
+				}else if($selectedTxt == '중고차구매'){
+					$tar = '#togPanel9';
+				}else if($selectedTxt == '우량유통업체'){
+					$tar = '#togPanel10';
+				}
+				$($tar).addClass('show');
+			}
+		});
 	});
 </script>
 </head>
@@ -62,52 +86,115 @@
 					</ul>
 				</div>
 				<hr class="hr_line ty2">
-				<ul class="btn_toggle grid col3 row2 ui-tab-rdo" data-hide="#etcSelect">
+				<ul class="btn_toggle grid col3 row2 ui-tab-rdo" data-hide="#etcSelect,#togPanel1,#togPanel2,#togPanel3,#togPanel4,#togPanel5,#togPanel6,#togPanel7,#togPanel8,#togPanel9,#togPanel10">
 					<li>
-						<input type="radio" id="togRdo1" name="togRdo">
+						<input type="radio" id="togRdo1" name="togRdo" value="1" data-show="#togPanel1">
 						<label for="togRdo1">세금납부</label>
 					</li>
 					<li>
-						<input type="radio" id="togRdo2" name="togRdo">
+						<input type="radio" id="togRdo2" name="togRdo" value="2" data-show="#togPanel2">
 						<label for="togRdo2">여행</label>
 					</li>
 					<li>
-						<input type="radio" id="togRdo3" name="togRdo">
+						<input type="radio" id="togRdo3" name="togRdo" value="3" data-show="#togPanel3">
 						<label for="togRdo3">병원비</label>
 					</li>
 					<li>
-						<input type="radio" id="togRdo4" name="togRdo">
+						<input type="radio" id="togRdo4" name="togRdo" value="4" data-show="#togPanel4">
 						<label for="togRdo4">가전구매</label>
 					</li>
 					<li>
-						<input type="radio" id="togRdo5" name="togRdo">
+						<input type="radio" id="togRdo5" name="togRdo" value="5" data-show="#togPanel5">
 						<label for="togRdo5">손해보험</label>
 					</li>
 					<li class="in_sel">
-						<input type="radio" id="togRdo6" name="togRdo" data-show="#etcSelect">
+						<input type="radio" id="togRdo6" name="togRdo" value="etc" data-show="#etcSelect">
 						<label for="togRdo6">기타</label>
 					</li>
 				</ul>
 
+				<!-- 기타 선택 -->
 				<div id="etcSelect" class="tab_rdo_panel">
 					<div class="select mt10">
 						<select name="" id="" title="기타 선택">
 							<option value="">기타 선택</option>
-							<option value="1">세금납부</option>
-							<option value="2">여행</option>
-							<option value="3">병원비</option>
-							<option value="4">손해보험(자동차보험 포함)</option>
-							<option value="5">결혼식</option>
-							<option value="6">교육비</option>
-							<option value="7">신차구매</option>
-							<option value="8">중고차구매</option>
-							<option value="9">우량유통업체</option>
+							<option value="6">결혼식</option>
+							<option value="7">교육비</option>
+							<option value="8">신차구매</option>
+							<option value="9">중고차구매</option>
+							<option value="10">우량유통업체</option>
 						</select>
 					</div>
 				</div>
 
-				<div class="txt_list mt30">
-					<p>* 국세 또는 지방세 납부처(관공서 및 온라인)</p>
+				<!-- 세금납부 -->
+				<div id="togPanel1" class="tab_rdo_panel">
+					<div class="txt_list mt25">
+						<div class="dot">국세 또는 지방세 납부처(관공서 및 온라인)</div>
+					</div>
+				</div>
+
+				<!-- 여행 -->
+				<div id="togPanel2" class="tab_rdo_panel">
+					<div class="txt_list mt25">
+						<div class="dot">대상 항공사 및 여행사 <a href="#tourInfoPop" class="btn_link2 ui-pop-open">[자세히 보기]</a></div>
+					</div>
+				</div>
+
+				<!-- 병원비 -->
+				<div id="togPanel3" class="tab_rdo_panel">
+					<div class="txt_list mt25">
+						<div class="dot">병원 업종 등록 가맹점(동물병원 포함) <br><strong class="fc_red">단, 보건소 제외</strong></div>
+					</div>
+				</div>
+
+				<!-- 가전구매 -->
+				<div id="togPanel4" class="tab_rdo_panel">
+					<div class="txt_list mt25">
+						<div class="dot">대상 가전판매 가맹점 <a href="#eletronInfoPop" class="btn_link2 ui-pop-open">[자세히 보기]</a></div>
+					</div>
+				</div>
+
+				<!-- 손해보험 -->
+				<div id="togPanel5" class="tab_rdo_panel">
+					<div class="txt_list mt25">
+						<div class="dot">대상 보험사 <a href="#insuranceInfoPop" class="btn_link2 ui-pop-open">[자세히 보기]</a></div>
+					</div>
+				</div>
+
+				<!-- 결혼식장 -->
+				<div id="togPanel6" class="tab_rdo_panel">
+					<div class="txt_list mt25">
+						<div class="dot">결혼식장</div>
+					</div>
+				</div>
+
+				<!-- 교육비 -->
+				<div id="togPanel7" class="tab_rdo_panel">
+					<div class="txt_list mt25">
+						<div class="dot">초중고 학교납입금, 대학(원) 등록금, 외국어학원, 자동차학원</div>
+					</div>
+				</div>
+
+				<!-- 신차구매 -->
+				<div id="togPanel8" class="tab_rdo_panel">
+					<div class="txt_list mt25">
+						<div class="dot">국산자동차 판매점, 수입자동차 판매점</div>
+					</div>
+				</div>
+
+				<!-- 신차구매 -->
+				<div id="togPanel9" class="tab_rdo_panel">
+					<div class="txt_list mt25">
+						<div class="dot">중고자동차 판매점</div>
+					</div>
+				</div>
+
+				<!-- 우량유통업체 -->
+				<div id="togPanel10" class="tab_rdo_panel">
+					<div class="txt_list mt25">
+						<div class="dot">백화점, 면세점</div>
+					</div>
 				</div>
 
 				<dl class="accordion_list accordion_dl mt50">
@@ -135,6 +222,96 @@
 			</div>
 		</section>
 	</div>
+
+	<!-- 대상항공사 및 여행사 팝업-->
+	<div id="tourInfoPop" class="popup modal" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_head">
+				<h1>대상항공사 및 여행사</h1>
+			</div>
+			<div class="pop_cont">
+				<div class="section">
+					<div class="txt_list">
+						<ul>
+							<li class="dot">항공 : 대한항공, 아시아나, 에어부산, 제주항공, 이스타항공, 티웨이항공, 진에어, 코우즈백항공, 우크라이나항공, 오케이에어, 라오항공, 아에로플로트러시아항공, 말레이이사에어라인스버해드, 하문항공, 춘추항공, 에어서울, 홍콩항공, 베트남항공, 에어뉴질랜드 등</li>
+							<li class="dot">여행사 : 하나투어, 모두투어, 한진관광, 레드캡, 참좋은여행, 노랑풍선, 롯데관광 등 국내 주요 관광여행사 등록 가맹점</li>
+						</ul>
+						<div class="caution_txt">당사에 전자상거래, 카드결제대행(PG) 업체로 등록된 가맹점에서는 이용 불가합니다.</div>
+						<div class="caution_txt">가맹점별로 이용에 제한이 있을 수 있습니다.</div>
+						<div class="caution_txt">상세 이용 가능 가맹점은 NH농협카드 대표전화(1644-4000)로 문의 바랍니다.</div>
+					</div>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h48 blue ui-pop-close">확인</a>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!--//대상항공사 및 여행사 팝업-->
+
+	<!-- 대상 가전판매 가맹점 팝업-->
+	<div id="eletronInfoPop" class="popup modal" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_head">
+				<h1>대상 가전판매 가맹점</h1>
+			</div>
+			<div class="pop_cont">
+				<div class="section">
+					<div class="txt_list">
+						<ul>
+							<li class="dot">LG전자 베스트샵, 삼성 디지털 플라자, 하이마트 등 국내 주요 가전제품 등록 가맹점</li>
+						</ul>
+						<div class="caution_txt fc_red">인터넷 오픈마켓 등 온라인 거래는 이용 불가합니다.</div>
+						<div class="caution_txt">가맹점별로 이용에 제한이 있을 수 있습니다.</div>
+						<div class="caution_txt">상세 이용 가능 가맹점은 NH농협카드 대표전화(1644-4000)로 문의 바랍니다. </div>
+					</div>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h48 blue ui-pop-close">확인</a>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!--//대상 가전판매 가맹점 팝업-->
+
+	<!-- 대상 보험사 팝업-->
+	<div id="insuranceInfoPop" class="popup modal" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_head">
+				<h1>대상 보험사</h1>
+			</div>
+			<div class="pop_cont">
+				<div class="section">
+					<div><strong class="fc_black">손해보험(자동차보험 포함)</strong></div>
+					<div class="txt_list mt10">
+						<ul>
+							<li class="dot">농협손해보험, 삼성화재, KB손해보험, 현대해상화재보험, 한화손해보험 등 국내 주요 손해보험사 가맹점</li>
+						</ul>
+						<div class="caution_txt fc_red">인터넷 오픈마켓 등 온라인 거래는 이용 불가합니다.</div>
+						<div class="caution_txt">가맹점별로 이용에 제한이 있을 수 있습니다.</div>
+						<div class="caution_txt">상세 이용 가능 가맹점은 NH농협카드 대표전화(1644-4000)로 문의 바랍니다. </div>
+					</div>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h48 blue ui-pop-close">확인</a>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!--//대상 보험사 팝업-->
+
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>

@@ -36,6 +36,11 @@
 <script>
 	$(function(){
 		common.title('카드별 이용한도');
+
+		//Layer.alert('금액을 정확히 입력해 주세요.');
+		//Layer.alert('요청하신 한도가 현재 한도와 동일합니다.');
+		Layer.open('#carLimitSavePop');
+		Layer.open('#carLimitClearPop');
 	});
 </script>
 </head>
@@ -100,64 +105,8 @@
 			</div>
 		</section>
 	</div>
-	<!-- 팝업1 -->
-	<div id="popup_error1" class="popup modal" role="dialog" aria-hidden="true">
-		<article class="pop_wrap">
-			<div class="pop_cont">
-				<div class="section">
-					<p class="fz_14 t_center">금액을 정확히 입력해 주세요.</p>
-				</div>
-			</div>
-			<div class="pop_btn btn_wrap bottom_fixed">
-				<div>
-					<div class="flex">
-						<a href="#" class="button h48 blue">확인</a>
-					</div>
-				</div>
-			</div>
-		</article>
-	</div>
-	<!--// 팝업1 -->
-	<!-- 팝업2 -->
-	<div id="popup_error2" class="popup modal" role="dialog" aria-hidden="true">
-		<article class="pop_wrap">
-			<div class="pop_cont">
-				<div class="section">
-					<p class="fz_14 t_center">요청하신 한도가 현재 한도와 동일합니다.</p>
-				</div>
-			</div>
-			<div class="pop_btn btn_wrap bottom_fixed">
-				<div>
-					<div class="flex">
-						<a href="#" class="button h48 blue">확인</a>
-					</div>
-				</div>
-			</div>
-		</article>
-	</div>
-	<!--// 팝업2 -->
-	<!-- 팝업3 -->
-	<div id="popup_error3" class="popup modal" role="dialog" aria-hidden="true">
-		<article class="pop_wrap">
-			<div class="pop_head">카드별 이용한도</div>
-			<div class="pop_cont">
-				<div class="section">
-					<p class="fz_14 t_center">고객님의 채움아시아나클럽카드 이용한도를 해제 하시겠습니까?</p>
-				</div>
-			</div>
-			<div class="pop_btn btn_wrap bottom_fixed">
-				<div>
-					<div class="flex">
-						<a href="#" class="button h48 gray ui-pop-close">취소</a>
-						<a href="#" class="button h48 blue">확인</a>
-					</div>
-				</div>
-			</div>
-		</article>
-	</div>
-	<!--// 팝업3 -->
-	<!-- 이용한도 상향조정 팝업-->
-	<div id="limit_submit" class="popup modal" role="dialog" aria-hidden="true">
+	<!-- 카드별 이용한도 팝업 -->
+	<div id="carLimitSavePop" class="popup modal" role="dialog" aria-hidden="true">
 		<article class="pop_wrap">
 			<div class="pop_head">
 				<h1>카드별 이용한도</h1>
@@ -171,7 +120,7 @@
 							</ul>
 						</div>
 					</div>
-					<p class="fz_14 t_center mt25">고객님의 채움아시아나클럽카드 이용한도를<br> 등록 하시겠습니까?</p>
+					<p class="fz_15 t_center mt25">고객님의 채움아시아나클럽카드 이용한도를<br> 등록 하시겠습니까?</p>
 				</div>
 			</div>
 			<div class="pop_btn btn_wrap bottom_fixed">
@@ -184,7 +133,27 @@
 			</div>
 		</article>
 	</div>
-	<!--// 이용한도 상향조정 팝업-->
+
+	<div id="carLimitClearPop" class="popup modal" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_head"><h1>카드별 이용한도</h1></div>
+			<div class="pop_cont">
+				<div class="section">
+					<p class="fz_15 t_center">고객님의 채움아시아나클럽카드 이용한도를 해제 하시겠습니까?</p>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h48 gray ui-pop-close">취소</a>
+						<a href="#" class="button h48 blue">확인</a>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!--//카드별 이용한도 팝업-->
+
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>
