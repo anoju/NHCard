@@ -43,9 +43,9 @@
 <article id="wrap">
 	<div data-include-html="../include/top.html"></div>
 	<div data-include-html="../include/gnb.html"></div>
-	<div id="container">
-		<section id="contents">
-			<div class="section">
+	<div id="container" class="bg_gray"><!-- 2020-05-19: 클래스 추가 -->
+		<section id="contents" class="pt0"><!-- 2020-05-19: 클래스 추가 -->
+			<div class="section bg_white pb30"><!-- 2020-05-19: 클래스 추가 -->
 				<!-- 카드선택 전 -->
 				<div class="select btn">
 					<a href="#" class="btn_select off" title="팝업으로 카드 선택" onclick="Layer.open('#cardSelectPop')">카드선택</a><!-- 선택전 off 클래스 -->
@@ -80,7 +80,8 @@
 						<a href="#" class="button blue">조회</a>
 					</div>
 				</div>
-
+			</div><!-- 2020-05-19: 구조변경 -->
+			<div class="section"><!-- 2020-05-19: 구조변경 -->
 				<div class="total_num_box">총 <strong>50</strong>건</div>
 				<div class="box_list_1">
 					<ul>
