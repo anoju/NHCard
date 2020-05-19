@@ -86,7 +86,7 @@
                     <ul>
                         <!--기본-->
                         <li>
-							<a href="#" class="inner">
+							<a href="#" class="inner" onclick="Layer.open('#payPopReceipt')">
 								<div class="flex">
 									<div class="td">
                                         <div class="tit">Itunes.com/bill</div>
@@ -105,7 +105,7 @@
 							</a>
                         </li>
                         
-                        <!-- 삭제 부분취소 내역 <li>
+                        <!-- 삭제 : 부분취소 내역 <li>
 							<a href="#" class="inner">
 								<div class="flex">
 									<div class="td">
@@ -178,6 +178,101 @@
             </div>
 		</section>
 	</div>
+	<!-- [해외]이용내역 > 매출전표 영수증 팝업 -->
+	<div id="payPopReceipt" class="popup full" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_head">
+				<h1>매출전표 영수증</h1>
+				<a href="#" class="pop_close ui-pop-close"><span class="blind">팝업창 닫기</span></a>
+			</div>
+			<div class="pop_cont">
+				<div class="section">
+					<dl class="detail_pay">
+						<dt>
+							<div>Itunes.com/bill</div>
+							<div class="sub_tit"><strong>58,000</strong>원</div>
+						</dt>
+						<dd>
+							<ul class="list_box_table">
+								<li>
+									<div class="th">이용카드</div>
+									<div class="td">
+										<div class="card_type_wrap">								
+											<span class="type master"><span class="blind">마스터카드</span></span>
+											<!-- <span class="type visa"><span class="blind">비자카드</span></span>
+											<span class="type jcb"><span class="blind">jcb카드</span></span>
+											<span class="type w"><span class="blind">w카드</span></span>
+											<span class="type unionpay"><span class="blind">unionpay카드</span></span>
+											<span class="type domestic"><span class="blind">국내전용카드</span></span> -->
+											1234-56**-****-5678
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="th">거래일자</div>
+									<div class="td">2020.05.05</div>
+								</li>
+								<li>
+									<div class="th">접수일자</div>
+									<div class="td">2020.05.05</div>
+								</li>
+								<li>
+									<div class="th">매출상태</div>
+									<div class="td">정상</div>
+								</li>
+								<li>
+									<div class="th">승인번호</div>
+									<div class="td">30003886</div>
+								</li>
+								<li>
+									<div class="th">결제(예정일)</div>
+									<div class="td">2020.07.02</div>
+								</li>
+								<li class="line">
+									<div class="th">거래통화</div>
+									<div class="td">UDS</div>
+								</li>
+								<li>
+									<div class="th">현지통화/금액</div>
+									<div class="td">$ <strong>2.19</strong></div>
+								</li>
+								<li>
+									<div class="th">수수료</div>
+									<div class="td">$ <strong>6</strong></div>
+								</li>
+								<li>
+									<div class="th">결제금액</div>
+									<div class="td fc_blue"><strong>2,563</strong> 원</div>
+								</li>
+								<li class="line">
+									<div class="th">업종</div>
+									<div class="td">백화점</div>
+								</li>
+								<li>
+									<div class="th">가맹점명</div>
+									<div class="td">Itunes.com/bill</div>
+								</li>
+								<li>
+									<div class="th">국가</div>
+									<div class="td">USA</div>
+								</li>
+								<li>
+									<div class="th">도시</div>
+									<div class="td">도시명</div>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div class="flex">
+					<a href="#" class="button h48 blue ui-pop-close">확인</a>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- [해외]이용내역 > 매출전표 영수증 팝업 -->
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>

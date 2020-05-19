@@ -35,7 +35,7 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('교통카드이용내역');
+		common.title('미청구내역');
 	});
 </script>
 </head>
@@ -46,32 +46,24 @@
 	<div id="container">
 		<section id="contents">
 			<div class="section">
-                <div class="card_info_box filter">
-					<div class="img">
-						<img src="../../images/contents/img_card_traffic.png" alt="교통카드">
-					</div>
-					<div>
-						<div class="name">채움(농·축협) 회원</div>
-						<div class="info">
-							<div>2020.04.01 ~ 2020.05.01(1주일)</div>
-						</div>
-                    </div>
-                    <a href="#" class="btn_filter" title="팝업으로 필터 설정" onclick="Layer.open('#inquiryListPop')"><span class="blind">필터</span></a>
+                <div class="tabmenu mb0">
+                    <ul>
+                        <li><a href="#">요약내역</a></li>
+                        <li class="active"><a href="#" title="현재선택">상세내역</a></li>
+                    </ul>
+                    <div class="tab_line" aria-hidden="true"></div>
                 </div>
-                <div class="price_box_wrap mt20">
-					<div class="txt">교통카드이용내역 (총 6건)</div>
-					<div class="total_num"><strong>123,456,789</strong> 원</div>
-                </div>
-				<div class="total_num_box">총 <strong>50</strong>건</div>
                 <div class="line_list_2 ty2">
                     <ul>
-                        <!--기본-->
                         <li>
-							<a href="#" class="inner" onclick="Layer.open('#receiptPopTraffic')">
+							<a href="#" class="inner" onclick="Layer.open('#unClaimPopup')">
 								<div class="flex">
 									<div class="td">
-                                        <div class="tit">티머니 지하철</div>
-                                        <div class="date fc_gray">14:55~15:10</div>
+                                        <div class="tit">웅진싱크빅</div>
+                                        <ul class="sub_info_etr">
+                                            <li>2020.03.16</li>
+                                            <li>일시불</li>
+                                        </ul>
 									</div>
 									<div class="td">
 										<ul class="info_right">
@@ -85,8 +77,29 @@
 							<a href="#" class="inner">
 								<div class="flex">
 									<div class="td">
-                                        <div class="tit">티머니 버스</div>
-                                        <div class="date fc_gray">14:55~15:10</div>
+                                        <div class="tit">웅진싱크빅</div>
+                                        <ul class="sub_info_etr">
+                                            <li>2020.03.16</li>
+                                            <li>할부</li>
+                                        </ul>
+									</div>
+									<div class="td">
+										<ul class="info_right">
+											<li class="price"><strong>123,456,789</strong> 원</li>
+										</ul>
+									</div>
+								</div>
+							</a>
+                        </li>
+                        <li>
+							<a href="#" class="inner">
+								<div class="flex">
+									<div class="td">
+                                        <div class="tit">웅진싱크빅</div>
+                                        <ul class="sub_info_etr">
+                                            <li>2020.03.16</li>
+                                            <li>할부</li>
+                                        </ul>
 									</div>
 									<div class="td">
 										<ul class="info_right">
@@ -107,68 +120,83 @@
 					<div class="txt">조회내역이 없습니다.</div>
 				</div>
                 <!--//리스트데이터 없음-->
-                <dl class="accordion_list accordion_dl">
-					<dt class="tit">
-						<a href="#" class="ui-toggle-btn open"><i class="i_ico_20 ico_1" aria-hidden="true"></i>이용안내</a>
-					</dt>
-					<dd class="panel">
-						<div class="txt_list">
-							<ul>
-                                <li class="dot">당일 교통카드 이용내역은 익일 오후부터 조회 가능합니다.</li>
-                                <li class="dot">조회가능기간은 최근 1년 이내, 최대 2개월 단위로 조회 가능합니다.</li>
-							</ul>
-						</div>
-					</dd>
-				</dl>
             </div>
 		</section>
-	</div>
-	<!-- 교통카드이용내역 상세내역 팝업(MN_30_005_003) -->
-	<div id="receiptPopTraffic" class="popup modal" role="dialog" aria-hidden="true">
+    </div>
+    <!-- 미청구내역 영수증 상세 팝업 -->
+    <div id="unClaimPopup" class="popup modal" role="dialog" aria-hidden="true">
 		<article class="pop_wrap">
 			<div class="pop_head">
-				<h1>티머니 지하철<span class="pay_sub_tit"><strong class="fz_24">1,300</strong> 원</span></h1>
+				<h1>SKT 자동납부(1234586)<span class="pay_sub_tit"><strong class="fz_24">123,198,585</strong> 원</span></h1>
 			</div>
 			<div class="pop_cont">
 				<div class="section">
 					<ul class="list_box_table">
                         <li>
+                            <div class="th">매출일자</div>
+                            <div class="td">2020.04.24</div>
+                        </li>
+                        <li>
+                            <div class="th">결제예정일자</div>
+                            <div class="td">2020.05.25</div>
+                        </li>
+                        <li>
                             <div class="th">카드번호</div>
                             <div class="td">
-                                <div class="card_type_wrap">
+                                <div class="card_type_wrap">								
                                     <span class="type master"><span class="blind">마스터카드</span></span>
                                     <!-- <span class="type visa"><span class="blind">비자카드</span></span>
                                     <span class="type jcb"><span class="blind">jcb카드</span></span>
                                     <span class="type w"><span class="blind">w카드</span></span>
                                     <span class="type unionpay"><span class="blind">unionpay카드</span></span>
                                     <span class="type domestic"><span class="blind">국내전용카드</span></span> -->
-                                    <span class="num">1234-56**-****-3456</span>
+                                    1234-56**-****-5678
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <div class="th">사용일자</div>
-                            <div class="td">2020.03.16</div>
-                        </li>
-                        <li>
-                            <div class="th">결제일자</div>
-                            <div class="td">2020.03.16</div>
+                            <div class="th">이용구분</div>
+                            <div class="td">할부</div>
                         </li>
                         <li class="line">
-                            <div class="th">승차시간</div>
-                            <div class="td">14:55</div>
+                            <div class="th">할부/현재회차</div>
+                            <div class="td">12개월&#47;10회차</div>
                         </li>
                         <li>
-                            <div class="th">하차시간</div>
-                            <div class="td">15:10</div>
+                            <div class="th">잔여회차</div>
+                            <div class="td">8회차</div>
                         </li>
                         <li>
-                            <div class="th">승차역</div>
-                            <div class="td">백현마을2단지</div>
+                            <div class="th">매출금액</div>
+                            <div class="td"><strong>402,000</strong> 원</div>
+                        </li>
+                        <li class="line">
+                            <div class="th">기청구금액 회차</div>
+                            <div class="td">7회차</div>
                         </li>
                         <li>
-                            <div class="th">하차역</div>
-                            <div class="td">종로2가사거리(중)</div>
+                            <div class="th">기청구금액</div>
+                            <div class="td"><strong>402,000</strong> 원</div>
+                        </li>
+                        <li>
+                            <div class="th">기청구금액 수수료</div>
+                            <div class="td"><strong>402,000</strong> 원</div>
+                        </li>
+                        <li class="line">
+                            <div class="th">미청구금액</div>
+                            <div class="td"><strong>0</strong> 원</div>
+                        </li>
+                        <li>
+                            <div class="th">포인트 사용금액</div>
+                            <div class="td"><strong>0</strong> 원</div>
+                        </li>
+                        <li>
+                            <div class="th">취소금액</div>
+                            <div class="td"><strong>0</strong> 원</div>
+                        </li>
+                        <li>
+                            <div class="th">할인금액</div>
+                            <div class="td"><strong>0</strong> 원</div>
                         </li>
                     </ul>
 				</div>
@@ -182,7 +210,7 @@
 			</div>
 		</article>
 	</div>
-	<!-- 교통카드이용내역 상세내역 팝업(MN_30_006_003) -->
+	<!-- //미청구내역 영수증 상세 팝업 -->
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>

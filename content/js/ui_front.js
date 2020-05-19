@@ -1221,7 +1221,7 @@ var Layer = {
 			var $headH = $head.outerHeight(),
 				$titH = $tit.outerHeight();
 			if(30 < $titH && $headH < $titH && !$head.hasClass('blind')){
-				$head.css('height',$titH);
+				$head.css('height',$titH + 15);
 				var $padTop = parseInt($content.css('padding-top'));
 				$content.css('padding-top',$titH+($padTop-$headH));
 			}
