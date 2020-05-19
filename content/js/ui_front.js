@@ -1916,7 +1916,7 @@ var tooltip = {
 	},
 	init:function(){
 		//열기
-		$(document).on('click','.tooltip_btn',function(e){
+		$(document).on('click','.tooltip_wrap .tooltip_btn',function(e){
 			e.preventDefault();
 			var $cont = $(this).closest('.tooltip_wrap').find('.tooltip_cont');
 			$('.tooltip_cont').fadeOut();
