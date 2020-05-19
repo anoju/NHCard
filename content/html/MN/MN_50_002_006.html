@@ -41,7 +41,7 @@
 			if($(this).val() != 'etc')$('#etcSelect select').val('').change();
 		});
 		$('#etcSelect select').change(function(){
-			var $selected =  $(this).find(':selected'),
+			var $selected = $(this).find(':selected'),
 				$selectedTxt = $selected.text(),
 				$tar = '';
 			$('[id^=togPanel]').removeClass('show');
