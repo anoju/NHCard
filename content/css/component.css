@@ -1068,7 +1068,7 @@ div.caution_txt{display:block;}
 .line_list_1>ul>li>.checkbox{position:absolute;left:1px;top:50%;margin-top:-11px;}
 .line_list_1>ul>li>.checkbox+.inner{padding-left:34px;}
 .line_list_1 .inner{display:block;padding:21px 15px;}
-.card_info_tbl{display:table;width:100%;}
+.card_info_tbl{display:table;width:100%;table-layout:fixed;}
 .card_info_tbl>div{display:table-cell;vertical-align:middle;}
 .card_info_tbl>.img{width:76px;}
 .card_info_tbl>.img img{max-width:100%;}
