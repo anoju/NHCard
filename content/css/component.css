@@ -759,6 +759,7 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .scl_calrender.full .scl_cal_group.scl_min{width:18%;}
 .scl_cal_group dt{padding:10px 0;font-weight:500;}
 .scl_cal_group dd{position:relative;border-top:1px solid #ddd;height:168px;overflow-x:hidden;overflow-y:auto;}
+.scl_cal_group dd::-webkit-scrollbar{display:none;}
 .scl_cal_group .scl_cal_item{display:block;width:100%;padding:10px 0;color:#858585;}
 .scl_cal_group .scl_cal_item.active{font-weight:500;color:#fff;background:#3182f7;}
 .scl_cal_close{display:none;position:absolute;right:0;top:0;overflow:hidden;}
