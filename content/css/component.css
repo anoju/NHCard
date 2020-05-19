@@ -625,14 +625,6 @@ html.isApp.ios.inpFocus .tab_wrap.fixed .tab_track{position:absolute;top:0;}
 .table table colgroup+tbody th{border-right-width:0;}
 .table.small_tbl table th,
 .table.small_tbl table td{padding:8px 6px;font-size:1.2rem;}
-.table.ty2 table th,.table.ty2 table td{background:none;}
-.table.ty2 table th{padding:7.5px 0 7.5px 14px}
-.table.ty2 table td{padding:7.5px 14px 7.5px 0}
-.table.ty2 table tr:not(:last-child) th,.table.ty2 table tr:not(:last-child) td{border-bottom:none}
-.table.ty2 table .result{border:1px dotted #ddd;border-width:1px 0 1px 0}
-.table.ty2 table .result th,.table.ty2 table .result td{padding-top: 16px;padding-bottom:16px}
-.table.ty2 table .start th, .table.ty2 table .start td{padding-top:16px}
-.table.ty2 table .end th, .table.ty2 table .end td{padding-bottom:16px}
 
 .tbl_scroll{position:relative;overflow:auto;-webkit-overflow-scrolling:touch;}
 html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
@@ -802,7 +794,7 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .accordion_list_1 .tit .i_ico_40+div{margin-left:56px;}
 
 .accordion_list.ty2 .tit{font-size:1.6rem;font-weight:500;}
-.accordion_list.ty2 .panel{border-top:0;}
+.accordion_list.ty2 .tit a{padding-right:35px;}
 
 /*swipe*/
 .ui-swiper-wrap{margin:40px 0 0;}
@@ -1027,19 +1019,19 @@ div.caution_txt{display:block;}
 .card_info_box .name+.sub{margin-top:4px;}
 .card_info_box .date{margin-right:10px;}
 .card_info_box .type,
-.line_list_2 .type{display:inline-block;margin-right:5px;width:17px;height:10px;background-repeat:no-repeat;background-position:center center;background-size:contain;}
+.card_type_wrap .type{display:inline-block;margin-right:5px;width:17px;height:10px;background-repeat:no-repeat;background-position:center center;background-size:contain;}
 .card_info_box .type.master,
-.line_list_2 .type.master{background-image:url(../images/common/card_type_master.png);}
+.card_type_wrap .type.master{background-image:url(../images/common/card_type_master.png);}
 .card_info_box .type.visa,
-.line_list_2 .type.visa{background-image:url(../images/common/card_type_visa.png);}
+.card_type_wrap .type.visa{background-image:url(../images/common/card_type_visa.png);}
 .card_info_box .type.jcb,
-.line_list_2 .type.jcb{background-image:url(../images/common/card_type_jcb.png);}
+.card_type_wrap .type.jcb{background-image:url(../images/common/card_type_jcb.png);}
 .card_info_box .type.w,
-.line_list_2 .type.w{background-image:url(../images/common/card_type_w.png);}
+.card_type_wrap .type.w{background-image:url(../images/common/card_type_w.png);}
 .card_info_box .type.unionpay,
-.line_list_2 .type.unionpay{background-image:url(../images/common/card_type_unionpay.png);}
+.card_type_wrap .type.unionpay{background-image:url(../images/common/card_type_unionpay.png);}
 .card_info_box .type.domestic,
-.line_list_2 .type.domestic{background-image:url(../images/common/card_type_domestic.png);}
+.card_type_wrap .type.domestic{background-image:url(../images/common/card_type_domestic.png);}
 .card_info_box .info{font-size:1.2rem;color:#666;}
 .card_info_box .name+.info{margin-top:10px;}
 .card_info_box .sub+.info{margin-top:8px;}
@@ -1078,6 +1070,7 @@ div.caution_txt{display:block;}
 .line_list_1>ul>li>.checkbox{position:absolute;left:1px;top:50%;margin-top:-11px;}
 .line_list_1>ul>li>.checkbox+.inner{padding-left:34px;}
 .line_list_1 .inner{display:block;padding:21px 15px;}
+.line_list_1 .card_info_box{padding:0;border:none;}
 .card_info_tbl{display:table;width:100%;}
 .card_info_tbl>div{display:table-cell;vertical-align:middle;}
 .card_info_tbl>.img{width:76px;}
@@ -1091,6 +1084,7 @@ div.caution_txt{display:block;}
 .card_info_tbl .tit+.sub{margin-top:2px;}
 .card_info_tbl .num+.sub{margin-top:6px;}
 
+.tabmenu+.line_list_2{border-top:none;}
 .line_list_2{border-top:1px solid #bbb;}
 .section .line_list_2{margin:0 -20px;}
 .line_list_2.first{margin-top:-30px;border-top-width:0;}

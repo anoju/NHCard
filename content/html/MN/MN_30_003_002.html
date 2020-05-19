@@ -35,7 +35,7 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('VIP 등급안내');
+		common.title('연체내역');
 	});
 </script>
 </head>
@@ -46,73 +46,64 @@
 	<div id="container">
 		<section id="contents">
 			<div class="section">
-				<div class="tabmenu">
-					<ul>
-						<li class="active"><a href="#" title="현재선택">등급 기준안내</a></li>
-						<li><a href="#">등급별 서비스</a></li>
-					</ul>
-					<div class="tab_line" aria-hidden="true"></div>
-				</div>
-				<div class="ht_vip_club_wrap">
-					<div class="ht_vip_club">
-						<h3 class="tit_h3">VIP CLUB 등급 기준안내</h3>
-						<img src="../../images/contents/ht_graph.png" alt="등급기준 안내 - 5,500만원 노블레스/3,400만원 슈퍼로얄/2,300만원로얄/1,600만원 프라임">
-						<span>연간사용 기준금액(단위:만원)</span>
-					</div>	
-				<div class="table">
-					<table class="t_center">
-						<caption>연간사용 실적기준 등급을 실적기준, 하나로가족으로 나타낸 표</caption><!--#200519 caption 수정-->
-						<!--#200519 html수정-->
-						<colgroup>
-							<col style="width:33.33%">
-							<col style="width:33.33%">
-							<col>
-						</colgroup>
-						<!--//#200519 html수정-->
-						<thead>
-							<tr>
-								<th scope="col">VIP 등급</th>
-								<th scope="col">실적기준</th>
-								<th scope="col">하나로가족</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>노블레스<br>(Nobless)</td>
-								<td>5,500만원<br>이상</td>
-								<td>-</td>
-							</tr>
-							<tr>
-								<td>슈퍼로얄<br>(Super Royal)</td>
-								<td>3,400만원<br>이상</td>
-								<td>-</td>
-							</tr>
-							<tr>
-								<td>로얄<br>(Royal)</td>
-								<td>2,300만원<br>이상</td>
-								<td>-</td>
-							</tr>
-							<tr>
-								<td>프라임<br>(Prime))</td>
-								<td>1,600만원<br>이상</td>
-								<td>탑클래스<br>(1,000만원 이상)</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="gray_info_box mt20">
-					<div class="txt_list">
-						<ul>
-							<li class="dash">위 실적기준 이외 신용등급(선정시점) 기준 동시 만족 회원 선정</li>
-							<li class="dash">자세한 문의는 카드고객상담센터로 문의바랍니다.</li>
-						</ul>
-					</div>
-				</div>
-				<a href="tel:1644-4000" class="tel"><i class="tel_icon" aria-hidden="true"></i><span>문의전화 : </span><strong>1644-4000</strong></a>
-				</div>
+				<a href="#" onclick="Layer.open('#receiptPop1')">팝업열기</a>
 			</div>
 		</section>
 	</div>
+	<!-- 연체내역 상세내역 팝업(MN_30_003_002) -->
+	<div id="receiptPop1" class="popup modal" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_head">
+				<h1>연체금액<span class="pay_sub_tit"><strong class="fz_24">123,198,585</strong> 원</span></h1>
+			</div>
+			<div class="pop_cont">
+				<div class="section">
+					<ul class="list_box_table">
+                        <li>
+                            <div class="th">연체원금</div>
+                            <div class="td"><strong>180,000</strong> 원</div>
+                        </li>
+                        <li>
+                            <div class="th">수수료</div>
+                            <div class="td"><strong>13,123</strong> 원</div>
+                        </li>
+                        <li>
+                            <div class="th">해외이용수수료</div>
+                            <div class="td"><strong>23</strong> 원</div>
+                        </li>
+                        <li>
+                            <div class="th">연체료</div>
+                            <div class="td"><strong>5,500</strong> 원</div>
+                        </li>
+                        <li class="last">
+                            <div class="th">합계</div>
+                            <div class="td"><strong>123,123,500</strong> 원</div>
+                        </li>
+                        <li class="line">
+                            <div class="th">카드번호</div>
+                            <div class="td">1234-56**-****-5678</div>
+                        </li>
+                        <li>
+                            <div class="th">연체시작일</div>
+                            <div class="td">2020.03.12</div>
+                        </li>
+                        <li>
+                            <div class="th">연체 개월수</div>
+                            <div class="td">1개월</div>
+                        </li>
+                    </ul>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h48 blue ui-pop-close">확인</a>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- 연체내역 상세내역 팝업(MN_30_003_002) -->
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>

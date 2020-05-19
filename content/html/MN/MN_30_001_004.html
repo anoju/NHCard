@@ -90,7 +90,7 @@
                     <ul>
                         <!--기본-->
                         <li>
-							<a href="#" class="inner">
+							<a href="#" class="inner" onclick="Layer.open('#payPopRcptDome1')">
 								<div class="flex">
 									<div class="td">
                                         <div class="tit">웅진싱크빅</div>
@@ -183,6 +183,97 @@
             </div>
 		</section>
 	</div>
+	<!-- [국내] 이용내역>매출전표 영수증 팝업 -->
+	<div id="payPopRcptDome1" class="popup full" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_head">
+				<h1>매출전표 영수증</h1>
+				<a href="#" class="pop_close ui-pop-close"><span class="blind">팝업창 닫기</span></a>
+			</div>
+			<div class="pop_cont">
+				<div class="section">
+					<dl class="detail_pay">
+						<dt>
+							<div>웅진싱크빅</div>
+							<div class="sub_tit"><strong>58,000</strong>원</div>
+						</dt>
+						<dd>
+							<ul class="list_box_table">
+								<li>
+									<div class="th">이용카드</div>
+									<div class="td">
+										<div class="card_type_wrap">								
+											<span class="type master"><span class="blind">마스터카드</span></span>
+											<!-- <span class="type visa"><span class="blind">비자카드</span></span>
+											<span class="type jcb"><span class="blind">jcb카드</span></span>
+											<span class="type w"><span class="blind">w카드</span></span>
+											<span class="type unionpay"><span class="blind">unionpay카드</span></span>
+											<span class="type domestic"><span class="blind">국내전용카드</span></span> -->
+											1234-56**-****-5678
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="th">이용구분</div>
+									<div class="td">일시불</div>
+								</li>
+								<li>
+									<div class="th">할부기간</div>
+									<div class="td">$할부기간$</div>
+								</li>
+								<li>
+									<div class="th">사용일자</div>
+									<div class="td">2020.05.05</div>
+								</li>
+								<li>
+									<div class="th">승인번호</div>
+									<div class="td">30003886</div>
+								</li>
+								<li>
+									<div class="th">취소여부</div>
+									<div class="td">-</div>
+								</li>
+								<li class="line">
+									<div class="th">이용금액</div>
+									<div class="td fc_blue"><strong>58,000</strong> 원</div>
+								</li>
+								<li class="line">
+									<div class="th">가맹점명</div>
+									<div class="td">웅진싱크빅</div>
+								</li>
+								<li>
+									<div class="th">가맹점번호</div>
+									<div class="td">153346535</div>
+								</li>
+								<li>
+									<div class="th">사업자번호</div>
+									<div class="td">350-00-05555</div>
+								</li>
+								<li>
+									<div class="th">대표자명</div>
+									<div class="td">이농협</div>
+								</li>
+								<li>
+									<div class="th">주소</div>
+									<div class="td">(03555) 서울특별시 서대문구 충정로6길 555층A-6호</div>
+								</li>
+								<li>
+									<div class="th">전화번호</div>
+									<div class="td">070-8888-5452</div>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div class="flex">
+					<a href="#" class="button h48 blue ui-pop-close">확인</a>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- //[국내] 이용내역>매출전표 영수증 팝업 -->
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>

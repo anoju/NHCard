@@ -77,7 +77,7 @@
                     <ul>
                         <!--기본-->
                         <li>
-							<a href="#" class="inner">
+							<a href="#" class="inner" onclick="Layer.open('#receiptPopHipass')">
 								<div class="flex">
 									<div class="td">
                                         <div class="tit">중부내륙고속도로</div>
@@ -144,6 +144,70 @@
             </div>
 		</section>
 	</div>
+	<!-- 후불하이패스 상세내역 팝업(MN_30_006_002) -->
+	<div id="receiptPopHipass" class="popup modal" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_head">
+				<h1>중부내륙고속도로<span class="pay_sub_tit"><strong class="fz_24">38,585</strong> 원</span></h1>
+			</div>
+			<div class="pop_cont">
+				<div class="section">
+					<ul class="list_box_table">
+                        <li>
+                            <div class="th">카드번호</div>
+                            <div class="td">
+                                <div class="card_type_wrap">
+                                    <span class="type master"><span class="blind">마스터카드</span></span>
+                                    <!-- <span class="type visa"><span class="blind">비자카드</span></span>
+                                    <span class="type jcb"><span class="blind">jcb카드</span></span>
+                                    <span class="type w"><span class="blind">w카드</span></span>
+                                    <span class="type unionpay"><span class="blind">unionpay카드</span></span>
+                                    <span class="type domestic"><span class="blind">국내전용카드</span></span> -->
+                                    <span class="num">1234-56**-****-3456</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="th">이용일자</div>
+                            <div class="td">2020.03.16</div>
+                        </li>
+                        <li>
+                            <div class="th">접수일자</div>
+                            <div class="td">2020.03.16</div>
+                        </li>
+                        <li class="line">
+                            <div class="th">차로구분</div>
+                            <div class="td">Hi-PASS</div>
+                        </li>
+                        <li>
+                            <div class="th">할인구분</div>
+                            <div class="td">정상</div>
+                        </li>
+                        <li>
+                            <div class="th">구간요금</div>
+                            <div class="td"><strong>2,500</strong> 원</div>
+                        </li>
+                        <li>
+                            <div class="th">입구</div>
+                            <div class="td">청주&#47;2020.03.16 14:57:22</div>
+                        </li>
+                        <li>
+                            <div class="th">출구</div>
+                            <div class="td">북수원&#47;2020.03.16 15:57:22</div>
+                        </li>
+                    </ul>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h48 blue ui-pop-close">확인</a>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- 후불하이패스 상세내역 팝업(MN_30_006_002) -->
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>
