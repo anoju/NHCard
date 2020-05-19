@@ -328,8 +328,8 @@ h3.tit_h2+h4.tit_h3{margin-top:16px;}
 .vip_ht li .service_list dl{padding-left:110px;position:relative;}
 .vip_ht li .service_list dl dt{position:absolute;left:0;top:0;}
 .vip_ht li .service_list dl dd .ico_txt:not(:last-of-type){margin-right:3px}
-.vip_ht li .service_list dl dd.txt{margin:17px 0 10px;font-size:1.4rem;color:#858585}
-.vip_ht li .service_list dl dd.txt + dd{position:relative;}
+.vip_ht li .service_list dl dd.txt{margin:11px 0 2px;font-size:1.4rem;color:#858585}
+.vip_ht li .service_list dl dd.txt + dd{position:relative;padding-right:20px;}
 .vip_ht li .service_list dl dd strong{font-size:1.7rem}
 .vip_ht li+li{margin-top:30px}
 .vip_ht li .service_list dl dd .tooltip_wrap{position:absolute;top:5px;right:0}
