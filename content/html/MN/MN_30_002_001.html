@@ -75,7 +75,7 @@
                     <ul>
                         <!--기본-->
                         <li>
-							<a href="#" class="inner">
+							<a href="#receipt1" class="inner ui-pop-open">
 								<div class="flex">
 									<div class="td">
                                         <div class="tit">파리바게뜨 서대문점</div>
@@ -121,6 +121,88 @@
             </div>
 		</section>
 	</div>
+	<!-- 영수증 팝업 -->
+	<div id="receipt1" class="popup modal" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_head">
+				<h1 class="pb5">파리바게뜨 서대문점</h1>
+				<p class="ml25"><strong class="fz_24">5,500</strong> 원</p>
+			</div>
+			<div class="pop_cont">
+				<div class="section">
+					<h2 class="tit_h3 fz_14">매출내역</h2>
+					<div class="table ty2 mt10">
+						<table>
+							<caption>매출내역을 나타낸 표</caption>
+							<colgroup>
+								<col style="width:120px">
+								<col style="width:auto">
+							</colgroup>
+							<tbody>
+								<tr class="start">
+									<th scope="row">카드번호</th>
+									<td>
+										1234-56**-****-5678</td>
+								</tr>
+								<tr>
+									<th scope="row">매출일자</th>
+									<td>2020.03.05</td>
+								</tr>
+								<tr>
+									<th scope="row">가맹점</th>
+									<td>파리바게뜨 서대문점</td>
+								</tr>
+								<tr>
+									<th scope="row">매출금액</th>
+									<td>5,500원</td>
+								</tr>
+								<tr class="end">
+									<th scope="row">할부기간</th>
+									<td>일시불</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<h2 class="tit_h3 fz_14 mt30">취소내역</h2>
+					<div class="table ty2 mt10">
+						<table>
+							<caption>취소내역을 나타낸 표</caption>
+							<colgroup>
+								<col style="width:120px">
+								<col style="width:auto">
+							</colgroup>
+							<tbody>
+								<tr class="start">
+									<th scope="row">접수일자</th>
+									<td>2020.03.05</td>
+								</tr>
+								<tr>
+									<th scope="row">원금</th>
+									<td><strong>0</strong> 원</td>
+								</tr>
+								<tr>
+									<th scope="row">수수료</th>
+									<td><strong>0</strong> 원</td>
+								</tr>
+								<tr class="end">
+									<th scope="row">비고</th>
+									<td>-</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div>
+					<div class="flex">
+						<a href="#" class="button h48 blue ui-pop-close">닫기</a>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!--// -->
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>
