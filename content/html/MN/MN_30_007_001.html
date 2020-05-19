@@ -46,14 +46,14 @@
 	<div id="container">
 		<section id="contents">
 			<div class="step_wrap">
-				<h2 class="step_tit">Step2. 발급신청</h2>
+				<h2 class="step_tit">STEP2. 발급신청</h2>
 				<ol class="step_state">
 					<li>1<span class="blind">단계</span></li>
 					<li class="on">2<span class="blind">단계(현재단계)</span></li>
 				</ol>
 			</div>
 			<div class="section">
-				<h2 class="tit_h2">신청정보</h2>
+				<h3 class="tit_h2">신청정보</h3>
 				<div class="input_div">NH비씨카드</div>
 				<div class="card_info_box blue">
 					<div class="img">
@@ -99,12 +99,12 @@
 						</div>
 					</div>
 				</div>
-				<h2 class="tit_h2">조회연도</h2>
+				<h3 class="tit_h2">조회연도</h3>
 				<div class="input_div">2019</div>
-				<h2 class="tit_h2">발급방법</h2>
+				<h3 class="tit_h2">발급방법</h3>
 				<ul class="btn_toggle grid col2 ui-tab-rdo" data-hide="#mailTogCont,#faxTogCont">
 					<li>
-						<input type="radio" id="togWay1" name="togContType" data-show="#mailTogCont" checked="">
+						<input type="radio" id="togWay1" name="togContType" data-show="#mailTogCont" checked="checked">
 						<label for="togWay1">이메일</label>
 					</li>
 					<li>
@@ -113,10 +113,46 @@
 					</li>
 				</ul>
 				<div id="mailTogCont" class="form_item tab_rdo_panel">
-					<label for="mail2" class="fm_lb">이메일</label>
-					<div class="fm_cont email_form">
-						<div class="input"><input type="text" id="mail2" title="이메일 입력" placeholder="이메일주소 입력"></div>
-						<div class="caution_txt2">이메일 주소변경 가능</div>
+					<div class="form_item">
+						<label for="eMailAddr" class="fm_lb">이메일 주소</label>
+						<div class="fm_cont email_form">
+							<div class="tbl">
+								<div class="td w40">
+									<div class="input"><input type="text" id="eMailAddr" title="이메일 아이디 입력"></div>
+								</div>
+								<div class="td dash ty2">@</div>
+								<div class="td w60 email_sel">
+									<div class="select">
+										<select title="이메일 도메인 선택">
+											<option value="" selected="selected">이메일계정선택</option>
+											<option value="naver.com">naver.com</option>
+											<option value="hanmail.net">hanmail.net</option>
+											<option value="nate.com">nate.com</option>
+											<option value="gmail.com">gmail.com</option>
+											<option value="yahoo.com">yahoo.com</option>
+											<option value="empal.com">empal.com</option>
+											<option value="freechal.com">freechal.com</option>
+											<option value="chol.com">chol.com</option>
+											<option value="dreamwiz.com">dreamwiz.com</option>
+											<option value="hanmir.com">hanmir.com</option>
+											<option value="hotmail.com">hotmail.com</option>
+											<option value="korea.com">korea.com</option>
+											<option value="lycos.com">lycos.com</option>
+											<option value="msn.com">msn.com</option>
+											<option value="paran.com">paran.com</option>
+											<option value="me.com">me.com</option>
+											<option value="etc">직접입력</option>
+										</select>
+									</div>
+								</div>
+								<div class="td w60 email_inp" style="display:none;">
+									<div class="input"><input type="text" title="이메일 도메인 직접입력" placeholder="직접입력"></div>
+									<a href="#" class="btn_sel"><span class="blind">이메일 도메인 직접입력 취소</span></a>
+								</div>
+							</div>
+							<div class="error_txt">이메일를 입력해주세요.</div><!-- 에러메세지 입력영역 -->
+							<div class="caution_txt2">이메일 주소변경 가능</div>
+						</div>
 					</div>
 					<dl class="accordion_list accordion_dl mt35">
 						<dt class="tit">
@@ -126,7 +162,7 @@
 							<div class="txt_list">
 								<ul>
 									<li class="dot">보안이메일로만 발송되며 열람 시 생년월일 6자리를 입력하시기 바랍니다.</li>
-									<li class="dot">이메일주소가 정확히 입력되어 있는지 확인하여 주시기 바랍니다. </li>
+									<li class="dot">이메일주소가 정확히 입력되어 있는지 확인하여 주시기 바랍니다.</li>
 									<li class="dot">잘못된 이메일 주소, 수신 서버의 결함 및 스팸메일 처리, 네트워크 상태 등의 요인으로 인해 이메일로 전달되지 못하는 경우가 발생할 수 있습니다.</li>
 								</ul>
 							</div>
@@ -136,7 +172,7 @@
 				<div id="faxTogCont" class="form_item tab_rdo_panel">
 					<label for="faxNum" class="fm_lb">팩스</label>
 					<div class="fm_cont email_form">
-						<div class="input"><input type="text" id="faxNum" title="팩스번호 입력" placeholder="‘-’없이 팩스번호 입력"></div>
+						<div class="input"><input type="text" id="faxNum" title="팩스번호 입력" placeholder="&prime;-&prime; 없이 입력"></div>
 					</div>
 					<dl class="accordion_list accordion_dl mt35">
 						<dt class="tit">
@@ -154,7 +190,7 @@
 				</div>
 				<div class="btn_wrap bottom_fixed">
 					<div class="flex">
-						<a href="#" class="button h54 blue">이메일 신청</a>
+						<a href="#" class="button h54 blue">발급 신청</a>
 					</div>
 				</div>
 			</div>

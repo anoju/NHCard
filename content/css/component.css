@@ -524,7 +524,8 @@ html.isApp.ios.inpFocus .tab_wrap.fixed .tab_track{position:absolute;top:0;}
 
 /*tooltip*/
 .tooltip_wrap{position:relative;display:inline-block;vertical-align:middle;margin-left:3px;line-height:1;}
-.tooltip_btn{display:inline-block;width:17px;height:17px;vertical-align:top;font-size:3px;color:transparent;background:url(../images/common/ico_tooltip.png) no-repeat center center;background-size:contain;overflow:hidden;}
+.tooltip_btn{display:inline-block;width:17px;height:17px;vertical-align:middle;font-size:3px;color:transparent;background:url(../images/common/ico_tooltip.png) no-repeat center center;background-size:contain;overflow:hidden;}
+.tooltip_wrap .tooltip_btn{vertical-align:top;}
 .tooltip_btn.bg_gray{width:24px;height:24px;border:none;background:url(../images/common/ico_tooltip2.png) no-repeat center center;background-size:contain;}
 .tooltip_cont{display:none;position:absolute;margin-top:10px;left:0px;top:100%;width:100px;min-width:300px;min-height:22px;padding:13px 30px 15px 14px;background:#f1f1f1;box-shadow:0 1px 3px 0 rgba(0,0,0,0.05);color:#666;box-sizing:border-box;z-index:10;font-size:1.3rem;font-weight:400;line-height:1.4;text-align:left;white-space:normal;word-break:normal;word-wrap:break-word;}
 .tooltip_cont .dl dd{color:#666;}
@@ -625,14 +626,6 @@ html.isApp.ios.inpFocus .tab_wrap.fixed .tab_track{position:absolute;top:0;}
 .table table colgroup+tbody th{border-right-width:0;}
 .table.small_tbl table th,
 .table.small_tbl table td{padding:8px 6px;font-size:1.2rem;}
-.table.ty2 table th,.table.ty2 table td{background:none;}
-.table.ty2 table th{padding:7.5px 0 7.5px 14px}
-.table.ty2 table td{padding:7.5px 14px 7.5px 0}
-.table.ty2 table tr:not(:last-child) th,.table.ty2 table tr:not(:last-child) td{border-bottom:none}
-.table.ty2 table .result{border:1px dotted #ddd;border-width:1px 0 1px 0}
-.table.ty2 table .result th,.table.ty2 table .result td{padding-top: 16px;padding-bottom:16px}
-.table.ty2 table .start th, .table.ty2 table .start td{padding-top:16px}
-.table.ty2 table .end th, .table.ty2 table .end td{padding-bottom:16px}
 
 .tbl_scroll{position:relative;overflow:auto;-webkit-overflow-scrolling:touch;}
 html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
@@ -740,6 +733,7 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .i_ico_88.ico_15{background-image:url(../images/common/ico_88_15.png);}
 .i_ico_88.ico_16{background-image:url(../images/common/ico_88_16.png);}
 .i_ico_88.ico_17{background-image:url(../images/common/ico_88_17.png);}
+.i_ico_88.ico_18{background-image:url(../images/common/ico_88_18.png);}
 .i_ico_122{width:122px;height:122px;background-color:#f8f8f8;border-radius:100%;background-size:122px auto;}
 .i_ico_122.ico_1{background-image:url(../images/common/ico_122_01.png);}
 .i_ico_122.ico_2{background-image:url(../images/common/ico_122_02.png);}
@@ -799,12 +793,13 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .accordion_list_1 .tit .i_ico_40+div{margin-left:56px;}
 
 .accordion_list.ty2 .tit{font-size:1.6rem;font-weight:500;}
-.accordion_list.ty2 .panel{border-top:0;}
+.accordion_list.ty2 .tit a{padding-right:35px;}
 
 /*swipe*/
 .ui-swiper-wrap{margin:40px 0 0;}
 .section .ui-swiper-wrap{margin-left:-20px;margin-right:-20px;}
-.ui-swiper .item{padding:0 20px;}
+.ui-swiper .item{padding:0 20px;overflow:hidden;}
+.ui-swiper .item>a{display:block;}
 .ui-swiper .item img{max-width:100%;}
 .ui-swiper.swiper-container-initialized{padding:0 12.5px;overflow:hidden;}
 .ui-swiper.swiper-container-initialized .item{padding:0 7.5px;}
@@ -1024,13 +1019,20 @@ div.caution_txt{display:block;}
 .card_info_box .sub{font-size:1.3rem;color:#111;}
 .card_info_box .name+.sub{margin-top:4px;}
 .card_info_box .date{margin-right:10px;}
-.card_info_box .type{display:inline-block;margin-right:5px;width:17px;height:10px;background-repeat:no-repeat;background-position:center center;background-size:contain;}
-.card_info_box .type.master{background-image:url(../images/common/card_type_master.png);}
-.card_info_box .type.visa{background-image:url(../images/common/card_type_visa.png);}
-.card_info_box .type.jcb{background-image:url(../images/common/card_type_jcb.png);}
-.card_info_box .type.w{background-image:url(../images/common/card_type_w.png);}
-.card_info_box .type.unionpay{background-image:url(../images/common/card_type_unionpay.png);}
-.card_info_box .type.domestic{background-image:url(../images/common/card_type_domestic.png);}
+.card_info_box .type,
+.card_type_wrap .type{display:inline-block;margin-right:5px;width:17px;height:10px;background-repeat:no-repeat;background-position:center center;background-size:contain;}
+.card_info_box .type.master,
+.card_type_wrap .type.master{background-image:url(../images/common/card_type_master.png);}
+.card_info_box .type.visa,
+.card_type_wrap .type.visa{background-image:url(../images/common/card_type_visa.png);}
+.card_info_box .type.jcb,
+.card_type_wrap .type.jcb{background-image:url(../images/common/card_type_jcb.png);}
+.card_info_box .type.w,
+.card_type_wrap .type.w{background-image:url(../images/common/card_type_w.png);}
+.card_info_box .type.unionpay,
+.card_type_wrap .type.unionpay{background-image:url(../images/common/card_type_unionpay.png);}
+.card_info_box .type.domestic,
+.card_type_wrap .type.domestic{background-image:url(../images/common/card_type_domestic.png);}
 .card_info_box .info{font-size:1.2rem;color:#666;}
 .card_info_box .name+.info{margin-top:10px;}
 .card_info_box .sub+.info{margin-top:8px;}
@@ -1069,6 +1071,7 @@ div.caution_txt{display:block;}
 .line_list_1>ul>li>.checkbox{position:absolute;left:1px;top:50%;margin-top:-11px;}
 .line_list_1>ul>li>.checkbox+.inner{padding-left:34px;}
 .line_list_1 .inner{display:block;padding:21px 15px;}
+.line_list_1 .card_info_box{padding:0;border:none;}
 .card_info_tbl{display:table;width:100%;table-layout:fixed;}
 .card_info_tbl>div{display:table-cell;vertical-align:middle;word-break:break-all;}
 .card_info_tbl>.img{width:76px;}
@@ -1082,6 +1085,7 @@ div.caution_txt{display:block;}
 .card_info_tbl .tit+.sub{margin-top:2px;}
 .card_info_tbl .num+.sub{margin-top:6px;}
 
+.tabmenu+.line_list_2{border-top:none;}
 .line_list_2{border-top:1px solid #bbb;}
 .section .line_list_2{margin:0 -20px;}
 .line_list_2.first{margin-top:-30px;border-top-width:0;}

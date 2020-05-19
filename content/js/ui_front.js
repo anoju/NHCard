@@ -1173,10 +1173,11 @@ var Layer = {
 		//닫기
 		$(tar).removeClass('show');
 		$(tar).attr('aria-hidden','true').removeAttr('style tabindex');
-
-		$(tar).find('.'+Layer.headClass).removeAttr('style').removeClass('shadow');
-		$(tar).find('.'+Layer.contClass).removeAttr('tabindex style');
-		if($(tar).find('.pop_close.last_focus').length)$(tar).find('.pop_close.last_focus').remove();
+		setTimeout(function(){
+			$(tar).find('.'+Layer.headClass).removeAttr('style').removeClass('shadow');
+			$(tar).find('.'+Layer.contClass).removeAttr('tabindex style');
+			if($(tar).find('.pop_close.last_focus').length)$(tar).find('.pop_close.last_focus').remove();
+		},$closeDelay);
 
 		//알럿창
 		if($(tar).hasClass(Layer.alertClass) || $(tar).hasClass(Layer.selectClass)  || $(tar).hasClass(Layer.calendarClass)){
@@ -1220,7 +1221,7 @@ var Layer = {
 			var $headH = $head.outerHeight(),
 				$titH = $tit.outerHeight();
 			if(30 < $titH && $headH < $titH && !$head.hasClass('blind')){
-				$head.css('height',$titH);
+				$head.css('height',$titH + 15);
 				var $padTop = parseInt($content.css('padding-top'));
 				$content.css('padding-top',$titH+($padTop-$headH));
 			}
@@ -1916,7 +1917,7 @@ var tooltip = {
 	},
 	init:function(){
 		//열기
-		$(document).on('click','.tooltip_btn',function(e){
+		$(document).on('click','.tooltip_wrap .tooltip_btn',function(e){
 			e.preventDefault();
 			var $cont = $(this).closest('.tooltip_wrap').find('.tooltip_cont');
 			$('.tooltip_cont').fadeOut();
@@ -3613,6 +3614,7 @@ var swiperUI = {
 					$itemLength = $this.children().length,
 					$autoplayOpt = '',
 					$navigationOpt = '',
+					$isParallax = false,
 					$isLoop = false;
 				if($itemLength == 1){
 					$this.closest('.ui-swiper-wrap').addClass('only');
@@ -3629,6 +3631,7 @@ var swiperUI = {
 						if($this.hasClass('autoplay') || $this.hasClass('navi')){
 							$this.addClass('swipe-container').append('<div class="swiper-navi"></div>');
 						}
+						if($this.find('[data-swiper-parallax]').length || $this.find('[data-swiper-parallax-x]').length || $this.find('[data-swiper-parallax-y]').length || $this.find('[data-swiper-parallax-scale]').length || $this.find('[data-swiper-parallax-opacity]').length)$isParallax = true;
 						if($this.hasClass('autoplay')){
 							$this.find('.swiper-navi').append('<button type="button" class="swiper-auto-ctl"><span class="blind">자동롤링 중지</span></button>');
 							$autoplayOpt = {
@@ -3648,13 +3651,13 @@ var swiperUI = {
 						}else{
 							$this.addClass('swipe-container').append('<div class="swiper-pagination"></div>');
 						}
-
 						var $option = {
 							slidesPerView: 'auto',
 							slideClass:'item',
 							resizeReInit:true,
 							autoplay:$autoplayOpt,
 							navigation:$navigationOpt,
+							parallax:$isParallax,
 							loop:$isLoop,
 							pagination:{
 								el: '.swiper-pagination',
