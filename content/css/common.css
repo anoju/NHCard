@@ -199,6 +199,9 @@ common
 
 .pl0{padding-left:0 !important;}
 
+.pb5{padding-bottom:5px !important}
+.pb10{padding-bottom:10px !important}
+.pb15{padding-bottom:15px !important}
 .pb16{padding-bottom:16px !important}
 .pb30{padding-bottom:30px !important;}
 
@@ -213,6 +216,7 @@ common
 
 /* bg-color */
 .bg_gray{background-color:#8997af}
+.bg_gray2{background-color:#f8f8f8}
 .bg_blue{background-color:#3182f7}
 
 .blur img{-webkit-filter:blur(6px);-moz-filter:blur(6px);filter:blur(6px);}
