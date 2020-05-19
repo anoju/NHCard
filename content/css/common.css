@@ -195,6 +195,8 @@ common
 .pt30{padding-top:30px !important;}
 .pt50{padding-top:50px !important;}
 
+.pb0{padding-bottom:0px !important;}
+
 .pl0{padding-left:0 !important;}
 
 .pb16{padding-bottom:16px !important}
@@ -356,15 +358,16 @@ html.ie9 #gnb.show{right:0;}
 .gnb_pagination .swiper-pagination-bullet{width:0;height:0;background:none !important;}
 
 #container{position:relative;min-height:calc(100vh - 50px);}
-.isApp #container{min-height:calc(100vh - 120px);}
-.chatbot #container{padding-bottom:60px;}
-#contents{padding:30px 0;}
-#container.bg_gray{background-color:#f8f8f8;}
-#container.ty2{background:#f8f8f8;min-height:calc(100vh - 120px);}
+#container.ty2{background:#f8f8f8;}
 #container.ty2 #contents{padding:0;min-height:calc(100vh - 120px);}
-#container.ty3{background:#eefcff;min-height:calc(100vh - 104px);}
-#container.ty3 #contents{padding:0;min-height:calc(100vh - 104px);}
+#container.ty3{background:#eefcff;}
+#container.ty3 #contents{padding:0 0 30px;min-height:calc(100vh - 104px);}
+#container.bg_gray{background-color:#f8f8f8;}
+#contents{padding:30px 0;}
+#contents.pt0>.section:first-child{padding-top:30px;}
+#contents.pb0>.section:last-child{padding-bottom:30px;}
 .section{padding:0 20px;}
+.section.bg_white{background:#fff;}
 .section .outer{margin-left:-20px;margin-right:-20px;}
 
 .area_next_bottom{padding-bottom:30px;min-height:calc(100vh - 153px)}
