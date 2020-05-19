@@ -162,16 +162,63 @@ html.iPhoneX .total_search.is_floating .pop_close.last_focus{bottom:calc(constan
 .select_item_wrap.col2>li{width:50%;}
 .select_item_wrap.col3>li{width:33.33%;}
 .tab_panel>.select_item_wrap{margin-top:0;}
-/*.select_item_wrap.bank{padding-top:2px;background:#f8f8f8;}
-.select_item_wrap.bank>li{width:33.33%;display:inline-block;vertical-align:top;}
-.select_item_wrap.bank .select_item>a{position:relative;display:block;padding:10px 0 0;height:70px;margin:-1px 0 0 -1px;background:#fff;border:1px solid #d4d4d4;text-align:center;line-height:1.2;color:#666;}
-.select_item_wrap.bank>li:nth-child(3n+1) .select_item>a{margin-left:0;border-left-color:transparent;}
-.select_item_wrap.bank>li:nth-child(3n) .select_item>a{border-right-color:transparent;}
-.select_item_wrap.bank .select_item.selected>a{border-color:#3182f7 !important;color:#3182f7;z-index:1;}
-.select_item_wrap.bank .select_item>a span{position:relative;display:flex;min-height:26px;font-size:1.3rem;align-items:center;justify-content:center;}
-.select_item_wrap.bank [class*=bk_]{display:block;width:30px;height:20px;margin:0 auto 3px;background:#ddd;}*/
-.select_item_wrap.bank>li{width:50%;}
-.select_item_wrap.bank .select_item>a{position:relative;padding-left:40px;min-height:45px;line-height:43px;text-align:left;font-size:1.3rem;}
-.select_item_wrap.bank .select_item>a span{display:flex;height:35px;align-items:center;}
-.select_item_wrap.bank [class*=bk_]{position:absolute;left:10px;top:50%;display:block;width:25px;height:18px;margin-top:-9px;background:#ddd;}
 .select_item_wrap.card .select_item>a{padding:15px 10px;line-height:1.5;}
+.select_item_wrap.bank>li{width:50%;}
+.select_item_wrap.bank .select_item>a{position:relative;padding-left:44px;min-height:52px;line-height:40px;text-align:left;}
+.select_item_wrap.bank .select_item>a span{display:flex;height:40px;align-items:center;}
+.select_item_wrap.bank [class*=bk_]{position:absolute;left:10px;top:50%;display:block;width:24px;height:24px;margin-top:-12px;background:url(../images/common/spr_bank_ico.png) no-repeat 0 0;background-size:100% auto;}
+/*은행*/
+.select_item_wrap.bank .bk_011,
+.select_item_wrap.bank .bk_012,
+.select_item_wrap.bank .bk_247{background-position:0 -24px;}
+.select_item_wrap.bank .bk_039,
+.select_item_wrap.bank .bk_032{background-position:0 -48px;}
+.select_item_wrap.bank .bk_034,
+.select_item_wrap.bank .bk_037{background-position:0 -72px;}
+.select_item_wrap.bank .bk_004,
+.select_item_wrap.bank .bk_218{background-position:0 -96px;}
+.select_item_wrap.bank .bk_003{background-position:0 -120px;}
+.select_item_wrap.bank .bk_031,
+.select_item_wrap.bank .bk_262{background-position:0 -144px;}
+.select_item_wrap.bank .bk_055{background-position:0 -168px;}
+.select_item_wrap.bank .bk_{background-position:0 -192px;}/*미즈호코퍼레이트은행*/
+.select_item_wrap.bank .bk_{background-position:0 -216px;}/*산림조합*/
+.select_item_wrap.bank .bk_002{background-position:0 -240px;}
+.select_item_wrap.bank .bk_050{background-position:0 -264px;}
+.select_item_wrap.bank .bk_045{background-position:0 -288px;}
+.select_item_wrap.bank .bk_007{background-position:0 -312px;}
+.select_item_wrap.bank .bk_088,
+.select_item_wrap.bank .bk_035,
+.select_item_wrap.bank .bk_278{background-position:0 -336px;}
+.select_item_wrap.bank .bk_048{background-position:0 -360px;}
+.select_item_wrap.bank .bk_020{background-position:0 -384px;}
+.select_item_wrap.bank .bk_{background-position:0 -408px;}/*제이피모간체이스은행*/
+.select_item_wrap.bank .bk_071{background-position:0 -432px;}
+.select_item_wrap.bank .bk_081,
+.select_item_wrap.bank .bk_270{background-position:0 -456px;}
+.select_item_wrap.bank .bk_027{background-position:0 -480px;}
+.select_item_wrap.bank .bk_{background-position:0 -504px;}/*보아은행*/
+.select_item_wrap.bank .bk_{background-position:0 -528px;}/*HSBC은행*/
+.select_item_wrap.bank .bk_023{background-position:0 -552px;}
+.select_item_wrap.bank .bk_089{background-position:0 -576px;}
+.select_item_wrap.bank .bk_090{background-position:0 -600px;}
+/*증권*/
+.select_item_wrap.bank .bk_261{background-position:0 -624px;}
+.select_item_wrap.bank .bk_267{background-position:0 -648px;}
+.select_item_wrap.bank .bk_279{background-position:0 -672px;}
+.select_item_wrap.bank .bk_287{background-position:0 -696px;}
+.select_item_wrap.bank .bk_238{background-position:0 -720px;}
+.select_item_wrap.bank .bk_290{background-position:0 -744px;}
+.select_item_wrap.bank .bk_240{background-position:0 -768px;}
+.select_item_wrap.bank .bk_{background-position:0 -792px;}/*솔로몬투자증권*/
+.select_item_wrap.bank .bk_291{background-position:0 -816px;}
+.select_item_wrap.bank .bk_209{background-position:0 -840px;}
+.select_item_wrap.bank .bk_280{background-position:0 -864px;}
+.select_item_wrap.bank .bk_265{background-position:0 -888px;}
+.select_item_wrap.bank .bk_264{background-position:0 -912px;}
+.select_item_wrap.bank .bk_243{background-position:0 -936px;}
+.select_item_wrap.bank .bk_269{background-position:0 -960px;}
+.select_item_wrap.bank .bk_{background-position:0 -984px;}/*현대증권*/
+.select_item_wrap.bank .bk_263{background-position:0 -1008px;}
+.select_item_wrap.bank .bk_292{background-position:0 -1030px;}
+.select_item_wrap.bank .bk_266{background-position:0 -1054px;}

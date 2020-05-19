@@ -3601,7 +3601,6 @@ var tblUI = {
 };
 
 //swiper 실행
-var $uiSwipers = [];
 var swiperUI = {
 	array:[],
 	focusAria: function(el,first,last){ 
@@ -3612,7 +3611,6 @@ var swiperUI = {
 		if ($(tar).length > 0){
 			$(tar).each(function(){
 				var $this = $(this),
-					$swipeIdx = swiperUI.array.length+1,
 					$itemLength = $this.children().length,
 					$autoplayOpt = '',
 					$navigationOpt = '',
@@ -3622,7 +3620,10 @@ var swiperUI = {
 				}else if($itemLength > 1){
 					$this.closest('.ui-swiper-wrap').removeClass('only');
 					//swipe
-					if(!$this.hasClass('swiper-container-initialized')){
+					if($this.hasClass('swiper-container-initialized')){
+						var $aryIdx = $this.data('idx');
+						swiperUI.array[$aryIdx].update();
+					}else{
 						$this.children('.item').addClass('swiper-slide');
 						$this.wrapInner('<div class="swiper-wrapper"></div>');
 						if($this.hasClass('loop'))$isLoop = true;
@@ -3708,7 +3709,7 @@ var swiperUI = {
 							}
 						};
 
-						$this.data('idx',$swipeIdx);
+						$this.data('idx',swiperUI.array.length);
 						var $swiper = new Swiper($this,$option);
 						swiperUI.array.push($swiper);
 
