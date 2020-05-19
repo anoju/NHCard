@@ -3613,6 +3613,7 @@ var swiperUI = {
 					$itemLength = $this.children().length,
 					$autoplayOpt = '',
 					$navigationOpt = '',
+					$isParallax = false,
 					$isLoop = false;
 				if($itemLength == 1){
 					$this.closest('.ui-swiper-wrap').addClass('only');
@@ -3629,6 +3630,7 @@ var swiperUI = {
 						if($this.hasClass('autoplay') || $this.hasClass('navi')){
 							$this.addClass('swipe-container').append('<div class="swiper-navi"></div>');
 						}
+						if($this.find('[data-swiper-parallax]').length || $this.find('[data-swiper-parallax-x]').length || $this.find('[data-swiper-parallax-y]').length || $this.find('[data-swiper-parallax-scale]').length || $this.find('[data-swiper-parallax-opacity]').length)$isParallax = true;
 						if($this.hasClass('autoplay')){
 							$this.find('.swiper-navi').append('<button type="button" class="swiper-auto-ctl"><span class="blind">자동롤링 중지</span></button>');
 							$autoplayOpt = {
@@ -3648,13 +3650,13 @@ var swiperUI = {
 						}else{
 							$this.addClass('swipe-container').append('<div class="swiper-pagination"></div>');
 						}
-
 						var $option = {
 							slidesPerView: 'auto',
 							slideClass:'item',
 							resizeReInit:true,
 							autoplay:$autoplayOpt,
 							navigation:$navigationOpt,
+							parallax:$isParallax,
 							loop:$isLoop,
 							pagination:{
 								el: '.swiper-pagination',

@@ -806,7 +806,8 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 /*swipe*/
 .ui-swiper-wrap{margin:40px 0 0;}
 .section .ui-swiper-wrap{margin-left:-20px;margin-right:-20px;}
-.ui-swiper .item{padding:0 20px;}
+.ui-swiper .item{padding:0 20px;overflow:hidden;}
+.ui-swiper .item>a{display:block;}
 .ui-swiper .item img{max-width:100%;}
 .ui-swiper.swiper-container-initialized{padding:0 12.5px;overflow:hidden;}
 .ui-swiper.swiper-container-initialized .item{padding:0 7.5px;}
