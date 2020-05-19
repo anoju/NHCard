@@ -1173,10 +1173,11 @@ var Layer = {
 		//닫기
 		$(tar).removeClass('show');
 		$(tar).attr('aria-hidden','true').removeAttr('style tabindex');
-
-		$(tar).find('.'+Layer.headClass).removeAttr('style').removeClass('shadow');
-		$(tar).find('.'+Layer.contClass).removeAttr('tabindex style');
-		if($(tar).find('.pop_close.last_focus').length)$(tar).find('.pop_close.last_focus').remove();
+		setTimeout(function(){
+			$(tar).find('.'+Layer.headClass).removeAttr('style').removeClass('shadow');
+			$(tar).find('.'+Layer.contClass).removeAttr('tabindex style');
+			if($(tar).find('.pop_close.last_focus').length)$(tar).find('.pop_close.last_focus').remove();
+		},$closeDelay);
 
 		//알럿창
 		if($(tar).hasClass(Layer.alertClass) || $(tar).hasClass(Layer.selectClass)  || $(tar).hasClass(Layer.calendarClass)){
