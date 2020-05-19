@@ -724,6 +724,7 @@ var Layer = {
 	focusClass:'pop_focused',
 	selectId:'uiSelectLayer',
 	selectClass:'ui-pop-select',
+	calendarClass:'ui-calendar',
 	wrapClass:'pop_wrap',
 	headClass:'pop_head',
 	contClass:'pop_cont',
@@ -941,7 +942,7 @@ var Layer = {
 			$popHtml += '</div>';
 		$popHtml += '</div>';
 
-		$('#wrap').append($popHtml);
+		$('body').append($popHtml);
 		if($isBank){
 			var isType2 = false;
 			$('#'+$popId+' .select_item_wrap.bank>li').each(function(){
@@ -1178,18 +1179,13 @@ var Layer = {
 		if($(tar).find('.pop_close.last_focus').length)$(tar).find('.pop_close.last_focus').remove();
 
 		//알럿창
-		if($(tar).hasClass(Layer.alertClass)){
+		if($(tar).hasClass(Layer.alertClass) || $(tar).hasClass(Layer.selectClass)  || $(tar).hasClass(Layer.calendarClass)){
 			setTimeout(function(){
-				var $content = $(tar).find('.pop_text>div').html();
-				$(tar).remove();
-				Layer.beforeCont.splice(Layer.beforeCont.indexOf($content),1);
-			},$closeDelay);
-		}
-
-		//select팝업
-		if($(tar).hasClass(Layer.selectClass)){
-			Layer.isSelectOpen = false;
-			setTimeout(function(){
+				if($(tar).hasClass(Layer.selectClass))Layer.isSelectOpen = false;
+				if($(tar).hasClass(Layer.alertClass)){
+					var $content = $(tar).find('.message>div').html();
+					Layer.beforeCont.splice(Layer.beforeCont.indexOf($content),1);
+				}
 				$(tar).remove();
 			},$closeDelay);
 		}
@@ -2935,8 +2931,7 @@ var sclCalendar = {
 				var $this = $(this),
 					$thisId = $this.attr('id'),
 					$type = $this.data('type'),
-					$btnTxt = '날짜 선택',
-					$html = '';
+					$btnTxt = '날짜 선택';
 				if($thisId == undefined || $thisId == ''){
 					$thisId = 'sclCal_'+i;
 					$this.attr('id',$thisId);
@@ -2944,12 +2939,27 @@ var sclCalendar = {
 				if($type == undefined)$type = 'date';
 				if($type == 'full')$btnTxt = '날짜 및 시간 선택';
 				if($type == 'time')$btnTxt = '시간 선택';
-				if(!$this.closest('.scl_calrender').length)$this.parent().wrap('<div class="scl_calrender"><div class="scl_cal_btn"></div></div>');
-				if(!$this.siblings('.btn_select').length)$this.after('<a href="#'+$thisId+'" class="btn_select ui-date-open" role="button"><span class="blind">'+$btnTxt+'</span></a>');
-				var $wrap = $this.closest('.scl_calrender'),
-					$calendar = $wrap.find('.scl_cal_wrap');
-				if(!$calendar.length){
-					$html += '<div class="scl_cal_wrap">';
+				if(!$this.siblings('.btn_select').length){
+					$this.parent().addClass('scl_cal_btn');
+					$this.data('pop',$thisId+'Pop');
+					$this.after('<a href="#'+$thisId+'Pop" class="btn_select ui-date-open" role="button"><span class="blind">'+$btnTxt+'</span></a>');
+				}
+			});
+		}
+	},
+	POP:function(element){
+		var $this = $(element),
+			$popId = $this.data('pop'),
+			$popH1 = $this.attr('title'),
+			$type = $this.data('type'),
+			$html = '';
+		if($popH1 == undefined)$popH1 = $this.siblings('.btn_select').text();
+		if($type == undefined)$type = 'date';
+		$html += '<div id="'+$popId+'" class="popup bottom ui-calendar" role="dialog" aria-hidden="true">';
+			$html += '<article class="pop_wrap">';
+				$html += '<div class="pop_head"><h1>'+$popH1+'</h1><a href="#" class="pop_close ui-pop-close" role="button"><span class="blind">팝업창 닫기</span></a></div>';
+				$html += '<div class="pop_cont">';
+					$html += '<div class="scl_calrender">';
 						$html += '<div class="tbl">';
 						if($type == 'full' || $type == 'date'){
 							$html += '<dl class="td scl_cal_group scl_year">';
@@ -2977,19 +2987,20 @@ var sclCalendar = {
 						}
 						$html += '</div>';
 					$html += '</div>';
-					$html += '<div class="scl_cal_close"><a href="#">달력 닫기</a></div>';
-					$wrap.append($html);
-					if($type == 'full')$wrap.find('.scl_cal_wrap').addClass('full');
-				}
-			});
-		}
+				$html += '</div>';
+			$html += '</article>';
+		$html += '</div>';
+		$('body').append($html);
+		$('#'+$popId).data('target',$this);
+		if($type == 'full')$('#'+$popId).find('.scl_calrender').addClass('full');
 	},
 	UI:function(element){
 		$(element).each(function(){
 			var $el = $(this);
 			$el.change(function(){
 				var $this = $(this),
-					$wrap = $this.closest('.scl_calrender'),
+					$popId = $this.data('pop'),
+					$wrap = $('#'+$popId),
 					$group = $wrap.find('.scl_cal_group '),
 					$type = $this.data('type'),
 					$today = autoDateFormet($nowDateDay.toString(),sclCalendar.dateMark),
@@ -3216,59 +3227,40 @@ var sclCalendar = {
 			});
 		});
 
-		$(document).on('click','.scl_calrender .ui-date-open',function(e){
+		$(document).on('click','.ui-date-open',function(e){
 			e.preventDefault();
 			var $this = $(this),
-				$wrap = $this.closest('.scl_calrender'),
-				$group = $wrap.find('.scl_cal_group'),
-				$input = $wrap.find('.scl_cal_btn input'),
+				$href = $this.attr('href'),
+				$input = $this.siblings('input'),
 				$type = $input.data('type'),
 				$todayDate = autoDateFormet($nowDateDay.toString(),sclCalendar.dateMark);
 			if($type == undefined)$type = 'date';
 			if($type == 'full')$todayDate = $todayDate + ' '+autoTimeFormet($nowDateOnlyTime.toString(),sclCalendar.timeMark);
 			if($type == 'time')$todayDate = autoTimeFormet($nowDateOnlyTime.toString(),sclCalendar.timeMark);
-			if($this.hasClass('open')){
-				$wrap.removeClass('expend');
-				//Body.unlock();
-				$wrap.find('.scl_cal_wrap').stop(true,false).slideUp(200);
-				$this.removeClass('open');
+			
+			sclCalendar.POP($input);
+			if($input.val() == ''){
+				$input.val($todayDate).change().keyup();
 			}else{
-				$wrap.addClass('expend');
-				$wrap.find('.scl_cal_wrap').stop(true,false).slideDown(200,function(){
-					accordion.scroll($this,this,function(){
-						//Body.lock();
-					});
-				});
-				$this.addClass('open');
-				if($input.val() == ''){
-					$input.val($todayDate).change().keyup();
-				}else{
-					$input.change().keyup();
-				}
+				$input.change().keyup();
+			}
+			Layer.open($href,function(){
+				var $group = $($href).find('.scl_cal_group');
 				$group.each(function(){
 					var $active = $(this).find('.active');
-					if($active.length)scrollUI.center($active,100,'vertical');
+					if($active.length){
+						scrollUI.center($active,100,'vertical');
+					}
 				});
-			}
-		});
-
-		$(document).on('click','.scl_calrender .scl_cal_close a, .scl_calrender .inp_del',function(e){
-			e.preventDefault();
-			var $wrap = $(this).closest('.scl_calrender'),
-				$btn = $wrap.find('.ui-date-open');
-			$wrap.removeClass('expend');
-			//Body.unlock();
-			$wrap.find('.scl_cal_wrap').stop(true,false).slideUp(200);
-			$btn.removeClass('on');
-			if($(this).closest('.scl_cal_close').length)$btn.focus();
+			});
 		});
 
 		$(document).on('click','.scl_calrender .scl_cal_item',function(e){
 			e.preventDefault();
-			var $wrap = $(this).closest('.scl_calrender'),
+			var $wrap = $(this).closest('.popup'),
 				$group = $wrap.find('.scl_cal_group'),
-				$input = $wrap.find('.scl_cal_btn input'),
-				$type = $input.data('type'),
+				$input = $wrap.data('target'),
+				$type = $($input).data('type'),
 				$valAry = [],
 				$val = '',
 				$active = '';
@@ -3282,7 +3274,7 @@ var sclCalendar = {
 			if($type == 'date')$val = $valAry.join(sclCalendar.dateMark);
 			if($type == 'time')$val = $valAry.join(sclCalendar.timeMark);
 			if($type == 'full')$val = $valAry[0]+sclCalendar.dateMark+$valAry[1]+sclCalendar.dateMark+$valAry[2]+' '+$valAry[3]+sclCalendar.timeMark+$valAry[4];
-			$input.val($val).change().keyup();
+			$($input).val($val).change().keyup();
 		});
 
 		$(document).on('keydown','.scl_calrender .scl_cal_item',function(e){
@@ -3319,6 +3311,13 @@ var sclCalendar = {
 					}
 				}
 			}
+		});
+
+		$(document).on('click','.' +Layer.calendarClass,function(e){
+			e.preventDefault();
+			Layer.close(this);
+		}).on('click','.'+Layer.wrapClass,function(e){
+			e.stopPropagation();
 		});
 	},
 	init:function(element){

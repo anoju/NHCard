@@ -745,28 +745,24 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .i_ico_122.ico_2{background-image:url(../images/common/ico_122_02.png);}
 
 /* scl_datepicker */
-.scl_cal_wrap{display:none;position:relative;margin-top:-4px;padding-top:4px;border:1px solid #ddd;border-top-width:0;overflow:hidden;}
-.scl_cal_btn{position:relative;z-index:1;}
-.scl_cal_btn .input input{padding-right:60px;}
+.scl_calrender{border-top:1px solid #ddd;font-size:1.5rem;}
+.scl_cal_btn{position:relative;}
+.scl_cal_btn input{padding-right:60px;}
 .scl_cal_btn .inp_del{right:35px;}
 .scl_cal_btn .btn_select{position:absolute;right:0;top:0;width:30px;height:100%;border:0 none;padding:0;}
 .scl_cal_group{text-align:center;padding-left:0 !important;}
 .scl_cal_group.scl_month,
 .scl_cal_group.scl_day{width:25%;}
-.scl_cal_wrap.full .scl_cal_group.scl_month,
-.scl_cal_wrap.full .scl_cal_group.scl_day,
-.scl_cal_wrap.full .scl_cal_group.scl_hour,
-.scl_cal_wrap.full .scl_cal_group.scl_min{width:18%;}
-.scl_cal_group dt{padding:5px 0;font-weight:500;}
-.scl_cal_group dd{position:relative;border-top:1px solid #ddd;height:129px;overflow-x:hidden;overflow-y:auto;}
-.scl_cal_group .scl_cal_item{display:block;width:100%;padding:5px 0;color:#888;}
+.scl_calrender.full .scl_cal_group.scl_month,
+.scl_calrender.full .scl_cal_group.scl_day,
+.scl_calrender.full .scl_cal_group.scl_hour,
+.scl_calrender.full .scl_cal_group.scl_min{width:18%;}
+.scl_cal_group dt{padding:10px 0;font-weight:500;}
+.scl_cal_group dd{position:relative;border-top:1px solid #ddd;height:168px;overflow-x:hidden;overflow-y:auto;}
+.scl_cal_group .scl_cal_item{display:block;width:100%;padding:10px 0;color:#858585;}
 .scl_cal_group .scl_cal_item.active{font-weight:500;color:#fff;background:#3182f7;}
 .scl_cal_close{display:none;position:absolute;right:0;top:0;overflow:hidden;}
 .scl_cal_close a{display:block;width:30px;height:40px;font-size:3px;color:transparent;}
-/*.scl_calrender.expend{position:relative;z-index:200;}
-.scl_calrender.expend:before{content:'';display:block;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);}
-.scl_calrender.expend .scl_cal_btn,
-.scl_calrender.expend .scl_cal_wrap{z-index:1;}*/
 
 /*accordion*/
 .accordion_list{border:1px solid #ddd;border-radius:4px;overflow:hidden;}
