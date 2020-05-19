@@ -214,6 +214,7 @@ common
 
 /* bg-color */
 .bg_gray{background-color:#8997af}
+.bg_gray2{background-color:#f8f8f8}
 .bg_blue{background-color:#3182f7}
 
 .blur img{-webkit-filter:blur(6px);-moz-filter:blur(6px);filter:blur(6px);}
