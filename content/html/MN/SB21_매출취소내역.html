@@ -35,7 +35,7 @@
 <script src="../../js/ui_front.js"></script>
 <script>
 	$(function(){
-		common.title('카드이용내역');
+		common.title('매출취소내역');
 	});
 </script>
 </head>
@@ -46,13 +46,6 @@
 	<div id="container">
 		<section id="contents">
 			<div class="section">
-				<div class="tabmenu mb0">
-					<ul>
-						<li class="active"><a href="#" title="현재선택" role="button">승인내역</a></li>
-						<li><a href="#" role="button">이용내역</a></li>
-					</ul>
-					<div class="tab_line" aria-hidden="true" style="width: 197px; left: 0px;"></div>
-				</div>
 				<div class="card_info_box filter mt35">
 					<div class="img">
 						<img src="../../images/temp/card_228_144.png" alt="채움카드">
@@ -68,14 +61,6 @@
 						</div>
 					</div>
 					<a href="#" class="btn_filter" title="팝업으로 필터 설정" onclick="Layer.open('#inquiryListPop')"><span class="blind">필터</span></a>
-				</div>
-				<div class="price_box_wrap ty3 mt20">
-					<div class="txt">카드이용내역 (총 6건)</div>
-					<div class="total_num"><strong>123,456,789</strong> 원</span></div>
-					<div class="flex">
-						<div class="sub_num">정상 5건 <span class="num"><strong>100,000,000</strong> 원</span></div>
-						<div class="sub_num">취소 5건 <span class="num"><strong>100,000,000</strong> 원</span></div>
-					</div>
 				</div>
 				<div class="total_num_box">
 					<div class="f_left">총 <strong>50</strong>건</div>
@@ -192,11 +177,6 @@
 							</ul>
 						</dd>
 					</dl>
-				</div>
-			</div>
-			<div class="pop_btn btn_wrap bottom_fixed">
-				<div class="flex">
-					<a href="#" class="button h48 blue ui-pop-close">확인</a>
 				</div>
 			</div>
 		</article>
