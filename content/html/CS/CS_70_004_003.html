@@ -36,6 +36,9 @@
 <script>
 	$(function(){
 		common.title('인증서 정보');
+
+		//Layer.confirm('휴대폰에서 인증서를 삭제합니다.<br>PC에 저장/복사 되어있는 인증서는<br>유효합니다.<br>삭제하시겠어요?');
+		Layer.alert('인증서가 삭제되었습니다.');
 	});
 </script>
 </head>
@@ -68,20 +71,20 @@
 								<td>은행개인</td>
 							</tr>
 							<tr>
-								<th scope="row">인증서 종류</th>
+								<th scope="row">발급일</th>
 								<td>2020.06.04</td>
 							</tr>
 							<tr>
-								<th scope="row">인증서 종류</th>
+								<th scope="row">만료일</th>
 								<td>2021.06.04</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
-				<div class="btn_wrap">
+				<div class="btn_wrap bottom_fixed">
 					<div class="flex">
-						<a href="#" class="button line blue">인증서삭제</a>
-						<a href="#" class="button blue">비밀번호 변경</a>
+						<a href="#" class="button h54 gray">인증서삭제</a>
+						<a href="#" class="button h54 blue">비밀번호 변경</a>
 					</div>
 				</div>
 			</div>

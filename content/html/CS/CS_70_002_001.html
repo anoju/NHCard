@@ -36,6 +36,9 @@
 <script>
 	$(function(){
 		common.title('인증서 가져오기');
+
+		//Layer.alert('인증서 가져오기가 완료되었습니다.');
+		//Layer.alert('인증서가 업로드 되지 않았어요.<br>다시 시도해 주세요.');
 	});
 </script>
 </head>
@@ -44,15 +47,18 @@
 	<div data-include-html="../include/top.html"></div>
 	<div data-include-html="../include/gnb.html"></div>
 	<div id="container">
-		<section id="contents">
+		<section id="contents" class="pb0">
 			<div class="section">
 				<div class="imp_npki">
 					<h2 class="tit_h2 fz_17 t_center">인증번호를 PC화면에 입력해 주세요.</h2>
 					<div class="img">
-						<img src="../../images/contents/img_pc_phone.png" alt="모바일에서 PC로의 전송이미지" />
+						<img src="../../images/contents/img_pc_to_phone.png" alt="모바일에서 PC로의 전송이미지" />
 					</div>
 					<div class="flex">
-						<span>1234</span><span>1234</span><span>1234</span><span>1234</span>
+						<div><input type="tel" value="1234" title="인증번호 첫번째 4자리" readonly></div>
+						<div><input type="tel" value="1234" title="인증번호 두번째 4자리" readonly></div>
+						<div><input type="tel" value="1234" title="인증번호 세번째 4자리" readonly></div>
+						<div><input type="tel" value="1234" title="인증번호 네번째 4자리" readonly></div>
 					</div>
 				</div>
 			</div>
@@ -66,19 +72,15 @@
 				<div class="npki_notice">
 					<dl>
 						<dt>STEP<strong>01</strong></dt>
-						<dd>PC에서 NH농협카드 홈페이지에 접속하여
-							오른쪽 상단의 [공인인증서 관리]> [인증
-							서 내보내기] 버튼을 선택해주세요.</dd>
+						<dd>PC에서 NH농협카드 홈페이지에 접속하여 오른쪽 상단의 [공인인증서 관리] &gt; [인증서 내보내기] 버튼을 선택해주세요.</dd>
 					</dl>
 					<dl>
 						<dt>STEP<strong>02</strong></dt>
-						<dd>인증서를 선택 한 후 인증번호 16자리를
-							PC에 입력해 주세요. </dd>
+						<dd>인증서를 선택 한 후 인증번호 16자리를 PC에 입력해 주세요. </dd>
 					</dl>
 					<dl>
 						<dt>STEP<strong>03</strong></dt>
-						<dd>휴대폰의 [확인] 버튼을 선택 후 인증서 비
-							밀번호를 입력하면 완료됩니다.</dd>
+						<dd>휴대폰의 [확인] 버튼을 선택 후 인증서 비밀번호를 입력하면 완료됩니다.</dd>
 					</dl>
 				</div>
 			</div>

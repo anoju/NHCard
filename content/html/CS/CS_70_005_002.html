@@ -54,7 +54,7 @@
 	<div id="selectNPKI" class="popup full" role="dialog" aria-hidden="true">
 		<article class="pop_wrap">
 			<div class="pop_head">
-				<h1 class="t_center mr20">공인인증서 목록</h1>
+				<h1>공인인증서 목록</h1>
 				<a href="#" class="pop_close ui-pop-close"><span class="blind">팝업창 닫기</span></a>
 			</div>
 			<div class="pop_cont bg_gray2"><!-- 인증서 없을시 bg_gray2 삭제 -->
@@ -63,17 +63,16 @@
 					<div class="box_list_1 npki">
 						<ul>
 							<li>
-								<div class="checkbox ty2 large"><input type="radio" id="npki01" name="npki"><i aria-hidden="true"></i></div>
-								<label for="npki01" class="inner">
+								<div class="checkbox ty2 large"><input type="radio" id="npki01" name="npki" disabled><i aria-hidden="true"></i></div><!-- input:disabled 속성 -->
+								<label for="npki01" class="inner disabled"><!-- disabled 클래스 -->
 									<div class="card_info_tbl">
-										<div class="img"><img src="../../images/common/ico_48_02.png" alt="인증서만료 아이콘"></div>
 										<div>
 											<div class="tit"><strong>이나현()00110213213212121</strong></div>
-											<div class="sub mt15">
+											<div class="sub">
 												<ul>
 													<li><strong>발급자</strong><span>금융결제원</span></li>
 													<li><strong>구분</strong><span>은행개인</span></li>
-													<li><strong>만료일</strong><span>2021.02.20</span><i class="ico_expire">만료</i></li>
+													<li><strong>만료일</strong><span>2021.02.20</span><i class="ico_txt line red">만료</i></li>
 												</ul>
 											</div>
 										</div>
@@ -84,10 +83,9 @@
 								<div class="checkbox ty2 large"><input type="radio" id="npki02" name="npki"><i aria-hidden="true"></i></div>
 								<label for="npki02" class="inner">
 									<div class="card_info_tbl">
-										<div class="img"><img src="../../images/common/ico_48_01.png" alt="인증서 아이콘"></div>
 										<div>
 											<div class="tit"><strong>이나현()00110213213212121</strong></div>
-											<div class="sub mt15">
+											<div class="sub">
 												<ul>
 													<li><strong>발급자</strong><span>금융결제원</span></li>
 													<li><strong>구분</strong><span>은행개인</span></li>
@@ -102,10 +100,9 @@
 								<div class="checkbox ty2 large"><input type="radio" id="npki03" name="npki"><i aria-hidden="true"></i></div>
 								<label for="npki03" class="inner">
 									<div class="card_info_tbl">
-										<div class="img"><img src="../../images/common/ico_48_01.png" alt="인증서 아이콘"></div>
 										<div>
 											<div class="tit"><strong>이나현()00110213213212121</strong></div>
-											<div class="sub mt15">
+											<div class="sub">
 												<ul>
 													<li><strong>발급자</strong><span>금융결제원</span></li>
 													<li><strong>구분</strong><span>은행개인</span></li>
