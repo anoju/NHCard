@@ -398,7 +398,7 @@ h3.tit_h2+h4.tit_h3{margin-top:16px;}
 
 .npki_notice_wrp{background-color:#f8f8f8;padding:20px;margin-top:45px}
 .npki_notice_wrp h3{font-weight:bold}
-.npki_notice_wrp .npki_notice{background-color:#fff;padding:20px;margin-top:20px}
+.npki_notice_wrp .npki_notice{background-color:#fff;padding:0 20px;margin-top:20px}
 .npki_notice_wrp .npki_notice dl{padding-left:50px;position:relative;padding-bottom:50px;}
 .npki_notice_wrp .npki_notice dl dt{position:absolute;top:2px;left:10px;text-align:center;color:#3182f7 !important;font-size:9px;font-weight:bold;height:100%;overflow:hidden;}
 .npki_notice_wrp .npki_notice dl dt strong{display:block;font-size:13px}

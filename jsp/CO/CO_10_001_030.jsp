@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<%@ include file="../include/meta.jsp" %>
+<%@ include file="../include/head.jsp" %>
+<script>
+	$(function(){
+		common.title('자동로그인 해제');
+	});
+</script>
+</head>
+<body>
+<article id="wrap">
+	<%@ include file="../include/top_menu.jsp" %>
+	<%@ include file="../include/gnb.jsp" %>
+	<div id="container" class="bg_gray">
+		<section id="contents">
+			<div class="section">
+				<div class="area_next_bottom">
+					<div class="complete_wrap">
+						<i class="i_ico_50 ico_1" aria-hidden="true"></i>
+						<h2 class="tit_h2">자동로그인 해제 완료</h2>
+						<p class="txt">자동로그인 설정이 해제되었습니다.</p>
+					</div>
+				</div>
+				<div class="btn_wrap bottom_fixed">
+					<div class="flex">
+						<a href="#" class="button h54 blue">확인</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<%@ include file="../include/footer.jsp" %>
+</article>
+</body>
+</html>

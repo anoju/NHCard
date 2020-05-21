@@ -2388,7 +2388,7 @@ var formUI = {
 		//input 삭제버튼
 		$(document).on('keyup focus','.input input, .textarea textarea',function(){
 			var $this = $(this), $val = $this.val();
-			if($this.prop('readonly') || $this.prop('disabled') || $this.attr('type') == 'password' || $this.hasClass('no_del') || $this.hasClass('datepicker') || $this.hasClass('time') || $this.hasClass('t_right')){
+			if($this.prop('readonly') || $this.prop('disabled') || $this.hasClass('no_del') || $this.hasClass('datepicker') || $this.hasClass('time') || $this.hasClass('t_right')){
 				return false;
 			}
 			if($val != ''){
