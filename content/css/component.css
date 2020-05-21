@@ -1059,6 +1059,7 @@ div.caution_txt{display:block;}
 .card_info_box.filter{border-color:#3182f7;}
 .card_info_box.filter .name{padding-right:25px;}
 .card_info_box .btn_filter{position:absolute;top:20px;right:20px;}
+.card_info_box .ico_txt{margin-bottom:7px;}
 
 .table .type{display:inline-block;margin-right:5px;width:17px;height:10px;background-repeat:no-repeat;background-position:center 1px;background-size:contain;}
 .table .type.master{background-image:url(../images/common/card_type_master.png);}
