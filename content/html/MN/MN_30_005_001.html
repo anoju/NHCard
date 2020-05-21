@@ -56,7 +56,7 @@
 							<div>2020.04.01 ~ 2020.05.01(1주일)</div>
 						</div>
 					</div>
-					<a href="#" class="btn_filter" title="팝업으로 필터 설정" onclick="Layer.open('#inquiryListPop')"><span class="blind">필터</span></a>
+					<a href="#" class="btn_filter" title="팝업으로 필터 설정" onclick="Layer.open('#agreeFilterPop')"><span class="blind">필터</span></a>
 				</div>
 				<div class="price_box_wrap mt20">
 					<div class="txt">교통카드이용내역 (총 6건)</div>
@@ -182,7 +182,80 @@
 			</div>
 		</article>
 	</div>
-	<!-- 교통카드이용내역 상세내역 팝업(MN_30_006_003) -->
+	<!-- //교통카드이용내역 상세내역 팝업(MN_30_006_003) -->
+	<!-- 교통카드 이용내역 필터 -->
+	<div id="agreeFilterPop" class="popup full" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_head">
+				<h1>교통카드 이용내역 필터</h1>
+				<a href="#" class="pop_close ui-pop-close"><span class="blind">팝업창 닫기</span></a>
+			</div>
+			<div class="pop_cont">
+				<div class="section">
+					<h2 class="tit_h2">고객구분</h2>
+					<div class="select">
+						<select id="installmentPeriod" title="고객구분 선택">
+							<option value="" selected="selected">고객구분 선택</option>
+							<option value="01">채움(농협은행) 회원</option>
+							<option value="02">비씨(농·축협) 회원</option>
+						</select>
+					</div>
+					<div class="error_txt">고객구분을 선택해주세요.</div><!-- 에러메세지 입력영역 -->
+
+					<h2 class="tit_h2">조회기간</h2>
+					<div class="form_item mt0">
+						<div class="fm_cont">
+							<ul class="btn_toggle grid col5">
+								<li>
+									<input type="radio" id="dateWeek" name="togDate" value="1" checked>
+									<label for="dateWeek"><span>1주일</span></label>
+								</li>
+								<li>
+									<input type="radio" id="dateDay15" name="togDate" value="3">
+									<label for="dateDay15"><span>15일</span></label>
+								</li>
+								<li>
+									<input type="radio" id="dateMon1" name="togDate" value="6">
+									<label for="dateMon1"><span>1개월</span></label>
+								</li>
+								<li>
+									<input type="radio" id="dateMon2" name="togDate" value="12">
+									<label for="dateMon2"><span>2개월</span></label>
+								</li>
+								<li>
+									<input type="radio" id="dateEtc" name="togDate" value="etc">
+									<label for="dateEtc"><span>직접입력</span></label>
+								</li>
+							</ul>
+							<div id="datepickerTxt" class="datepicker_box">
+								<div class="tbl date_wrap"><!-- 달력 2개일때 data_wrap 클래스 필요-->
+									<div class="td">
+										<div class="input"><input type="tel" class="datepicker" placeholder="YYYY.MM.DD" title="YYYY.MM.DD 형식으로 입력"></div>
+									</div>
+									<div class="td dash">-</div>
+									<div class="td">
+										<div class="input"><input type="tel" class="datepicker" placeholder="YYYY.MM.DD" title="YYYY.MM.DD 형식으로 입력"></div>
+									</div>
+								</div>
+							</div>
+							<div class="error_txt">기간를 입력해주세요.</div><!-- 에러메세지 입력영역 -->
+							<p class="fz_13 fc_gray mt10">최근 1년, 2개월 단위로 조회 가능</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div class="flex">
+					<a href="#" class="button h48 blue ui-pop-close">조회</a>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- //교통카드 이용내역 필터 -->
+	<!--카드선택 팝업-->
+	<div data-include-html="../include/pop/cardSelect.html"></div>
+	<!--//카드선택 팝업-->
+	<div data-include-html="../include/footer.html"></div>
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>

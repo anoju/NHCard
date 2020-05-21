@@ -67,7 +67,7 @@
 							<div>2020.04.01 ~ 2020.05.01(이번달)</div>
 						</div>
 					</div>
-					<a href="#" class="btn_filter" title="팝업으로 필터 설정" onclick="Layer.open('#inquiryListPop')"><span class="blind">필터</span></a>
+					<a href="#" class="btn_filter" title="팝업으로 필터 설정" onclick="Layer.open('#agreeFilterPop')"><span class="blind">필터</span></a>
 				</div>
 				<div class="price_box_wrap ty3 mt20">
 					<div class="txt">카드이용내역 (총 6건)</div>
@@ -96,7 +96,7 @@
 										<div class="tit">웅진싱크빅</div>
 										<div class="date fc_gray">2020.03.16 15:15:56</div>
 										<ul class="sub_info">
-											<li><span class="fc_blue">예금인출</span></li>
+											<li>예금인출</li>
 											<li>12345678</li>
 										</ul>
 									</div>
@@ -117,7 +117,7 @@
 										<div class="tit">웅진싱크빅</div>
 										<div class="date fc_gray">2020.03.16 15:15:56</div>
 										<ul class="sub_info">
-											<li><span class="fc_blue">예금인출</span></li>
+											<li>예금인출</li>
 											<li>12345678</li>
 										</ul>
 									</div>
@@ -182,6 +182,112 @@
 			</div>
 		</section>
 	</div>
+	<!-- 승인내역 필터 팝업 -->
+	<div id="agreeFilterPop" class="popup full" role="dialog" aria-hidden="true">
+		<article class="pop_wrap">
+			<div class="pop_head">
+				<h1>승인내역 필터</h1>
+				<a href="#" class="pop_close ui-pop-close"><span class="blind">팝업창 닫기</span></a>
+			</div>
+			<div class="pop_cont">
+				<div class="section">
+					<h2 class="tit_h2">카드선택</h2>
+					<!-- 카드선택 전 -->
+					<div class="select btn">
+						<a href="#" class="btn_select off" title="팝업으로 카드 선택" onclick="Layer.open('#cardSelectPop')">카드선택</a><!-- 선택전 off 클래스 -->
+					</div>
+					<!-- //카드선택 전 -->
+					<!-- 카드선택 후 -->
+					<div class="select btn">
+						<a href="#" class="btn_select on" title="팝업으로 카드 선택" onclick="Layer.open('#cardSelectPop')">전체카드</a><!-- 선택후 on 클래스 -->
+					</div>
+					
+					<div class="select btn">
+						<a href="#" class="btn_select on" title="팝업으로 카드 선택" onclick="Layer.open('#cardSelectPop')"><!-- 선택후 on 클래스 -->
+							<div class="card_info_box">
+								<div class="name">채움(농협은행)</div>
+								<div class="sub">
+									<span class="type master"><span class="blind">마스터카드</span></span>
+									<!-- <span class="type visa"><span class="blind">비자카드</span></span>
+									<span class="type jcb"><span class="blind">jcb카드</span></span>
+									<span class="type w"><span class="blind">w카드</span></span>
+									<span class="type unionpay"><span class="blind">unionpay카드</span></span>
+									<span class="type domestic"><span class="blind">국내전용카드</span></span> -->
+									<span class="num">1234-56**-****3456</span>
+								</div>
+							</div>
+						</a>
+					</div>
+					<!-- //카드선택 후 -->
+					<span class="checkbox mt20">
+						<input type="checkbox" id="familyCard"><i aria-hidden="true"></i>
+						<label for="familyCard" class="lbl">가족카드 포함 조회</label>
+					</span>
+					<h2 class="tit_h2">조회기간</h2>
+					<div class="form_item mt0">
+						<div class="fm_cont">
+							<ul class="btn_toggle grid col5">
+								<li>
+									<input type="radio" id="dateThisMon" name="togDate" value="1" checked>
+									<label for="dateThisMon"><span>이번달</span></label>
+								</li>
+								<li>
+									<input type="radio" id="date1Week" name="togDate" value="3">
+									<label for="date1Week"><span>1주일</span></label>
+								</li>
+								<li>
+									<input type="radio" id="date1Mon" name="togDate" value="6">
+									<label for="date1Mon"><span>1개월</span></label>
+								</li>
+								<li>
+									<input type="radio" id="date3Mon" name="togDate" value="12">
+									<label for="date3Mon"><span>3개월</span></label>
+								</li>
+								<li>
+									<input type="radio" id="dateEtc" name="togDate" value="etc">
+									<label for="dateEtc"><span>직접입력</span></label>
+								</li>
+							</ul>
+							<div id="datepickerTxt" class="datepicker_box">
+								<div class="tbl date_wrap"><!-- 달력 2개일때 data_wrap 클래스 필요-->
+									<div class="td">
+										<div class="input"><input type="tel" class="datepicker" placeholder="YYYY.MM.DD" title="YYYY.MM.DD 형식으로 입력"></div>
+									</div>
+									<div class="td dash">-</div>
+									<div class="td">
+										<div class="input"><input type="tel" class="datepicker" placeholder="YYYY.MM.DD" title="YYYY.MM.DD 형식으로 입력"></div>
+									</div>
+								</div>
+							</div>
+							<div class="error_txt">기간를 입력해주세요.</div><!-- 에러메세지 입력영역 -->
+							<p class="fz_13 fc_gray mt10">최근 1년, 3개월 단위로 조회 가능</p>
+						</div>
+					</div>
+					<h2 class="tit_h2">조회지역</h2>
+						<div class="form_item mt0">
+						<div class="fm_cont">
+							<ul class="btn_toggle grid col2">
+								<li>
+									<input type="radio" id="inquiry1" name="inquiry" checked="">
+									<label for="inquiry1"><span>국내</span></label>
+								</li>
+								<li>
+									<input type="radio" id="inquiry2" name="inquiry">
+									<label for="inquiry2"><span>해외</span></label>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pop_btn btn_wrap bottom_fixed">
+				<div class="flex">
+					<a href="#" class="button h48 blue ui-pop-close">조회</a>
+				</div>
+			</div>
+		</article>
+	</div>
+	<!-- //승인내역 필터 팝업 -->
 	<!-- [국내] 승인내역>매출전표 영수증 팝업 -->
 	<div id="payPopRcptArvl1" class="popup full" role="dialog" aria-hidden="true">
 		<article class="pop_wrap">
@@ -295,6 +401,10 @@
 		</article>
 	</div>
 	<!-- //[국내] 승인내역>매출전표 영수증 팝업 -->
+	
+	<!--카드선택 팝업-->
+	<div data-include-html="../include/pop/cardSelect.html"></div>
+	<!--//카드선택 팝업-->
 	<div data-include-html="../include/footer.html"></div>
 </article>
 </body>
