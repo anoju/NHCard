@@ -1221,7 +1221,7 @@ var Layer = {
 			var $headH = $head.outerHeight(),
 				$titH = $tit.outerHeight();
 			if(30 < $titH && $headH < $titH && !$head.hasClass('blind')){
-				$head.css('height',$titH + 15);
+				$head.css('height',$titH);
 				var $padTop = parseInt($content.css('padding-top'));
 				$content.css('padding-top',$titH+($padTop-$headH));
 			}
@@ -1416,27 +1416,27 @@ var winPopCenter = {
 };
 
 //토스트팝업
-var toastBox = function(txt){
-	var $delay = 3000,
-		$speed = 300,
-		$className = '.toast_box';
+var toastBox = function(txt,delayTime){
+	var $className = '.toast_box',
+		closeTime = 500;
+
+	if(delayTime == undefined )delayTime = 3000;
 
 	var $boxHtml = '<div class="'+$className.substring(1)+'">';
 		$boxHtml += '<div class="txt">'+txt+'</div>';
 		$boxHtml += '</div>';
 	$('#contents').before($boxHtml);
-
-	/*var $toast = $($className).last(),
-		$height = $toast.outerHeight();
-	$toast.css({'height':0});
-
-	setTimeout(function(){
-		var $headH = $('#header').outerHeight();
-		if($headH > 50)$toast.css({'top':$headH});
-		$toast.animate({'height':$height},$speed).delay($delay).animate({'height':0},$speed);
-	},100);*/
 	var $toast = $($className).last();
-	$toast.addRemoveClass('on', 0, $delay);
+	if($('.fixed_space').length){
+		var $bottom = parseInt($toast.css('bottom')),
+			$spaceH = $('.fixed_space').height();
+		$toast.css('bottom',$bottom+$spaceH);
+	}
+	$toast.addRemoveClass('on', 0, delayTime,function(){
+		setTimeout(function(){
+			$toast.addClass('off').removeAttr('style');
+		},closeTime);
+	});
 };
 
 //버튼 관련
@@ -1509,7 +1509,7 @@ var buttonUI ={
 			hoverClass: 'hover',
 			scrollSpeed : 300
 		};
-		var btnHtml = '<div class="floating_btn btn_top"><a href="#" id="'+settings.button.substring(1)+'" class="btn" title="'+settings.text+'" role="button"><span class="blind">'+settings.text+'</span></a></div>';
+		var btnHtml = '<div class="floating_btn btn_top"><a href="#" id="'+settings.button.substring(1)+'" class="btn" title="'+settings.text+'" role="button" aria-hidden="true"><span class="blind">'+settings.text+'</span></a></div>';
 		if(!$(settings.button).length && $('#footer').length){
 			if($('#floatingBar').length){
 				$('#floatingBar .ft_wrap').append(btnHtml);
@@ -1532,10 +1532,12 @@ var buttonUI ={
 			$(window).on('scroll resize',function(){
 				var position = $(window).scrollTop();
 				if (position > settings.min){
-					$(settings.button).parent().addClass(settings.onClass);
+					$(settings.button).parent().addClass(settings.onClass)
+					$(settings.button).attr('aria-hidden','false');
 					$('.floating_btn').not('.btn_top').addClass('top_on');
 				}else{
 					$(settings.button).parent().removeClass(settings.onClass);
+					$(settings.button).attr('aria-hidden','true');
 					$('.floating_btn').not('.btn_top').removeClass('top_on');
 				}
 			});
@@ -4385,13 +4387,16 @@ $.fn.changeTxt = function(beforeTxt, afterTxt){
 
 //클래스 넣었다 빼기: addRemoveClass(클래스명, 붙는 시간, 빼는 시간)
 //$(this).addRemoveClass('on', 500, 1000);
-$.fn.addRemoveClass = function(className,addTime,removeTime){
+$.fn.addRemoveClass = function(className,addTime,removeTime,callback){
 	var element = this;
 	var addIt = function(){
 		element.addClass(className);
 	};
 	var removeIt = function(){
 		element.removeClass(className);
+		if(!!callback){
+			callback();
+		}
 	};
 	setTimeout(function(){addIt();setTimeout(removeIt,removeTime);},addTime);
 	return this;
