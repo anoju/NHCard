@@ -28,7 +28,7 @@
 				<div class="ht_vip_club_wrap">
 					<div class="ht_vip_club">
 						<h3 class="tit_h3">VIP CLUB 등급 기준안내</h3>
-						<img src="../../images/contents/ht_graph.png" alt="등급기준 안내 - 5,500만원 노블레스/3,400만원 슈퍼로얄/2,300만원로얄/1,600만원 프라임">
+						<img src="/content/images/contents/ht_graph.png" alt="등급기준 안내 - 5,500만원 노블레스/3,400만원 슈퍼로얄/2,300만원로얄/1,600만원 프라임">
 						<span>연간사용 기준금액(단위:만원)</span>
 					</div>	
 				<div class="table">

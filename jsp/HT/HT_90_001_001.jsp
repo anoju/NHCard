@@ -31,13 +31,13 @@
 					<div class="ui-swiper-wrap">
 						<div class="evnt_banner ui-swiper loop">
 							<div class="item">
-								<img src="../../images/contents/img_evt_banner01.png" alt="가정의 달 NH농협카드 채움스케치 매일 참여하는 사다리타기 이벤트 2020.05.01 ~ 2020.05.31">
+								<img src="/content/images/contents/img_evt_banner01.png" alt="가정의 달 NH농협카드 채움스케치 매일 참여하는 사다리타기 이벤트 2020.05.01 ~ 2020.05.31">
 							</div>
 							<div class="item">
-								<img src="../../images/contents/img_evt_banner01.png" alt="가정의 달 NH농협카드 채움스케치 매일 참여하는 사다리타기 이벤트 2020.05.01 ~ 2020.05.31">
+								<img src="/content/images/contents/img_evt_banner01.png" alt="가정의 달 NH농협카드 채움스케치 매일 참여하는 사다리타기 이벤트 2020.05.01 ~ 2020.05.31">
 							</div>
 							<div class="item">
-								<img src="../../images/contents/img_evt_banner01.png" alt="가정의 달 NH농협카드 채움스케치 매일 참여하는 사다리타기 이벤트 2020.05.01 ~ 2020.05.31">
+								<img src="/content/images/contents/img_evt_banner01.png" alt="가정의 달 NH농협카드 채움스케치 매일 참여하는 사다리타기 이벤트 2020.05.01 ~ 2020.05.31">
 							</div>
 						</div>
 					</div>
@@ -112,7 +112,7 @@
 					<ul class="sketch_cate_list">
 						<li>
 							<a href="http://cheumsketch.co.kr/mobile/contents_18.do" target="_blank" title="새창열림">
-								<img src="../../images/contents/img_sketch_01.png" alt="">
+								<img src="/content/images/contents/img_sketch_01.png" alt="">
 								<span class="flag">5% 할인</span>
 								<div class="sketch_keyword">
 									<strong>육아</strong>
@@ -126,7 +126,7 @@
 						</li>
 						<li>
 							<a href="http://cheumsketch.co.kr/mobile/contents_24.do" target="_blank" title="새창열림">
-								<img src="../../images/contents/img_sketch_02.png" alt="">
+								<img src="/content/images/contents/img_sketch_02.png" alt="">
 								<span class="flag">5% 할인</span>
 								<div class="sketch_keyword">
 									<strong>펫</strong>
@@ -147,21 +147,21 @@
 					<ul class="sketch_circle_list">
 						<li>
 							<a href="http://cheumsketch.co.kr/mobile/contents_22.do" target="_blank" title="새창열림">
-								<img src="../../images/contents/img_sketch_cir_01.png" alt="">
+								<img src="/content/images/contents/img_sketch_cir_01.png" alt="">
 								<span>뷰티</span>
 								<strong>50% 할인</strong>
 							</a>
 						</li>
 						<li>
 							<a href="http://cheumsketch.co.kr/mobile/contents_33.do" target="_blank" title="새창열림">
-								<img src="../../images/contents/img_sketch_cir_02.png" alt="">
+								<img src="/content/images/contents/img_sketch_cir_02.png" alt="">
 								<span>공연&amp;영화</span>
 								<strong>할인혜택 및<br>이벤트</strong>
 							</a>
 						</li>
 						<li>
 							<a href="http://cheumsketch.co.kr/mobile/contents_29.do" target="_blank" title="새창열림">
-								<img src="../../images/contents/img_sketch_cir_03.png" alt="">
+								<img src="/content/images/contents/img_sketch_cir_03.png" alt="">
 								<span>심리상담</span>
 								<strong>15% 할인</strong>
 							</a>

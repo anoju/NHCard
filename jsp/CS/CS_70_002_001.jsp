@@ -24,7 +24,7 @@
 				<div class="imp_npki">
 					<h2 class="tit_h2 fz_17 t_center">인증번호를 PC화면에 입력해 주세요.</h2>
 					<div class="img">
-						<img src="../../images/contents/img_pc_to_phone.png" alt="모바일에서 PC로의 전송이미지" />
+						<img src="/content/images/contents/img_pc_to_phone.png" alt="모바일에서 PC로의 전송이미지" />
 					</div>
 					<div class="flex">
 						<div><input type="tel" value="1234" title="인증번호 첫번째 4자리" readonly></div>
