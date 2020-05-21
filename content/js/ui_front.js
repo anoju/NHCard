@@ -710,7 +710,7 @@ var common = {
 		common.gnb();
 		common.header();
 		common.footer();
-		common.skipNavi();
+		//common.skipNavi();
 
 		common.fixed('#header');
 		if($('.tab_wrap.add_fixed').length)common.fixed('.tab_wrap.add_fixed');
