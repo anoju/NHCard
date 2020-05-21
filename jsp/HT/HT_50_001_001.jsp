@@ -19,7 +19,7 @@
 		<section id="contents pt0 pb0">
 			<div class="vip_intro">
 				<div class="item_effect type2">
-					<img src="../../images/contents/vip_intro_img.png" alt="VIP SERVICE 소중한 고객님을 위해 서비스의 가치를 높이겠습니다.">
+					<img src="/content/images/contents/vip_intro_img.png" alt="VIP SERVICE 소중한 고객님을 위해 서비스의 가치를 높이겠습니다.">
 				</div>
 				<div class="vip_intro_txt">
 					<h2 class="tit_h2 fc_gold"><span>NH농협카드 VIP SERVICE</span></h2>

@@ -11,7 +11,7 @@
 		</div>
 		<div class="gnb_info">
 			<div class="avata">
-				<img src="../../images/temp/avata.png" alt="">
+				<img src="/content/images/temp/avata.png" alt="">
 			</div>
 			<div>
 				<!-- <h2 class="tit">고객님 환영합니다.</h2> -->

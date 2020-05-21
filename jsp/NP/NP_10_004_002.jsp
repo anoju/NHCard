@@ -156,7 +156,7 @@
 			</div>
 			<div class="pop_cont">
 				<div class="section">
-					<div class="rule_wrap">
+					<div class="terms_cont"><!-- 2020-05-21: terms_cont로 클래스 변경 -->
 						우선 해당영역에 기존 관리자에 등록된 약관 불러오시면 됩니다.<br>
 						추후 스타일 별도로 잡을 예정<br>
 						<br>
@@ -199,7 +199,7 @@
 			</div>
 			<div class="pop_cont">
 				<div class="section">
-					<div class="rule_wrap">
+					<div class="terms_cont"><!-- 2020-05-21: terms_cont로 클래스 변경 -->
 						우선 해당영역에 기존 관리자에 등록된 약관 불러오시면 됩니다.<br>
 						추후 스타일 별도로 잡을 예정<br>
 						<br>
@@ -242,7 +242,7 @@
 			</div>
 			<div class="pop_cont">
 				<div class="section">
-					<div class="rule_wrap">
+					<div class="terms_cont"><!-- 2020-05-21: terms_cont로 클래스 변경 -->
 						우선 해당영역에 기존 관리자에 등록된 약관 불러오시면 됩니다.<br>
 						추후 스타일 별도로 잡을 예정<br>
 						<br>

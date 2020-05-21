@@ -30,34 +30,34 @@
 					<ul class="grade_vip_list">
 						<li>
 							<a href="#">
-								<img src="../../images/contents/img_vip_badge01.png" alt="">
+								<img src="/content/images/contents/img_vip_badge01.png" alt="">
 								<span class="vip_ko">노블레스</span>
 								<span class="vip_en">Nobless</span>
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="../../images/contents/img_vip_badge02.png" alt="">
+								<img src="/content/images/contents/img_vip_badge02.png" alt="">
 								<span class="vip_ko">슈퍼로얄</span>
 								<span class="vip_en">Super Royal</span>
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="../../images/contents/img_vip_badge03.png" alt="">
+								<img src="/content/images/contents/img_vip_badge03.png" alt="">
 								<span class="vip_ko">로얄</span>
 								<span class="vip_en">Royal</span>
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="../../images/contents/img_vip_badge04.png" alt="">
+								<img src="/content/images/contents/img_vip_badge04.png" alt="">
 								<span class="vip_ko">프라임</span>
 								<span class="vip_en">Prime</span>
 							</a>
 						</li>
 					</ul>
-					<img src="../../images/contents/img_vip_visua01.jpg" alt="NHCARD VIP CLUB">
+					<img src="/content/images/contents/img_vip_visua01.jpg" alt="NHCARD VIP CLUB">
 				</div>
 				<dl class="accordion_list accordion_dl mt30">
 					<dt class="tit">

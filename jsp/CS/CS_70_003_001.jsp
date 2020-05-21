@@ -31,7 +31,7 @@
 				<div class="imp_npki">
 					<h2 class="tit_h2 fz_17 t_center">인증번호를 PC화면에 입력해 주세요.</h2>
 					<div class="img">
-						<img src="../../images/contents/img_phone_to_pc.png" alt="모바일에서 PC로의 전송이미지" />
+						<img src="/content/images/contents/img_phone_to_pc.png" alt="모바일에서 PC로의 전송이미지" />
 					</div>
 					<div class="btn_wrap">
 						<div class="flex">

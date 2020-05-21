@@ -67,13 +67,13 @@
 					<div class="ui-swiper-wrap full">
 						<div class="ui-swiper navi">
 							<div class="item">
-								<img src="../../images/temp/chaeumletter.png" alt="채움레터 임시 이미지">
+								<img src="/content/images/temp/chaeumletter.png" alt="채움레터 임시 이미지">
 							</div>
 							<div class="item">
-								<img src="../../images/temp/20-580x250.jpg" alt="채움레터 임시 이미지">
+								<img src="/content/images/temp/20-580x250.jpg" alt="채움레터 임시 이미지">
 							</div>
 							<div class="item">
-								<img src="../../images/temp/30-580x250.jpg" alt="채움레터 임시 이미지">
+								<img src="/content/images/temp/30-580x250.jpg" alt="채움레터 임시 이미지">
 							</div>
 						</div>
 					</div>

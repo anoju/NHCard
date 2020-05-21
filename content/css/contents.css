@@ -58,6 +58,41 @@
 .fm_cont .fm_btn{width:96px;}
 .fm_cont .fm_btn .button{width:87px;font-size:1.4rem;font-weight:400;}
 
+/* AS-IS 약관 */
+.terms_cont ol.terms{margin:3px 0 5px;}
+.terms_cont ol.terms li{padding-left:17px;margin:4px 0 3px!important;text-indent:-17px;line-height:16px;}
+.terms_cont ol.terms li span, ol.terms li p{text-indent:0;}
+.terms_cont ol.num{padding-left:0px;margin:0 0 0 -8px;}
+.terms_cont .depth2{margin: 0 0 4px 7px !important;}
+.terms_cont ol.num li{padding-left:13px;text-indent:-13px;}
+.terms_cont ol.terms ol.num{margin-left:0;}
+.terms_cont ul.txt_type2 li{padding-left:9px; text-indent:0;}
+.terms_cont .tit_type1{margin:25px 0 11px 0;padding:0;background:none;color:#4b4e5a;}
+.terms_cont .only_txt{padding:0 0 0 7px;}
+.terms_cont p.tit_type3{position:relative;padding:0 0 0 10px;margin-top:10px;}
+.terms_cont p.tit_type3:before{content:'';display:block;width:3px;height:1px;position:absolute;left:0;top:6px;background:#666;}
+.terms_cont .tit_type3{background:none!important;padding-left:0;margin-top:20px;}
+.terms_cont .txt_type4{margin:10px 0 6px;}
+.terms_cont table.tb_col{margin:5px 0 10px 0;}
+.terms_cont table.tb_col td, .terms_cont table.tb_col th{text-indent:0;}
+.terms_cont table.tb_col td{padding-left:20px;padding-right:20px;}
+.terms_cont table.tb_col th.last, .terms_cont table.tb_col td.last{border-right:0 none;}
+.terms_cont .mgt10{margin-top:10px !important;}
+/*
+.box_agree{border:1px solid #ccd3d9;}
+.box_agree iframe{width:100%;height:160px;}
+.box_agree_high iframe{height:300px;}
+.box_agree_low iframe{height:70px;}
+.sec_agree{padding:30px 20px;}
+.terms_frame{margin:20px 0;padding:0 20px;}
+ol.num li{padding-left:17px;margin:3px 0 5px!important;text-indent:-17px;line-height:16px;background-image:none;}
+ol.num li span{text-indent:0;}
+ol.num li ul li{padding-left:7px;list-style: none; text-indent: 0;}
+.terms_frame .depth4 li li{margin-left:0;}
+.box_iframe iframe{width:100%;border:0;}
+.txt_btn span.btn3{margin-top:-5px;}
+*/
+
 /*본인인증*/
 .user_check_wrap .tab_wrap{margin-bottom:0;}
 .user_check_wrap .tab_panel{padding:30px 20px 0;min-height:calc(100vh - 154px);}
