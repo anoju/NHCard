@@ -1532,7 +1532,7 @@ var buttonUI ={
 			$(window).on('scroll resize',function(){
 				var position = $(window).scrollTop();
 				if (position > settings.min){
-					$(settings.button).parent().addClass(settings.onClass)
+					$(settings.button).parent().addClass(settings.onClass);
 					$(settings.button).attr('aria-hidden','false');
 					$('.floating_btn').not('.btn_top').addClass('top_on');
 				}else{
