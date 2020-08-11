@@ -110,17 +110,26 @@ var _gdBoardUI ={
 		}
 	},
 	board :function(){
-		var $board = $('.g_board');
+		var $board = $('.g_board'),
+			$lastDay = _todayTimeString(-1);
+		
+		if(_dayLabelPrint() == '월')$lastDay = _todayTimeString(-3);
+		if(_dayLabelPrint() == '일')$lastDay = _todayTimeString(-2);
+		
 		//완료일 체크
 		$board.find('tbody .c_date').each(function(){
 			var $thisHtml = $.trim($(this).html());
 			if($thisHtml != '' && !$(this).parent('tr').hasClass('del'))$(this).parent('tr').addClass('complete');
+			if($(this).text() == $lastDay)$(this).parent('tr').addClass('last');
 		});
 		//수정일 체크
 		$board.find('tbody .m_date').each(function(){
 			var $thisHtml = $.trim($(this).html());
 			if($thisHtml != '' && !$(this).parent('tr').hasClass('del'))$(this).parent('tr').addClass('modify');
+			if($(this).text() == $lastDay)$(this).parent('tr').addClass('last');
 		});
+
+
 		$board.each(function(){
 			var _this = $(this);
 			var dayArry = [];
@@ -280,6 +289,8 @@ var _gdBoardUI ={
 			var max = $(wrap).find('tbody tr').not('.hr, .del').length,
 				c = $(wrap).find('.complete').length,
 				p = Math.round((100/max)*c);
+
+			if(p = 100)p = Math.floor((100/max)*c);
 			
 			$(el).find('.total .num').text(max);
 			$(el).find('.cp_num .num').text(c);
@@ -328,12 +339,18 @@ var _gdBoardUI ={
 			$grid.data('colspan',thNum);
 			$grid.find('.hr th').attr('colspan', thNum);
 		});
-		$(document).on('click','tr.complete',function(e){
+		/*$(document).on('click','tr.complete',function(e){
 			if($(this).find('a').length){
 				if(!$(e.target).is('a')){
 					var $href = $(this).find('a').attr('href');
 					if($href != '' && $href != '#')window.open($href);
 				}
+			}
+		});*/
+		$(document).on ('click','a',function(e){
+			var $href = $(this).attr('href');
+			if($href === '#'){
+				e.preventDefault();
 			}
 		});
 	},
@@ -344,3 +361,27 @@ var _gdBoardUI ={
 		_gdBoardUI.click();
 	}
 };
+var _todayTimeString=function(addDay){
+	var $today=new Date();
+	if(!!addDay)$today.setDate($today.getDate()+addDay);
+	return _timeString($today);
+};
+var _timeString=function(date){
+	var $year=date.getFullYear(),
+		$month=date.getMonth()+1,
+		$day=date.getDate(),
+		$hour=date.getHours(),
+		$min=date.getMinutes();
+	if((''+$month).length==1)$month='0'+$month;
+	if((''+$day).length==1)$day="0"+$day;
+	if((''+$hour).length==1)$hour='0'+$hour;
+	if((''+$min).length==1)$min='0'+$min;
+	return(''+$year+'-'+$month+'-'+$day);
+};
+var _dayLabelPrint = function(){
+	var $today = new Date(),
+		$week=['일','월','화','수','목','금','토'],
+		$dayLabel=$week[$today.getDay()];
+	return $dayLabel;
+};
+//console.log(_todayTimeString(),_dayLabelPrint())
