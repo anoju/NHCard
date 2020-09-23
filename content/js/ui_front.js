@@ -3310,6 +3310,7 @@ var share = {
 				$href = '//story.kakao.com/share?url=' + $url;
 				break;
 			case 'kakao_talk':
+				alert($link);
 				var kakaoSend = function(){
 					Kakao.Link.sendDefault({
 						objectType: 'feed',
