@@ -26,6 +26,8 @@
 
 .mT5{margin-top:5px !important;}
 
+.card_detail_cont table{table-layout:fixed;}
+
 /*버튼 */
 .card_detail_cont span[class*="btn"] button, 
 .card_detail_cont span[class*="btn"] a{display:inline-block;padding:0 10px;height:25px;line-height:23px;text-decoration:none;color:#333;background:#fff;border:1px solid #ddd;font-size:12px;font-weight:500;border-radius:2px;}
@@ -57,6 +59,7 @@
 .card_detail_cont .info1{padding:0 0 0 19px;background:url("../../images/CN/bull_char_i.gif") no-repeat 0 0px;font-weight:normal;color:#fc775c;}
 .card_detail_cont .color_info1{ color:#fc775c !important;}
 .card_detail_cont .info2>li{padding:0 0 0 19px;background:url("../../images/CN/bull_char_i2.gif") no-repeat 0 3px;font-weight:normal;}
+.card_detail_cont .info2>li+li{margin-top:5px;}
 .card_detail_cont .info2{padding:0 0 0 19px;background:url("../../images/CN/bull_char_i2.gif") no-repeat 0 3px;font-weight:normal;}
 .card_detail_cont .info2 a{text-decoration:underline;color:#fc775c;}
 .card_detail_cont .info3>li{margin-top:5px;padding:0 0 0 19px;background:url("../../images/CN/bull_char_i3.gif") no-repeat 0 3px !important;font-weight:normal;}
@@ -88,10 +91,11 @@
 
 .card_detail_cont .tit_type1{ margin:31px 0 6px 0;padding:0;font-size:14px;color:#333;font-weight:500;line-height:18px;}
 .card_detail_cont .tit_type2{margin:31px 0 6px 0;padding-left:9px;background:url("../../images/CN/bull_tit_type2.gif") no-repeat 0 5px;color:#111;font-size:14px;}
-.card_detail_cont .tit_type3{padding:0 0 5px 10px;font-size:14px;background:url("../../images/CN/bull_txt_type1.gif") no-repeat 0 6px !important;}
+.card_detail_cont .tit_type3{margin-top:10px;padding:0 0 5px 10px;font-size:15px;background:url("../../images/CN/bull_txt_type1.gif") no-repeat 0 11px !important;}
 .card_detail_cont .tit_type4{margin:30px 0 7px 0;font-size:14px;font-weight:500;color:#111;}
 .card_detail_cont .tit_type5{margin:35px 0 7px 0;font-size:16px;font-weight:500;color:#111;}
 .card_detail_cont .tit_type6{margin:0px 0 7px 0;font-size:14px;font-weight:500;color:#111;}
+.card_detail_cont .depth2{padding-left:10px;}
 
 /* 서비스pop */
 .tb_indata_row2{width:100%;margin:8px 0;border-top:1px solid #ddd;border-left:1px solid #ddd !important;background:#fff;font-size:12px;}
@@ -134,8 +138,8 @@
 .sec_benefit .menu li.ls5.on a, .sec_benefit .menu li.ls5 a:hover{background-position:-419px 7px;background-color:#fff;}
 .sec_benefit .menu li.ls6.on a, .sec_benefit .menu li.ls6 a:hover{background-position:-524px 7px;background-color:#fff;}
 .sec_benefit .menu li.ls7.on a, .sec_benefit .menu li.ls7 a:hover{background-position:-629px 7px;background-color:#fff;}
-.sec_benefit .menu li a strong{display:block;font-size:14px;font-weight:500;text-align:center;color:#5e636f;}
-.sec_benefit .menu li a span{display:block;padding-top:3px;font-size:11px;text-align:center;color:#5e636f;line-height:110%;}
+.sec_benefit .menu li a strong{display:block;font-size:14px;font-weight:500;text-align:center;color:#666;}
+.sec_benefit .menu li a span{display:block;padding-top:3px;font-size:11px;text-align:center;color:#666;line-height:110%;}
 .sec_benefit .menu li.on a{height:53px;padding-top:47px;border-top:3px solid #fc775c;border-bottom:1px solid #fff;cursor:default;}
 .sec_benefit .menu li a:hover{height:55px;padding-top:47px;border-top:3px solid #fc775c;}
 .sec_benefit .menu li.on a strong, .sec_benefit .menu li a:hover strong{color:#41444f;}
@@ -557,7 +561,7 @@ em.icon_bene23 span{background-position:-749px 0;}
 .sec_svcinfo .icon{overflow:hidden !important;position:absolute;top:0;left:0;width:0 !important;height:0 !important;margin:0 !important;padding:0 !important;border:0 !important;font:0/0 Arial !important;}
 .sec_svcinfo .icon em{display:inline-block;position:relative;width:81px;height:76px;background:url("/images/IP/cc/cm/bg_icon1.gif") no-repeat 0 0;text-align:center;}
 .sec_svcinfo .icon em span{display:inline-block;width:60px;height:32px;margin:10px 0 0 12px;background-image:url("/images/IP/cc/cm/bg_icon_bene.gif");}
-.sec_svcinfo .icon em i{display:block;text-decoration:none;font-size:11px;font-style:normal;text-align:center;color:#5e636f;}
+.sec_svcinfo .icon em i{display:block;text-decoration:none;font-size:11px;font-style:normal;text-align:center;color:#666;}
 .sec_svcinfo .icon em.icon_benee1 span{background:url("/images/IP/cc/cm/bg_icon_benee.gif") no-repeat 10px 0;}
 .sec_svcinfo .icon em.icon_benee2 span{background:url("/images/IP/cc/cm/bg_icon_benee.gif") no-repeat -90px 0;}
 .sec_svcinfo .icon em.icon_benee3 span{background:url("/images/IP/cc/cm/bg_icon_benee.gif") no-repeat -190px 0;}
@@ -577,7 +581,7 @@ em.icon_bene23 span{background-position:-749px 0;}
 .sec_svcinfo li{color:#676b70;}
 .sec_svcinfo .info3 li{color:#fc775c;}
 .sec_svcinfo .txt_type1 ul.info2, .sec_svcinfo .txt_type1 p.info2{margin-top:5px;}
-.sec_svcinfo .txt_type2{font-size:11px;}
+.sec_svcinfo .txt_type2{font-size:12px;}
 .sec_svcinfo .txt_type2 li{margin-top:5px;}
 .sec_svcinfo .txt_type1 .txt_type2 li{margin-bottom:0;}
 .sec_svcinfo .txt_type2 .txt_type3 li{margin-left:0 !important;}
@@ -588,11 +592,11 @@ em.icon_bene23 span{background-position:-749px 0;}
 .sec_svcinfo h3.img{padding-bottom:10px;font-size:14px;color:#111;}
 .sec_svcinfo h3.img img{margin-right:5px;vertical-align:-6px;}
 .sec_svcinfo a{color:#fc775c;text-decoration:underline;}
-.sec_svcinfo .txt_em{font-weight:500;color:#3d7cca;}
+.sec_svcinfo .txt_em{font-weight:500;color:#3182f7;}
 .sec_svcinfo .tit_info2+table{margin-top:0 !important;}
 .sec_svcinfo .tit_info1+table{margin-top:0 !important;}
 .sec_svcinfo .tit_type3+table{margin-top:0 !important;}
-.sec_svcinfo .tit_info3{margin-top:20px;padding-bottom:5px;font-size:12px;}
+.sec_svcinfo .tit_info3{margin-top:20px;padding-bottom:5px;}
 .sec_svcinfo table h4.txt_type4{margin-top:10px;padding-bottom:5px;font-weight:normal;}
 
 .sec_cardinfo{position:relative;overflow:hidden;}
@@ -615,9 +619,9 @@ em.icon_bene23 span{background-position:-749px 0;}
 .sec_cardinfo .summary .recom_list .icon_bene_s3 li{width:40px;}
 .sec_cardinfo .btn_both{padding:8px 10px;border:1px solid #ddd;border-top:0;background-color:#f7f7f7;}
 
-.card_detail_cont .tit_info1{margin-top:20px;padding:0 0 10px 23px;font-size:16px;color:#111;background:url("/images/IP/cc/cm/bull_info1.gif") no-repeat 0 5px;}
+.card_detail_cont .tit_info1{margin-top:35px;padding:0 0 10px 0;font-size:18px;color:#111;}
 .card_detail_cont .tit_info1:first-child{margin-top:0;}
-.card_detail_cont .tit_info2{margin:15px 0 3px;padding:0 0 0 12px;font-size:14px;background:url("/images/IP/cc/cm/bull_info2.gif") no-repeat 0 6px;color:#3d7cca;}
+.card_detail_cont .tit_info2{margin:15px 0 3px;padding:0 0 0 12px;font-size:14px;background:url("/images/IP/cc/cm/bull_info2.gif") no-repeat 0 6px;color:#3182f7;}
 .card_detail_cont .txt_info1 li{padding:0 0 3px 12px;background:url("/images/IP/cc/cm/bull_info2.gif") no-repeat 0 3px;}
 
 .box_detailinfo{padding:18px 20px;border:1px solid #ddd;background:#f8f8f8}
@@ -643,7 +647,7 @@ ul.wid50 li{float:left;width:45%;margin:1px 0;}
 .sec_pack h2{position:absolute;top:226px;left:257px;}
 .sec_pack h3{height:33px;font:bold 21px arial;}
 .sec_pack ul.txt_type4{padding-top:3px;}
-.sec_pack ul.txt_type4 li{font-size:11px;color:#5e636f;}
+.sec_pack ul.txt_type4 li{font-size:11px;color:#666;}
 .sec_pack ul.txt_type4 p.point2{padding-left:27px;text-indent:-27px;}
 .sec_pack .sec1{position:absolute;top:35px;left:32px;}
 .sec_pack .sec2{position:absolute;top:35px;left:440px;}
@@ -1142,6 +1146,7 @@ link+.box_de_cashbag,
 
 
 /* AS-IS 약관 */
+.terms_cont table{table-layout:fixed;}
 .terms_cont>*:first-child,
 .terms_cont>.access:first-child+*{margin-top:0 !important;}
 .terms_cont h1{font-size:18px;color:#111;}
@@ -1171,6 +1176,11 @@ link+.box_de_cashbag,
 .terms_cont table.tb_col td{padding-left:10px;padding-right:10px;}
 .terms_cont table.tb_row th.last, .terms_cont table.tb_row td.last,
 .terms_cont table.tb_col th.last, .terms_cont table.tb_col td.last{border-right:0 none;}
+.terms_cont .squre{margin:10px 0;}
+.terms_cont .squre>li+li{margin-top:10px;}
+.terms_cont .list_bold{font-weight:bold;}
+.terms_cont .list_depth2{font-size:1.3rem;margin:5px 0;}
+.terms_cont .list_depth2>li+li{margin-top:5px;}
 .tb_row,
 .tb_col{width:100%;border-top:solid 1px #bbb;}
 .tb_row th,.tb_row td,

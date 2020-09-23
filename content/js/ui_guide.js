@@ -288,9 +288,8 @@ var _gdBoardUI ={
 		var stateTxt = function(el,wrap){
 			var max = $(wrap).find('tbody tr').not('.hr, .del').length,
 				c = $(wrap).find('.complete').length,
-				p = Math.round((100/max)*c);
-
-			if(p = 100)p = Math.floor((100/max)*c);
+				p = Math.round((max/c)*100);
+			if(p = 100)p = Math.floor((max/c)*100);
 			
 			$(el).find('.total .num').text(max);
 			$(el).find('.cp_num .num').text(c);
