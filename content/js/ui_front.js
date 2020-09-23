@@ -3276,15 +3276,19 @@ var share = {
 			Layer.alert('주소가 복사되었습니다.<br>원하는곳에 붙여넣으세요.');
 		}
 	},
-	sns:function($snsType,title,image,description,link){
+	sns:function($snsType,title,image,description,link,imgWidth,imgHeight){
 		var $title = title;
 		var $image = image;
 		var $description = description;
 		var $link = link;
+		var $imgWidth = imgWidth;
+		var $imgHeight = imgHeight;
 		if(title == '' || title == undefined)$title = $('meta[property="og:title"]').attr("content");
 		if(image == '' || image == undefined)$image = $('meta[property="og:image"]').attr("content");
 		if(description == '' || description == undefined)$description = $('meta[property="og:description"]').attr("content");
 		if(link == '' || link == undefined)$link = location.href;
+		if(imgWidth == '' || imgWidth == undefined)$imgWidth = 1200;
+		if(imgHeight == '' || imgHeight == undefined)$imgHeight = 1200;
 		var $protocol = location.protocol,
 			$width = 500,
 			$href = '',
@@ -3320,6 +3324,8 @@ var share = {
 						content: {
 							title: $title,
 							imageUrl: $image,
+							imageWidth: $imgWidth,
+							imageHeight: $imgHeight,
 							description: $description,
 							link: {
 								mobileWebUrl: $link,
