@@ -3255,7 +3255,7 @@ var tooltip = {
 //카카오톡 공유하기 -  https://developers.kakao.com/ 에서 키값 발급 필요
 //<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 var share = {
-	kakaoKey:'2b9d5c1ae618c224aebf9fd012228304',
+	kakaoKey:'5ea7c35c641087250a63564a3d2842d1',
 	kakaoInit: false,
 	copy:function($link){
 		if($link == '' || $link == undefined)$link = location.href;
