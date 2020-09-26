@@ -1774,7 +1774,7 @@ var Layer = {
 			}
 		});
 	},
-	multiSeleUI:function(){
+	multiSelectUI:function(){
 		$(document).on('click', '.scl_sel_item',function(e){
 			e.preventDefault();
 			$(this).addClass('active').attr('title','현재선택').siblings().removeClass('active').removeAttr('title');
@@ -2405,7 +2405,7 @@ var Layer = {
 
 		Layer.keyEvt();
 		Layer.selectUI();
-		Layer.multiSeleUI();
+		Layer.multiSelectUI();
 
 		//윈도우팝업
 		if($('.pop_wrap.win').length){
