@@ -147,7 +147,7 @@ $.fn.removeAria = function(attr){
 			$this.removeAttr('aria-'+$arry[i]);
 		}
 	});
-}
+};
 //$(element).role('button');
 $.fn.role = function(val){
 	return this.each(function(){
@@ -483,7 +483,7 @@ var loadingPopup = function($url,popId,$popType,isLayer){
 		}
 	}	
 	var $popId = popId;
-	if($popType == undefined)$popType = 'full'
+	if($popType == undefined)$popType = 'full';
 	if(isLayer != undefined)$isLayer = isLayer;
 	if(!$('#'+$popId).length){
 		if($isLayer){
@@ -937,7 +937,7 @@ var common = {
 			if($path.indexOf('.') >= 0){
 				$returnVal = $path.split('.').shift();
 			}else{
-				$returnVal = $path
+				$returnVal = $path;
 			}
 		}else if(type === 'fileType'){
 			if($path.indexOf('/') >= 0)$path = $path.split('/').pop();
@@ -952,9 +952,10 @@ var common = {
 	console:function(txt,delay){
 		if(delay == undefined)delay = 3000;
 		var $consoles = $('.console'),
-			$top = 0;
+			$top = 0,
+			$last = '';
 		if($consoles.length){
-			var $last = $('.console').last();
+			$last = $('.console').last();
 			$top = parseInt($last.css('top')) + $last.outerHeight();
 		}
 		$('#contents').append('<div class="console">'+txt+'</div>');
@@ -1180,7 +1181,7 @@ var common = {
 		if(str != undefined && str != ''){
 			var $title = document.title;
 			if($title.indexOf(' | ')<0){
-				if($title == '')$title == '농협카드 모바일';
+				if($title == '')$title = '농협카드 모바일';
 				// if($('.tabmenu').not('.ui-tab').find('.active').length == 1){
 				// 	document.title = $('.tabmenu .active a').text()+' - '+str+' | '+$title;
 				// }else{
@@ -1274,7 +1275,7 @@ var common = {
 			if($('.floating_btn').length){
 				$('.floating_btn').css('bottom',$maxHeight+20);
 			}
-		}
+		};
 		fixedSpaceHeight();
 		$(window).scroll(function(){
 			var $spaceH = $space.height();
@@ -1502,7 +1503,7 @@ var Layer = {
 			var $textAry = $htmlContent.split(' '),
 				$textLengthAry = [];
 			for(var i = 0;i<$textAry.length;i++){
-				$textLengthAry.push($textAry[i].length)
+				$textLengthAry.push($textAry[i].length);
 			}
 			var $maxTxtLength = Math.max.apply(null, $textLengthAry);
 			if($maxTxtLength > 20)$('#'+$popId).find('.message>div').addClass('breakall');
@@ -1711,6 +1712,90 @@ var Layer = {
 			}
 		});
 	},
+	multiSelect:function(target,title,btn){
+		var $target = $(target),
+			$popId = Layer.selectId+Layer.selectIdx,
+			$popHtml = '';
+
+		Layer.selectIdx++;
+		$popHtml += '<div id="'+$popId+'" class="'+Layer.popClass+' bottom '+Layer.selectClass+'" role="dialog" aria-hidden="true">';
+			$popHtml += '<div class="'+Layer.wrapClass+'">';
+				$popHtml += '<div class="'+Layer.headClass+'">';
+					$popHtml += '<h1>'+title+'</h1>';
+					$popHtml += '<a href="#" class="pop_close ui-pop-close" role="button" aria-label="팝업창 닫기"></a>';
+				$popHtml += '</div>';
+				$popHtml += '<div class="'+Layer.contClass+'">';
+					$popHtml += '<div class="scl_select">';
+						$popHtml += '<div class="tbl">';
+						$($target).each(function(){
+							var $this = $(this),
+								$thisTit = $this.attr('title'),
+								$option = $this.find('option');
+							$popHtml += '<dl class="td scl_sel_group">';
+								$popHtml += '<dt>'+$thisTit+'</dt>';
+								$popHtml += '<dd>';
+								$option.each(function(){
+									var $op = $(this),
+										$opTxt = $op.text(),
+										$opVal = $op.val();
+									if($opVal != ''){
+										$popHtml += '<button type="button" class="scl_sel_item '+($op.prop('selected') ? ' active' : '')+'" data-val="'+$opVal+'" '+($op.prop('disabled') ? ' disabled' : '')+' '+($op.prop('selected') ? ' title="현재선택"' : '')+'>'+$opTxt+'</button>';
+									}
+								});
+								$popHtml += '</dd>';
+							$popHtml += '</dl>';
+						});
+						$popHtml += '</div>';
+					$popHtml += '</div>';
+				$popHtml += '</div>';
+				$popHtml += '<div class="pop_btn btn_wrap bottom_fixed">';
+					$popHtml += '<div>';
+						$popHtml += '<div class="flex ty2">';
+							$popHtml += '<a href="#none" class="button h48 gray ui-pop-close" role="button">취소</a>';
+							$popHtml += '<a href="#none" class="button h48 blue ui-multiselect-ok" role="button">적용</a>';
+						$popHtml += '</div>';
+					$popHtml += '</div>';
+				$popHtml += '</div>';
+			$popHtml += '</div>';
+		$popHtml += '</div>';
+
+		if($('#wrap').length){
+			$('#wrap').append($popHtml);
+		}else{
+			$('body').append($popHtml);
+		}
+		$('#'+$popId).data('button',btn);
+		Layer.open('#'+$popId,function(){
+			var $active = $('#'+$popId).find('.scl_sel_group .active');
+			if($active.length){
+				$active.each(function(){
+					scrollUI.center(this,100,'vertical');
+				});
+			}
+		});
+	},
+	multiSeleUI:function(){
+		$(document).on('click', '.scl_sel_item',function(e){
+			e.preventDefault();
+			$(this).addClass('active').attr('title','현재선택').siblings().removeClass('active').removeAttr('title');
+			scrollUI.center(this,100,'vertical');
+		});
+		$(document).on('click', '.ui-multiselect-ok',function(e){
+			e.preventDefault();
+			var $wrap = $(this).closest('.pop_wrap').find('.scl_select');
+			if($wrap.find('.active').length){
+				$wrap.find('.active').each(function(){
+					var $this = $(this),
+						$val = $this.data('val'),
+						$idx = $this.closest('dl').index(),
+						$popup = $this.closest('.'+Layer.popClass),
+						$button = $popup.data('button');
+					$($button).closest('.multi-select').find('select').eq($idx).val($val).change();
+					Layer.close($popup);
+				});
+			}
+		});
+	},
 	isSelectOpen: false,
 	selectOpen:function(select,e){
 		var $select = $(select);
@@ -1760,10 +1845,18 @@ var Layer = {
 		//셀렉트 팝업
 		$(document).on('click','.ui-select-open',function(e){
 			e.preventDefault();
+			var $select = ''; 
 			if(Layer.isSelectOpen == false){
-				var $select = $($(this).attr('href'));
-				if(!$select.length)$select = $(this).siblings('select');
-				Layer.selectOpen($select,e);
+				if($(this).closest('.select').hasClass('multi-select')){
+					var $title = $(this).closest('.select').attr('title');
+					if($title == undefined || $title == '')$title = '항목선택';
+					$select = $(this).siblings('select');
+					Layer.multiSelect($select,$title,this);
+				}else{
+					$select = $($(this).attr('href'));
+					if(!$select.length)$select = $(this).prev('select');
+					Layer.selectOpen($select,e);
+				}
 			}
 		});
 		$(document).on('click','.ui-select-lbl',function(e){
@@ -1853,7 +1946,7 @@ var Layer = {
 						$childrenTxt = '';
 					//모바일
 					if($(tar).find('.'+Layer.headClass).length){
-						$first = $(tar).find('.'+Layer.headClass).children().first()
+						$first = $(tar).find('.'+Layer.headClass).children().first();
 						if(!$first.is($focusableEl))$first.attr('tabindex',-1);
 						$first.focus();
 					}else{
@@ -2308,10 +2401,11 @@ var Layer = {
 			}
 		}).on('click','.bg-pop-close .'+Layer.wrapClass,function(e){
 			e.stopPropagation();
-		});;
+		});
 
 		Layer.keyEvt();
 		Layer.selectUI();
+		Layer.multiSeleUI();
 
 		//윈도우팝업
 		if($('.pop_wrap.win').length){
@@ -3658,42 +3752,82 @@ var formUI = {
 		});
 	},
 	select:function(){
-		var $select = $('.select').not('.btn');
+		var $select = $('.select').not('.btn, .not');
 		if($select.length){
 			$select.each(function(e){
 				var $this = $(this),
-					$sel = $this.find('select'),
-					$selId = $sel.attr('id'),
-					$title = $sel.attr('title');
-				if($selId == undefined)$selId = 'none';
-				if($title == undefined)$title = '선택';
-				var $btnTitle = '팝업으로 '+$title,
-					$btnHtml = '<a href="#'+$selId+'" class="btn_select ui-select-open" title="'+$btnTitle+'" role="button"><span class="val"></span></a>';
-
-				if(!$this.find('.btn_select').length){
-					$sel.hide();
-					$this.append($btnHtml);
-					var $forLbl = $('label[for="'+$selId+'"]');
-					if($forLbl.length){
-						$forLbl.addClass('ui-select-lbl').attr('title',$btnTitle);
-						//$forLbl.replaceWith('<a href="#'+$selId+'" class="'+$forLbl.attr('class')+' ui-select-lbl" title="'+$btnTitle+'">'+$forLbl.html()+'</a>');
-					}
-
-					$sel.change(function(){
-						var $val = $(this).val(),
-							$selectTxt = $(this).find(':selected').text();
-						if(($title == '카드선택' || $title == '카드 선택') && $selectTxt.length > 20){
-							$selectTxt = $selectTxt.substring(20,$selectTxt.lastIndexOf('(')) +'<span class="sub">'+ $selectTxt.substring(0,19) +'</span>';
+					$selEl = $this.find('select');
+				if($this.hasClass('multi-select')){
+					var $titleAry = [],
+						$btnTitle = '';
+					$selEl.each(function(){
+						var $sel = $(this),
+							$title = $sel.attr('title');
+						if($title == undefined || $title == ''){
+							$title = '항목 선택';
+							$sel.attr('title',$title);
 						}
-						if($selectTxt == '')$selectTxt = '선택';
-						$this.find('.btn_select .val').html($selectTxt);
-						if($val == ''){
-							$this.find('.btn_select').addClass('off');
-						}else{
-							$this.find('.btn_select').removeClass('off');
+						$titleAry.push($title);
+						$sel.hide();
+					});
+					$btnTitle = '팝업으로 '+$titleAry.join(',');
+					$btnHtml = '<a href="#none" class="btn_select ui-select-open multi" title="'+$btnTitle+'" role="button"><div class="flex"><div class="val off"></div><div class="val off"></div><div class="val off"></div></div></a>';
+					if(!$this.find('.btn_select').length){
+						$this.append($btnHtml);
+					}
+					$selEl.each(function(){
+						var $sel = $(this);
+						$sel.change(function(){
+							var $idx = $selEl.index(this),
+								$val = $(this).val(),
+								$thisTit = $.trim($(this).attr('title').replace('선택','')),
+								$selectTxt = $(this).find(':selected').text();
+							if($selectTxt == '')$selectTxt = '선택';
+							var $valEl = $this.find('.btn_select .val').eq($idx);
+							if($val == ''){
+								$valEl.addClass('off').html($selectTxt+'<span class="blind">선택</span>');
+							}else{
+								$valEl.removeClass('off').html('<span class="blind">'+$thisTit+'</span>'+$selectTxt);
+							}
+						});
+						$sel.change();
+					});
+				}else{
+					$selEl.each(function(){
+						var $sel = $(this),
+							$selId = $sel.attr('id'),
+							$title = $sel.attr('title');
+
+						if($selId == undefined)$selId = 'none';
+						if($title == undefined)$title = '선택';
+						var $btnTitle = '팝업으로 '+$title,
+							$btnHtml = '<a href="#'+$selId+'" class="btn_select ui-select-open" title="'+$btnTitle+'" role="button"><span class="val"></span></a>';
+
+						if(!$sel.next('.btn_select').length){
+							$sel.hide().after($btnHtml);
+							var $forLbl = $('label[for="'+$selId+'"]');
+							if($forLbl.length){
+								$forLbl.addClass('ui-select-lbl').attr('title',$btnTitle);
+								//$forLbl.replaceWith('<a href="#'+$selId+'" class="'+$forLbl.attr('class')+' ui-select-lbl" title="'+$btnTitle+'">'+$forLbl.html()+'</a>');
+							}
+
+							$sel.change(function(){
+								var $val = $(this).val(),
+									$selectTxt = $(this).find(':selected').text();
+								if(($title == '카드선택' || $title == '카드 선택') && $selectTxt.length > 20){
+									$selectTxt = $selectTxt.substring(20,$selectTxt.lastIndexOf('(')) +'<span class="sub">'+ $selectTxt.substring(0,19) +'</span>';
+								}
+								if($selectTxt == '')$selectTxt = '선택';
+								$(this).next('.btn_select').find('.val').html($selectTxt);
+								if($val == ''){
+									$(this).next('.btn_select').addClass('off');
+								}else{
+									$(this).next('.btn_select').removeClass('off');
+								}
+							});
+							$sel.change();
 						}
 					});
-					$sel.change();
 				}
 			});
 		}
@@ -3809,7 +3943,7 @@ var formUI = {
 		var listShow = function(target){
 			var $val = $(target).val(),
 				$closest = $(target).closest($searchWrap),
-				$target = $closest.find($contClass);;
+				$target = $closest.find($contClass);
 			
 			if($val != ''){
 				$target.show();
@@ -3848,7 +3982,7 @@ var formUI = {
 		$(document).on('focus','.total_search '+$inpClass,function(){
 			$('.total_search .keyword_wrap').hide();
 			$('.total_search .keyword_wrap2').show();
-		})
+		});
 		$(document).on('blur','.total_search .search_wrap :focusable, .total_search .keyword_wrap2 :focusable',function(){
 			setTimeout(function(){
 				if($('.total_search .keyword_wrap2 :focus').length == 0 && $('.total_search .search_wrap :focus').length == 0){
@@ -3993,7 +4127,7 @@ var formUI = {
 		});
 		$(document).on('change','.ui-agree-chk input.chk-item',function(){
 			var $wrap = $(this).closest('.ui-agree-chk'),
-				$allChk = $wrap.find('input.all-item')
+				$allChk = $wrap.find('input.all-item'),
 				$chkLength = $wrap.find('input.chk-item').length,
 				$checkedLength = $wrap.find('input.chk-item:checked').length;
 			if($checkedLength > 0){
@@ -4061,7 +4195,7 @@ var formUI = {
 				$lblTxt = '';
 			if($(this).prop('checked')){
 				if($lbl.attr('aria-label') != undefined){
-					$lblTxt = $lbl.attr('aria-label')
+					$lblTxt = $lbl.attr('aria-label');
 					$lblTxt = $lblTxt.replace('해제','등록');
 					$lbl.attr('aria-label',$lblTxt);
 				}else if($lbl.find('.blind').length){
@@ -4084,7 +4218,7 @@ var formUI = {
 				$lblTxt = $lbl.text();
 			if($(this).prop('checked')){
 				if($lbl.attr('aria-label') != undefined){
-					$lblTxt = $lbl.attr('aria-label')
+					$lblTxt = $lbl.attr('aria-label');
 					$lblTxt = $lblTxt.replace('해제','등록');
 					$lbl.attr('aria-label',$lblTxt);
 				}else if($lbl.find('.blind').length){
@@ -4098,7 +4232,7 @@ var formUI = {
 				}
 			}else{
 				if($lbl.attr('aria-label') != undefined){
-					$lblTxt = $lbl.attr('aria-label')
+					$lblTxt = $lbl.attr('aria-label');
 					$lblTxt = $lblTxt.replace('등록','해제');
 					$lbl.attr('aria-label',$lblTxt);
 				}else if($lbl.find('.blind').length){
@@ -4186,7 +4320,7 @@ var formUI = {
 					$slider.find('.ui-slider-handle i').text($txt+$unit);
 					if($inp.length)$inp.val($txt).change();
 					//$sel.val($txt).change();
-					$(this).parent().addClass('on').find('a').attr('title','현재선택')
+					$(this).parent().addClass('on').find('a').attr('title','현재선택');
 					$(this).parent().siblings().removeClass('on').find('a').removeAttr('title');
 				});
 
@@ -4977,7 +5111,7 @@ var listUI = {
 		});
 		$(document).on('change','.ui-all-chk2 input.chk-item',function(){
 			var $wrap = $(this).closest('.ui-all-chk2'),
-				$allChk = $wrap.find('input.all-item')
+				$allChk = $wrap.find('input.all-item'),
 				$chkLength = $wrap.find('input.chk-item').not(':disabled').length,
 				$checkedLength = $wrap.find('input.chk-item:checked').length;
 			if($chkLength == $checkedLength){
@@ -5408,7 +5542,7 @@ var swiperUI = {
 						}
 						if(!$this.parent().find('.swiper-pagination').length){
 							if($this.parent().find('.swiper-navi').length){
-								$this.parent().find('.swiper-navi').append('<div class="swiper-pagination"></div>');1
+								$this.parent().find('.swiper-navi').append('<div class="swiper-pagination"></div>');
 								$pagination = $this.parent().find('.swiper-pagination');
 							}else{
 								$this.append('<div class="swiper-pagination"></div>');
@@ -5422,12 +5556,20 @@ var swiperUI = {
 							};
 							$this.find('.swiper-zoom-container').each(function(){
 								$(this).parent().before('<div class="swiper-zoom-btn"></div>');
-								var $zoomBtnWrap = $(this).parent().siblings('.swiper-zoom-btn')
+								var $zoomBtnWrap = $(this).parent().siblings('.swiper-zoom-btn');
 								$zoomBtnWrap.append('<button type="button" role="button" class="swiper-zoom-in" aria-label="확대"></button>');
 								$zoomBtnWrap.append('<button type="button" role="button" class="swiper-zoom-out" aria-label="축소"></button>');
 							});
 						}
 						var resizeUpadte = '';
+						var swipeRollingNum = function(){
+							var $rollNum = $this.find('.swiper-slide-active').find('.swipe_rolling_num');
+							if($rollNum.length){
+								var $rollNumData = $rollNum.data('num'), 
+									$rollNumTxt = !!$rollNumData?$rollNumData:$rollNum.text();
+								$rollNum.data('num',$rollNumTxt).rollingNumber($rollNumTxt);
+							}
+						};
 						var $option = {
 							slidesPerView: 'auto',
 							slideClass:'item',
@@ -5511,7 +5653,7 @@ var swiperUI = {
 								slideChangeTransitionEnd:function(e){
 									var $scrollInCont = $this.closest('.ui-swiper-scroll-in');
 									if($scrollInCont.length){
-										var $gap = isAppChk() ? 10 : 60;
+										var $gap = isAppChk() ? 10 : 60,
 											$winTop = $(window).scrollTop(),
 											$winHeight = $(window).height(),
 											$contTop = $scrollInCont.offset().top,
@@ -5535,14 +5677,7 @@ var swiperUI = {
 							}
 						};
 
-						function swipeRollingNum(){
-							var $rollNum = $this.find('.swiper-slide-active').find('.swipe_rolling_num');
-							if($rollNum.length){
-								var $rollNumData = $rollNum.data('num'), 
-									$rollNumTxt = !!$rollNumData?$rollNumData:$rollNum.text();
-								$rollNum.data('num',$rollNumTxt).rollingNumber($rollNumTxt);
-							}
-						}
+						
 
 						$this.data('idx',swiperUI.array.length);
 						var $swiper = new Swiper($this,$option);
@@ -5551,11 +5686,11 @@ var swiperUI = {
 						$this.parent().on('click','.swiper-auto-ctl',function(e){
 							e.preventDefault();
 							if($(this).hasClass('play')){
-								console.log('play')
+								console.log('play');
 								$swiper.autoplay.start();
 								$(this).removeClass('play').changeAriaLabel('시작','중지');
 							}else{
-								console.log('stop')
+								console.log('stop');
 								$swiper.autoplay.stop();
 								$(this).addClass('play').changeAriaLabel('중지','시작');
 							}
@@ -6024,21 +6159,22 @@ var scrollItem ={
 			}
 			//if(($elCenter >= $scrollTop) && ($elCenter <= $winBottom)){
 			if(($elBottom >= $scrollTop) && ($elTop <= $winBottom)){
+				var $slide = '';
 				if($el.hasClass('animated')){
 					if($el.closest('.tab_panel').length && !$el.closest('.tab_panel').hasClass('active'))return;
 					
-					var $slide = $el.closest('.swiper-slide');
+					$slide = $el.closest('.swiper-slide');
 					if($slide.length){
 						if($slide.hasClass('swiper-slide-active')){
-							if(!$el.hasClass($animationClass))$el.addClass($animationClass)
+							if(!$el.hasClass($animationClass))$el.addClass($animationClass);
 							if($el.hasClass('paused'))$el.removeClass('paused');
 						}
 					}else{
-						if(!$el.hasClass($animationClass))$el.addClass($animationClass)
+						if(!$el.hasClass($animationClass))$el.addClass($animationClass);
 						if($el.hasClass('paused'))$el.removeClass('paused');
 					}
 				}else{
-					var $slide = $el.closest('.swiper-slide');
+					$slide = $el.closest('.swiper-slide');
 					if($slide.length){
 						if($slide.hasClass('swiper-slide-active'))$el.addClass($animationClass);
 					}else{
@@ -6339,7 +6475,7 @@ var brTxtInsert = function(el,mark,maxWordLength){
 			$(this).html($insertTxt);
 		}
 	});
-}
+};
 
 //넓이대비 삽입가능한 글자수 확인: 검증필요
 //console.log(wordInsertCount(element));
@@ -6458,7 +6594,7 @@ var uiCookie = {
 		}
 		return returnVal;
 	}
-}
+};
 
 //날짜구하기
 var todayTimeString=function(addDay){
@@ -6617,15 +6753,15 @@ var calcHeight = function(){
 			$('#box_interest').height($('#box_interest').contents().find("body").height());
 			if($('.card_detail_cont').length){
 				if($detailSwiper != '')$detailSwiper.update();
-			};
+			}
 		}
-	}
+	};
 
 	heightInit();
 	setTimeout(function(){
 		heightInit();
 	},1000);
-}
+};
 $.fn.fnQna = function (options) {
 	return this.each(function () {
 		var that = $(this);

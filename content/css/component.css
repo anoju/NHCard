@@ -336,6 +336,10 @@ input.input-text-error{border-color:#fd775c !important;}
 .btn_select.open:after{-webkit-transform:rotate3d(1,0,0,180deg);transform:rotate3d(1,0,0,180deg);}
 .btn_select .val{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .btn_select .val .sub{display:block;padding:5px 0 10px;color:#858585;line-height:1.2;font-size:1.2rem;}
+.btn_select .flex{margin:0 -5px;}
+.btn_select .flex .val{padding:0 5px;text-align:center;}
+.btn_select .flex .val.off{color:#bbb;}
+.btn_select .flex .val+.val{border-left:1px solid #ddd;}
 .select select:focus,
 .btn_select:focus{border-color:#3182f7;}
 .select select.off,
@@ -1428,6 +1432,15 @@ html.mobile .tbl_scroll::-webkit-scrollbar{display:none;}
 .scl_cal_group .scl_cal_item.active{font-weight:500;color:#fff;background:#3182f7;}
 .scl_cal_close{display:none;position:absolute;right:0;top:0;overflow:hidden;}
 .scl_cal_close a{display:block;width:30px;height:40px;font-size:3px;color:transparent;}
+
+.scl_select{border-top:1px solid #ddd;font-size:1.5rem;}
+.scl_sel_group{text-align:center;padding-left:0 !important;}
+.scl_sel_group dt{padding:10px 0;font-weight:500;}
+.scl_sel_group dd{position:relative;border-top:1px solid #ddd;height:168px;overflow-x:hidden;overflow-y:auto;}
+.scl_sel_group dd::-webkit-scrollbar{display:none;}
+.scl_sel_group .scl_sel_item{display:block;width:100%;padding:10px 0;color:#858585;}
+.scl_sel_group .scl_sel_item.active{font-weight:500;color:#fff;background:#3182f7;}
+.scl_sel_group .scl_sel_item:disabled{background:#f0f0f0;color:#858585;}
 
 /*accordion*/
 .accordion_list{border:1px solid #ddd;border-radius:4px;overflow:hidden;}
