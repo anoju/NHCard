@@ -646,16 +646,8 @@ html.iPhoneX .add_fixed_btn .floating_btn{bottom:calc(constant(safe-area-inset-b
 .floating_btn .btn{position:relative;display:inline-block;width:60px;height:60px;background-color:#ddd;background-repeat:no-repeat;background-position:center center;border-radius:50%;background-size:contain;-webkit-transition:0.3s;transition:0.3s;vertical-align:top;}
 .floating_btn .btn .txt{display:block;position:absolute;right:48px;top:0;line-height:48px;padding:0 8px;white-space:nowrap;}
 
-.floating_btn .btn.ft_compare{background-color:#3182f7;}
-.floating_btn .btn.ft_compare.effect{
--webkit-animation-duration:1s;
-animation-duration:1s;
--webkit-animation-fill-mode:both;
-animation-fill-mode:both;
--webkit-animation-name:bounce;
-animation-name:bounce;
--webkit-transform-origin:center bottom;
-transform-origin:center bottom;}
+.floating_btn .btn.ft_compare{background-color:#3182f7;box-shadow:0 0 10px rgba(0,0,0,0.2);}
+.floating_btn .btn.ft_compare.effect{-webkit-animation:bounce 1s;animation:bounce 1s;-webkit-transform-origin:center bottom;transform-origin:center bottom;}
 .floating_btn .btn.ft_compare:before{content:'';display:block;position:absolute;top:50%;left:50%;width:32px;height:24px;margin:-12px 0 0 -16px;background:url(../images/btn/bt_card_compare.png) no-repeat center center;background-size:contain;}
 .floating_btn .btn.ft_compare strong{position:absolute;top:50%;left:50%;width:20px;margin:-4px 0 0 -8px;background:#3182f7;color:#fff;line-height:1;text-align:center;}
 

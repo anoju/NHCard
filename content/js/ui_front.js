@@ -1712,90 +1712,6 @@ var Layer = {
 			}
 		});
 	},
-	multiSelect:function(target,title,btn){
-		var $target = $(target),
-			$popId = Layer.selectId+Layer.selectIdx,
-			$popHtml = '';
-
-		Layer.selectIdx++;
-		$popHtml += '<div id="'+$popId+'" class="'+Layer.popClass+' bottom '+Layer.selectClass+'" role="dialog" aria-hidden="true">';
-			$popHtml += '<div class="'+Layer.wrapClass+'">';
-				$popHtml += '<div class="'+Layer.headClass+'">';
-					$popHtml += '<h1>'+title+'</h1>';
-					$popHtml += '<a href="#" class="pop_close ui-pop-close" role="button" aria-label="팝업창 닫기"></a>';
-				$popHtml += '</div>';
-				$popHtml += '<div class="'+Layer.contClass+'">';
-					$popHtml += '<div class="scl_select">';
-						$popHtml += '<div class="tbl">';
-						$($target).each(function(){
-							var $this = $(this),
-								$thisTit = $this.attr('title'),
-								$option = $this.find('option');
-							$popHtml += '<dl class="td scl_sel_group">';
-								$popHtml += '<dt>'+$thisTit+'</dt>';
-								$popHtml += '<dd>';
-								$option.each(function(){
-									var $op = $(this),
-										$opTxt = $op.text(),
-										$opVal = $op.val();
-									if($opVal != ''){
-										$popHtml += '<button type="button" class="scl_sel_item '+($op.prop('selected') ? ' active' : '')+'" data-val="'+$opVal+'" '+($op.prop('disabled') ? ' disabled' : '')+' '+($op.prop('selected') ? ' title="현재선택"' : '')+'>'+$opTxt+'</button>';
-									}
-								});
-								$popHtml += '</dd>';
-							$popHtml += '</dl>';
-						});
-						$popHtml += '</div>';
-					$popHtml += '</div>';
-				$popHtml += '</div>';
-				$popHtml += '<div class="pop_btn btn_wrap bottom_fixed">';
-					$popHtml += '<div>';
-						$popHtml += '<div class="flex ty2">';
-							$popHtml += '<a href="#none" class="button h48 gray ui-pop-close" role="button">취소</a>';
-							$popHtml += '<a href="#none" class="button h48 blue ui-multiselect-ok" role="button">적용</a>';
-						$popHtml += '</div>';
-					$popHtml += '</div>';
-				$popHtml += '</div>';
-			$popHtml += '</div>';
-		$popHtml += '</div>';
-
-		if($('#wrap').length){
-			$('#wrap').append($popHtml);
-		}else{
-			$('body').append($popHtml);
-		}
-		$('#'+$popId).data('button',btn);
-		Layer.open('#'+$popId,function(){
-			var $active = $('#'+$popId).find('.scl_sel_group .active');
-			if($active.length){
-				$active.each(function(){
-					scrollUI.center(this,100,'vertical');
-				});
-			}
-		});
-	},
-	multiSelectUI:function(){
-		$(document).on('click', '.scl_sel_item',function(e){
-			e.preventDefault();
-			$(this).addClass('active').attr('title','현재선택').siblings().removeClass('active').removeAttr('title');
-			scrollUI.center(this,100,'vertical');
-		});
-		$(document).on('click', '.ui-multiselect-ok',function(e){
-			e.preventDefault();
-			var $wrap = $(this).closest('.pop_wrap').find('.scl_select');
-			if($wrap.find('.active').length){
-				$wrap.find('.active').each(function(){
-					var $this = $(this),
-						$val = $this.data('val'),
-						$idx = $this.closest('dl').index(),
-						$popup = $this.closest('.'+Layer.popClass),
-						$button = $popup.data('button');
-					$($button).closest('.multi-select').find('select').eq($idx).val($val).change();
-					Layer.close($popup);
-				});
-			}
-		});
-	},
 	isSelectOpen: false,
 	selectOpen:function(select,e){
 		var $select = $(select);
@@ -1851,6 +1767,7 @@ var Layer = {
 					var $title = $(this).closest('.select').attr('title');
 					if($title == undefined || $title == '')$title = '항목선택';
 					$select = $(this).siblings('select');
+					$select.data('isPop',true);
 					Layer.multiSelect($select,$title,this);
 				}else{
 					$select = $($(this).attr('href'));
@@ -1866,13 +1783,156 @@ var Layer = {
 		});
 		$(document).on('click','.' +Layer.selectClass,function(e){
 			e.preventDefault();
-			Layer.close(this,function(){
+			var $cancleBtn = $(this).find('.pop_head .ui-multiselect-cancle');
+			if($cancleBtn.length){
+				$cancleBtn.click();
 				if(typeof(closeCallbackAction) == "function" ){
 					closeCallbackAction();
 				}
-			});
+			}else{
+				Layer.close(this,function(){
+					if(typeof(closeCallbackAction) == "function" ){
+						closeCallbackAction();
+					}
+				});
+			}
 		}).on('click','.'+Layer.wrapClass,function(e){
 			e.stopPropagation();
+		});
+	},
+	multiSelect:function(target,title,btn){
+		var $target = $(target),
+			$popId = Layer.selectId+Layer.selectIdx,
+			$popHtml = '';
+
+		Layer.selectIdx++;
+		$popHtml += '<div id="'+$popId+'" class="'+Layer.popClass+' bottom '+Layer.selectClass+'" role="dialog" aria-hidden="true">';
+			$popHtml += '<div class="'+Layer.wrapClass+'">';
+				$popHtml += '<div class="'+Layer.headClass+'">';
+					$popHtml += '<h1>'+title+'</h1>';
+					$popHtml += '<a href="#" class="pop_close ui-multiselect-cancle" role="button" aria-label="팝업창 닫기"></a>';
+				$popHtml += '</div>';
+				$popHtml += '<div class="'+Layer.contClass+'">';
+					$popHtml += '<div class="scl_select">';
+						$popHtml += '<div class="tbl">';
+						$($target).each(function(){
+							var $this = $(this),
+								$val = $this.val(),
+								$thisTit = $this.attr('title');
+							$popHtml += '<dl class="td scl_sel_group" data-val="'+$val+'">';
+								$popHtml += '<dt>'+$thisTit+'</dt>';
+								$popHtml += '<dd>';
+								$popHtml += Layer.multiSelectOpt($this);
+								$popHtml += '</dd>';
+							$popHtml += '</dl>';
+						});
+						$popHtml += '</div>';
+					$popHtml += '</div>';
+				$popHtml += '</div>';
+				$popHtml += '<div class="pop_btn btn_wrap bottom_fixed">';
+					$popHtml += '<div>';
+						$popHtml += '<div class="flex ty2">';
+							$popHtml += '<a href="#none" class="button h48 gray ui-multiselect-cancle" role="button">취소</a>';
+							$popHtml += '<a href="#none" class="button h48 blue ui-multiselect-ok" role="button">적용</a>';
+						$popHtml += '</div>';
+					$popHtml += '</div>';
+				$popHtml += '</div>';
+			$popHtml += '</div>';
+		$popHtml += '</div>';
+
+		if($('#wrap').length){
+			$('#wrap').append($popHtml);
+		}else{
+			$('body').append($popHtml);
+		}
+		$('#'+$popId).data('button',btn);
+		$(btn).data('popup','#'+$popId);
+		Layer.open('#'+$popId,function(){
+			var $active = $('#'+$popId).find('.scl_sel_group .active');
+			if($active.length){
+				$active.each(function(){
+					scrollUI.center(this,100,'vertical');
+				});
+			}
+		});
+	},
+	multiSelectOpt:function(element){
+		var $option = $(element).find('option'),
+			$optHtml = '';
+		$optHtml += '<div class="ui-scl-info top" role="img" aria-label="위로 스크롤하면 아래 숨겨진 컨텐츠를 확인 할 수 있습니다."></div>';
+		$optHtml += '<div class="in_scl">';
+			$optHtml += '<div class="scl_sel_space" aria-hidden="true"></div>';
+			$option.each(function(){
+				var $op = $(this),
+					$opTxt = $op.text(),
+					$opVal = $op.val();
+				if($opVal != ''){
+					$optHtml += '<button type="button" class="scl_sel_item ui-sel-item'+($op.prop('selected') ? ' active' : '')+'" data-val="'+$opVal+'" '+($op.prop('disabled') ? ' disabled' : '')+' '+($op.prop('selected') ? ' title="현재선택"' : '')+'><span class="val">'+$opTxt+'</span></button>';
+				}
+			});
+			$optHtml += '<div class="scl_sel_space" aria-hidden="true"></div>';
+		$optHtml += '</div>';
+		$optHtml += '<div class="ui-scl-info bottom" role="img" aria-label="아래로 스크롤하면 아래 숨겨진 컨텐츠를 확인 할 수 있습니다."></div>';
+		return $optHtml;
+	},
+	multiSelectUI:function(){
+		$(document).on('click', '.ui-sel-item',function(e){
+			e.preventDefault();
+			var $this = $(this),
+				$val = $this.data('val'),
+				$idx = $this.closest('dl').index(),
+				$popup = $this.closest('.'+Layer.popClass),
+				$button = $popup.data('button'),
+				$select = $($button).closest('.multi-select').find('select');
+			$select.eq($idx).data('isPop',false).val($val).change().data('isPop',true);
+			$(this).addClass('active').attr('title','현재선택').siblings().removeClass('active').removeAttr('title');
+			scrollUI.center(this,100,'vertical');
+		});
+
+		//확인
+		$(document).on('click', '.ui-multiselect-ok',function(e){
+			e.preventDefault();
+			var $this = $(this),
+				$selectWrap = $this.closest('.pop_wrap').find('.scl_select'),
+				$popup = $this.closest('.'+Layer.popClass);
+			if(!$selectWrap.find('.active').length){
+				Layer.alert('선택한 항목이 없습니다.');
+			}else{
+				Layer.close($popup);
+			}
+		});
+
+		//취소
+		$(document).on('click', '.ui-multiselect-cancle',function(e){
+			e.preventDefault();
+			var $this = $(this),
+				$group = $this.closest('.pop_wrap').find('.scl_sel_group'),
+				$popup = $this.closest('.'+Layer.popClass),
+				$button = $popup.data('button'),
+				$select = $($button).closest('.multi-select').find('select');
+
+			//원래 val 값으로
+			$group.each(function(i){
+				var $groupVal = $(this).data('val');
+				$select.eq(i).data('isPop',false).val($groupVal).change();
+			});
+			Layer.close($popup);
+		});
+
+		$(document).on('change', '.multi-select select',function(e){
+			e.preventDefault();
+			var $this = $(this),
+				$idx = $this.index(),
+				$isPop = $this.data('isPop'),
+				$button = $this.siblings('.ui-select-open'),
+				$popup = $($button.data('popup'));
+			if($isPop && $popup.hasClass('show')){
+				var $dd = $popup.find('.scl_sel_group').eq($idx).find('dd'),
+					$popHtml = Layer.multiSelectOpt($this);
+				$dd.html($popHtml);
+				var $active = $dd.find('.active');
+				if($active.length)scrollUI.center($active,0,'vertical');
+			}
 		});
 	},
 	reOpen:false,
@@ -2168,7 +2228,8 @@ var Layer = {
 					$('#header').focus();
 				}
 			}else{
-				$('#container').focus();
+				$(tar).find(':focus').blur();
+				$('#container').find($focusableEl).first().focus();
 			}
 		}
 
@@ -3349,7 +3410,7 @@ var tooltip = {
 //카카오톡 공유하기 -  https://developers.kakao.com/ 에서 키값 발급 필요
 //<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 var share = {
-	kakaoKey:'5ea7c35c641087250a63564a3d2842d1',
+	kakaoKey:'2b9d5c1ae618c224aebf9fd012228304',
 	kakaoInit: false,
 	copy:function($link){
 		if($link == '' || $link == undefined)$link = location.href;
@@ -3370,25 +3431,25 @@ var share = {
 			Layer.alert('주소가 복사되었습니다.<br>원하는곳에 붙여넣으세요.');
 		}
 	},
-	sns:function($snsType,title,image,description,link,imgWidth,imgHeight){
-		var $title = title;
-		var $image = image;
-		var $description = description;
-		var $link = link;
-		var $imgWidth = imgWidth;
-		var $imgHeight = imgHeight;
-		if(title == '' || title == undefined)$title = $('meta[property="og:title"]').attr("content");
-		if(image == '' || image == undefined)$image = $('meta[property="og:image"]').attr("content");
-		if(description == '' || description == undefined)$description = $('meta[property="og:description"]').attr("content");
-		if(link == '' || link == undefined)$link = location.href;
-		if(imgWidth == '' || imgWidth == undefined)$imgWidth = 1200;
-		if(imgHeight == '' || imgHeight == undefined)$imgHeight = 1200;
+	sns:function(snsType,title,image,description,link,imgWidth,imgHeight){
+		var $title = title,
+			$image = image,
+			$description = description,
+			$link = link,
+			$imgWidth = imgWidth,
+			$imgHeight = imgHeight;
+		if($title == '' || $title == undefined)$title = $('meta[property="og:title"]').attr("content");
+		if($image == '' || $image == undefined)$image = $('meta[property="og:image"]').attr("content");
+		if($description == '' || $description == undefined)$description = $('meta[property="og:description"]').attr("content");
+		if($link == '' || $link == undefined)$link = location.href;
+		if($imgWidth == '' || $imgWidth == undefined)$imgWidth = 800;
+		if($imgHeight == '' || $imgHeight == undefined)$imgHeight = 800;
 		var $protocol = location.protocol,
 			$width = 500,
 			$href = '',
 			$url = encodeURIComponent($link);
 			
-		switch ($snsType) {
+		switch (snsType) {
 			case 'facebook':
 				$href = '//www.facebook.com/sharer/sharer.php?u=' + $url;
 				break;
@@ -3425,14 +3486,7 @@ var share = {
 								mobileWebUrl: $link,
 								webUrl: $link
 							}
-						},
-						// buttons: [{
-						// 	title: '상세 보기',
-						// 	link: {
-						// 		mobileWebUrl: $link,
-						// 		webUrl: $link
-						// 	}
-						// }]
+						}
 					});
 				};
 
@@ -3451,8 +3505,7 @@ var share = {
 				}
 				break;
 		}
-		//'kakao_talk' !== $snsType && window.open($protocol + $href, $snsType + 'sns_share', 'scrollbars=1,width=' + $width + ',height=500,menubar=0,resizable=0');
-		if($snsType !== 'kakao_talk')window.open($protocol + $href, $snsType + 'sns_share', 'scrollbars=1,width=' + $width + ',height=500,menubar=0,resizable=0');
+		if(snsType !== 'kakao_talk')window.open($protocol + $href, snsType + 'sns_share', 'scrollbars=1,width=' + $width + ',height=500,menubar=0,resizable=0');
 	}
 };
 var loadScript = function(url, callback){
@@ -3771,12 +3824,13 @@ var formUI = {
 						$sel.hide();
 					});
 					$btnTitle = '팝업으로 '+$titleAry.join(',');
-					$btnHtml = '<a href="#none" class="btn_select ui-select-open multi" title="'+$btnTitle+'" role="button"><div class="flex"><div class="val off"></div><div class="val off"></div><div class="val off"></div></div></a>';
+					$btnHtml = '<a href="#none" class="btn_select ui-select-open" title="'+$btnTitle+'" role="button"><div class="flex"></div></a>';
 					if(!$this.find('.btn_select').length){
 						$this.append($btnHtml);
 					}
 					$selEl.each(function(){
 						var $sel = $(this);
+						$this.find('.btn_select .flex').append('<div class="val off"></div>');
 						$sel.change(function(){
 							var $idx = $selEl.index(this),
 								$val = $(this).val(),
@@ -4625,10 +4679,16 @@ var sclCalendar = {
 		}else if(type == 'm'){
 			$nuit = '분';
 		}
+		$Html += '<div class="ui-scl-info top" role="img" aria-label="위로 스크롤하면 아래 숨겨진 컨텐츠를 확인 할 수 있습니다."></div>';
+		$Html += '<div class="in_scl">';
+			$Html += '<div class="scl_sel_space" aria-hidden="true"></div>';
 		for(var i=start; i<=(end/step); i++){
 			var _i = i*step;
-			$Html += '<button type="button" class="scl_cal_item'+(_i==val?' active" title="현재선택':'')+'"><span class="val">'+(_i<10?'0'+_i:_i)+'</span><span class="blind">'+$nuit+' 선택</span></button>';
+			$Html += '<button type="button" class="scl_sel_item ui-calendar-item'+(_i==val?' active" title="현재선택':'')+'"><span class="val">'+(_i<10?'0'+_i:_i)+'</span><span class="blind">'+$nuit+' 선택</span></button>';
 		}
+			$Html += '<div class="scl_sel_space" aria-hidden="true"></div>';
+		$Html += '</div>';
+		$Html += '<div class="ui-scl-info bottom" role="img" aria-label="아래로 스크롤하면 아래 숨겨진 컨텐츠를 확인 할 수 있습니다."></div>';
 		return $Html;
 	},
 	getMonthlyDay:function(year,month){
@@ -4679,28 +4739,28 @@ var sclCalendar = {
 			$html += '<article class="'+Layer.wrapClass+'">';
 				$html += '<div class="'+Layer.headClass+'"><h1>'+$popH1+'</h1><a href="#" class="pop_close ui-pop-close" role="button" aria-label="팝업창 닫기"></a></div>';
 				$html += '<div class="'+Layer.contClass+'">';
-					$html += '<div class="scl_calrender">';
+					$html += '<div class="scl_select">';
 						$html += '<div class="tbl">';
 						if($type == 'full' || $type == 'date'){
-							$html += '<dl class="td scl_cal_group scl_year">';
+							$html += '<dl class="td scl_sel_group scl_year">';
 								$html += '<dt>년</dt>';
 								$html += '<dd></dd>';
 							$html += '</dl>';
-							$html += '<dl class="td scl_cal_group scl_month">';
+							$html += '<dl class="td scl_sel_group scl_month">';
 								$html += '<dt>월</dt>';
 								$html += '<dd></dd>';
 							$html += '</dl>';
-							$html += '<dl class="td scl_cal_group scl_day">';
+							$html += '<dl class="td scl_sel_group scl_day">';
 								$html += '<dt>일</dt>';
 								$html += '<dd></dd>';
 							$html += '</dl>';
 						}
 						if($type == 'full' || $type == 'time'){
-							$html += '<dl class="td scl_cal_group scl_hour">';
+							$html += '<dl class="td scl_sel_group scl_hour">';
 								$html += '<dt>시</dt>';
 								$html += '<dd></dd>';
 							$html += '</dl>';
-							$html += '<dl class="td scl_cal_group scl_min">';
+							$html += '<dl class="td scl_sel_group scl_min">';
 								$html += '<dt>분</dt>';
 								$html += '<dd></dd>';
 							$html += '</dl>';
@@ -4712,7 +4772,7 @@ var sclCalendar = {
 		$html += '</div>';
 		$('body').append($html);
 		$('#'+$popId).data('target',$this);
-		if($type == 'full')$('#'+$popId).find('.scl_calrender').addClass('full');
+		if($type == 'full')$('#'+$popId).find('.scl_select').addClass('full');
 	},
 	UI:function(element){
 		$(element).each(function(){
@@ -4721,7 +4781,7 @@ var sclCalendar = {
 				var $this = $(this),
 					$popId = $this.data('pop'),
 					$wrap = $('#'+$popId),
-					$group = $wrap.find('.scl_cal_group '),
+					$group = $wrap.find('.scl_sel_group '),
 					$type = $this.data('type'),
 					$today = autoDateFormet($nowDateDay.toString(),sclCalendar.dateMark),
 					$todayAry = $today.split(sclCalendar.dateMark),
@@ -4874,7 +4934,7 @@ var sclCalendar = {
 							}
 							if(!!$min || !!$max || !!$minDate || !!$maxDate)$replaceVal.push($val);
 							$item = sclCalendar.dateHtml('Y',$yearS,$yearE,$val);
-							if($groupEl.find('.scl_cal_item').length != ($yearE-$yearS+1))$groupEl.find('dd').html($item);
+							if($groupEl.find('.ui-calendar-item').length != ($yearE-$yearS+1))$groupEl.find('dd').html($item);
 						}else if($groupEl.hasClass('scl_month')){
 							//월
 							$monthS = 1;
@@ -4891,7 +4951,7 @@ var sclCalendar = {
 							}
 							if(!!$min || !!$max || !!$minDate || !!$maxDate)$replaceVal.push($val<10?'0'+$val:$val);
 							$item = sclCalendar.dateHtml('M',$monthS,$monthE,$val);
-							if($groupEl.find('.scl_cal_item').length != ($monthE-$monthS+1))$groupEl.find('dd').html($item);
+							if($groupEl.find('.ui-calendar-item').length != ($monthE-$monthS+1))$groupEl.find('dd').html($item);
 						}else if($groupEl.hasClass('scl_day')){
 							//일
 							if($dayStep == undefined)$dayStep = 1;
@@ -4920,21 +4980,27 @@ var sclCalendar = {
 								$val = $val2;
 							}
 							$item = sclCalendar.dateHtml('D',$dayS,$dayE,$val,$dayStep);
-							if($groupEl.find('.scl_cal_item').length != ($dayE-$dayS+1) || $dayS != 1)$groupEl.find('dd').html($item);
+							if($groupEl.find('.ui-calendar-item').length != ($dayE-$dayS+1) || $dayS != 1){
+								$groupEl.find('dd').html($item);
+								var $active = $groupEl.find('dd').find('.active');
+								if($active.length){
+									scrollUI.center($active,0,'vertical');
+								}
+							}
 						}else if($groupEl.hasClass('scl_hour')){
 							$hourS = 0;
 							$hourE = 23;
 							if(!!$minHour)$hourS=$minHour;
 							if(!!$maxHour)$hourE=$maxHour;
 							$item = sclCalendar.dateHtml('h',$hourS,$hourE,$val);
-							if($groupEl.find('.scl_cal_item').length != ($hourE-$hourS+1))$groupEl.find('dd').html($item);
+							if($groupEl.find('.ui-calendar-item').length != ($hourE-$hourS+1))$groupEl.find('dd').html($item);
 						}else if($groupEl.hasClass('scl_min')){
 							if($minStep == undefined)$minStep = 1;
 							if($val%$minStep != 0){
 								$val = $val+($minStep-$val%$minStep);
 							}
 							$item = sclCalendar.dateHtml('m',0,59,$val,$minStep);
-							if($groupEl.find('.scl_cal_item').length != (60/$minStep))$groupEl.find('dd').html($item);
+							if($groupEl.find('.ui-calendar-item').length != (60/$minStep))$groupEl.find('dd').html($item);
 						}
 					}
 					if($replaceVal.length){
@@ -4965,20 +5031,22 @@ var sclCalendar = {
 				$input.change().keyup();
 			}
 			Layer.open($href,function(){
-				var $group = $($href).find('.scl_cal_group');
-				$group.each(function(){
-					var $active = $(this).find('.active');
-					if($active.length){
-						scrollUI.center($active,100,'vertical');
-					}
-				});
+				setTimeout(function(){
+					var $group = $($href).find('.scl_sel_group');
+					$group.each(function(){
+						var $active = $(this).find('.active');
+						if($active.length){
+							scrollUI.center($active,300,'vertical');
+						}
+					});
+				},300);
 			});
 		});
 
-		$(document).on('click','.scl_calrender .scl_cal_item',function(e){
+		$(document).on('click','.scl_select .ui-calendar-item',function(e){
 			e.preventDefault();
 			var $wrap = $(this).closest('.'+Layer.popClass),
-				$group = $wrap.find('.scl_cal_group'),
+				$group = $wrap.find('.scl_sel_group'),
 				$input = $wrap.data('target'),
 				$type = $($input).data('type'),
 				$valAry = [],
@@ -4997,10 +5065,10 @@ var sclCalendar = {
 			$($input).val($val).change().keyup();
 		});
 
-		$(document).on('keydown','.scl_calrender .scl_cal_item',function(e){
+		$(document).on('keydown','.scl_select .ui-calendar-item',function(e){
 			var $keyCode = (e.keyCode?e.keyCode:e.which),
 				$this = $(this),
-				$group = $this.closest('.scl_cal_group');
+				$group = $this.closest('.scl_sel_group');
 			if($keyCode == 38 && $this.prev().length){
 				//up
 				e.preventDefault();
@@ -5014,19 +5082,19 @@ var sclCalendar = {
 				if(e.shiftKey){
 					if($group.prev().length){
 						e.preventDefault();
-						$group.prev().find('.scl_cal_item').first().focus();
+						$group.prev().find('.ui-calendar-item').first().focus();
 					}else{
 						if($(this).index() != 0){
-							$group.find('.scl_cal_item').first().focus();
+							$group.find('.ui-calendar-item').first().focus();
 						}
 					}
 				}else{
 					if($group.next().length){
 						e.preventDefault();
-						$group.next().find('.scl_cal_item').first().focus();
+						$group.next().find('.ui-calendar-item').first().focus();
 					}else{
-						if($(this).index()+1 != $group.find('.scl_cal_item').length){
-							$group.find('.scl_cal_item').last().focus();
+						if($(this).index()+1 != $group.find('.ui-calendar-item').length){
+							$group.find('.ui-calendar-item').last().focus();
 						}
 					}
 				}
@@ -5676,8 +5744,6 @@ var swiperUI = {
 								}
 							}
 						};
-
-						
 
 						$this.data('idx',swiperUI.array.length);
 						var $swiper = new Swiper($this,$option);
@@ -6843,7 +6909,7 @@ $.fn.fnQna.option = {
 	multiple:'off', // 다수보여짐, 한항목만보여짐
 	defaultCont:1, //기본 보여지는 콘텐츠
 	activeClass : 'on', //활성화클래스
-	selector : 'a', //선택자
+	selector : 'dt>a', //선택자
 	speed:200, //콘텐츠보여지는 속도
 	q:'.qst',//제목항목
 	callback : false //콜백함수입력
