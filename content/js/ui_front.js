@@ -1986,14 +1986,6 @@ var Layer = {
 		}
 		tblCalendar.swiper();
 	},
-	calendarUI:function(){
-		$(document).on('click','.ui-swiper-datepicker-btn',function(e){
-			e.preventDefault();
-			var $input = $(this).siblings('input').first(),
-				$val = $input.val();
-			Layer.calendar($input,$val);
-		});
-	},
 	reOpen:false,
 	openEl:'',
 	openPop:[],
@@ -2526,7 +2518,6 @@ var Layer = {
 		Layer.keyEvt();
 		Layer.selectUI();
 		Layer.multiSelectUI();
-		Layer.calendarUI();
 
 		//윈도우팝업
 		if($('.pop_wrap.win').length){
@@ -5539,6 +5530,13 @@ var tblCalendar = {
 				$dataSwiper.update();
 				$(this).data('year',$val);
 			}
+		});
+
+		$(document).on('click','.ui-swiper-datepicker-btn',function(e){
+			e.preventDefault();
+			var $input = $(this).siblings('input').first(),
+				$val = $input.val();
+			Layer.calendar($input,$val);
 		});
 	}
 };
