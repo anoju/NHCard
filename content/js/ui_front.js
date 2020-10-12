@@ -4598,8 +4598,8 @@ var formUI = {
 				var $popup = $cal.closest('.ui-calendar');
 				if($popup.length){
 					Layer.close($popup);
-					var $input = $popup.data('input');
-					if($input != undefined && $input.length)$input.val($date);
+					var $inp = $popup.data('input');
+					if($inp != undefined && $inp.length)$inp.val($date);
 				}
 			}else{
 				//팝업달력
@@ -5085,9 +5085,9 @@ var sclCalendar = {
 							$item = sclCalendar.dateHtml('D',$dayS,$dayE,$val,$dayStep);
 							if($groupEl.find('.ui-calendar-item').length != ($dayE-$dayS+1) || $dayS != 1){
 								$groupEl.find('dd').html($item);
-								var $active = $groupEl.find('dd').find('.active');
-								if($active.length){
-									scrollUI.center($active,0,'vertical');
+								var $ddActive = $groupEl.find('dd').find('.active');
+								if($ddActive.length){
+									scrollUI.center($ddActive,0,'vertical');
 								}
 							}
 						}else if($groupEl.hasClass('scl_hour')){
@@ -5273,11 +5273,11 @@ var tblCalendar = {
 				$tbody += '<td>';
 			}
 			if($start <= i && i < $end){
-				var $date = ''+$year+$month+((''+$day).length==1?'0'+$day:$day);
-				$tbody += '<a href="#" role="button" class="ui-state-default'+(parseInt($date)==$nowDateDay?' ui-state-highlight':'')+''+(parseInt($date)==$val?' ui-state-active':'')+'" data-date="'+$date+'"';
-				if(parseInt($date)==$val){
+				var $btnDate = ''+$year+$month+((''+$day).length==1?'0'+$day:$day);
+				$tbody += '<a href="#" role="button" class="ui-state-default'+(parseInt($btnDate)==$nowDateDay?' ui-state-highlight':'')+''+(parseInt($btnDate)==$val?' ui-state-active':'')+'" data-date="'+$btnDate+'"';
+				if(parseInt($btnDate)==$val){
 					$tbody += ' title="선택 일자"';
-				}else if(parseInt($date)==$nowDateDay){
+				}else if(parseInt($btnDate)==$nowDateDay){
 					$tbody += ' title="오늘 일자"';
 				}
 				$tbody += '>'+$day+'</a>';
@@ -5391,7 +5391,7 @@ var tblCalendar = {
 					if($headTitSel.length){
 						var $selVal = parseInt($titleTxt.split('.')[0]);
 						for(var i = ($nowDateOnlyYear-100);i<=($nowDateOnlyYear+100);i++){
-						 	var $option = '<option value="'+i+'">'+i+'</option>'
+						 	var $option = '<option value="'+i+'">'+i+'</option>';
 						 	$headTitSel.append($option);
 						}
 						$headTitSel.val($selVal);
@@ -5515,7 +5515,7 @@ var tblCalendar = {
 					tblCalendar.setView($this,null,$setVal);
 				});
 				$swiper.data('setYear',$setYear+$setVal);
-				var $dataSwiper = $swiper.data('swiper')
+				var $dataSwiper = $swiper.data('swiper');
 				$dataSwiper.update();
 			}
 		});
@@ -5535,7 +5535,7 @@ var tblCalendar = {
 					tblCalendar.setView($this,null,$setVal);
 				});
 				$swiper.data('setYear',$setYear);
-				var $dataSwiper = $swiper.data('swiper')
+				var $dataSwiper = $swiper.data('swiper');
 				$dataSwiper.update();
 				$(this).data('year',$val);
 			}
