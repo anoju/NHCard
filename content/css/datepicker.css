@@ -3,7 +3,8 @@
 /*****************************************************************
 jq-Datepicker
 *****************************************************************/
-.ui-datepicker-trigger{position:absolute;top:0;right:11px;width:22px;height:44px;font-size:3px;color:transparent;overflow:hidden;
+.ui-datepicker-trigger,
+.ui-swiper-datepicker-btn{position:absolute;top:0;right:11px;width:22px;height:44px;font-size:3px;color:transparent;overflow:hidden;
 	/* background:url(../images/calendar/ico_date.png) 50% 50% no-repeat;*/
 	background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='75px' height='71px'%3E%3Cpath fill-rule='evenodd' stroke='rgb(102, 102, 102)' stroke-width='6px' stroke-linecap='round' stroke-linejoin='round' fill='rgb(255, 255, 255)' d='M12.000,11.000 L60.000,11.000 C64.970,11.000 69.000,15.029 69.000,20.000 L69.000,56.000 C69.000,60.971 64.970,65.000 60.000,65.000 L12.000,65.000 C7.029,65.000 3.000,60.971 3.000,56.000 L3.000,20.000 C3.000,15.029 7.029,11.000 12.000,11.000 Z'/%3E%3Cpath fill-rule='evenodd' fill='rgb(102, 102, 102)' d='M19.000,-0.000 C20.657,-0.000 22.000,1.343 22.000,3.000 L22.000,18.000 C22.000,19.657 20.657,21.000 19.000,21.000 C17.343,21.000 16.000,19.657 16.000,18.000 L16.000,3.000 C16.000,1.343 17.343,-0.000 19.000,-0.000 Z'/%3E%3Cpath fill-rule='evenodd' fill='rgb(102, 102, 102)' d='M53.000,-0.000 C54.657,-0.000 56.000,1.343 56.000,3.000 L56.000,18.000 C56.000,19.657 54.657,21.000 53.000,21.000 C51.343,21.000 50.000,19.657 50.000,18.000 L50.000,3.000 C50.000,1.343 51.343,-0.000 53.000,-0.000 Z'/%3E%3Cpath fill-rule='evenodd' fill='rgb(102, 102, 102)' d='M21.000,26.999 C23.209,26.999 25.000,28.791 25.000,31.000 C25.000,33.209 23.209,35.000 21.000,35.000 C18.791,35.000 17.000,33.209 17.000,31.000 C17.000,28.791 18.791,26.999 21.000,26.999 Z'/%3E%3Cpath fill-rule='evenodd' fill='rgb(102, 102, 102)' d='M36.000,26.999 C38.209,26.999 40.000,28.791 40.000,31.000 C40.000,33.209 38.209,35.000 36.000,35.000 C33.791,35.000 32.000,33.209 32.000,31.000 C32.000,28.791 33.791,26.999 36.000,26.999 Z'/%3E%3Cpath fill-rule='evenodd' fill='rgb(102, 102, 102)' d='M51.000,26.999 C53.209,26.999 55.000,28.791 55.000,31.000 C55.000,33.209 53.209,35.000 51.000,35.000 C48.791,35.000 47.000,33.209 47.000,31.000 C47.000,28.791 48.791,26.999 51.000,26.999 Z'/%3E%3Cpath fill-rule='evenodd' fill='rgb(102, 102, 102)' d='M21.000,42.000 C23.209,42.000 25.000,43.791 25.000,46.000 C25.000,48.209 23.209,50.000 21.000,50.000 C18.791,50.000 17.000,48.209 17.000,46.000 C17.000,43.791 18.791,42.000 21.000,42.000 Z'/%3E%3Cpath fill-rule='evenodd' fill='rgb(102, 102, 102)' d='M36.000,42.000 C38.209,42.000 40.000,43.791 40.000,46.000 C40.000,48.209 38.209,50.000 36.000,50.000 C33.791,50.000 32.000,48.209 32.000,46.000 C32.000,43.791 33.791,42.000 36.000,42.000 Z'/%3E%3Cpath fill-rule='evenodd' fill='rgb(48, 110, 223)' d='M51.000,42.000 C53.209,42.000 55.000,43.791 55.000,46.000 C55.000,48.209 53.209,50.000 51.000,50.000 C48.791,50.000 47.000,48.209 47.000,46.000 C47.000,43.791 48.791,42.000 51.000,42.000 Z'/%3E%3C/svg%3E") 50% 50% no-repeat;background-size:contain;}
 .ui-widget{font-size:1.1em;}
@@ -17,7 +18,9 @@ jq-Datepicker
 .ui-widget-header{background:#fff;color:#252525;font-weight:bold;}
 .ui-icon{display:block;text-indent:-99999px;overflow:hidden;background-repeat:no-repeat;}
 .datepicker-dimmed{position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.7);z-index:299}
-.ui-datepicker{position:relative;width:300px;display:none;padding:50px 15px 25px;position:fixed !important;top:50% !important;left:50% !important;transform:translateY(-50%) !important;margin-left:-150px;z-index:300 !important;border-radius:0;border:0 none;overflow:hidden;}
+.ui-datepicker{position:relative;padding:0 15px;}
+/* .ui-datepicker.ui-datepicker-inline{margin-bottom:25px;} */
+.ui-datepicker:not(.ui-datepicker-inline){position:fixed;top:50% !important;left:50% !important;width:300px;display:none;padding:50px 15px 25px;-webkit-transform:translateY(-50%);transform:translateY(-50%);margin-left:-150px;z-index:300 !important;border-radius:0;border:0 none;overflow:hidden;}
 .ui-datepicker .swipe_arr{position:absolute;left:0;right:0;bottom:0;top:100px;overflow:hidden;}
 .ui-datepicker.add_guide .swipe_arr{bottom:50px;}
 .ui-datepicker .swipe_arr .txt{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#ededed;text-align:center;}
@@ -38,15 +41,21 @@ jq-Datepicker
 .ui-datepicker .ui-datepicker-prev-y,
 .ui-datepicker .ui-datepicker-next-y,
 .ui-datepicker .ui-datepicker-prev,
-.ui-datepicker .ui-datepicker-next{display:block;padding:0;position:absolute;top:50%;width:24px;height:24px;margin-top:-12px;background:none !important;border-radius:0;overflow:hidden;text-align:center;}
-.ui-datepicker .ui-datepicker-prev{left:57px;}
-.ui-datepicker .ui-datepicker-next{right:57px;}
-.ui-datepicker .ui-datepicker-prev-y{left:28px;}
-.ui-datepicker .ui-datepicker-next-y{right:28px;}
+.ui-datepicker .ui-datepicker-next,
+.calendar-swiper-head .swiper-arr{display:block;padding:0;position:absolute;top:50%;width:24px;height:24px;margin-top:-12px;background:none !important;border-radius:0;overflow:hidden;text-align:center;}
+.ui-datepicker .ui-datepicker-prev,
+.calendar-swiper-head .swiper-prev{left:57px;}
+.ui-datepicker .ui-datepicker-next,
+.calendar-swiper-head .swiper-next{right:57px;}
+.ui-datepicker .ui-datepicker-prev-y,
+.calendar-swiper-head .swiper-prev-y{left:28px;}
+.ui-datepicker .ui-datepicker-next-y,
+.calendar-swiper-head .swiper-next-y{right:28px;}
 .ui-datepicker .ui-datepicker-prev-y span,
 .ui-datepicker .ui-datepicker-next-y span,
 .ui-datepicker .ui-datepicker-prev span,
-.ui-datepicker .ui-datepicker-next span{display:block;width:18px;height:18px;margin:3px;font-size:3px;color:transparent;
+.ui-datepicker .ui-datepicker-next span,
+.calendar-swiper-head .swiper-arr span{display:block;width:18px;height:18px;margin:3px;font-size:3px;color:transparent;
 	/* background:url(../images/calendar/spr_calendar.png) 0 0 no-repeat;background-size:40px auto;*/
 	background-color:#306edf;background-repeat:no-repeat;background-position:center center;border-radius:50%;background-size:auto 10px;}
 .ui-datepicker 	.ui-datepicker-header .ui-state-disabled span{background-color:#858585;}
@@ -57,11 +66,15 @@ jq-Datepicker
 .ui-datepicker .ui-datepicker-next.ui-state-disabled span{background-position:-20px -40px}
 .ui-datepicker .ui-datepicker-next-y span{background-position:0 -60px}
 .ui-datepicker .ui-datepicker-next-y.ui-state-disabled span{background-position:-20px -60px} */
-.ui-datepicker .ui-datepicker-prev-y span{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='30px'%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M28,2 L15,15 L28,28 '/%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M15,2 L2,15 L15,28 '/%3E%3C/svg%3E");}
-.ui-datepicker .ui-datepicker-prev span{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='30px'%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M15,2 L2,15  L15,28'/%3E%3C/svg%3E");}
-.ui-datepicker .ui-datepicker-next span{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='18px' height='30px'%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M3,2 L16,15 L3,28 '/%3E%3C/svg%3E");}
-.ui-datepicker .ui-datepicker-next-y span{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30px' height='30px'%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M2,2 L15,15 L2,28 '/%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M15,2 L28,15 L15,28 '/%3E%3C/svg%3E");}
-.ui-datepicker .ui-datepicker-title{position:relative;margin:0 4.4em;line-height:50px;height:50px;text-align:center;font-size:1.8rem;z-index:1;}
+.ui-datepicker .ui-datepicker-prev-y span,
+.calendar-swiper-head .swiper-prev-y span{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='30px'%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M28,2 L15,15 L28,28 '/%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M15,2 L2,15 L15,28 '/%3E%3C/svg%3E");}
+.ui-datepicker .ui-datepicker-prev span,
+.calendar-swiper-head .swiper-prev span{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='30px'%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M15,2 L2,15  L15,28'/%3E%3C/svg%3E");}
+.ui-datepicker .ui-datepicker-next span,
+.calendar-swiper-head .swiper-next span{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='18px' height='30px'%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M3,2 L16,15 L3,28 '/%3E%3C/svg%3E");}
+.ui-datepicker .ui-datepicker-next-y span,
+.calendar-swiper-head .swiper-next-y span{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30px' height='30px'%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M2,2 L15,15 L2,28 '/%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M15,2 L28,15 L15,28 '/%3E%3C/svg%3E");}
+.ui-datepicker .ui-datepicker-title{position:relative;margin:0 4.4em;line-height:50px;height:50px;text-align:center;font-size:1.8rem;font-weight:bold;z-index:1;}
 .ui-datepicker .ui-datepicker-title select{background:transparent;font-size:1.8rem;font-weight:bold;margin:0;width:auto;height:50px;line-height:50px;padding:0;border:0 none;-webkit-appearance:none;appearance:none;color:#111;vertical-align:top;}
 .ui-datepicker .ui-datepicker-title select option{color:#111;}
 .ui-datepicker select.ui-datepicker-month,
@@ -74,7 +87,8 @@ jq-Datepicker
 .ui-datepicker td a{display:block;width:30px;height:30px;line-height:30px;font-size:1.3rem;color:#111;text-align:center;text-decoration:none;border-radius:50%;margin:0 auto;}
 .ui-datepicker .ui-datepicker-buttonpane{background:none;border:none;}
 .ui-datepicker .ui-datepicker-buttonpane button{display:block;position:absolute;top:36px;width:25px;height:25px;cursor:pointer;z-index:2;}
-.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-close{top:13px;right:13px;width:24px;height:24px;padding:0;text-indent:-9999px;
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-close,
+.popup.modal.ui-calendar .pop_head .pop_close{top:13px;right:13px;width:24px;height:24px;padding:0;text-indent:-9999px;
 	/* background:url(../images/calendar/close.png) no-repeat center center; */
 	background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='48px' height='48px'%3E%3Cpath fill-rule='evenodd' stroke='rgb(187, 187, 187)' stroke-width='6px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M4,4 L44,44 '/%3E%3Cpath fill-rule='evenodd' stroke='rgb(187, 187, 187)' stroke-width='6px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M44,4 L4,44 '/%3E%3C/svg%3E") no-repeat center center;
 	background-size:16px;}
@@ -121,3 +135,15 @@ jq-Datepicker
 	.date_wrap .input input.datepicker{padding-right:30px;padding-left:6px;}
 	.date_wrap .ui-datepicker-trigger{right:6px;}
 }
+
+.calendar-swiper{position:relative;}
+.calendar-swiper-head{position:relative;text-align:center;background:#f8f8f8;line-height:1.6;padding:11px 100px;margin-bottom:25px;}
+.calendar-swiper-head .tit{position:relative;font-size:1.8rem;font-weight:bold;}
+.calendar-swiper-head .tit select{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;}
+.calendar-swiper .ui-datepicker-header,
+.calendar-swiper .swiper-pagination{display:none;}
+.popup.modal.ui-calendar .pop_wrap{width:300px;}
+.popup.modal.ui-calendar .pop_head{padding-top:0;height:50px;}
+.popup.modal.ui-calendar .pop_head h1{font-size:1.6rem;}
+.popup.modal.ui-calendar .pop_cont{padding-top:50px;padding-bottom:25px;}
+.ui-tbl-datepicker .input{display:none;}

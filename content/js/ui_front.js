@@ -1432,7 +1432,7 @@ var Layer = {
 	},
 	alertHtml: function(type,popId,btnActionId,btnCancelId){
 		var $html = '<div id="'+popId+'" class="'+Layer.popClass+' modal alert '+Layer.alertClass+'" role="dialog" aria-hidden="true">';
-				$html += '<div class="'+Layer.wrapClass+'">';
+				$html += '<article class="'+Layer.wrapClass+'">';
 					$html += '<div class="'+Layer.contClass+'">';
 						$html += '<div class="'+Layer.innerClass+'">';
 							if(type === 'prompt'){
@@ -1457,7 +1457,7 @@ var Layer = {
 							$html += '<button type="button" id="'+btnActionId+'" class="button h48 blue">확인</button>';
 						$html += '</div>';
 					$html += '</div>';
-				$html += '</div>';
+				$html += '</article>';
 			$html += '</div>';
 
 		if($('#wrap').length){
@@ -1600,7 +1600,7 @@ var Layer = {
 			if(($bankCut > 8) || ($bankCut2 > 8))$isFullPop = true;
 		}
 		$popHtml += '<div id="'+$popId+'" class="'+Layer.popClass+' '+($isFullPop?'full':'bottom')+($isTouch || $isTouchMove?' is-touch':'')+($isTouchMove?' touchmove':'')+' '+Layer.selectClass+'" role="dialog" aria-hidden="true">';
-			$popHtml += '<div class="'+Layer.wrapClass+'">';
+			$popHtml += '<article class="'+Layer.wrapClass+'">';
 				$popHtml += '<div class="'+Layer.headClass+'">';
 					$popHtml += '<h1>'+$title+'</h1>';
 					$popHtml += '<a href="#" class="pop_close ui-pop-close" role="button" aria-label="팝업창 닫기"></a>';
@@ -1667,7 +1667,7 @@ var Layer = {
 						$popHtml += '</div>';
 					}
 				$popHtml += '</div>';
-			$popHtml += '</div>';
+			$popHtml += '</article>';
 		$popHtml += '</div>';
 
 		if($('#wrap').length){
@@ -1807,7 +1807,7 @@ var Layer = {
 
 		Layer.selectIdx++;
 		$popHtml += '<div id="'+$popId+'" class="'+Layer.popClass+' bottom '+Layer.selectClass+'" role="dialog" aria-hidden="true">';
-			$popHtml += '<div class="'+Layer.wrapClass+'">';
+			$popHtml += '<article class="'+Layer.wrapClass+'">';
 				$popHtml += '<div class="'+Layer.headClass+'">';
 					$popHtml += '<h1>'+title+'</h1>';
 					$popHtml += '<a href="#" class="pop_close ui-multiselect-cancle" role="button" aria-label="팝업창 닫기"></a>';
@@ -1837,7 +1837,7 @@ var Layer = {
 						$popHtml += '</div>';
 					$popHtml += '</div>';
 				$popHtml += '</div>';
-			$popHtml += '</div>';
+			$popHtml += '</article>';
 		$popHtml += '</div>';
 
 		if($('#wrap').length){
@@ -1933,6 +1933,65 @@ var Layer = {
 				var $active = $dd.find('.active');
 				if($active.length)scrollUI.center($active,0,'vertical');
 			}
+		});
+	},
+	calendar:function(input,val){
+		var $calendarId = 'calendarPop',
+			$popHtml = '',
+			$val = val;
+		if($val == undefined)$val = '';
+		$popHtml += '<div id="'+$calendarId+'" class="'+Layer.popClass+' modal ui-calendar" role="dialog" aria-hidden="true">';
+			$popHtml += '<article class="'+Layer.wrapClass+'">';
+				$popHtml += '<div class="'+Layer.headClass+'">';
+					$popHtml += '<h1>날짜선택</h1>';
+					$popHtml += '<a href="#" class="pop_close ui-pop-close" role="button" aria-label="팝업창 닫기"></a>';
+				$popHtml += '</div>';
+				$popHtml += '<div class="'+Layer.contClass+'">';
+					$popHtml += '<div class="calendar-swiper">';
+						$popHtml += '<div class="calendar-swiper-head">';
+							$popHtml += '<div class="tit">';
+								$popHtml += '<strong></strong>';
+								$popHtml += '<select title="년도선택" class="ui-calendar-select-y"></select>';
+							$popHtml += '</div>';
+						$popHtml += '</div>';
+						$popHtml += '<div class="swiper-container">';
+							$popHtml += '<div class="swiper-wrapper">';
+								$popHtml += '<div class="swiper-slide"><div class="datepicker"></div></div>';
+								$popHtml += '<div class="swiper-slide now"><div class="datepicker"></div></div>';
+								$popHtml += '<div class="swiper-slide"><div class="datepicker"></div></div>';
+							$popHtml += '</div>';
+						$popHtml += '</div>';
+					$popHtml += '</div>';
+				$popHtml += '</div>';
+			$popHtml += '</article>';
+		$popHtml += '</div>';
+
+		if($('#wrap').length){
+			$('#wrap').append($popHtml);
+		}else{
+			$('body').append($popHtml);
+		}
+		var $pop = '#'+$calendarId;
+		$($pop).data('input',input);
+		Layer.open($pop);
+		var $datepicker = $($pop).find('.datepicker');
+		if(!!val){
+			$($pop).find('.calendar-swiper').data('date',val);
+			//formUI.jqCalendar($datepicker,null,val);
+			var $setVal = onlyNumber(val);
+			tblCalendar.create($datepicker,$setVal.substr(0,4),$setVal.substr(4,2),$setVal);
+		}else{
+			//formUI.jqCalendar($datepicker);
+			tblCalendar.create($datepicker);
+		}
+		tblCalendar.swiper();
+	},
+	calendarUI:function(){
+		$(document).on('click','.ui-swiper-datepicker-btn',function(e){
+			e.preventDefault();
+			var $input = $(this).siblings('input').first(),
+				$val = $input.val();
+			Layer.calendar($input,$val);
 		});
 	},
 	reOpen:false,
@@ -2467,6 +2526,7 @@ var Layer = {
 		Layer.keyEvt();
 		Layer.selectUI();
 		Layer.multiSelectUI();
+		Layer.calendarUI();
 
 		//윈도우팝업
 		if($('.pop_wrap.win').length){
@@ -2581,7 +2641,7 @@ var buttonUI ={
 		$(document).on ('click','a',function(e){
 			var $href = $(this).attr('href'),
 				$target = $(this).attr('target');
-			if(!$(this).hasClass('no_button')){ //기본속성 살리는 클래스(스킵네비 등)
+			if(!$(this).hasClass('no_button') && $href != undefined){ //기본속성 살리는 클래스(스킵네비 등)
 				if($href.startsWith('#')){
 					e.preventDefault();
 				}
@@ -4381,7 +4441,7 @@ var formUI = {
 			});
 		}
 	},
-	jqCalendar:function(element,callback){
+	jqCalendar:function(element,callback,defaultDate){
 	//jquery UI datepicker
 		var h3Tit = $('<h3 class="title">날짜선택</h3>'),
 			swipeArr = $('<div class="swipe_arr" aria-hidden="true"><i class="arr top"></i><i class="arr bottom"></i><i class="arr left"></i><i class="arr right"></i></div>'),
@@ -4389,9 +4449,11 @@ var formUI = {
 			isSwipeGuide = true,
 			prevYrBtn = $('<a href="#" role="button" class="ui-datepicker-prev-y" aria-label="이전년도 보기"><span>이전년도 보기</span></a>'),
 			nextYrBtn = $('<a href="#" role="button" class="ui-datepicker-next-y" aria-label="다음년도 보기"><span>다음년도 보기</span></a>');
-		var calendarOpen = function(target,ob){
+		var calendarOpen = function(target,ob,delay){
+			if(delay == undefined || delay == '')delay = 5;
 			setTimeout(function(){
-				var $calendar = '#'+ob.dpDiv[0].id,
+				var $isInline = ob.inline ? true : false,
+					$calendar = $isInline ? '#'+ob.id :'#'+ob.dpDiv[0].id,
 					$header = $($calendar).find('.ui-datepicker-header'),
 					$container = $($calendar).find('.ui-datepicker-calendar'),
 					$min = $.datepicker._getMinMaxDate(target.data('datepicker'),'min'),
@@ -4400,16 +4462,26 @@ var formUI = {
 					$maxY = $max.getFullYear(),
 					$selectedYear = ob.selectedYear,
 					$dimmedClass = 'datepicker-dimmed';
-				
-				if(!$($calendar).find('.title').length)$($calendar).prepend(h3Tit);
-				if(!$($calendar).find('.swipe_arr').length)$($calendar).prepend(swipeArr);
-				if(isSwipeGuide){
-					$($calendar).addClass('add_guide').append(swipeGuide);
-					isSwipeGuide = false;
+					$inlineInpClass = 'ui-datepicker-inline-inp';
+				if($isInline){
+					//인라인달력
+					if(!$($calendar).find('.'+$inlineInpClass).length && !$($calendar).closest('.calendar-swiper').length)$($calendar).append('<div class="input mt10 blind"><input type="text" class="ui-datepicker-inline-inp" readonly></div>');
+					var $getDate = $(target).datepicker('getDate'),
+						$date = $.datepicker.formatDate('yy.mm.dd',$getDate),
+						$input = $($calendar).find('.ui-datepicker-inline-inp');
+					if($input.length)$input.val($date);
 				}else{
-					$($calendar).removeClass('add_guide');
+					//팝업달력
+					if(!$($calendar).find('.title').length)$($calendar).prepend(h3Tit);
+					if(!$($calendar).find('.swipe_arr').length)$($calendar).prepend(swipeArr);
+					if(isSwipeGuide){
+						$($calendar).addClass('add_guide').append(swipeGuide);
+						isSwipeGuide = false;
+					}else{
+						$($calendar).removeClass('add_guide');
+					}
+					if(!$('.'+$dimmedClass).length)$($calendar).before('<div class="datepicker-dimmed" aria-hidden="true"></div>');
 				}
-				if(!$('.'+$dimmedClass).length)$($calendar).before('<div class="datepicker-dimmed" aria-hidden="true"></div>');
 				
 				$header.find('.ui-datepicker-year').attr('title','년 선택');
 				$header.find('.ui-datepicker-month').attr('title','월 선택');
@@ -4460,46 +4532,48 @@ var formUI = {
 				
 				//$header.find('.ui-datepicker-title').append('월');
 				$header.find('.ui-datepicker-prev, .ui-datepicker-next').attr('href','#');
-				if(isMobile.any()){
-					$($calendar).find('.title').attr('tabindex',-1).focus();
-					if($('#wrap').length)$('#wrap').attr('aria-hidden',true);
-				}else{
-					$($calendar).attr('tabindex',0).focus();
-					Layer.focusMove($calendar);
-				}
+				if(!$isInline){
+					if(isMobile.any()){
+						$($calendar).find('.title').attr('tabindex',-1).focus();
+						if($('#wrap').length)$('#wrap').attr('aria-hidden',true);
+					}else{
+						$($calendar).attr('tabindex',0).focus();
+						Layer.focusMove($calendar);
+					}
 
-				if(!$container.data('init')){
-					$container.data('init',true);
-					$container.swipe({
-						swipeStatus:function(event,phase,direction,distance,duration,fingerCount,fingerData,currentDirection){
-							var $this = $(this),
-								$max = 30,
-								$btnPrevMonth = $header.find('.ui-datepicker-prev'),
-								$btnNextMonth = $header.find('.ui-datepicker-next'),
-								$btnPrevYear = $header.find('.ui-datepicker-prev-y'),
-								$btnNextYear = $header.find('.ui-datepicker-next-y');
-							if(direction != null){
-								var $distance = Math.min($max,distance);
-								if(direction == 'left' || direction == 'up')$distance = -$distance;
-								if(direction == 'left' || direction == 'right')$this.css('left',$distance);
-								if(direction == 'up' || direction == 'down')$this.css('top',$distance);
-								if(phase == 'end' || phase == 'cancel'){
-									$this.animate({
-										'left':0,
-										'top':0
-									},200,function(){
-										if(Math.abs($distance) >= $max){
-											if(direction == 'right' && !$btnPrevMonth.hasClass('ui-state-disabled'))$btnPrevMonth.click();
-											if(direction == 'left' && !$btnNextMonth.hasClass('ui-state-disabled'))$btnNextMonth.click();
-											if(direction == 'down' && !$btnPrevYear.hasClass('ui-state-disabled'))$btnPrevYear.click();
-											if(direction == 'up' && !$btnNextYear.hasClass('ui-state-disabled'))$btnNextYear.click();
-										}
-									});
+					if(!$container.data('init')){
+						$container.data('init',true);
+						$container.swipe({
+							swipeStatus:function(event,phase,direction,distance,duration,fingerCount,fingerData,currentDirection){
+								var $this = $(this),
+									$max = 30,
+									$btnPrevMonth = $header.find('.ui-datepicker-prev'),
+									$btnNextMonth = $header.find('.ui-datepicker-next'),
+									$btnPrevYear = $header.find('.ui-datepicker-prev-y'),
+									$btnNextYear = $header.find('.ui-datepicker-next-y');
+								if(direction != null){
+									var $distance = Math.min($max,distance);
+									if(direction == 'left' || direction == 'up')$distance = -$distance;
+									if(direction == 'left' || direction == 'right')$this.css('left',$distance);
+									if(direction == 'up' || direction == 'down')$this.css('top',$distance);
+									if(phase == 'end' || phase == 'cancel'){
+										$this.animate({
+											'left':0,
+											'top':0
+										},200,function(){
+											if(Math.abs($distance) >= $max){
+												if(direction == 'right' && !$btnPrevMonth.hasClass('ui-state-disabled'))$btnPrevMonth.click();
+												if(direction == 'left' && !$btnNextMonth.hasClass('ui-state-disabled'))$btnNextMonth.click();
+												if(direction == 'down' && !$btnPrevYear.hasClass('ui-state-disabled'))$btnPrevYear.click();
+												if(direction == 'up' && !$btnNextYear.hasClass('ui-state-disabled'))$btnNextYear.click();
+											}
+										});
+									}
 								}
-							}
-						},
-						cancleTreshold:0
-					});
+							},
+							cancleTreshold:0
+						});
+					}
 				}
 			
 				$header.find('.ui-datepicker-prev-y').unbind('click').bind('click',function(){
@@ -4508,17 +4582,35 @@ var formUI = {
 				$header.find('.ui-datepicker-next-y').unbind('click').bind('click',function(){
 					if(!$(this).hasClass('ui-state-disabled'))$.datepicker._adjustDate(target,+1,'Y');
 				});
-			},5);
+			},delay);
 		};
-		var calendarClose = function(target,ob){
-			Body.unlock();
-			$(ob.input).change();
-			var $cal = $('#'+ob.dpDiv[0].id);
-			if($('#wrap').length)$('#wrap').removeAttr('aria-hidden');
-			$cal.find('.title').removeAttr('tabindex');
-			$('.datepicker-dimmed').remove();
-			$(target).next('.ui-datepicker-trigger').focus();
-			if($(target).data('isReadonly') != true)$(target).prop('readonly',false);
+		var calendarClose = function(target,ob,date){
+			var $isInline = ob.inline ? true : false,
+				$calendar = $isInline ? '#'+ob.id :'#'+ob.dpDiv[0].id,
+				$cal = $($calendar);
+			if($isInline){
+				//인라인달력
+				//var $getDate = $(target).datepicker('getDate'),
+				//	$date = $.datepicker.formatDate('yy.mm.dd',$getDate),
+				var $date = date,
+					$input = $cal.find('.ui-datepicker-inline-inp');
+				if($input.length)$input.val($date);
+				var $popup = $cal.closest('.ui-calendar');
+				if($popup.length){
+					Layer.close($popup);
+					var $input = $popup.data('input');
+					if($input != undefined && $input.length)$input.val($date);
+				}
+			}else{
+				//팝업달력
+				Body.unlock();
+				$(ob.input).change();
+				if($('#wrap').length)$('#wrap').removeAttr('aria-hidden');
+				$cal.find('.title').removeAttr('tabindex');
+				$('.datepicker-dimmed').remove();
+				$(target).next('.ui-datepicker-trigger').focus();
+				if($(target).data('isReadonly') != true)$(target).prop('readonly',false);
+			}
 		};
 
 		if($(element).length){
@@ -4526,13 +4618,24 @@ var formUI = {
 				var $this = $(this),
 					$minDate = $(this).data('min'),
 					$maxDate = $(this).data('max'),
+					$defaultDate = $(this).data('default'),
 					$range = $(this).data('range');
 				if($minDate == undefined)$minDate = '-100y';
 				if($maxDate == undefined)$maxDate = '+100y';
+				if($defaultDate == undefined){
+					$defaultDate = null;
+				}else{
+					if($this.val() == '')$this.val($defaultDate);
+				}
+				if(!!defaultDate)$defaultDate = defaultDate;
 				if($range == undefined)$range = '-100:+100';
+				var $inlineTag = 'div, span',
+					$isInline = false;
+				if($this.is($inlineTag))$isInline = true;
 				$this.datepicker({
 					minDate: $minDate,
 					maxDate: $maxDate,
+					defaultDate: $defaultDate,
 					closeText: '닫기',
 					prevText: '이전달 보기',
 					nextText: '다음달 보기',
@@ -4554,11 +4657,13 @@ var formUI = {
 					selectOtherMonths: true,
 					beforeShow: function(el,ob){
 						//열때
-						Body.lock();
-						if($this.prop('readonly') == true){
-							$this.data('isReadonly',true);
-						}else{
-							$this.prop('readonly',true);
+						if(!$isInline){
+							Body.lock();
+							if($this.prop('readonly') == true){
+								$this.data('isReadonly',true);
+							}else{
+								$this.prop('readonly',true);
+							}
 						}
 
 						//기간 선택
@@ -4575,34 +4680,25 @@ var formUI = {
 					},
 					onChangeMonthYear: function(y,m,ob){
 						//달력 바뀔때
-						//console.log('onChangeMonthYear');
 						calendarOpen($this,ob);
 					},
 					onSelect: function(d,ob){
 						//선택할때
-						calendarClose(this,ob);
-
-						//기간 선택
-						/*var $closest = $(this).closest('.date_wrap');
-						if($closest.length && $closest.find(element).length == 2){
-							var $idx = $closest.find(element).index(this),
-								$first = $closest.find(element).eq(0),
-								$last = $closest.find(element).eq(1);
-							if($idx == 1){
-								$first.datepicker('option','maxDate',d);
-							}else{
-								$last.datepicker('option','minDate',d);
-							}
-						}*/
+						calendarClose($this,ob,d);
+						if($isInline)calendarOpen($this,ob);
 
 						//콜백
 						if(!!callback)callback();
 					},
 					onClose: function(d,ob){
 						//닫을때
-						calendarClose(this,ob);
+						calendarClose($this,ob,d);
 					}
 				});
+				if($isInline){
+					var $ob = $.datepicker._getInst($this[0]);
+					calendarOpen($this,$ob);
+				}
 
 				//달력버튼 카드리더기에서 안읽히게
 				$(this).siblings('.ui-datepicker-trigger').attr({
@@ -4644,6 +4740,7 @@ var formUI = {
 		formUI.jqRange();
 		formUI.jqCalendar('.datepicker');
 		sclCalendar.init('.s_datepicker');
+		tblCalendar.UI();
 
 		//입력 텍스트 카운팅(입력)
 		$(document).on('keyup','[data-text-count]',function(e){
@@ -4951,7 +5048,13 @@ var sclCalendar = {
 							}
 							if(!!$min || !!$max || !!$minDate || !!$maxDate)$replaceVal.push($val<10?'0'+$val:$val);
 							$item = sclCalendar.dateHtml('M',$monthS,$monthE,$val);
-							if($groupEl.find('.ui-calendar-item').length != ($monthE-$monthS+1))$groupEl.find('dd').html($item);
+							if($groupEl.find('.ui-calendar-item').length != ($monthE-$monthS+1)){
+								$groupEl.find('dd').html($item);
+								var $active = $groupEl.find('dd').find('.active');
+								if($active.length){
+									scrollUI.center($active,0,'vertical');
+								}
+							}
 						}else if($groupEl.hasClass('scl_day')){
 							//일
 							if($dayStep == undefined)$dayStep = 1;
@@ -5111,6 +5214,332 @@ var sclCalendar = {
 	init:function(element){
 		sclCalendar.HTML(element);
 		sclCalendar.UI(element);
+	}
+};
+
+//달력그리기
+var tblCalendar = {
+	defaultTargte:'.tbl_datepicker',
+	wrapClass:'.ui-tbl-datepicker',
+	table:function(year,month,val){
+		var $month = month,
+			$table = '';
+		if((''+$month).length==1)$month='0'+$month;
+		$table += '<div class="ui-datepicker ui-datepicker-inline '+tblCalendar.wrapClass.substring(1)+'">';
+			$table += '<div class="ui-datepicker-header">';
+				$table += '<div class="ui-datepicker-title">'+year+'.'+$month+'</div>';
+			$table += '</div>';
+			$table += '<table class="ui-datepicker-calendar">';
+				$table += '<thead>';
+					$table += '<tr>';
+						$table += '<th scope="col" class="ui-datepicker-week-end">일</th>';
+						$table += '<th scope="col">월</th>';
+						$table += '<th scope="col">화</th>';
+						$table += '<th scope="col">수</th>';
+						$table += '<th scope="col">목</th>';
+						$table += '<th scope="col">금</th>';
+						$table += '<th scope="col" class="ui-datepicker-week-end">토</th>';
+					$table += '</tr>';
+				$table += '</thead>';
+				$table += tblCalendar.tbody(year,month,val);
+			$table += '</table>';
+			$table += '<div class="input"><input type="tel" class="ui-datepicker-inline-inp" readonly title="달력에서 선택한 날짜"></div>';
+		$table += '</div>';
+		return $table;
+	},
+	tbody:function(year,month,val){
+		var $date = new Date(year,(month-1),1,0,0,0,0),
+			$year = $date.getFullYear(),
+			$month = $date.getMonth()+1,
+			$start = $date.getDay(),
+			$end = tblCalendar.getLastDay(year,month)+$start,
+			$day = 1,
+			$last = (($end)%7 == 0)? $end: $end+(7-(($end)%7)),
+			$row = 0,
+			$tbody = '',
+			$val = '';
+		if(!!val)$val = parseInt(onlyNumber(val));
+		if((''+$month).length==1)$month='0'+$month;
+		$tbody = '<tbody class="ui-datepicker-tbody" data-year="'+$year+'" data-month="'+$month+'">';
+		$tbody += '<tr>';
+		for(var i = 0;i<$last;i++){
+			if($row > 6){
+				$row = 0;
+				$tbody += '</tr><tr>';
+			}
+			if($row == 0 || $row == 6){
+				$tbody += '<td class="ui-datepicker-week-end">';
+			}else{
+				$tbody += '<td>';
+			}
+			if($start <= i && i < $end){
+				var $date = ''+$year+$month+((''+$day).length==1?'0'+$day:$day);
+				$tbody += '<a href="#" role="button" class="ui-state-default'+(parseInt($date)==$nowDateDay?' ui-state-highlight':'')+''+(parseInt($date)==$val?' ui-state-active':'')+'" data-date="'+$date+'"';
+				if(parseInt($date)==$val){
+					$tbody += ' title="선택 일자"';
+				}else if(parseInt($date)==$nowDateDay){
+					$tbody += ' title="오늘 일자"';
+				}
+				$tbody += '>'+$day+'</a>';
+				$day++;
+			}
+			$tbody += '</td>';
+			$row++;
+		}
+		$tbody += '</tr>';
+		$tbody += '</tbody>';
+		return $tbody;
+	},
+	getLastDay:function(year,month){
+		var $day = 31;
+		if(month == 4 || month == 6	|| month == 9 || month == 11){
+			$day = 30;
+		}else if(month == 2){
+			if(year%4 == 0 && (year%100 != 0 || year%400 == 0)){
+				$day = 29;
+			}else{
+				$day = 28;
+			}
+		}
+		return $day;
+	},
+	create:function(element,year,month,val){
+		if(element == undefined || element == '')element = tblCalendar.defaultTargte;
+		if(year == undefined || year == '')year = $nowDateOnlyYear;
+		if(month == undefined || month == '')month = $nowDateOnlyMonth;
+		var $element = $(element);
+		if($element.length){
+			$element.each(function(){
+				var $this = $(this);
+				$this.html(tblCalendar.table(year,month,val));
+				if(!!val)tblCalendar.setValue($this,val);
+			});
+		}
+	},
+	setValue:function(element,val){
+		var $element = $(element);
+		if($element.length && !!val){
+			var $inpVal = autoDateFormet(''+val,'.');
+			if($element.find('.ui-datepicker-inline-inp').length)$element.find('.ui-datepicker-inline-inp').val($inpVal);
+		}
+	},
+	setView:function(element,monthVal,yearVal){	//tblCalendar.setView(this,-1,+2);
+		if(element == undefined || element == '')element = '.tbl_datepicker';
+		var $element = $(element);
+		if($element.length && (!!monthVal || !!yearVal)){
+			$element.each(function(){
+				var $tbody = $element.find('.ui-datepicker-tbody'),
+					$wrap = $tbody.closest(tblCalendar.wrapClass),
+					$input = $wrap.find('.ui-datepicker-inline-inp'),
+					$val = '',
+					$table = $wrap.find('.ui-datepicker-calendar'),
+					$getYear = parseInt($tbody.data('year')),
+					$getMonth = parseInt($tbody.data('month')),
+					$setYear = $getYear,
+					$setMonth = $getMonth;
+
+				if($input.val() != '')$val = $input.val();
+				if(!!monthVal){
+					$setMonth = $getMonth+monthVal;
+					if($setMonth < 1){
+						$setMonth = $setMonth+12;
+						$setYear--;
+					}else if($setMonth > 12){
+						$setMonth = $setMonth-12;
+						$setYear++;
+					}
+				}
+				
+				if(!!yearVal){
+					$setYear = $setYear+yearVal;
+				}
+				var $tbodyHtml = tblCalendar.tbody($setYear,$setMonth,$val);
+				if((''+$setMonth).length==1)$setMonth='0'+$setMonth;
+				$wrap.find('.ui-datepicker-title').html($setYear+'.'+$setMonth);
+				if($wrap.closest('.swiper-slide-active').length){
+					var $headTit = $wrap.closest('.calendar-swiper').find('.calendar-swiper-head .tit');
+					$headTit.find('strong').html($setYear+'.'+$setMonth);
+					var $headTitSel = $headTit.find('.ui-calendar-select-y');
+					if($headTitSel.length)$headTitSel.val($setYear);
+				}
+				$tbody.remove();
+				$table.append($tbodyHtml);
+			});
+		}
+	},
+	swiper:function(element){
+		var tar = !!element ? element : '.calendar-swiper';
+		if($(tar).length > 0){
+			$(tar).each(function(i){
+				var $this = $(this);
+				var dateTitle = function(){
+					var $titleDiv = $this.find('.swiper-slide-active .ui-datepicker-title'),
+						$titleSel = $titleDiv.find('select'),
+						$titleTxt = '';
+					if($titleSel.length){
+						var $titleAry = [];
+						$titleSel.each(function(){
+							$titleAry.push($(this).find(':selected').text());
+						});
+						$titleTxt = $titleAry.join('.');
+					}else{
+						$titleTxt = $titleDiv.text();
+					}
+					var $headTit = $this.find('.calendar-swiper-head .tit');
+					$headTit.find('strong').text($titleTxt);
+					var $headTitSel = $headTit.find('.ui-calendar-select-y');
+					if($headTitSel.length){
+						var $selVal = parseInt($titleTxt.split('.')[0]);
+						for(var i = ($nowDateOnlyYear-100);i<=($nowDateOnlyYear+100);i++){
+						 	var $option = '<option value="'+i+'">'+i+'</option>'
+						 	$headTitSel.append($option);
+						}
+						$headTitSel.val($selVal);
+					}
+				};
+				var slideCalendar = function(){
+					var $nowIdx = $this.find('.swiper-slide.now').index();
+					$this.find('.swiper-slide').not('.is-date').each(function(){
+						var $slide = $(this),
+							$cal = $slide.find('.datepicker'),
+							$slideIdx = $slide.index(),
+							$setting = $slideIdx-$nowIdx;
+						$slide.addClass('is-date');
+						if($setting != 0){
+							//$.datepicker._adjustDate($cal[0],$setting,'M');
+							tblCalendar.setView($cal,$setting);
+						}
+					});
+				};
+				var $headWrap = $this.find('.calendar-swiper-head').length?$this.find('.calendar-swiper-head'):$this;
+				if(!$this.find('.swiper-prev-y').length)$headWrap.append('<button type="button" role="button" class="swiper-arr swiper-arr-y swiper-prev-y" aria-hidden="이전년도 보기"><span></span></button>');
+				if(!$this.find('.swiper-prev').length)$headWrap.append('<button type="button" class="swiper-arr swiper-prev"><span></span></button>');
+				if(!$this.find('.swiper-pagination').length)$this.append('<div class="swiper-pagination"></div>');
+				if(!$this.find('.swiper-next').length)$headWrap.append('<button type="button" class="swiper-arr swiper-next"><span></span></button>');
+				if(!$this.find('.swiper-next-y').length)$headWrap.append('<button type="button" role="button" class="swiper-arr swiper-arr-y swiper-next-y" aria-hidden="다음년도 보기"><span></span></button>');
+
+				var $pagination = $this.find('.swiper-pagination');
+				var $option = {
+					slidesPerView: 'auto',
+					initialSlide: 1,
+					navigation:{
+						prevEl: $this.find('.swiper-prev'),
+						nextEl: $this.find('.swiper-next')
+					},
+					autoHeight:true,
+					pagination:{
+						el: $pagination,
+						clickable:true,
+						renderBullet:function(index, className) {
+							return '<button type="button" class="'+className+'">'+(index+1)+'번째 슬라이드</button>';
+						}
+					},
+					on:{
+						init:function(){
+							setTimeout(function(){
+								$this.find('.swiper-prev').attr('aria-label','이전달 보기');
+								$this.find('.swiper-next').attr('aria-label','다음달 보기');
+							},10);
+						},
+						transitionEnd:function(e){
+							if($swiper != undefined){
+								var $length = $swiper.pagination.bullets.length,
+									$index = $swiper.snapIndex>=0?$swiper.snapIndex:$swiper.realIndex;
+
+								if($swiper.realIndex == 0)$swiper.prependSlide('<div class="swiper-slide"><div class="datepicker"></div></div>');
+								if($swiper.realIndex == ($length-1))$swiper.appendSlide('<div class="swiper-slide"><div class="datepicker"></div></div>');
+
+								var $prependPicker = $this.find('.swiper-slide').not('.is-date').find('.datepicker');
+								if($prependPicker.length){
+									var $date = $this.data('date'),
+										$setYear = $this.data('setYear');
+									if($date == undefined){
+										//formUI.jqCalendar($prependPicker);
+										if($setYear == undefined){
+											tblCalendar.create($prependPicker);
+										}else{
+											tblCalendar.create($prependPicker,$nowDateOnlyYear+$setYear);
+										}
+									}else{
+										//formUI.jqCalendar($prependPicker,null,$date);
+										var $setVal = onlyNumber($date);
+										tblCalendar.create($prependPicker,$setVal.substr(0,4),$setVal.substr(4,2),$setVal);
+									}
+								}
+
+								if($index>$length)$index = $index-$length;
+								swiperUI.focusAria($this,$index,0);
+							}
+						},
+						slideChangeTransitionEnd:function(e){
+							slideCalendar();
+							dateTitle();
+						}
+					}
+				};
+				var $swiper = new Swiper($this.find('.swiper-container'),$option);
+				$this.data('swiper',$swiper);
+			});
+		}
+	},
+	UI:function(){
+		$(document).on('click','.ui-calendar .ui-state-default',function(e){
+			e.preventDefault();
+			var $calendar = $(this).closest('.ui-datepicker'),
+				$date = $(this).data('date'),
+				$inpVal = autoDateFormet(''+$date,'.');
+			$calendar.find('.ui-state-default').removeClass('ui-state-active').removeAttr('title');
+			$calendar.find('ui-state-highlight').attr('title','오늘 일자');
+			$(this).addClass('ui-state-active').attr('title','선택 일자');
+			if($calendar.find('.ui-datepicker-inline-inp').length)$calendar.find('.ui-datepicker-inline-inp').val($inpVal);
+
+			var $popup = $(this).closest('.ui-calendar'),
+				$input = $popup.data('input');
+			if($popup.length){
+				Layer.close($popup);
+				if($input != undefined && $input.length)$input.val($inpVal);
+			}
+		});
+
+		$(document).on('click','.ui-calendar .swiper-arr-y',function(e){
+			e.preventDefault();
+			var $popup = $(this).closest('.ui-calendar'),
+				$swiper = $(this).closest('.calendar-swiper'),
+				$setYear = $swiper.data('setYear'),
+				$cal = $popup.find('.datepicker'),
+				$setVal = $(this).hasClass('swiper-prev-y')?-1:1;
+			if($setYear == undefined)$setYear = 0;
+			if($cal.length){
+				$cal.each(function(){
+					var $this = $(this);
+					tblCalendar.setView($this,null,$setVal);
+				});
+				$swiper.data('setYear',$setYear+$setVal);
+				var $dataSwiper = $swiper.data('swiper')
+				$dataSwiper.update();
+			}
+		});
+
+		$(document).on('change','.ui-calendar .ui-calendar-select-y',function(e){
+			var $val = $(this).val(),
+				$year = $(this).data('year'),
+				$popup = $(this).closest('.ui-calendar'),
+				$swiper = $(this).closest('.calendar-swiper'),
+				$cal = $popup.find('.datepicker'),
+				$setYear = $val-$nowDateOnlyYear;
+			if($year == undefined)$year = $nowDateOnlyYear;
+			var $setVal = $val-$year;
+			if($cal.length){
+				$cal.each(function(){
+					var $this = $(this);
+					tblCalendar.setView($this,null,$setVal);
+				});
+				$swiper.data('setYear',$setYear);
+				var $dataSwiper = $swiper.data('swiper')
+				$dataSwiper.update();
+				$(this).data('year',$val);
+			}
+		});
 	}
 };
 
@@ -5535,7 +5964,7 @@ var swiperUI = {
 	focusAria: function(el,first,end,isLoop){
 		if(!isNaN(first) && !isNaN(end)){
 			var last = first+end+1;
-			$(el).children().children('.swiper-slide').attr('aria-hidden','true').find($focusableEl).each(function(e){
+			$(el).find('.swiper-wrapper').children('.swiper-slide').attr('aria-hidden','true').find($focusableEl).each(function(e){
 				Focus.disabled(this);
 			});
 
@@ -5543,18 +5972,18 @@ var swiperUI = {
 			if(isLoop){
 				var $activeIdx = $(el).children().children('.swiper-slide-active').index();
 				last = $activeIdx+end+1;
-				$(el).children().children('.swiper-slide').slice($activeIdx,last).removeAttr('aria-hidden').find($focusableEl).each(function(e){
+				$(el).find('.swiper-wrapper').children('.swiper-slide').slice($activeIdx,last).removeAttr('aria-hidden').find($focusableEl).each(function(e){
 					Focus.abled(this);
 				});
 			}else{
-				$(el).children().children('.swiper-slide').not('.swiper-slide-duplicate').slice(first,last).removeAttr('aria-hidden').find($focusableEl).each(function(e){
+				$(el).find('.swiper-wrapper').children('.swiper-slide').not('.swiper-slide-duplicate').slice(first,last).removeAttr('aria-hidden').find($focusableEl).each(function(e){
 					Focus.abled(this);
 				});
 			}
 		}
 	},
-	item: function(){
-		var tar = '.ui-swiper';
+	item: function(element){
+		var tar = !!element ? element : '.ui-swiper';
 		if ($(tar).length > 0){
 			$(tar).each(function(i){
 				var $this = $(this),
@@ -5732,6 +6161,24 @@ var swiperUI = {
 									var $sclGuide = $this.find('.ui-scl-cont');
 									if($sclGuide.length){
 										scrollUI.guide($sclGuide);
+									}
+
+									//높이값: auto
+									if($isAutoheight){
+										//메인
+										if($this.closest('.main_page').length){
+											if(typeof($mainSwiper) != 'undefined' && $mainSwiper != '')$mainSwiper.update();
+										}
+
+										//통합검색
+										if($this.closest('.search_swiper').length){
+											if(typeof($searchSwiper) != 'undefined' && $searchSwiper != '')$searchSwiper.update();
+										}
+
+										//카드상세
+										if($this.closest('.card_detail_cont').length){
+											if(typeof($detailSwiper) != 'undefined' && $detailSwiper != '')$detailSwiper.update();
+										}
 									}
 								},
 								touchEnd:function(e){
