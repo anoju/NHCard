@@ -1,300 +1,435 @@
 <nav id="gnb" aria-hidden="true">
 	<div class="gnb_header">
 		<div class="gnb_head_top">
-			<a href="#btnGnb" class="btn_gnb_close"><span class="blind">전체메뉴 닫기</span></a>
-			<div>
-				<a href="#" class="btn_gnb_search"><span class="blind">통합검색 열기</span></a>
-				<a href="#" class="btn_gnb_logout"><span class="blind">로그아웃</span></a>
+			<div class="f_left">
+				<!-- <a href="#" class="button">회원가입</a> --><!-- 로그인 전 --><!-- 2020-07-06: 클래스 수정 -->
+				<a href="#" class="button">로그아웃</a><!-- 로그인 후 --><!-- 2020-07-06: 클래스 수정 -->
 			</div>
+			<div class="f_right">
+				<a href="#" class="btn_gnb_home" role="button" aria-label="메인화면으로 이동"></a><!--#200803 추가-->
+				<a href="#" class="btn_gnb_search" role="button" aria-label="통합검색 열기"></a>
+				<!-- <a href="#" class="btn_gnb_alarm new" aria-label="알림함. 새알림도착"></a> --><!-- 알림 있을때,앱에서만 쓰임 -->
+				<!-- <a href="#" class="btn_gnb_alarm" aria-label="알림함."></a> --><!-- 알림 없을때,앱에서만 쓰임 -->
+				<!-- <a href="#" class="btn_gnb_setting" aria-label="설정"></a> --><!--앱에서만 쓰임-->
+			</div>
+			<a href="#btnGnb" class="btn_gnb_close" role="button" aria-label="전체메뉴 닫기"></a>
 		</div>
-		<div class="gnb_info">
+
+		<!-- 로그인 전 -->
+		<!-- <div class="user_setting_info">
+			<div>
+				<h2 class="tit ty2"><a href="#"><strong class="line">로그인</strong> 해주세요</a></h2>
+			</div>
+		</div> -->
+		<!-- //로그인 전 -->
+
+		<!-- 로그인 후 -->
+		<div class="user_setting_info">
 			<div class="avata">
-				<img src="../../images/temp/avata.png" alt="">
+				<a href="#"><div class="img"><img src="../../images/profile/img_profile_0.png" alt="캐릭터 미지정"></div></a><!-- 미설정일때 보여주는 이미지 -->
+				<!-- <img src="../../images/profile/img_profile_1.png" alt="캐릭터 올리">
+				<img src="../../images/profile/img_profile_2.png" alt="캐릭터 원이">
+				<img src="../../images/profile/img_profile_3.png" alt="캐릭터 코리">
+				<img src="../../images/profile/img_profile_4.png" alt="캐릭터 달리">
+				<img src="../../images/profile/img_profile_5.png" alt="캐릭터 단지"> -->
 			</div>
 			<div>
-				<!-- <h2 class="tit">고객님 환영합니다.</h2> -->
-				<h2 class="tit"><strong>홍길동</strong>님, 반가워요.</h2>
+				<div class="info">
+					<span class="my_summary">Since. 1998</span>
+					<span class="my_summary color_5">NH농협</span><!-- 설정에 따른 클래스 변경: color_1, color_2, color_3, color_4, color_5, color_6, color_7 -->
+					<span class="my_level" title="회원등급">노블레스</span><!-- 등급따라 노블레스, 슈퍼로얄, 로얄, 프라임 텍스트 변경, 해당없으면 숨김 -->
+				</div>
+				<h2 class="tit"><strong>김농협</strong>님, 반갑습니다!</h2>
 				<div class="cont">
-					<span class="my_level lv_0"><span class="blind">회원등급</span><strong>VIP</strong></span><!-- lv_0:VIP, lv_1:Prime, lv_2:Royal, lv_3:Super Royal, lv_4:Noblesse -->
-					<span class="last_date">최근접속 <span>2019.10.24 17:34</span></span>
+					<span class="last_date">최근접속 : <span>2019.10.24 14:23</span> 
+						<span class="tooltip_wrap">
+							<a href="#" class="tooltip_btn" role="button" aria-label="자세한 내용 확인"></a>
+							<span class="tooltip_cont" role="tooltip">최근 접속 시간은 NH농협카드 디지털채널에 최종으로 로그인 한 시간입니다.</span><!--#200911 수정-->
+						</span>
+					</span>
 				</div>
 			</div>
 		</div>
-		<div class="gnb_link">
-			<ul class="grid col3">
-				<li><a href="#"><i class="ic_1" aria-hidden="true"></i><span>홈으로</span></a></li>
-				<li><a href="#"><i class="ic_2" aria-hidden="true"></i><span>인증센터</span></a></li>
-				<li><a href="#"><i class="ic_3" aria-hidden="true"></i><span>로그인 설정</span></a></li>
-			</ul>
-		</div>
+		<!-- //로그인 후 -->
 	</div>
 	<div class="gnb_content">
-		<div class="gnb_quick">
-			<a href="#" class="button h25 round white">선결제</a>
-			<a href="#" class="button h25 round white">카드이용내역</a>
-			<a href="#" class="button h25 round white">도시가스요금</a>
-			<a href="#" class="button h25 round white">NH포인트</a>
-			<a href="#" class="button h25 round white">리볼빙</a>
-			<a href="#" class="button h25 round green2">내게맞는 카드찾기</a>
-		</div>
 		<div class="gnb_dep1">
 			<ul>
-				<li><a href="#"><span>MY NH</span></a></li>
-				<li><a href="#"><span>혜택</span></a></li>
-				<li><a href="#"><span>카드</span></a></li>
-				<li><a href="#"><span>금융</span></a></li>
-				<li><a href="#"><span>생활&middot;편의</span></a></li>
-				<li><a href="#"><span>고객센터</span></a></li>
-			</ul>
-		</div>
-		<div class="gnb_sub">
-			<div class="swipe-container">
-				<div class="swiper-wrapper">
-					<div class="swiper-slide gnb_dep2">
+				<li><a href="#"><span>마이</span></a>
+					<div class="gnb_dep2">
 						<ul>
-							<li><a href="#">결제 예정금액 조회</a></li>
-							<li><a href="#">이용대금 명세서 조회</a></li>
-							<li><a href="#" class="in_sub">이용내역 조회</a>
+							<li><a href="#">이용대금명세서</a>
 								<div class="gnb_dep3">
 									<ul>
-										<li><a href="#">카드 이용내역</a></li>
-										<li><a href="#">교통카드 이용내역</a></li>
-										<li><a href="#">후불하이패스 이용내역</a></li>
-										<li><a href="#">매출 취소내역</a></li>
+										<li><a href="#">이용대금명세서</a></li>
+										<li><a href="#">결제예정금액</a></li>
 									</ul>
 								</div>
 							</li>
-							<li><a href="#" class="in_sub">결제 서비스</a>
+							<li><a href="#">이용내역</a>
+								<div class="gnb_dep3">
+									<ul>
+										<li><a href="#">카드이용내역</a></li>
+										<li><a href="#">매출취소내역</a></li>
+										<li><a href="#">연체내역</a></li>
+										<li><a href="#">미청구내역</a></li>
+										<li><a href="#">교통카드이용내역</a></li>
+										<li><a href="#">후불 하이패스&middot;후불<br>모바일티머니이용내역</a></li>
+										<li><a href="#">소득공제</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="#">결제 서비스</a>
 								<div class="gnb_dep3">
 									<ul>
 										<li><a href="#">선결제</a></li>
-										<li><a href="#">결제일 즉시/연체금액 결제</a></li>
-										<li><a href="#">가상계좌 예약 조회/취소</a></li>
-										<li><a href="#">결제결과 조회</a></li>
-										<li><a href="#">즉시결제 서비스 신청</a></li>
-										<li><a href="#">카드 결제정보 변경</a></li>
-										<li><a href="#">내맘대로 할부</a></li>
-										<li><a href="#">스마트할부 서비스</a></li>
+										<li><a href="#">결제일즉시/연체금액 결제</a></li>
+										<li><a href="#">가상계좌예약조회/취소</a></li>
+										<li><a href="#">결제결과조회</a></li>
+										<li><a href="#">즉시결제서비스</a></li>
+										<li><a href="#">일시불 분할 납부</a></li>
+										<li><a href="#">일부결제금액이월약정(리볼빙)</a></li>
+										<li><a href="#">할부기간 변경</a></li>
+										<li><a href="#">할부상환스케줄조회</a></li>
 									</ul>
 								</div>
 							</li>
-							<li><a href="#" class="in_sub">이용한도 서비스</a>
+							<li><a href="#">이용한도</a>
 								<div class="gnb_dep3">
 									<ul>
-										<li><a href="#">카드이용한도 조회</a></li>
-										<li><a href="#">이용한도 상향조정</a></li>
+										<li><a href="#">카드이용 한도조회</a></li>
+										<li><a href="#">한도상향 안내 동의</a></li>
 										<li><a href="#">이용한도 하향조정</a></li>
-										<li><a href="#">카드별 이용한도 등록</a></li>
+										<li><a href="#">이용한도 하향조정</a></li>
+										<li><a href="#">카드별 이용한도</a></li>
 										<li><a href="#">체크카드 한도변경</a></li>
 									</ul>
 								</div>
 							</li>
-							<li><a href="#" class="in_sub">카드 등록/관리</a>
+							<li><a href="#">카드등록/관리</a>
 								<div class="gnb_dep3">
 									<ul>
-										<li><a href="#">카드사용 등록</a></li>
-										<li><a href="#">카드신청 현황/취소</a></li>
-										<li><a href="#">카드 비밀번호 변경</a></li>
-										<li><a href="#">보유카드 조회/해지</a></li>
-										<li><a href="#">기프트카드 조회</a></li>
-										<li><a href="#">거래정지사유 조회</a></li>
-										<li><a href="#">서비스팩 조회/변경</a></li>
+										<li><a href="#">카드사용등록</a></li>
+										<li><a href="#">카드신청현황/취소</a></li>
+										<li><a href="#">보드카드관리</a></li>
+										<li><a href="#">카드비밀번호등록/변경</a></li>
+										<li><a href="#">서비스팩조회/변경</a></li>
+										<li><a href="#">거래정지/휴면카드</a></li>
+										<li><a href="#">휴면카드 갱신발급 신청</a></li>
 									</ul>
 								</div>
 							</li>
-							<li><a href="#" class="in_sub">정보관리</a>
+							<li><a href="#">회원정보관리</a>
 								<div class="gnb_dep3">
 									<ul>
-										<li><a href="#">회원정보 조회</a></li>
-										<li><a href="#">영문주소 관리</a></li>
-										<li><a href="#">회원 탈퇴</a></li>
-										<li><a href="#">명세서수령방법 변경</a></li>
+										<li><a href="#">회원정보조회</a></li>
+										<li><a href="#">명세서수령방법변경</a></li>
+										<li><a href="#">결제정보관리</a></li>
+										<li><a href="#">수수료율</a></li>
+										<li><a href="#">피싱방지 설정</a></li>
 									</ul>
 								</div>
 							</li>
-							<li><a href="#" class="in_sub">NH신용 Manager 신청/조회</a>
+							<li><a href="#">안심서비스</a>
 								<div class="gnb_dep3">
 									<ul>
-										<li><a href="#">NH신용 Manager</a></li>
-										<li><a href="#">NH신용 Manager Plus</a></li>
+										<li><a href="#">해외이용제한 등록/해제</a></li>
+										<li><a href="#">해외원화결제차단서비스</a></li>
 									</ul>
 								</div>
 							</li>
 						</ul>
 					</div>
-					<div class="swiper-slide gnb_dep2">
+				</li>
+				<li class="active"><a href="#"><span>혜택</span></a><!-- 활성화 메뉴는 li에 active 클래스-->
+					<div class="gnb_dep2">
 						<ul>
-							<li><a href="#" class="in_sub">내가받은혜택</a>
+							<li><a href="#">내가받은혜택</a></li>
+							<li><a href="#">실적충족 현황</a></li>
+							<li><a href="#">할인/적립 상세내역</a></li>
+							<li><a href="#">VIP CLUB</a>
 								<div class="gnb_dep3">
 									<ul>
-										<li><a href="#">할인/적립 상세내역</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="#">카드실적충족 현황</a></li>
-							<li><a href="#" class="in_sub">채움 특별서비스</a>
-								<div class="gnb_dep3">
-									<ul>
-										<li><a href="#">채움특별서비스란?</a></li>
-										<li><a href="#">공통 서비스</a></li>
-										<li><a href="#">PLUS등급 서비스</a></li>
-										<li><a href="#">TWO PLUS등급 서비스</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="#" class="in_sub">VIP서비스</a>
-								<div class="gnb_dep3">
-									<ul>
-										<li><a href="#">VIP서비스 안내</a></li>
-										<li><a href="#">VIP등급 안내</a></li>
+										<li><a href="#">제도 안내</a></li>
+										<li><a href="#">등급 안내</a></li>
 										<li><a href="#">VIP우대 서비스</a></li>
-										<li><a href="#">My VIP 서비스</a></li>
+										<li><a href="#">My VIP CLUB</a></li>
 									</ul>
 								</div>
 							</li>
-							<li><a href="#" class="in_sub">이벤트</a>
+							<li class="active"><a href="#">이벤트</a></li>
+							<li><a href="#">포인트</a>
 								<div class="gnb_dep3">
 									<ul>
-										<li><a href="#">진행중인 이벤트</a></li>
-										<li><a href="#">지난 이벤트</a></li>
-										<li><a href="#">당첨자 발표</a></li>
+										<li>
+											<a href="#">채움 브랜드</a>
+											<div class="gnb_dep4">
+												<ul>
+													<li><a href="#">NH포인트</a></li>
+													<li><a href="#">NH포인트 금융거래 안내</a></li>
+													<li><a href="#">NH포인트 적립/사용내역</a></li>
+													<li><a href="#">NH포인트 전환신청</a></li>
+													<li><a href="#">NH포인트 캐시백 신청</a></li>
+													<li><a href="#">NH포인트 양도신청</a></li>
+												</ul>
+											</div>
+										</li>
+										<li>
+											<a href="#">BC 브랜드</a>
+											<div class="gnb_dep4">
+												<ul>
+													<li><a href="#">농촌사랑포인트</a></li>
+													<li><a href="#">농촌사랑포인트 적립/사용내역</a></li>
+													<li><a href="#">농촌사랑포인트 포인트전환 신청</a></li>
+													<li><a href="#">농촌사랑포인트 캐시백 신청</a></li>
+													<li><a href="#">슈퍼TOP 포인트</a></li>
+													<li><a href="#">슈퍼TOP포인트 적립/사용내역</a></li>
+													<li><a href="#">슈퍼TOP포인트 전환신청</a></li>
+													<li><a href="#">슈퍼TOP포인트 캐시백 신청</a></li>
+												</ul>
+											</div>
+										</li>
+										<li>
+											<a href="#">제휴포인트</a>
+											<div class="gnb_dep4">
+												<ul>
+													<li><a href="#">OK캐쉬백 포인트</a></li>
+													<li><a href="#">GS&amp;POINT(리테일)</a></li>
+												</ul>
+											</div>
+										</li>
 									</ul>
 								</div>
 							</li>
-							<li><a href="#">금리할인 이벤트신청</a></li>
-							<li><a href="#" class="in_sub">포인트</a>
-								<div class="gnb_dep3">
-									<ul>
-										<li><a href="#">NH 포인트</a></li>
-										<li><a href="#">농촌사랑 포인트</a></li>
-										<li><a href="#">슈퍼TOP 포인트</a></li>
-										<li><a href="#">OK캐쉬백 포인트</a></li>
-									</ul>
-								</div>
-							</li>
+							<li><a href="#">채움레터</a></li>
+							<li><a href="#">채움스케치</a></li>
+							<li><a href="#">채움SHOP</a></li>
 						</ul>
 					</div>
-					<div class="swiper-slide gnb_dep2">
+				</li>
+				<li><a href="#"><span>카드</span></a>
+					<div class="gnb_dep2">
 						<ul>
-							<li><a href="#" class="in_sub">카드검색</a>
+							<li><a href="#">카드찾기</a></li>
+							<li><a href="#">스마트추천</a></li>
+							<li><a href="#">기프트카드</a>
 								<div class="gnb_dep3">
 									<ul>
-										<li><a href="#">프리미엄카드</a></li>
-										<li><a href="#">NH올원카드</a></li>
-										<li><a href="#">NH올바른카드</a></li>
-										<li><a href="#">채움카드</a></li>
-										<li><a href="#">신용카드</a></li>
-										<li><a href="#">체크카드</a></li>
-										<li><a href="#">학생증 카드발급</a></li>
+										<li>
+											<a href="#">기프트카드 상품안내</a>
+										</li>
+										<li>
+											<a href="#">기프트카드관리</a>
+											<div class="gnb_dep4">
+												<ul>
+													<li><a href="#">기프트카드 등록</a></li>
+													<li><a href="#">사용등록조회</a></li>
+													<li><a href="#">사용등록해제</a></li>
+													<li><a href="#">비밀번호 변경</a></li>
+													<li><a href="#">소득공제등록/해제</a></li>
+													<li><a href="#">기프트카드 환불</a></li>
+													<li><a href="#">SMS알림 신청/해제</a></li>
+												</ul>
+											</div>
+										</li>
+										<li>
+											<a href="#">잔액조회</a>
+										</li>
+										<li>
+											<a href="#">이용내역조회</a>
+										</li>
 									</ul>
 								</div>
 							</li>
-							<li><a href="#">MY 맞춤카드</a></li>
-							<li><a href="#">스마트 추천카드</a></li>
-							<li><a href="#" class="in_sub">지인 추천카드</a>
+							<li><a href="#">카드등록/관리</a></li>
+							<li><a href="#">발급상황조회</a></li>
+							<li> 
+								<a href="#">지인추천서비스</a>
 								<div class="gnb_dep3">
 									<ul>
-										<li><a href="#">추천인 안내</a></li>
-										<li><a href="#">추천인 등록</a></li>
+										<li><a href="#">지인추천서비스 안내</a></li>
+										<li><a href="#">추천인 등록하기</a></li>
 										<li><a href="#">추천내역 조회</a></li>
-										<li><a href="#">추천 URL 재발송</a></li>
+										<li><a href="#">추천인 URL 재발송</a></li>
+										<li><a href="#">대상카드보기</a></li>
 									</ul>
 								</div>
 							</li>
-							<li><a href="#" class="in_sub">모바일카드</a>
-								<div class="gnb_dep3">
-									<ul>
-										<li><a href="#">올원페이(앱카드)</a></li>
-										<li><a href="#">후불형 모바일 티머니</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="#">카드 즉시발급</a></li>
-							<li><a href="#">카드신청 현황/취소</a></li>
+							<li><a href="#">학생증카드(테스트용)</a></li>
 						</ul>
 					</div>
-					<div class="swiper-slide gnb_dep2">
+				</li>
+				<li><a href="#"><span>금융</span></a>
+					<div class="gnb_dep2">
 						<ul>
-							<li><a href="#" class="in_sub">단기카드대출(현금서비스)</a>
+							<li><a href="#">단기카드대출(현금서비스)</a>
 								<div class="gnb_dep3">
 									<ul>
 										<li><a href="#">안내</a></li>
-										<li><a href="#">단기카드대출 신청</a></li>
+										<li><a href="#">신청</a></li>
 									</ul>
 								</div>
 							</li>
-							<li><a href="#" class="in_sub">장기카드대출(카드론)</a>
+							<li><a href="#">장기카드대출(카드론)</a>
 								<div class="gnb_dep3">
 									<ul>
-										<li><a href="#">장기카드대출 안내</a></li>
-										<li><a href="#">장기카드대출 신청</a></li>
+										<li><a href="#">안내</a></li>
+										<li><a href="#">신청</a></li>
 										<li><a href="#">한도조회/시뮬레이션</a></li>
-										<li><a href="#">조회</a></li>
+										<li><a href="#">이용내역조회</a></li>
 										<li><a href="#">기한연장</a></li>
 										<li><a href="#">철회</a></li>
 										<li><a href="#">한도부여(이용) 동의</a></li>
 									</ul>
 								</div>
 							</li>
-							<li><a href="#" class="in_sub">일부결제금액 이월약정(리볼링)</a>
+							<li><a href="#">일부결제금액이월약정(리볼링)</a>
 								<div class="gnb_dep3">
 									<ul>
 										<li><a href="#">안내</a></li>
 										<li><a href="#">신청</a></li>
-										<li><a href="#">변경/해지</a></li>
+										<li><a href="#">조회/변경/해지</a></li>
 										<li><a href="#">이용내역조회</a></li>
 									</ul>
 								</div>
 							</li>
+							<li><a href="#">금리할인이벤트</a></li>
+							<li><a href="#">스마트할부</a></li>
+							<li><a href="#">체크회원신용결제</a></li>
 						</ul>
 					</div>
-					<div class="swiper-slide gnb_dep2">
+				</li>
+				<li><a href="#"><span>납부/편의</span></a>
+					<div class="gnb_dep2">
 						<ul>
-							<li><a href="#" class="in_sub">자동납부 신청/조회</a>
+							<li><a href="#">자동납부</a>
 								<div class="gnb_dep3">
 									<ul>
-										<li><a href="#">통신요금조회</a></li>
-										<li><a href="#">아파트관리비</a></li>
+										<li><a href="#">통신요금</a></li>
+										<li><a href="#">아파트 관리비</a></li>
+										<li><a href="#">교육비</a></li>
 										<li><a href="#">주택임대료</a></li>
 										<li><a href="#">전기요금</a></li>
-										<li><a href="#">도시가스</a></li>
-										<li><a href="#">4대 사회보험</a></li>
+										<li><a href="#">도시가스 요금</a></li>
+										<li><a href="#">4대사회보험</a></li>
 									</ul>
 								</div>
 							</li>
-							<li><a href="#" class="in_sub">안심서비스</a>
+							<li><a href="#">카드/신용정보알림</a>
 								<div class="gnb_dep3">
 									<ul>
-										<li><a href="#">알림서비스 신청/해지</a></li>
-										<li><a href="#">해외 이용제한 서비스</a></li>
+										<li><a href="#">휴대폰메시지서비스</a></li>
+										<li><a href="#">MY신용Manager</a></li>
+										<li><a href="#">My신용Manager 플러스</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="#">해외이용제한</a>
+								<div class="gnb_dep3">
+									<ul>
+										<li><a href="#">해외이용제한 신청/해지</a></li>
+										<li><a href="#">해외원화결제차단 서비스</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="#">후불형 모바일티버니</a>
+								<div class="gnb_dep3">
+									<ul>
+										<li><a href="#">후불형 모바일티머니 서비스란?</a></li>
+										<li><a href="#">신청방법</a></li>
+										<li><a href="#">사용처</a></li>
+										<li><a href="#">유의사항</a></li>
+										<li><a href="#">자주 묻는 질문</a></li>
 									</ul>
 								</div>
 							</li>
 						</ul>
 					</div>
-					<div class="swiper-slide gnb_dep2">
+				</li>
+				<li><a href="#"><span>올원페이</span></a>
+					<div class="gnb_dep2">
 						<ul>
-							<li><a href="#" class="in_sub">고객상담</a>
+							<li><a href="#">올원페이 소개</a></li>
+							<li><a href="#">등록방법</a></li>
+							<li><a href="#">가맹점 이용방법</a></li>
+							<li><a href="#">자주묻는질문</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="#"><span>고객센터</span></a>
+					<div class="gnb_dep2">
+						<ul>
+							<li><a href="#">고객센터 메인</a></li>
+							<li><a href="#">새소식</a></li>
+							<li><a href="#">카드분실신고</a>
 								<div class="gnb_dep3">
 									<ul>
-										<li><a href="#">새소식</a></li>
-										<li><a href="#">자주하는 질문</a></li>
-										<li><a href="#">Q&A</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="#">채움레터</a></li>
-							<li><a href="#" class="in_sub">분실신고/해제</a>
-								<div class="gnb_dep3">
-									<ul>
-										<li><a href="#">신용/체크카드 분실신고</a></li>
+										<li><a href="#">분실신고</a></li>
+										<li><a href="#">분실해제/재발급</a></li>
+										<li><a href="#">분실도난 보상접수</a></li>
 										<li><a href="#">기프트카드 분실신고</a></li>
-										<li><a href="#">타사카드 분실 일괄신고 조회</a></li>
+										<li><a href="#">다른은행카드 분실 일괄신고조회</a></li>
 										<li><a href="#">금융사기 카드사용정지 등록</a></li>
+										<li><a href="#">분실도난 보상신청 현황 조회</a></li>
 									</ul>
 								</div>
 							</li>
-							<li><a href="#" class="in_sub">공인인증서 관리</a>
+							<li><a href="#">온라인 고객 상담</a>
+								<div class="gnb_dep3">
+									<ul>
+										<li><a href="#">1:1문의</a></li>
+										<li><a href="#">자주묻는질문</a></li>
+										<li><a href="#">ARS 이용안내</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="#">이용안내</a>
+								<div class="gnb_dep3">
+									<ul>   
+										<li><a href="#">APP 이용안내</a></li>
+										<li><a href="#">이용 시간 안내</a></li>
+										<li>
+											<a href="#">해외이용안내</a>
+											<div class="gnb_dep4">
+												<ul>
+													<li><a href="#">출발전확인사항</a></li>
+													<li><a href="#">해외이용 시 유의사항</a></li>
+													<li><a href="#">해외단기카드대출(현금서비스) 안내</a></li>
+													<li><a href="#">해외긴급서비스 안내</a></li>
+													<li><a href="#">대금청구 안내</a></li>
+													<li><a href="#">농협 Global혜택</a></li>
+													<li><a href="#">글로벌  ATM 위치안내</a></li>
+												</ul>
+											</div>
+										</li>
+										
+										<li>
+											<a href="#">기타안내</a>
+											<div class="gnb_dep4">
+												<ul>
+													<li><a href="#">교통카드안내</a></li>
+													<li><a href="#">하이패스안내</a></li>
+													<li><a href="#">T-커머스 결제안내</a></li>
+												</ul>
+											</div>
+										</li>
+										<li>
+											<a href="#">사고예방 119</a>
+											<div class="gnb_dep4">
+												<ul>
+													<li><a href="#">이용시 유의사항</a></li>
+													<li><a href="#">불법가맹점신고</a></li>
+													<li><a href="#">불법모집 신고센터</a></li>
+												</ul>
+											</div>
+										</li>										
+										<li><a href="#">스마트폰금융거래10계명</a></li>
+										<li><a href="#">연회비 안내</a></li>
+										<li><a href="#">결제일별 이용기간 안내</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="#">공인인증서 관리</a>
 								<div class="gnb_dep3">
 									<ul>
 										<li><a href="#">인증서 관리</a></li>
@@ -304,34 +439,42 @@
 									</ul>
 								</div>
 							</li>
-							<li><a href="#" class="in_sub">고객신용정보 관리</a>
+							<li><a href="#">브라우저인증서 관리</a></li>
+							<li><a href="#">약관/정책</a>
 								<div class="gnb_dep3">
 									<ul>
-										<li><a href="#">개인정보처리방침</a></li>
-										<li><a href="#">신용정보제공&middot;이용에 대한 고객권리 안내문</a></li>
-										<li><a href="#">개인정보 수집&middot;이용&middot;조회&middot;제공 동의서</a></li>
-										<li><a href="#">개인(신용)정보 수신동의&middot;거부 및 철회 신청</a></li>
-										<li><a href="#">개인정보 열람 청구/조회 신청</a></li>
-										<li><a href="#">카드회원 가입약관</a></li>
-									</ul>
-								</div>
-							</li>
-							<li><a href="#" class="in_sub">이용안내</a>
-								<div class="gnb_dep3">
-									<ul>
-										<li><a href="#">APP 이용안내</a></li>
-										<li><a href="#">해외 이용안내</a></li>
-										<li><a href="#">연회비 안내</a></li>
-										<li><a href="#">결제일별 이용기간 안내</a></li>
-										<li><a href="#">스마트폰 금융거래 10계명</a></li>
+										<li><a href="#">이용약관</a></li>
+										<li><a href="#">개인정보보호정책</a></li>
+										<li><a href="#">개인정보 열람 청구/조회</a></li>
+										<li><a href="#">개인(신용)정보 수신동의.거부 및 철회 신청</a></li>
 									</ul>
 								</div>
 							</li>
 						</ul>
 					</div>
+				</li>
+
+			</ul>
+			<div class="ui-swiper-wrap full">
+				<div class="ui-swiper autoplay">
+					<div class="item swiper-slide">
+						<a href="#"><img src="../../images/temp/menu_banner.png" alt="올원페이로 10만원 결제 시 스타벅스 증정. 2020년 4월1부터 4월 30일까지"></a>
+					</div>
+					<div class="item swiper-slide">
+						<a href="#"><img src="../../images/temp/menu_banner.png" alt="올원페이로 10만원 결제 시 스타벅스 증정. 2020년 4월1부터 4월 30일까지"></a>
+					</div>
+					<div class="item swiper-slide">
+						<a href="#"><img src="../../images/temp/menu_banner.png" alt="올원페이로 10만원 결제 시 스타벅스 증정. 2020년 4월1부터 4월 30일까지"></a>
+					</div>
 				</div>
 			</div>
-			<div class="gnb_pagination" aria-hidden="true"></div>
+			<div class="etc_link">
+				<ul>
+					<li><a href="#">채움레터</a></li>
+					<li><a href="#">채움스케치</a></li>
+					<!--<li><a href="#">패밀리앱</a></li>--><!--앱에서만 쓰임-->
+				</ul>
+			</div>
 		</div>
 	</div>
 </nav>
