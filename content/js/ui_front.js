@@ -5354,7 +5354,7 @@ var tblCalendar = {
 					var $headTit = $wrap.closest('.calendar-swiper').find('.calendar-swiper-head .tit');
 					$headTit.find('strong').html($setYear+'.'+$setMonth);
 					var $headTitSel = $headTit.find('.ui-calendar-select-y');
-					if($headTitSel.length)$headTitSel.val($setYear).data('year',$setYear);
+					if($headTitSel.length)$headTitSel.val($setYear).attr('data-year',$setYear);
 				}
 				$tbody.remove();
 				$table.append($tbodyHtml);
@@ -5388,7 +5388,7 @@ var tblCalendar = {
 						 	var $option = '<option value="'+i+'">'+i+'</option>';
 						 	$headTitSel.append($option);
 						}
-						$headTitSel.val($selVal);
+						$headTitSel.val($selVal).attr('data-year',$selVal);
 					}
 				};
 				var slideCalendar = function(){
@@ -5531,7 +5531,7 @@ var tblCalendar = {
 				$swiper.data('setYear',$setYear);
 				var $dataSwiper = $swiper.data('swiper');
 				if($dataSwiper != undefined)$dataSwiper.update();
-				$(this).data('year',$val);
+				$(this).attr('data-year',$val);
 			}
 		});
 
