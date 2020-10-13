@@ -5041,9 +5041,9 @@ var sclCalendar = {
 							$item = sclCalendar.dateHtml('M',$monthS,$monthE,$val);
 							if($groupEl.find('.ui-calendar-item').length != ($monthE-$monthS+1)){
 								$groupEl.find('dd').html($item);
-								var $active = $groupEl.find('dd').find('.active');
-								if($active.length){
-									scrollUI.center($active,0,'vertical');
+								var $monthActive = $groupEl.find('dd').find('.active');
+								if($monthActive.length){
+									scrollUI.center($monthActive,0,'vertical');
 								}
 							}
 						}else if($groupEl.hasClass('scl_day')){
@@ -5076,9 +5076,9 @@ var sclCalendar = {
 							$item = sclCalendar.dateHtml('D',$dayS,$dayE,$val,$dayStep);
 							if($groupEl.find('.ui-calendar-item').length != ($dayE-$dayS+1) || $dayS != 1){
 								$groupEl.find('dd').html($item);
-								var $ddActive = $groupEl.find('dd').find('.active');
-								if($ddActive.length){
-									scrollUI.center($ddActive,0,'vertical');
+								var $daydActive = $groupEl.find('dd').find('.active');
+								if($daydActive.length){
+									scrollUI.center($daydActive,0,'vertical');
 								}
 							}
 						}else if($groupEl.hasClass('scl_hour')){
@@ -5351,7 +5351,7 @@ var tblCalendar = {
 					var $headTit = $wrap.closest('.calendar-swiper').find('.calendar-swiper-head .tit');
 					$headTit.find('strong').html($setYear+'.'+$setMonth);
 					var $headTitSel = $headTit.find('.ui-calendar-select-y');
-					if($headTitSel.length)$headTitSel.val($setYear);
+					if($headTitSel.length)$headTitSel.val($setYear).data('year',$setYear);
 				}
 				$tbody.remove();
 				$table.append($tbodyHtml);
