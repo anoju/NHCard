@@ -1951,7 +1951,10 @@ var Layer = {
 						$popHtml += '<div class="calendar-swiper-head">';
 							$popHtml += '<div class="tit">';
 								$popHtml += '<strong></strong>';
-								$popHtml += '<select title="년도선택" class="ui-calendar-select-y"></select>';
+								$popHtml += '<div class="sel">';
+									$popHtml += '<select title="년도선택" class="ui-calendar-select-y"></select>';
+									$popHtml += '<a href="#none" class="btn_select ui-select-open" aria-label="년도선택" role="button"></a>';
+								$popHtml += '</div>';
 							$popHtml += '</div>';
 						$popHtml += '</div>';
 						$popHtml += '<div class="swiper-container">';
@@ -5507,7 +5510,7 @@ var tblCalendar = {
 				});
 				$swiper.data('setYear',$setYear+$setVal);
 				var $dataSwiper = $swiper.data('swiper');
-				$dataSwiper.update();
+				if($dataSwiper != undefined)$dataSwiper.update();
 			}
 		});
 
@@ -5527,7 +5530,7 @@ var tblCalendar = {
 				});
 				$swiper.data('setYear',$setYear);
 				var $dataSwiper = $swiper.data('swiper');
-				$dataSwiper.update();
+				if($dataSwiper != undefined)$dataSwiper.update();
 				$(this).data('year',$val);
 			}
 		});

@@ -115,12 +115,23 @@
 				<div>
 					<h3 class="gd__h2">inline 달력</h3>
 					<div class="tbl_calendar"></div>
+					<div class="btn_wrap">
+						<div class="flex">
+							<a href="#" class="button line" onclick="tblCalendar.setView('.tbl_calendar',-1)">-1달</a>
+							<a href="#" class="button line" onclick="tblCalendar.setView('.tbl_calendar',+1)">+1달</a>
+						</div>
+					</div>
 					<script>
 						$(function(){
 							tblCalendar.create('.tbl_calendar');
 						});
 					</script>
 					<h3 class="gd__h2">swiper 달력</h3>
+					<div class="btn_wrap mt0">
+						<div class="flex">
+							<a href="#" class="button line" onclick="Layer.calendar()">swiper 달력</a>
+						</div>
+					</div>
 					<div class="input">
 						<input type="tel" placeholder="YYYY.MM.DD" title="YYYY.MM.DD 형식으로 입력">
 						<button type="button" class="ui-swiper-datepicker-btn" aria-label="달력팝업으로 기간조회">기간조회</button>

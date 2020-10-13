@@ -139,7 +139,10 @@ jq-Datepicker
 .calendar-swiper{position:relative;}
 .calendar-swiper-head{position:relative;text-align:center;background:#f8f8f8;line-height:1.6;padding:11px 100px;margin-bottom:25px;}
 .calendar-swiper-head .tit{position:relative;font-size:1.8rem;font-weight:bold;}
-.calendar-swiper-head .tit select{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;}
+.calendar-swiper-head .tit>select,
+.calendar-swiper-head .tit .btn_select{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;}
+.calendar-swiper-head .tit .btn_select{display:block;padding:0;min-height:0;}
+.calendar-swiper-head .tit .sel select{display:none;}
 .calendar-swiper .ui-datepicker-header,
 .calendar-swiper .swiper-pagination{display:none;}
 .popup.modal.ui-calendar .pop_wrap{width:300px;}
