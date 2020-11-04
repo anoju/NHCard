@@ -307,6 +307,7 @@ common
 .hr_line+[class*=tit_h]{margin-top:0;}
 .hr_line.ty2{height:0;background:none;border-top:1px solid #ddd;}
 .hr_line.ty2.dashed{border-style:dashed;}
+.tbl_hr{border-bottom-color:#bbb;}
 .section .hr_line{margin-left:-20px;margin-right:-20px;}
 .section .hr_line.short{margin-left:0px;margin-right:0px;}
 hr.no_mrg{margin:20px -20px;}
@@ -361,11 +362,17 @@ html.isApp #header{display:none;}
 html.isApp.ios.inpFocus #header>div{position:absolute;}
 #header h1,
 .fake_header h1{position:relative;line-height:26px;font-size:1.8rem;padding:12px 0 11px;margin:0 55px;color:#010101;text-align:center;/*word-break:break-all;*/white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+#header h1.small,
+.fake_header h1.small{font-size:1.6rem;padding:0;height:50px;white-space:normal;}
+#header h1.small>.in,
+.fake_header h1.small>.in{position:absolute;left:0;width:100%;top:50%;display:block;display:-webkit-box;line-height:19px;-webkit-line-clamp:2;word-wrap:break-word;-webkit-box-orient:vertical;text-overflow:ellipsis;overflow:hidden;-webkit-transform:translateY(-50%);transform:translateY(-50%);}
 #header.fixed h1{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 #header .h1_scl_top{display:block;position:absolute;left:0;top:10px;width:100%;height:30px;font-size:1px;text-indent:-9999rem;color:transparent;overflow:hidden;}
 #header h1.logo{margin-left:20px;text-align:left;}
 #header h1.logo a,
-#header h1.logo span{display:block;width:130px;height:26px;text-indent:-9999rem;overflow:hidden;color:transparent;background:url(../images/common/head_logo.png) no-repeat left center;background-size:auto 19px;}
+#header h1.logo span,
+.nh_logo a,
+.nh_logo span{display:block;width:130px;height:26px;text-indent:-9999rem;overflow:hidden;color:transparent;background:url(../images/common/head_logo.png) no-repeat left center;background-size:auto 19px;}
 #header h1.logo.center{margin-left:55px;float:none;}
 #header h1.logo.center a,
 #header h1.logo.center span{margin:0 auto;}

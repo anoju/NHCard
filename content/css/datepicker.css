@@ -36,13 +36,17 @@ jq-Datepicker
 .ui-datepicker .swipe_arr .arr.off{opacity:0;-webkit-animation:none;animation:none;}
 .ui-datepicker .title{position:absolute;top:0;left:15px;display:block;line-height:1.4;padding:14px 0 14px 6px;font-size:1.6rem;color:#111;}
 .ui-datepicker .ui-datepicker-header{position:relative;height:50px;background:#f8f8f8;margin:0 -15px 25px;}
+/* .ui-datepicker .ui-datepicker-header:before,
+.ui-datepicker .ui-datepicker-header:after{content:'';display:block;position:absolute;top:50%;width:18px;height:18px;margin-top:-9px;background-color:#306edf;background-repeat:no-repeat;background-position:center center;border-radius:50%;background-size:auto 10px;}
+.ui-datepicker .ui-datepicker-header:before{left:31px;}
+.ui-datepicker .ui-datepicker-header:after{right:31px;} */
 .ui-datepicker .ui-datepicker-header .ui-state-disabled{cursor:default;;}
 /* .ui-datepicker .ui-datepicker-header .ui-state-disabled span{opacity:0.7;} */
 .ui-datepicker .ui-datepicker-prev-y,
 .ui-datepicker .ui-datepicker-next-y,
 .ui-datepicker .ui-datepicker-prev,
 .ui-datepicker .ui-datepicker-next,
-.calendar-swiper-head .swiper-arr{display:block;padding:0;position:absolute;top:50%;width:24px;height:24px;margin-top:-12px;background:none !important;border-radius:0;overflow:hidden;text-align:center;}
+.calendar-swiper-head .swiper-arr{display:block;padding:0;position:absolute;top:50%;width:24px;height:24px;margin-top:-12px;background:none !important;border-radius:0;overflow:hidden;text-align:center;z-index:1;}
 .ui-datepicker .ui-datepicker-prev,
 .calendar-swiper-head .swiper-prev{left:57px;}
 .ui-datepicker .ui-datepicker-next,
@@ -67,13 +71,15 @@ jq-Datepicker
 .ui-datepicker .ui-datepicker-next-y span{background-position:0 -60px}
 .ui-datepicker .ui-datepicker-next-y.ui-state-disabled span{background-position:-20px -60px} */
 .ui-datepicker .ui-datepicker-prev-y span,
-.calendar-swiper-head .swiper-prev-y span{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='30px'%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M28,2 L15,15 L28,28 '/%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M15,2 L2,15 L15,28 '/%3E%3C/svg%3E");}
+.calendar-swiper-head .swiper-prev-y span,
+.ui-datepicker .ui-datepicker-header:before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='32px' height='30px'%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M28,2 L15,15 L28,28 '/%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M15,2 L2,15 L15,28 '/%3E%3C/svg%3E");}
 .ui-datepicker .ui-datepicker-prev span,
 .calendar-swiper-head .swiper-prev span{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='30px'%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M15,2 L2,15  L15,28'/%3E%3C/svg%3E");}
 .ui-datepicker .ui-datepicker-next span,
 .calendar-swiper-head .swiper-next span{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='18px' height='30px'%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M3,2 L16,15 L3,28 '/%3E%3C/svg%3E");}
 .ui-datepicker .ui-datepicker-next-y span,
-.calendar-swiper-head .swiper-next-y span{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30px' height='30px'%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M2,2 L15,15 L2,28 '/%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M15,2 L28,15 L15,28 '/%3E%3C/svg%3E");}
+.calendar-swiper-head .swiper-next-y span,
+.ui-datepicker .ui-datepicker-header:after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30px' height='30px'%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M2,2 L15,15 L2,28 '/%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 255, 255)' stroke-width='3px' stroke-linecap='round' stroke-linejoin='round' fill='none' d='M15,2 L28,15 L15,28 '/%3E%3C/svg%3E");}
 .ui-datepicker .ui-datepicker-title{position:relative;margin:0 4.4em;line-height:50px;height:50px;text-align:center;font-size:1.8rem;font-weight:bold;z-index:1;}
 .ui-datepicker .ui-datepicker-title select{background:transparent;font-size:1.8rem;font-weight:bold;margin:0;width:auto;height:50px;line-height:50px;padding:0;border:0 none;-webkit-appearance:none;appearance:none;color:#111;vertical-align:top;}
 .ui-datepicker .ui-datepicker-title select option{color:#111;}

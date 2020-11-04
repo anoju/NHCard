@@ -1178,6 +1178,12 @@ var common = {
 	},
 	title:function(str){
 		var $header = $('#header');
+		var inTitleTxt = function(width){
+			var	_fontSize = 18,
+				_fontSize2 = 16,
+				_val = Math.floor(width/(_fontSize*0.9));
+			return _val;
+		};
 		if(str != undefined && str != ''){
 			var $title = document.title;
 			if($title.indexOf(' | ')<0){
@@ -1189,17 +1195,20 @@ var common = {
 				// }
 			}
 			if($header.length && !$header.find('h1').hasClass('logo')){
-				$header.find('h1').html(str);
+				var $h1 = $header.find('h1');
+				$h1.html(str);
+				/*$(window).resize(function(){
+					var $txtLength = inTitleTxt($h1.width());
+					if(str.length > $txtLength){
+						$h1.addClass('small');
+						if(!$h1.find('.in').length)$h1.wrapInner('<span class="in"></span>');
+					}else{
+						$h1.removeClass('small');
+						if($h1.find('.in').length)$h1.find('.in').contents().unwrap();
+					}
+				});*/
 			}
 		}
-		/*else{
-			str = '<a href="#">농협카드</a>';
-			if($('#header').length){
-				$('#header .btn_back').remove();
-				$('#header h1').addClass('logo').html(str);
-			}
-		}*/
-
 		
 		if($header.outerHeight() < $header.children().outerHeight())$header.css('height',$header.children().outerHeight());
 	},
@@ -1217,7 +1226,7 @@ var common = {
 					var $offsetTop = Math.max(0,$(this).offset().top),
 						$dataTop = $(this).data('top');
 					if($dataTop == undefined){
-						$dataTop = isAppChk()? 0: $gap;
+						$dataTop = (isAppChk() || !$('#header').length)? 0: $gap;
 					}
 					if($dataTop != 0)$offsetTop = Math.max(0,$offsetTop - $dataTop);
 					if($target.attr('id') == 'header' && $target.outerHeight() > $gap)$offsetTop = $offsetTop+($target.outerHeight()-$gap);
@@ -2848,7 +2857,7 @@ var buttonUI ={
 					$(window).scrollTop($winScrollTop);
 				}
 				if($this.closest('.fixed').length){
-					var $scrollTop = $this.closest('.fixed').offset().top - $('#header').outerHeight();
+					var $scrollTop = $('#header').length ? $this.closest('.fixed').offset().top - $('#header').outerHeight() : $this.closest('.fixed').offset().top;
 					scrollUI.move($scrollTop);
 				}
 
@@ -5077,11 +5086,11 @@ var sclCalendar = {
 								$val = $val2;
 							}
 							$item = sclCalendar.dateHtml('D',$dayS,$dayE,$val,$dayStep);
-							if($groupEl.find('.ui-calendar-item').length != ($dayE-$dayS+1) || $dayS != 1){
+							if($groupEl.find('.ui-calendar-item').length != Math.floor(($dayE-$dayS+1)/$dayStep)){
 								$groupEl.find('dd').html($item);
-								var $daydActive = $groupEl.find('dd').find('.active');
-								if($daydActive.length){
-									scrollUI.center($daydActive,0,'vertical');
+								var $dayActive = $groupEl.find('dd').find('.active');
+								if($dayActive.length){
+									scrollUI.center($dayActive,0,'vertical');
 								}
 							}
 						}else if($groupEl.hasClass('scl_hour')){
@@ -5477,15 +5486,16 @@ var tblCalendar = {
 		}
 	},
 	UI:function(){
-		$(document).on('click','.ui-calendar .ui-state-default',function(e){
+		$(document).on('click','.ui-tbl-datepicker .ui-state-default',function(e){
 			e.preventDefault();
 			var $calendar = $(this).closest('.ui-datepicker'),
+				$inp = $calendar.find('.ui-datepicker-inline-inp'),
 				$date = $(this).data('date'),
 				$inpVal = autoDateFormet(''+$date,'.');
 			$calendar.find('.ui-state-default').removeClass('ui-state-active').removeAttr('title');
-			$calendar.find('ui-state-highlight').attr('title','오늘 일자');
+			$calendar.find('.ui-state-highlight').attr('title','오늘 일자');
 			$(this).addClass('ui-state-active').attr('title','선택 일자');
-			if($calendar.find('.ui-datepicker-inline-inp').length)$calendar.find('.ui-datepicker-inline-inp').val($inpVal);
+			if($inp.length)$inp.val($inpVal);
 
 			var $popup = $(this).closest('.ui-calendar'),
 				$input = $popup.data('input');
@@ -5537,7 +5547,8 @@ var tblCalendar = {
 
 		$(document).on('click','.ui-swiper-datepicker-btn',function(e){
 			e.preventDefault();
-			var $input = $(this).siblings('input').first(),
+			var $target = $(this).data('target'),
+				$input = !!$target ? $($target) : $(this).siblings('input').first(),
 				$val = $input.val();
 			Layer.calendar($input,$val);
 		});
@@ -5829,7 +5840,8 @@ var accordion = {
 			$winHeight = $(window).height();
 		if($('.bottom_fixed').not('.pop_btn').length)$winHeight = $winHeight - 60;
 		var $topMargin = isAppChk() ? 10 : 60;
-		if($('.tab_fixed').length)$topMargin = $topMargin+50;
+		var $headerH = $('#header').length ? 50 : 0;
+		if($('.tab_fixed').length)$topMargin = $topMargin+$headerH;
 		var $winEnd = $scrollTop+$winHeight,
 			$btnTop = $(btn).offset().top - $topMargin,
 			$thisTop = $(panel).offset().top,
@@ -5965,7 +5977,7 @@ var swiperUI = {
 	focusAria: function(el,first,end,isLoop){
 		if(!isNaN(first) && !isNaN(end)){
 			var last = first+end+1;
-			$(el).find('.swiper-wrapper').children('.swiper-slide').attr('aria-hidden','true').find($focusableEl).each(function(e){
+			$(el).find('>.swiper-wrapper').children('.swiper-slide').attr('aria-hidden','true').find($focusableEl).each(function(e){
 				Focus.disabled(this);
 			});
 
@@ -5973,11 +5985,11 @@ var swiperUI = {
 			if(isLoop){
 				var $activeIdx = $(el).children().children('.swiper-slide-active').index();
 				last = $activeIdx+end+1;
-				$(el).find('.swiper-wrapper').children('.swiper-slide').slice($activeIdx,last).removeAttr('aria-hidden').find($focusableEl).each(function(e){
+				$(el).find('>.swiper-wrapper').children('.swiper-slide').slice($activeIdx,last).removeAttr('aria-hidden').find($focusableEl).each(function(e){
 					Focus.abled(this);
 				});
 			}else{
-				$(el).find('.swiper-wrapper').children('.swiper-slide').not('.swiper-slide-duplicate').slice(first,last).removeAttr('aria-hidden').find($focusableEl).each(function(e){
+				$(el).find('>.swiper-wrapper').children('.swiper-slide').slice(first,last).removeAttr('aria-hidden').find($focusableEl).each(function(e){
 					Focus.abled(this);
 				});
 			}
@@ -6058,6 +6070,14 @@ var swiperUI = {
 								$zoomBtnWrap.append('<button type="button" role="button" class="swiper-zoom-in" aria-label="확대"></button>');
 								$zoomBtnWrap.append('<button type="button" role="button" class="swiper-zoom-out" aria-label="축소"></button>');
 							});
+						}
+						if($this.hasClass('swiper-more') && !$this.parent().find('.btn_swiper_allview').length){
+							var $btnAllViewHtml = '<a href="#" class="btn_swiper_allview" role="button" aria-label="전체보기">전체보기</a>';
+							if($this.parent().find('.swiper-navi').length){
+								$this.parent().find('.swiper-navi').append($btnAllViewHtml);
+							}else{
+								$this.append($btnAllViewHtml);
+							}
 						}
 						var resizeUpadte = '';
 						var swipeRollingNum = function(){
@@ -6224,6 +6244,39 @@ var swiperUI = {
 			});
 		}
 	},
+	allview:function(){
+		$(document).on('click','.btn_swiper_allview',function(e){
+			e.preventDefault();
+			var $wrap = $('#wrap').length? $('#wrap') : $('body'),
+				$popid =  'swiperAllView';
+				$swiper = $(this).parent().parent().find('.swiper-wrapper');
+
+			var $popHtml = '<div id="'+$popid+'" class="popup full ui-pop-remove" role="dialog" aria-hidden="true">';
+				$popHtml += '<article class="pop_wrap">';
+					$popHtml += '<div class="pop_head">';
+						$popHtml += '<h1>전체보기</h1>';
+						$popHtml += '<a href="#" class="pop_close ui-pop-close" role="button" aria-label="팝업창 닫기"></a>';
+					$popHtml += '</div>';
+					$popHtml += '<div class="pop_cont">';
+						$popHtml += '<div class="section">';
+							$popHtml += '<div class="swiper_cont"></div>';
+						$popHtml += '</div>';
+					$popHtml += '</div>';
+				$popHtml += '</article>';
+			$popHtml += '</div>';
+			
+			if(!$('#'+$popid).length){
+				$wrap.append($popHtml);
+				$swiper.find('.swiper-slide').not('.swiper-slide-duplicate').each(function(){
+					var $elCont = $(this).children().clone();
+					$('#'+$popid).find('.swiper_cont').append($elCont);
+				});
+				$('#'+$popid).find('.swiper_cont').children().removeAttr('tabindex');
+			}
+
+			Layer.open('#'+$popid);
+		});
+	},
 	alarm:function(){
 		$('.alarm_list li').swipe({
 			swipeStatus:function(event,phase,direction,distance,duration,fingerCount,fingerData,currentDirection){
@@ -6279,6 +6332,7 @@ var swiperUI = {
 	},
 	init:function(){
 		swiperUI.item();
+		swiperUI.allview();
 	}
 };
 
@@ -6561,7 +6615,9 @@ var wizveraPad = {
 		$('#pinsign-pinpad-bg').remove();
 		$('.fixed_space').removeCss('min-height');
 		$('#header,#contents').removeAttr('aria-hidden');
-		$($el).data('keypad',false).focus();
+		//$($el).data('keypad',false).focus();
+		var $fixedBtn = $('.btn_wrap.bottom_fixed').not('.pop_btn');
+		if($fixedBtn.length)$fixedBtn.find('.button').first().focus();
 	}
 };
 

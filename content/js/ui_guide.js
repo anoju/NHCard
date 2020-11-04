@@ -60,7 +60,7 @@ var _gdCommon ={
 // swiper Tab
 var _gdTabSwiper = '';
 var _gdBoardUI ={
-	tab :function(){
+	tab:function(){
 		var $tab = $('.g_board_tab'),
 			$tabLi = $('.g_board_tab ul li'), 
 			$tabCurrent = $('.g_board_tab ul li.active'), 
@@ -91,7 +91,17 @@ var _gdBoardUI ={
 			e.preventDefault();
 			var $this = $(this), panelID = $this.attr('rel'), $scrollTop = $(window).scrollTop();
 			$this.addClass('active').siblings('li').removeClass('active');
-			$('#'+panelID).addClass('active').siblings('.g_board_panel').removeClass('active');
+			var $siblings = $('#'+panelID).addClass('active').siblings('.g_board_panel');
+			$siblings.each(function(){
+				$(this).removeClass('active');
+
+				var $board = $(this).find('.g_board');
+				$board.find('th select').val('').change();
+				$board.find('th, td').removeAttr('style');
+				var $colspan = $board.find('thead th').length;
+				$board.data('colspan',$colspan);
+				$board.find('.hr th').attr('colspan',($(window).width() < 760)?2:$colspan);
+			});
 
 			location.hash = panelID;
 			$(window).scrollTop($scrollTop);
@@ -288,9 +298,8 @@ var _gdBoardUI ={
 		var stateTxt = function(el,wrap){
 			var max = $(wrap).find('tbody tr').not('.hr, .del').length,
 				c = $(wrap).find('.complete').length,
-				p = Math.round((max/c)*100);
-			if(p = 100)p = Math.floor((max/c)*100);
-			
+				p = (c==0)?0:Math.round((c/max)*100);
+			if(p == 100)p = Math.floor((c/max)*100);
 			$(el).find('.total .num').text(max);
 			$(el).find('.cp_num .num').text(c);
 			$(el).find('.ing .num').text(p);
@@ -355,7 +364,17 @@ var _gdBoardUI ={
 	},
 	init :function(){
 		if($('.g_board_tab').length)_gdBoardUI.tab();
-		if($('.g_board').length)_gdBoardUI.board();
+		if($('.g_board').length){
+			_gdBoardUI.board();
+			if(!!_getParams().cdate){
+				var $cdate = _getParams().cdate;
+				$('.g_board_panel.active .c_date select').val($cdate).change();
+			}
+			if(!!_getParams().mdate){
+				var $mdate = _getParams().mdate;
+				$('.g_board_panel.active .m_date select').val($mdate).change();
+			}
+		}
 		if($('.g_project_status').length)_gdBoardUI.state();
 		_gdBoardUI.click();
 	}
@@ -384,3 +403,10 @@ var _dayLabelPrint = function(){
 	return $dayLabel;
 };
 //console.log(_todayTimeString(),_dayLabelPrint())
+var _getParams = function(){
+	var params = {};
+	window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(str,key,value){
+		params[key]=value;
+	});
+	return params;
+};
