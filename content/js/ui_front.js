@@ -6854,6 +6854,7 @@ $.fn.splitText = function(speed, delay){
 	return this.each(function(){
 		var $this = $(this),
 			$thisTxt = $.trim($(this).text()),
+			$originHtml = $(this).html(),
 			$split = $(this).html().split(''),
 			$html = '',
 			$tag = '',
@@ -6908,6 +6909,9 @@ $.fn.splitText = function(speed, delay){
 		}
 		$this.html($html).removeAttr('style');
 		if($style)$this.attr('style',$style);
+		setTimeout(function(){
+			$this.html($originHtml);
+		},(j*100)+1000);
 	});
 };
 
