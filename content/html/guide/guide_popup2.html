@@ -376,26 +376,15 @@ var Pop = {
 
 		$(window).resize(function(){
 			$head.removeAttr('style').removeClass('shadow');
-			$content.removeAttr('tabindex style');
+			$content.removeAttr('style');
 
-			//타이틀이 두줄 이상이 될때
-			//개발에서 스크립트로 제목제어 시 제대로된 높이값을 갖고올수 없어 setTimeout케이스 추가
-			if($.trim($tit.text()).length < 2){
-				setTimeout(function(){
-					headTitHeight($head,$tit,$content);
-				},200);
-			}else{
-				headTitHeight($head,$tit,$content);
-			}
-			
+			headTitHeight($head,$tit,$content); //제목이 2줄이상 될때
+			addShadow($content); //팝업 헤더 shadow
 			
 			//컨텐츠 스크롤이 필요할때
 			var $height = $(tar).height(),
 				$popHeight = $(tar).find('.'+Pop.wrapClass).outerHeight();
 			if(!$(tar).hasClass('full'))$content.css('max-height',$height);
-
-			//팝업 헤더 shadow
-			addShadow($content);
 		});
 
 		$content.scroll(function(){
