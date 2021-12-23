@@ -127,15 +127,22 @@
         'aria-hidden': 'true',
       });
       if($card.length) {
+        const $cardName = $.trim($card.text());
         const $dt = $this.closest('dd').siblings('dt');
         const $dtTxt = $.trim($dt.text());
-        const $cardName = $.trim($card.text());
-        const $text = $.trim($(this).text()).replace(/						/g, ',').replace(/		/g, ':');
+        const $text = $.trim($(this).text());
         $this.attr({
+          'role':'text',
+          // 'title': $cardName+' '+$dtTxt+'-'+$text,
           'aria-label': $cardName+' '+$dtTxt+'-'+$text
         });
+        if(isMobile.iOS()){
+          $this.attr({
+            'title': '타이틀' + $cardName+' '+$dtTxt+'-'+$text
+          });
+        }
       }else{
-        $this.removeAttr('aria-label');
+        $this.removeAttr('aria-label title');
       }
     });
   }
