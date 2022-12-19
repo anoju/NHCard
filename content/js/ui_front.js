@@ -1628,7 +1628,7 @@ var Layer = {
 						$popHtml += '<div id="uiSelPanel1" class="tab_panel" role="tabpanel" aria-labelledby="uiSelTab1" aria-expanded="false">';
 					}
 
-					$popHtml += '<ul class="select_item_wrap';
+					$popHtml += '<ul role="listbox" class="select_item_wrap';
 					if($isBank){
 						$popHtml += ' bank';
 					}else if($isCard){
@@ -1643,15 +1643,16 @@ var Layer = {
 						$opTxt = $option.text();
 						$opVal = $option.attr('value');
 						if($opVal != ''){
+							$popHtml += '<li';
 							if($isBank){
-								$popHtml += '<li class="'+($opVal >= 200 ? 'ty2' : 'ty1')+'">';
-							}else{
-								$popHtml += '<li>';
+								$popHtml += ' class="'+($opVal >= 200 ? 'ty2' : 'ty1')+'"';
 							}
+							$popHtml += '>';
 							$popHtml += '<div class="select_item'+($targetVal == $opVal ? ' selected' : '')+'">';
-								$popHtml += '<a href="#" class="ui-pop-select-btn'+($opDisabled?' disabled':'')+'" role="button" data-value="'+$opVal+'"';
-								if($targetVal == $opVal)$popHtml +=  ' title="'+(($opTxt.length)>20 ?$opTxt.substring(20,$opTxt.lastIndexOf('(')):$opTxt)+' 선택됨"';
-								$popHtml += '>';
+								$popHtml += '<a href="#" class="ui-pop-select-btn'+($opDisabled?' disabled':'')+'" role="option" data-value="'+$opVal+'"';
+								//if($targetVal == $opVal)$popHtml +=  ' title="'+(($opTxt.length)>20 ?$opTxt.substring(20,$opTxt.lastIndexOf('(')):$opTxt)+' 선택됨"';
+								// $popHtml += '>';
+								$popHtml += ($targetVal == $opVal) ? ' aria-selected="true">' : '>';
 									if($isBank)$popHtml += '<i class="bk_ico bk_'+$opVal+'" aria-hidden="true"></i>';
 									if($isCard){
 										if($opTxt.length > 20){

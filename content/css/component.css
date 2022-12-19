@@ -350,6 +350,8 @@ input.input-text-error{border-color:#fd775c !important;}
 .select select.disabled{color:#858585;background-color:#f0f0f0;}
 .select select:disabled+.btn_select,
 .btn_select.disabled{border-color:#ddd;color:#858585;background-color:#f1f1f1;-webkit-tap-highlight-color:transparent;}
+.select select:disabled{display:block !important;}
+.select select:disabled + .btn_select{display:none !important;visibility:hidden;}
 .form_item.error .select select,
 .form_item.error .select .btn_select,
 .select.error select,
