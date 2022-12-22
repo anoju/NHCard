@@ -3426,7 +3426,8 @@ var tooltip = {
 			});
 			$cont.attr({
 				'id':$contId,
-				'role':'tooltip'
+				'role':'tooltip',
+				'aria-hidden':'true'
 			});
 			$closeBtn.attr('role','button');
 		});
